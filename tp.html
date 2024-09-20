@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>DSA Topics</title>
+    <link rel="stylesheet" href="tp.css">
+</head>
+<body>
+    <header>
+        <h1>Explore Data Structures and Algorithms</h1>
+        <p>Click on a topic to learn more</p>
+    </header>
+
+    <div class="grid-container">
+        <div class="grid-item" onclick="redirect('arrays.html')">
+            <h2>Arrays</h2>
+            <p>Arrays store elements in contiguous memory locations, allowing indexed access to elements.</p>
+        </div>
+        <div class="grid-item" onclick="redirect('linkedlists.html')">
+            <h2>Linked Lists</h2>
+            <p>Linked lists consist of nodes where each node contains data and a pointer to the next node.</p>
+        </div>
+        <div class="grid-item" onclick="redirect('trees.html')">
+            <h2>Trees</h2>
+            <p>Trees are hierarchical data structures with nodes connected by edges. They are used in search operations.</p>
+        </div>
+        <div class="grid-item" onclick="redirect('graphs.html')">
+            <h2>Graphs</h2>
+            <p>Graphs consist of vertices connected by edges, representing relationships between entities.</p>
+        </div>
+        <div class="grid-item" onclick="redirect('heaps.html')">
+            <h2>Heaps</h2>
+            <p>Heaps are complete binary trees where each node is greater (max heap) or smaller (min heap) than its children.</p>
+        </div>
+        <div class="grid-item" onclick="redirect('hashing.html')">
+            <h2>Hashing</h2>
+            <p>Hashing is a technique to map data to a fixed-size table using a hash function for faster access.</p>
+        </div>
+        <!-- Add more topics as needed -->
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
