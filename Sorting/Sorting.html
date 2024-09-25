@@ -1,0 +1,235 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sorting and Searching Algorithms</title>
+    <style>
+        /* body {
+          
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 20px;
+        }
+        .header {
+            background: linear-gradient(to right, #048834, #000000);
+            padding: 10px;
+            text-align: center;
+            border-radius: 5px;
+            margin-bottom: 20px;
+        }
+        h1{
+            color: rgb(255, 247, 247); 
+            margin: 0;
+        }
+        h2{
+            color: rgb(0, 0, 0); 
+            margin: 0;
+        }
+        .section {
+            margin-bottom: 40px;
+        }
+        pre {
+            background: rgba(0, 0, 0, 0.1); 
+            color: black;
+            padding: 10px;
+            border-radius: 5px;
+            overflow-x: auto;
+        }
+        h3 {
+            border-bottom: 1px solid #ffffff;
+            padding-bottom: 10px;
+            color: rgb(0, 0, 0); 
+        } */
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: white;
+            color: #333;
+            padding-left: 10%;
+            padding-right: 10%;
+        }
+       .header {
+            background-color: #4CAF50;
+            padding: 10px 0;
+            text-align: center;
+            color: white;
+        }
+        h1 {
+            margin: 0;
+        }
+       
+        h2 {
+            color: #4CAF50;
+        }
+        p {
+            line-height: 1.6;
+        }
+        ul {
+            margin-left: 20px;
+        }
+        .code {
+            background-color: #f1f1f1;
+            padding: 10px;
+            border-left: 5px solid #4CAF50;
+            margin: 20px 0;
+            font-family: monospace;
+        }
+        footer {
+            text-align: center;
+            padding: 20px 0;
+            background-color: #4CAF50;
+            color: white;
+        }
+    </style>
+</head>
+<body>
+
+    <div class="header">
+        <h1>Sorting and Searching Algorithms</h1>
+    </div>
+
+    <div class="section">
+        <h2>Sorting Algorithms</h2>
+        <p>Sorting algorithms arrange the elements of a list or array in a specific order. Here are three common sorting algorithms:</p>
+        
+        <h3>1. Insertion Sort</h3>
+        <p>Insertion Sort works by building a sorted array one element at a time.</p>
+        <h4>Algorithm Steps:</h4>
+        <ol>
+            <li>Start from the second element (index 1) of the array.</li>
+            <li>Compare the current element (key) with the elements in the sorted part of the array (to the left).</li>
+            <li>Shift all elements greater than the key to the right.</li>
+            <li>Insert the key in its correct position.</li>
+            <li>Repeat until the end of the array.</li>
+        </ol>
+        <div class="code">
+        <pre>
+function insertionSort(arr) {
+    for (let i = 1; i < arr.length; i++) {
+        let key = arr[i];
+        let j = i - 1;
+        while (j >= 0 && arr[j] > key) {
+            arr[j + 1] = arr[j];
+            j--;
+        }
+        arr[j + 1] = key;
+    }
+    return arr;
+}
+        </pre></div>
+
+        <h3>2. Merge Sort</h3>
+        <p>Merge Sort is a divide-and-conquer algorithm that recursively splits the array.</p>
+        <h4>Algorithm Steps:</h4>
+        <ol>
+            <li>If the array has one or no elements, return it (base case).</li>
+            <li>Find the middle index and divide the array into two halves.</li>
+            <li>Recursively apply merge sort on the left half and the right half.</li>
+            <li>Merge the two sorted halves into a single sorted array.</li>
+        </ol>
+        <div class="code">
+        <pre>
+function mergeSort(arr) {
+    if (arr.length <= 1) return arr;
+    const mid = Math.floor(arr.length / 2);
+    const left = mergeSort(arr.slice(0, mid));
+    const right = mergeSort(arr.slice(mid));
+    return merge(left, right);
+}
+
+function merge(left, right) {
+    let result = [];
+    let i = 0, j = 0;
+    while (i < left.length && j < right.length) {
+        if (left[i] < right[j]) {
+            result.push(left[i]);
+            i++;
+        } else {
+            result.push(right[j]);
+            j++;
+        }
+    }
+    return result.concat(left.slice(i)).concat(right.slice(j));
+}
+        </pre></pre></div>
+
+        <h3>3. Quick Sort</h3>
+        <p>Quick Sort uses a pivot element to partition the array.</p>
+        <h4>Algorithm Steps:</h4>
+        <ol>
+            <li>If the array has one or no elements, return it (base case).</li>
+            <li>Select a pivot element from the array.</li>
+            <li>Partition the array into two sub-arrays: elements less than the pivot and elements greater than the pivot.</li>
+            <li>Recursively apply quick sort to the left and right sub-arrays.</li>
+            <li>Combine the sorted sub-arrays and the pivot.</li>
+        </ol>
+        <div class="code">
+        <pre>
+function quickSort(arr) {
+    if (arr.length <= 1) return arr;
+    const pivot = arr[arr.length - 1];
+    const left = [], right = [];
+    for (let i = 0; i < arr.length - 1; i++) {
+        if (arr[i] < pivot) left.push(arr[i]);
+        else right.push(arr[i]);
+    }
+    return [...quickSort(left), pivot, ...quickSort(right)];
+}
+        </pre>
+    </div>
+
+    <div class="section">
+        <h2>Searching Algorithms</h2>
+        <p>Searching algorithms are used to find an element within a data structure. Here are two fundamental searching techniques:</p>
+        
+        <h3>1. Linear Search</h3>
+        <p>Linear Search checks each element one by one until the target is found.</p>
+        <h4>Algorithm Steps:</h4>
+        <ol>
+            <li>Start from the first element in the array.</li>
+            <li>Compare the current element with the target value.</li>
+            <li>If they match, return the index of the current element.</li>
+            <li>If not, move to the next element and repeat.</li>
+            <li>If the end of the array is reached without finding the target, return -1.</li>
+        </ol>
+        <div class="code">
+        <pre>
+function linearSearch(arr, target) {
+    for (let i = 0; i < arr.length; i++) {
+        if (arr[i] === target) return i;
+    }
+    return -1; // Not found
+}
+        </pre></div>
+
+        <h3>2. Binary Search</h3>
+        <p>Binary Search is more efficient but requires the array to be sorted.</p>
+        <h4>Algorithm Steps:</h4>
+        <ol>
+            <li>Set two pointers: left at the start and right at the end of the array.</li>
+            <li>While left is less than or equal to right:</li>
+            <li>Calculate the middle index.</li>
+            <li>If the middle element is equal to the target, return the middle index.</li>
+            <li>If the middle element is less than the target, move the left pointer to mid + 1.</li>
+            <li>If the middle element is greater than the target, move the right pointer to mid - 1.</li>
+            <li>If the target is not found, return -1.</li>
+        </ol>
+        <div class="code">
+        <pre>
+function binarySearch(arr, target) {
+    let left = 0, right = arr.length - 1;
+    while (left <= right) {
+        const mid = Math.floor((left + right) / 2);
+        if (arr[mid] === target) return mid;
+        else if (arr[mid] < target) left = mid + 1;
+        else right = mid - 1;
+    }
+    return -1; // Not found
+}
+        </pre>
+    </div>
+
+</body>
+</html>

@@ -1,0 +1,126 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Introduction to Linked Lists</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #f4f4f9;
+            color: #333;
+            padding-left: 10%;
+            padding-right: 10%;
+        }
+        header {
+            background-color: #4CAF50;
+            padding: 10px 0;
+            text-align: center;
+            color: white;
+        }
+        h1 {
+            margin: 0;
+        }
+       
+        h2 {
+            color: #4CAF50;
+        }
+        p {
+            line-height: 1.6;
+        }
+        ul {
+            margin-left: 20px;
+        }
+        .code {
+            background-color: #f1f1f1;
+            padding: 10px;
+            border-left: 5px solid #4CAF50;
+            margin: 20px 0;
+            font-family: monospace;
+        }
+        footer {
+            text-align: center;
+            padding: 20px 0;
+            background-color: #4CAF50;
+            color: white;
+        }
+    </style>
+</head>
+<body>
+
+<header>
+    <h1>Linked Lists</h1>
+</header>
+
+<div class="container">
+    <h2>What is a Linked List?</h2>
+    <p>A <b>Linked List</b> is a linear data structure where each element, called a node, is an object that contains data and a reference to the next node. Unlike arrays, linked lists do not store data in contiguous memory locations. This allows for more efficient insertion and deletion operations compared to arrays.</p>
+    
+    <p>In a linked list, elements are connected using pointers, and each node contains two main components:</p>
+    <ul>
+        <li><b>Data:</b> The value or data stored in the node.</li>
+        <li><b>Pointer (or link):</b> A reference to the next node in the sequence.</li>
+    </ul>
+
+    <h2>Advantages of Linked Lists</h2>
+    <p>Linked lists have several advantages over arrays:</p>
+    <ul>
+        <li><b>Dynamic Size:</b> Linked lists can grow or shrink during runtime as needed, while arrays have a fixed size.</li>
+        <li><b>Efficient Insertions/Deletions:</b> Inserting or deleting nodes in a linked list is more efficient, as it only involves updating pointers.</li>
+        <li><b>Memory Utilization:</b> Memory is allocated as needed, so there is no wasted space as with arrays where you may need to predefine the size.</li>
+    </ul>
+
+    <h2>Types of Linked Lists</h2>
+    <p>There are several types of linked lists, each with its unique structure and application:</p>
+    <ul>
+        <li><b>Singly Linked List:</b> In this type of linked list, each node has data and a reference to the next node in the sequence. It allows traversal in one direction, from the head (first node) to the tail (last node).</li>
+        <li><b>Doubly Linked List:</b> Each node contains references to both the next and the previous nodes. This allows traversal in both directions (forward and backward).</li>
+        <li><b>Circular Linked List:</b> In a circular linked list, the last node in the sequence points back to the first node, creating a circular structure.</li>
+    </ul>
+
+    <h2>Basic Structure of a Node</h2>
+    <p>The basic structure of a linked list node can vary based on the type of linked list. Below is an example of a node structure for a singly linked list in C:</p>
+
+    <div class="code">
+        <pre>
+struct Node {
+    int data;
+    struct Node* next;
+};
+        </pre>
+    </div>
+
+    <p>In this structure, <code>data</code> holds the value stored in the node, and <code>next</code> is a pointer to the next node in the list.</p>
+
+    <h2>How Linked Lists Work</h2>
+    <p>In a linked list, the first node is referred to as the <strong>head</strong>, and the last node is referred to as the <strong>tail</strong>. The tail node's pointer typically points to <code>NULL</code>, indicating the end of the list (except in circular linked lists).</p>
+
+    <p>Here’s how basic operations work in a linked list:</p>
+    <ul>
+        <li><b>Insertion:</b> A new node can be inserted at the beginning, middle, or end of the linked list by adjusting the pointers.</li>
+        <li><b>Deletion:</b> To delete a node, we modify the pointers of the surrounding nodes to bypass the node being deleted.</li>
+        <li><b>Traversal:</b> We can traverse a linked list by following the pointers from the head node to the tail.</li>
+    </ul>
+
+    <h2>Common Operations in Linked Lists</h2>
+    <p>Some common operations performed on linked lists include:</p>
+    <ul>
+        <li><b>Insertion:</b> Inserting an element at the beginning, middle, or end of the list.</li>
+        <li><b>Deletion:</b> Deleting an element from the list.</li>
+        <li><b>Traversal:</b> Visiting each element in the list to perform a specific task (e.g., searching for an element).</li>
+        <li><b>Reversal:</b> Reversing the order of nodes in the list.</li>
+    </ul>
+
+    <h2>Applications of Linked Lists</h2>
+    <p>Linked lists are widely used in various applications due to their flexibility and efficiency. Some common applications include:</p>
+    <ul>
+        <li><b>Dynamic Memory Allocation:</b> Linked lists are used to manage free memory in operating systems.</li>
+        <li><b>Implementing Stacks and Queues:</b> Linked lists provide a convenient way to implement stacks and queues dynamically.</li>
+        <li><b>Graph Representations:</b> In graph data structures, adjacency lists are often implemented using linked lists.</li>
+        <li><b>Polynomial Manipulation:</b> Linked lists can be used to store and manipulate polynomials where each node represents a term of the polynomial.</li>
+    </ul>
+</div>
+</body>
+</html>
