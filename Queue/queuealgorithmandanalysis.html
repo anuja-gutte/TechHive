@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Queue algo</title>
+    <link rel="stylesheet" href="styles.css">
+  </head>
+  <body>
+    <!-- Navbar Section -->
+    <div class="home">
+      <nav class="nav">
+        <div class="tab">
+          <div class="left">
+            <div class="logo">
+              <img src="../logo.jpeg" alt="Logo" />
+            </div>
+            <a
+              ><button class="open-btn" onclick="toggleSidebar()">
+                ☰ Menu
+              </button></a
+            >
+          </div>
+
+          <div class="right">
+            <ul id="list">
+              <li><a href="#home">Home</a></li>
+              <li><a href="about.html">About</a></li>
+              <li><a href="#services">Services</a></li>
+              <li><a href="#contact">Contact</a></li>
+              <li>
+                <a href="#contact"
+                  ><button class="tabs-learn-more">Learn More</button></a
+                >
+              </li>
+            </ul>
+          </div>
+        </div>
+      </nav>
+    </div>
+    <header class="main-header">
+      <h1>ALGORITHM AND ANALYSIS</h1>
+    </header>
+
+    <!-- Main Content Container -->
+    <div class="container">
+      <!-- Algorithm for Insertion of element (enqueue) -->
+      <div>
+        <h2>Algorithm for Insertion of element (enqueue):</h2>
+        <ol>
+          <li>Check for the overflow condition.</li>
+          <li>Check if the queue is empty.</li>
+          <li>
+            If the queue is empty, then both FRONT and REAR are set to zero, so
+            that the new value can be stored at the 0th location. Otherwise, if
+            the queue already has some values, then REAR is incremented so that
+            it points to the next location in the array.
+          </li>
+          <li>
+            The value is stored in the queue at the location pointed by REAR.
+          </li>
+        </ol>
+      </div>
+      <!-- New Insertion Block -->
+      <div class="insertion">
+        <h3>Queue_Insert (Queue, Size, Front, Rear, x)</h3>
+        <pre>
+Queue_Insert(Queue, Size, Front, Rear, x) 
+{
+if (Rear == Size - 1) 
+   Print Overflow 
+if (Front == -1) 
+   Set Front = 0 && Rear = 0 
+Else 
+   Rear = Rear + 1 
+Queue[Rear] = x 
+EXIT
+}
+        </pre>
+      </div>
+      <div>
+        <h2>Algorithm for Deletion of element (dequeue):</h2>
+        <ol>
+          <li>Check for underflow condition.</li>
+          <li>An underflow occurs if FRONT = –1 or FRONT > REAR.</li>
+          <li>If the queue has some values, then FRONT is incremented so that it now points to the next value in the queue.</li>
+        </ol>
+      </div>
+
+      <!-- Deletion Algorithm Code -->
+      <div class="deletion">
+        <h3>Queue_Delete (Queue, Size, Front, Rear)</h3>
+        <pre>
+Queue_Delete(Queue, Size, Front, Rear) 
+{
+if (Front == - 1) 
+   Print Underflow 
+x = Queue [Front] 
+if (Front == Rear) 
+   Set Front = -1 && Rear = -1 
+Else 
+   Front = Front + 1 
+EXIT
+}
+        </pre>
+      </div>
+      <div class="complexity">
+        <h3>Complexity Analysis of Queue Operations</h3>
+        
+        <ol>
+          <li>Enqueue: O(1)</li>
+          <li>Dequeue: O(1)</li>
+          <li>Size: O(1)</li>
+        </ol>
+      </div>
+</div>
+  </body>
+</html>

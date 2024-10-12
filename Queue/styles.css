@@ -12,13 +12,12 @@ body {
 }
 
 header {
-  background-color: #4CAF50;
-  color: white;
+  background-color:#f4f4f4;
+  color: rgb(12, 4, 4);
   padding: 0em;
   text-align: center;
   width: 100%;
 }
-
 h1 {
   margin: 0;
 }
@@ -34,25 +33,22 @@ h1 {
   /* padding: 10px 50px; */
 }
 
-.tab{
+.tab {
   background: black;
   font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
   width: 100%;
-  /* padding-left: 15px;
-  padding-right: 15px; */
 }
 
 .tab {
   display: flex;
   align-items: center;
   justify-content: space-between;
-
 }
 
 .logo img {
   width: 50px;
-    border-radius: 100px;
-    padding-right: 50px;
+  border-radius: 100px;
+  padding-right: 50px;
 }
 
 .open-btn {
@@ -69,11 +65,9 @@ h1 {
   transition: color 0.3s;
 }
 
-.left{
+.left {
   display: inline-flex;
   align-items: center;
-  /* margin-left: 10%; */
-  
 }
 
 .tabs-learn-more {
@@ -102,7 +96,6 @@ ul li {
   margin-right: 20px;
 }
 
-
 ul li a {
   color: white;
   text-decoration: none;
@@ -114,20 +107,35 @@ ul li a:hover {
   transition: color 0.3s;
 }
 
-
 /* Main Content Styles */
 .container {
-  max-width: 1300px; /* Sets max-width for the content */
-  margin: 0 auto; /* Centers the content horizontally */
+  max-width: 1300px;
+  margin: 0 auto;
   padding: 1em;
   flex: 1;
   justify-content: center;
   align-items: center;
-  padding-top: 120px; /* Adjust padding to account for fixed navbar */
+  padding-top: 20px; /* Ensures that the content is not hidden behind the navbar */
 }
+.container > div {
+  margin-top: 0px; /* Reduce space between the sections */
+}
+
 
 main {
   padding: 1em;
+}
+
+.main-header {
+  margin-top: 70px; /* Adds spacing from the top for visibility */
+  
+}
+
+.main-header h1 {
+  font-size: 2.5em;
+  color: #010a00;
+  margin-bottom: 10px;
+  text-align: center;
 }
 
 h2, h3 {
@@ -142,6 +150,7 @@ h3 {
 
 p {
   line-height: 1.6em;
+  text-align: left;
 }
 
 ol {
@@ -152,8 +161,6 @@ ol {
 ol li {
   margin-bottom: 0.5em;
 }
-
-/* Image Section with Green Border Around the Image Only */
 .image-section {
   margin-top: 20px;
   margin-bottom: 20px;
@@ -180,4 +187,90 @@ ol li {
 
 .nav-button:hover {
   background-color: #0d0f12;
+}
+/* Insertion Algorithm Code */
+.insertion {
+  color: black; /* Text color */
+  padding: 20px; /* Padding inside the section */
+  margin: 0 auto; /* Center the insertion section */
+  width: 70%; /* Adjust the width to 70% of the container */
+  max-width: 600px; /* Optional: Set a maximum width */
+  background-color: #f4f4f4; /* Optional: Background color */
+  border-radius: 5px; /* Optional: Rounded corners */
+}
+
+.insertion h3 {
+  font-size: 22px;
+  margin-bottom: 15px;
+  text-align: center;
+}
+
+.insertion pre {
+  background-color: #e4e4e4;
+  padding: 15px;
+  border-radius: 5px;
+  font-family: monospace;
+  white-space: pre-wrap;
+  word-wrap: break-word;
+}
+
+/* Deletion Algorithm Code */
+.deletion {
+  color: black; /* Text color */
+  padding: 20px; /* Padding inside the section */
+  margin: 0 auto; /* Center the deletion section */
+  width: 70%; /* Adjust the width to 70% of the container */
+  max-width: 600px; /* Optional: Set a maximum width */
+  background-color: #f4f4f4; /* Optional: Background color */
+  border-radius: 5px; /* Optional: Rounded corners */
+}
+
+.deletion h3 {
+  font-size: 22px;
+  margin-bottom: 15px;
+  text-align: center;
+}
+
+.deletion pre {
+  background-color: #e4e4e4;
+  padding: 15px;
+  border-radius: 5px;
+  font-family: monospace;
+  white-space: pre-wrap;
+  word-wrap: break-word;
+}
+/* Complexity Analysis Block */
+.complexity {
+  color: black;
+  padding: 20px;
+  margin: 0 auto;
+  width: 70%; /* Set the width similar to the other blocks */
+  max-width: 600px; /* Limit the width to 600px */
+  background-color: #f4f4f4;
+  border-radius: 5px;
+  margin-top: 20px; /* Space between the sections */
+}
+
+.complexity h3 {
+  font-size: 22px;
+  margin-bottom: 15px;
+  text-align: center; /* Center the heading */
+}
+
+/* Reset global margins for the container */
+.complexity {
+  margin: 0 auto;
+  padding: 20px;
+  width: 574.688px;
+  height: 125px;
+  background-color: #f4f4f4;
+  border-radius: 5px;
+  text-align: left;
+}
+
+/* Reset margins and paddings for the ordered list */
+.complexity ol, .complexity li {
+  margin:1% ;
+  padding: 0;
+  text-align: left;
 }
