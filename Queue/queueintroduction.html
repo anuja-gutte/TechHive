@@ -1,15 +1,41 @@
 <!DOCTYPE html>
 <html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Queue</title>
-    <link rel="stylesheet" href="styles.css" />
-  </head>
-  <body>
-    <header>
-      <h1>Queue</h1>
-    </header>
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Queue Introduction</title>
+  <link rel="stylesheet" href="styles.css"> <!-- Reference your CSS file -->
+</head>
+<body>
+
+  <!-- Navbar Section -->
+  <nav class="nav">
+    <div class="tab">
+      <div class="left">
+        <div class="logo">
+          <img src="../logo.jpeg" alt="Logo">
+        </div>
+        <a><button class="open-btn" onclick="toggleSidebar()">☰ Menu</button></a>
+      </div>
+
+      <div class="right">
+        <ul id="list">
+          <li><a href="#home">Home</a></li>
+          <li><a href="about.html">About</a></li>
+          <li><a href="#services">Services</a></li>
+          <li><a href="#contact">Contact</a></li>
+          <li><a href="#contact"><button class="tabs-learn-more">Learn More</button></a></li>
+        </ul>
+      </div>
+    </div>
+  </nav>
+
+  <!-- Main Content Section -->
+  <header>
+    <h1>Queue Introduction</h1>
+  </header>
+
+  <div class="container">
     <main>
       <section>
         <h2>What is a Queue?</h2>
@@ -25,50 +51,49 @@
         </p>
       </section>
 
-      <section class="image-section"></section>
-        <img src="Queue -imgjpg.jpg" alt="Illustration of a Queue" />
+        <!-- Image Section with Green Border Around the Image Only -->
+        <section class="image-section">
+          <img src="C:\Users\tanuj\Desktop\project\TechHive\.git\TechHive\Queue\Queue -imgjpg.jpg" alt="Illustration of a Queue">
+        </section>
+
+      <!-- Key Points About Queues Section -->
+      <section>
+        <h3>Below are some key points about queues:</h3>
+        <ol>
+          <li><strong>Simple Queue:</strong> Basic FIFO queue without any additional features.</li>
+          <li><strong>Circular Queue:</strong> A queue where the end of the queue wraps around to the beginning.</li>
+          <li><strong>Priority Queue:</strong> A queue where elements are dequeued based on priority rather than the order they were enqueued.</li>
+          <li><strong>Double-ended Queue (Deque):</strong> A queue where elements can be added or removed from both ends.</li>
+        </ol>
       </section>
       
+
+     <!--
       <section>
         <h3>Below are some key points about queues:</h3>
         <ul>
-          <li>
-            <strong>Simple Queue:</strong> Basic FIFO queue without any
-            additional features.
-          </li>
-          <li>
-            <strong>Circular Queue:</strong> A queue where the end of the queue
-            wraps around to the beginning.
-          </li>
-          <li>
-            <strong>Priority Queue:</strong> A queue where elements are dequeued
-            based on priority rather than the order they were enqueued.
-          </li>
-          <li>
-            <strong>Double-ended Queue (Deque):</strong> A queue where elements
-            can be added or removed from both ends.
-          </li>
+          <li><strong>Simple Queue:</strong> Basic FIFO queue without any additional features.</li>
+          <li><strong>Circular Queue:</strong> A queue where the end of the queue wraps around to the beginning.</li>
+          <li><strong>Priority Queue:</strong> A queue where elements are dequeued based on priority rather than the order they were enqueued.</li>
+          <li><strong>Double-ended Queue (Deque):</strong> A queue where elements can be added or removed from both ends.</li>
         </ul>
-      </section>
-      <section>
-        <h2>Queue Implementations</h2>
-        <br>
-        <button
-          onclick="location.href='arrayImplementation.html'"
-          class="nav-button"
-        >
-          Array Implementation
-        </button>
-        <br>
-        <button
-          onclick="location.href='linkedListImplementation.html'"
-          class="nav-button"
-        >
-          Linked List Implementation
-        </button>
-      </section>
+      </section>  -->
 
-      
+      <!-- Navigation Buttons for Queue Implementations -->
+      <section>
+        <button onclick="location.href='arrayImplementation.html'" class="nav-button">Array Implementation</button>
+        <br>
+        <button onclick="location.href='linkedListImplementation.html'" class="nav-button">Linked List Implementation</button>
+      </section>
     </main>
-  </body>
+  </div>
+
+  <script>
+    // Function to toggle the sidebar (if needed in the future)
+    function toggleSidebar() {
+      console.log('Toggle menu clicked!');
+    }
+  </script>
+
+</body>
 </html>
