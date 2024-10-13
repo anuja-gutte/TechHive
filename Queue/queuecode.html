@@ -1,0 +1,289 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+<style>
+    .body{
+    font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+   
+}
+.home{
+  max-width: 1300px;
+  margin: 0 auto;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+*{
+    text-decoration: none;
+    margin: 0;
+    padding: 0;
+    
+}
+
+.nav{
+    position: fixed;
+}
+
+.tab{
+    background: black;
+    font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+    width: 100%;
+    /* padding-left: 15px;
+    padding-right: 15px; */
+}
+
+.tab{
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+img{
+    width: 50px;
+    border-radius: 100px;
+    padding-right: 50px;
+}
+
+.open-btn{
+    font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+    font-size:15px;
+    cursor: pointer;
+    display: inline-block;
+    background-color: black;
+    color:white;
+    border: none;
+    
+   
+}
+
+.arrow {
+    border: solid white;
+    border-width: 0 3px 3px 0;
+    display: inline-block;
+    padding: 2px;
+  }
+
+.down {
+    transform: rotate(45deg);
+    -webkit-transform: rotate(45deg);
+  }
+
+.open-btn:hover{
+    color:orange;
+    transition-duration: 0.3s;
+
+}
+
+a:hover{
+    color: orange;
+    transition-duration: 0.3s;
+}
+
+.left{
+    display: inline-flex;
+    align-items: center;
+    /* margin-left: 10%; */
+    
+}
+
+
+.tabs-learn-more{
+    font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+    
+    background-color: black;
+    border-width: 2px;
+    border-style: solid;
+    border-color: white;
+    color: white;
+    font-weight: 500;
+    border-radius: 20px;
+    padding: 8px;
+    cursor: pointer;
+}
+
+.tabs-learn-more:hover{
+    background-color: rgb(28, 205, 15);
+    transition-duration: 0.3s;
+    border-color:  rgb(28, 205, 15);
+    
+}
+
+li{
+    list-style: none;
+    display: inline-block;
+}
+
+li a{
+    color: white;
+    font-size: 15px;
+    margin-right: 20px;
+}
+
+
+  </style>
+</head>
+<body>
+  <nav>
+    <div class="tab">
+        <div class="left">
+        <div class="logo">
+            <img src="../logo.jpeg">
+        </div>
+        <a><button class="open-btn" onclick="toggleSidebar()">☰ Menu</button></a>
+        </div>
+    
+            <div class="right">
+                <ul id="list">
+                    <li> <a href="#home">Home</a></li>
+                    <li><a href="about.html">About</a></li>
+                    <li><a href="#services">Services</a></li>
+                    <li> <a href="#contact">Contact</a></li>
+                    <li><a href="#contact"><button class="tabs-learn-more">Learn More</button></a></li>
+                    
+                </ul>
+               
+            
+            </div>
+    
+    </div>
+</nav>
+<header>
+<h2 style="text-align: center; padding-top: 20PX;"> Code Implementation of <span style="color: green;"> QUEUE </span> - Java </h2>
+</header>
+<main>
+    <div class="section" id="theory" style="background-color:#eff8ed; padding: 20px; border-radius: 2px; box-shadow: 0 4px 8px rgba(36, 30, 30, 0.1); margin: 20px 0;">
+       <p  style="font-size: larger;">In this section, we will explore the fundamental operations of a queue, including enqueue, dequeue, peek, and print.
+         To help solidify our understanding of these operations, we'll implement a basic queue in Java. This hands-on example 
+         will allow you to grasp the core concepts of queue behavior effectively. Furthermore, you are encouraged to try implementing 
+         this in other programming languages as well . Doing so will deepen your comprehension of the topic and provide valuable insights
+          into how queues can be handled across different programming environments.</p>
+
+</div>
+
+<h3 > Simple Example : </h3>
+    
+<div class="section" id="code block" style="background-color:#eff8ed; padding: 20px; border-radius: 2px; box-shadow: 0 4px 8px rgba(36, 30, 30, 0.1); margin: 20px 0;">
+    <pre>
+        import java.util.*; 
+    
+        class Queue {
+            private static int front, rear, capacity;
+            private static int queue[];
+        
+            Queue(int val)
+            {
+                front = rear = 0;
+                capacity = val;
+                queue = new int[capacity];
+            }
+        
+            static void queueEnqueue(int data)
+            {
+                if (capacity == rear) {
+                    System.out.println("Queue is full");
+                    return;
+                } else {
+                    queue[rear] = data;
+                    rear++;
+                }
+                return;
+            }
+        
+            static void queueDequeue()
+            {
+                if (front == rear) {
+                    System.out.println("Queue is empty");
+                    return;
+                } else {
+                    for (int i = 0; i < rear - 1; i++) {
+                        queue[i] = queue[i + 1];
+                    }
+                    if (rear < capacity)
+                        queue[rear] = 0;
+                    rear--;
+                }
+                return;
+            }
+        
+            static void queueDisplay()
+            {
+                int i;
+                if (front == rear) {
+                    System.out.println("Queue is Empty");
+                    return;
+                }
+                for (i = front; i < rear; i++) {
+                    System.out.printf("%d ", queue[i]);
+                }
+                System.out.println();
+                return;
+            }
+        
+            static void queueFront()
+            {
+                if (front == rear) {
+                    System.out.println("Queue is Empty");
+                    return;
+                }
+                System.out.print("Front Element is: "+queue[front]);
+                return;
+            }
+        }
+        
+        public class StaticQueueinjava {
+            public static void main(String[] args)
+            {
+                Queue q = new Queue(4);
+        
+                q.queueDisplay();
+                q.queueEnqueue(20);
+                q.queueEnqueue(30);
+                q.queueEnqueue(40);
+                q.queueEnqueue(50);
+                q.queueDisplay();
+                q.queueEnqueue(60);
+        
+                q.queueDisplay();
+        
+                q.queueDequeue();
+                q.queueDequeue();
+                System.out.println("after two node deletion");
+        
+                q.queueDisplay();
+        
+                q.queueFront();
+            }
+        }         
+
+    </pre>
+  </div>
+
+    <h3>Output IS : </h3>
+    <div class="section" id="theory" style="background-color:#eff8ed; padding: 20px; border-radius: 2px; box-shadow: 0 4px 8px rgba(36, 30, 30, 0.1); margin: 20px 0;">
+
+    <pre>
+        Queue is Empty
+        20 30 40 50 
+        Queue is full
+        20 30 40 50
+        after two node deletion
+        40 50
+        Front Element is: 40
+    </pre>
+  </div>
+<h3> Explanation of code :</h3>
+<div class="section" id="output Explanation" style="background-color:#eff8ed; padding: 20px; border-radius: 2px; box-shadow: 0 4px 8px rgba(36, 30, 30, 0.1); margin: 20px 0;">
+<p>The Java program implements a queue using an array with static methods to perform enqueue, dequeue, and display operations. The `Queue` class 
+    tracks the front and rear indices to manage the elements, and it limits the queue size based on the given capacity. The program demonstrates the enqueue 
+    and dequeue operations, displaying the queue contents and the front element. When the queue is full, it prevents further insertions, and when empty, it 
+    prevents removals. The output shows the queue contents at different stages and prints the front element after two dequeue operations. </p>
+
+
+</div>
+</main>
+</body>
+</html>
