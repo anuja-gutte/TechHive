@@ -1,42 +1,360 @@
 <!DOCTYPE html>
 <html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Queue Implementation Using Arrays</title>
-    <link rel="stylesheet" href="styles.css" />
-  </head>
-  <body>
-    <header>
-      <h1>Queue Implementation Using Arrays</h1>
-    </header>
-    <main>
-      <section>
-        <h2>Array Implementation</h2>
-        <p>
-          To implement a queue using a simple array,
-          <li>create an array arr of size n</li>
-          <li>
-            take two variables front and rear which are initialized as 0 and -1
-            respectively
-          </li>
-          <li>
-            rear is the index up to which the elements are stored in the array
-            including the rear index itself. We mainly add an item by
-            incrementing it.
-          </li>
-          <li>
-            front is the index of the first element of the array. We mainly
-            remove the element at this index in Dequeue operation.
-          </li>
-        </p>
-      </section>
-      <button
-        onclick="location.href='queueintroduction.html'"
-        class="nav-button"
-      >
-        Back to Introduction
-      </button>
-    </main>
-  </body>
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Queue Implementation</title>
+  <style>
+    /* General styles */
+    body {
+      font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+    }
+
+    .home {
+      max-width: 1300px;
+      margin: 0 auto;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+    }
+
+    * {
+      text-decoration: none;
+      margin: 0;
+      padding: 0;
+    }
+
+    /* Navbar styles */
+    .nav {
+      position: fixed;
+    }
+
+    .tab {
+      background: black;
+      font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+      width: 100%;
+    }
+
+    .tab {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+    }
+
+    img {
+      width: 50px;
+      border-radius: 100px;
+      padding-right: 50px;
+    }
+
+    .open-btn {
+      font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+      font-size: 15px;
+      cursor: pointer;
+      display: inline-block;
+      background-color: black;
+      color: white;
+      border: none;
+    }
+
+    .arrow {
+      border: solid white;
+      border-width: 0 3px 3px 0;
+      display: inline-block;
+      padding: 2px;
+    }
+
+    .down {
+      transform: rotate(45deg);
+      -webkit-transform: rotate(45deg);
+    }
+
+    .open-btn:hover {
+      color: orange;
+      transition-duration: 0.3s;
+    }
+
+    a:hover {
+      color: orange;
+      transition-duration: 0.3s;
+    }
+
+    .left {
+      display: inline-flex;
+      align-items: center;
+    }
+
+    .tabs-learn-more {
+      font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+      background-color: black;
+      border-width: 2px;
+      border-style: solid;
+      border-color: white;
+      color: white;
+      font-weight: 500;
+      border-radius: 20px;
+      padding: 8px;
+      cursor: pointer;
+    }
+
+    .tabs-learn-more:hover {
+      background-color: rgb(28, 205, 15);
+      transition-duration: 0.3s;
+      border-color: rgb(28, 205, 15);
+    }
+
+    li {
+      list-style: none;
+      display: inline-block;
+    }
+
+    li a {
+      color: white;
+      font-size: 15px;
+      margin-right: 20px;
+    }
+
+    /* Header and main content styles */
+    header h1 {
+      text-align: center;
+      padding-top: 20px;
+    }
+
+    main {
+      padding: 20px;
+    }
+
+    main p {
+      font-size: x-large;
+    }
+
+    section {
+      margin: 20px auto;
+      padding: 20px;
+      max-width: 600px;
+    }
+
+    /* Styling the heading to align left */
+    h2 {
+      text-align: left; /* Aligns the title to the left */
+      font-size: 1.5em; /* Makes the heading a bit larger */
+      margin-bottom: 10px; /* Adds space below the heading */
+    }
+
+    /* Styling the ordered list */
+    ol {
+      padding-left: 20px; /* Adds padding to make the numbers clearly visible */
+      font-size: 1.2em; /* Slightly larger text for the list */
+    }
+
+    /* List items styling */
+    ol li {
+      margin-bottom: 10px; /* Adds space between list items */
+    }
+
+  </style>
+</head>
+<body>
+  <!-- Navbar section -->
+  <nav>
+    <div class="tab">
+      <div class="left">
+        <div class="logo">
+          <img src="../logo.jpeg" alt="Logo">
+        </div>
+        <a><button class="open-btn" onclick="toggleSidebar()">☰ Menu</button></a>
+      </div>
+
+      <div class="right">
+        <ul id="list">
+          <li><a href="#home">Home</a></li>
+          <li><a href="about.html">About</a></li>
+          <li><a href="#services">Services</a></li>
+          <li><a href="#contact">Contact</a></li>
+          <li><a href="#contact"><button class="tabs-learn-more">Learn More</button></a></li>
+        </ul>
+      </div>
+    </div>
+  </nav>
+
+  <!-- Page header -->
+  <header>
+    <h1>Implementations Of <span style="color: green;">Queue</span> Using Array</h1>
+  </header>
+
+  <!-- Main content -->
+  <main>
+    <p>
+      For implementing a queue, we need to keep track of two indices: front and rear. We enqueue an
+      item at the rear and dequeue an item from the front. If we simply increment 
+      front and rear indices, then there may be problems, as front may reach the 
+      end of the array. The solution to this problem is to increase front and rear in a circular manner.
+    </p>
+
+    <div class="section" id="steps-of">
+      <h2 style="text-align: left;">Steps for Enqueue</h2>
+      <ol>
+        <li> 1.Check the queue is full or not</li>
+<br>
+
+      </br>
+
+        <li> 2. If full, print overflow and exit</li>
+
+<br>
+</br>
+
+        <li> 3.If the queue is not full, increment tail and add the element</li>
+      </ol>
+    </div>
+  
+
+   <div class="section" id="steps-of">
+    <h2 style="text-align: left;">Steps for dequeue</h2>
+    <ol>
+      <li> 1.Check queue is empty or not</li>
+<br>
+
+    </br>
+
+      <li> 2. if empty, print underflow and exit</li>
+
+<br>
+</br>
+
+      <li> 3. if not empty, print element at the head and increment head</li>
+    </ol>
+  </div>
+  <div class="section" id="code block" style="background-color:#eff8ed; padding: 20px; border-radius: 2px; box-shadow: 0 4px 8px rgba(36, 30, 30, 0.1); margin: 20px 0;">
+   <h2> Example code :</h2>
+    <pre>
+      // Java program for array
+      // implementation of queue
+      
+      // A class to represent a queue
+      class Queue {
+        int front, rear, size;
+        int capacity;
+        int array[];
+      
+        public Queue(int capacity)
+        {
+          this.capacity = capacity;
+          front = this.size = 0;
+          rear = capacity - 1;
+          array = new int[this.capacity];
+        }
+      
+        // Queue is full when size becomes
+        // equal to the capacity
+        boolean isFull(Queue queue)
+        {
+          return (queue.size == queue.capacity);
+        }
+      
+        // Queue is empty when size is 0
+        boolean isEmpty(Queue queue)
+        {
+          return (queue.size == 0);
+        }
+      
+        // Method to add an item to the queue.
+        // It changes rear and size
+        void enqueue(int item)
+        {
+          if (isFull(this))
+            return;
+          this.rear = (this.rear + 1)
+                % this.capacity;
+          this.array[this.rear] = item;
+          this.size = this.size + 1;
+          System.out.println(item
+                  + " enqueued to queue");
+        }
+      
+        // Method to remove an item from queue.
+        // It changes front and size
+        int dequeue()
+        {
+          if (isEmpty(this))
+            return Integer.MIN_VALUE;
+      
+          int item = this.array[this.front];
+          this.front = (this.front + 1)
+                % this.capacity;
+          this.size = this.size - 1;
+          return item;
+        }
+      
+        // Method to get front of queue
+        int front()
+        {
+          if (isEmpty(this))
+            return Integer.MIN_VALUE;
+      
+          return this.array[this.front];
+        }
+      
+        // Method to get rear of queue
+        int rear()
+        {
+          if (isEmpty(this))
+            return Integer.MIN_VALUE;
+      
+          return this.array[this.rear];
+        }
+      }
+      
+      // Driver class
+      public class Test {
+        public static void main(String[] args)
+        {
+          Queue queue = new Queue(1000);
+      
+          queue.enqueue(10);
+          queue.enqueue(20);
+          queue.enqueue(30);
+          queue.enqueue(40);
+      
+          System.out.println(queue.dequeue()
+                  + " dequeued from queue\n");
+      
+          System.out.println("Front item is "
+                  + queue.front());
+      
+          System.out.println("Rear item is "
+                  + queue.rear());
+        }
+      }
+    </pre>
+  </div>
+      <h2> THE OUTPUT IS :</h2>
+
+      <div class="section" id="theory" style="background-color:#c9c3c3; padding: 2px; border-radius: 4px; box-shadow: 0 4px 8px rgba(36, 30, 30, 0.1); margin: 25px 300px; margin-left: auto;margin-right: auto; ">
+
+        <pre>
+        10 enqueued to queue
+        20 enqueued to queue
+        30 enqueued to queue
+        40 enqueued to queue
+        10 dequeued from queue
+        Front item is 20
+        Rear item is 40
+        </pre>
+      </div>
+      <button onclick="location.href='queueintroduction.html'"
+      class="nav-button"
+    >
+      Back to Introduction
+    </button>
+  </main>
+
+  <script>
+    // You can add your toggleSidebar function here if you need it for the "Menu" button.
+    function toggleSidebar() {
+      console.log("Sidebar toggle functionality goes here.");
+    }
+  </script>
+
+</body>
 </html>
