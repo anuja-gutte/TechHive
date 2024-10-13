@@ -5,55 +5,96 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Queue Application and Example</title>
     <link rel="stylesheet" href="styles.css" />
+<!-- Navbar Section -->
 
+<div class="home">
+  <nav class="nav">
+    <div class="tab">
+      <div class="left">
+        <div class="logo">
+          <img src="../logo.jpeg" alt="Logo">
+        </div>
+        <a><button class="open-btn" onclick="toggleSidebar()">☰ Menu</button></a>
+      </div>
+
+      <div class="right">
+        <ul id="list">
+          <li><a href="#home">Home</a></li>
+          <li><a href="about.html">About</a></li>
+          <li><a href="#services">Services</a></li>
+          <li><a href="#contact">Contact</a></li>
+          <li><a href="#contact"><button class="tabs-learn-more">Learn More</button></a></li>
+        </ul>
+      </div>
+    </div>
+  </nav>
+  </div>
   <body>
     
-      <header>
-        <h1>Queue Application and Example</h1>
+      <header style="padding: 20 px; margin-top: 100px;">
+      <h1>APPLICATION AND EXAMPLE OF <span style="color: green;"> QUEUE </span> :</h1>
       </header>
     
     <main>
-        <div class="section" id="applications">
-        <h2>Applications of Queue</h2>
-        <p>
-          <strong>Multi Programming:</strong> Multi programming means when
-          multiple programs are running in the main memory. It is essential to
-          organize these multiple programs, and these multiple programs are
-          organized as queues.
-        </p>
-        <p>
-          <strong>Network:</strong> In a network, a queue is used in devices
-          such as a router or a switch. Another application of a queue is a mail
-          queue, which is a directory that stores data and controls files for
-          mail messages.
-        </p>
-        <p>
-          <strong>Job Scheduling:</strong> The computer has a task to execute a
-          particular number of jobs that are scheduled to be executed one after
-          another. These jobs are assigned to the processor one by one,
-          organized using a queue.
-        </p>
-        <p>
-          <strong>Shared Resources:</strong> Queues are used as waiting lists
-          for a single shared resource.
-        </p>
-      </div>
-      <div class="section" id="example">
-        <h2>Example</h2>
-            
-            <p>Here are some examples of queue applications:</p>
-            <ul>
-                <li>Printer Queue: Jobs are queued for printing in the order they are received.</li>
-                <li>Task Scheduling: Tasks are executed based on their order in the queue.</li>
-                <li>Call Center: Incoming calls are placed in a queue to be answered in order.</li>
-                <li>Operating System: Processes waiting for CPU time are managed as queues.</li>
-                <li>Web Server: Requests from users are queued to be processed sequentially.</li>
-            </ul>
-        </div>
-        
+      <h2 style="text-align: left; padding: 0PX; padding-top: 0px; text-decoration: underline; text-underline-position: under; ">Application  of  <span style="color: green;">Queue</span> Data Structure :</h2>
+        <div class="section" id="applications" style="background-color:#eff8ed; padding: 20px; border-radius: 2px; box-shadow: 0 4px 8px rgba(36, 30, 30, 0.1); margin: 20px 0;">
+        <ol>
+            <li> <strong> Task Scheduling : </strong> Qeues can be used to schedule tasks based on priority or the order in which they were received.</li>
+              <li> <strong> Allocation :</strong>  Queues can be used to manage and allocate resources, such as printers or CPU processing time</li>
+              <li> <strong> Batch Processing : </strong>Queues can be used to handle batch processing jobs, such as data analysis or image rendering.</li>
+              <li><strong> Message Buffering :</strong> Queues can be used to buffer messages in communication systems, such as message queues 
+                    in messaging systems or buffers in computer networks.</li>
+              <li><strong> Event Handling :</strong> Queues can be used to handle events in event-driven systems, such as GUI applications or 
+                simulation systems.</li>
+               <li><strong> Management :</strong>  Queues can be used to manage traffic flow in transportation systems, such as airport control 
+                systems or road networks.</li>
+               <li><strong>systems:</strong> Operating systems often use queues to manage processes and resources. For example, a process scheduler 
+                   might use a queue to manage the order in which processes are executed.</li>
+                <li><strong> protocols:</strong> Network protocols like TCP and UDP use queues to manage packets that are transmitted over the network. 
+                  Queues can help to ensure that packets are delivered in the correct order and at the appropriate rate.</li>
 
-        </p>
+        </ol>
       </div>
+
+
+      <h2 style="text-align: left; text-decoration: underline; text-underline-position: under;"> Application Of <span style="color: green;"> QUEUE</span> in Operating System : </h2>
+      <div class="section" id="Operating" style="background-color:  #eff8ed; padding: 20px; border-radius: 8px; box-shadow: 0 4px 8px rgba(36, 30, 30, 0.1); margin: 20px 0;">
+            <ol>
+             <li> Semaphores</li> 
+             <li>  FCFS ( first come first serve) scheduling, example: FIFO queue</li> 
+              <li>  Spooling in printers</li> 
+                <li> Buffer for devices like keyboard</li> 
+                  <li> CPU Scheduling </li> 
+                    <li> Memory management </li> 
+            </ol>
+        </div>  
+      
+    
+
+      <h2 style="text-align: left; text-decoration: underline; text-underline-position: under;"> Example: </h2>
+      <div class="section" id="example" style="background-color:  #eff8ed; padding: 20px; border-radius: 8px; box-shadow: 0 4px 8px rgba(36, 30, 30, 0.1); margin: 20px 0;">
+        <ol>
+          <li> <strong>Customer Service Line:</strong>
+          In a customer service center, the first customer to arrive is the first to be served, 
+          while others wait in line behind them.
+          
+          <li><strong> Supermarket Checkout:</strong>
+          Shoppers line up at the checkout counter. The first person in line gets checked out
+           first, followed by the next customer, and so on. </li>
+          
+           <li> <strong>Call Center:</strong>
+          Incoming calls are placed in a queue. The first call received is the first 
+          one answered by the next available representative.</li>
+          
+          <li><strong> Elevator:</strong>
+          People waiting for the elevator stand in a queue. The first person to enter the
+           elevator is the first to get on.</li>
+          
+         <li><strong> Bus Stop:</strong> 
+          At a bus stop, passengers form a line. The first person in line gets on the bus
+           first, and others follow in order.</li>
+        </ol>
+    </div>  
     </main>
   </body>
 </html>
