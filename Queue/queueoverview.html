@@ -1,32 +1,219 @@
 <!DOCTYPE html>
 <html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>video explanation</title>
-    <link rel="stylesheet" href="styles.css" />
-  </head>
-  <body>
-    <header>
-      <h1>Queue</h1>
-    </header>
-    <main>
-      <div class="video-wrapper">
-        <h2>SYNOPSIS</h2>
-        <div class="video-container">
-          <iframe
-            width="560"
-            height="310"
-            src="https://www.youtube.com/embed/va_6RmSrKCg"
-            frameborder="0"
-            allowfullscreen
-          ></iframe>
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+<style>
+    .body{
+    font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+   
+}
+.home{
+  max-width: 1300px;
+  margin: 0 auto;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+*{
+    text-decoration: none;
+    margin: 0;
+    padding: 0;
+    
+}
+
+.nav{
+    position: fixed;
+}
+
+.tab{
+    background: black;
+    font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+    width: 100%;
+    /* padding-left: 15px;
+    padding-right: 15px; */
+}
+
+.tab{
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+img{
+    width: 50px;
+    border-radius: 100px;
+    padding-right: 50px;
+}
+
+.open-btn{
+    font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+    font-size:15px;
+    cursor: pointer;
+    display: inline-block;
+    background-color: black;
+    color:white;
+    border: none;
+    
+   
+}
+
+.arrow {
+    border: solid white;
+    border-width: 0 3px 3px 0;
+    display: inline-block;
+    padding: 2px;
+  }
+
+.down {
+    transform: rotate(45deg);
+    -webkit-transform: rotate(45deg);
+  }
+
+.open-btn:hover{
+    color:orange;
+    transition-duration: 0.3s;
+
+}
+
+a:hover{
+    color: orange;
+    transition-duration: 0.3s;
+}
+
+.left{
+    display: inline-flex;
+    align-items: center;
+    /* margin-left: 10%; */
+    
+}
+
+
+.tabs-learn-more{
+    font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+    
+    background-color: black;
+    border-width: 2px;
+    border-style: solid;
+    border-color: white;
+    color: white;
+    font-weight: 500;
+    border-radius: 20px;
+    padding: 8px;
+    cursor: pointer;
+}
+
+.tabs-learn-more:hover{
+    background-color: rgb(28, 205, 15);
+    transition-duration: 0.3s;
+    border-color:  rgb(28, 205, 15);
+    
+}
+
+li{
+    list-style: none;
+    display: inline-block;
+}
+
+li a{
+    color: white;
+    font-size: 15px;
+    margin-right: 20px;
+}
+ /* Styles for the video and description */
+ .video-section {
+      /* Remove background-color or set it to transparent */
+      background-color: transparent; /* Change this if you want a different background color */
+      padding: 20px;
+      border-radius: 2px;
+      box-shadow: 0 4px 8px rgba(36, 30, 30, 0.1);
+      margin: 20px 0;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      flex-direction: column;
+    }
+
+    /* Container for video with border */
+    .video-container {
+      
+      border: 5px solid #1ac80f; /* The border color you want */
+      padding: 20px; /* Space between the border and video */
+      border-radius: 10px;
+      max-width: 70%; /* Reduce width to 70% of the parent container */
+      width: 100%;
+      margin: 0 auto; /* Center the video */
+    }
+
+    .video-description {
+      padding-top: 20px;
+      font-size: 16px;
+      color: #333;
+    }
+
+    /* Centering the video within the video-container */
+    iframe {
+      width: 100%;
+      height: 450px; /* Adjust the height as needed */
+      border-radius: 10px;
+    }
+  </style>
+
+
+</head>
+<body>
+  <nav>
+    <div class="tab">
+        <div class="left">
+        <div class="logo">
+            <img src="../logo.jpeg">
         </div>
-        <div class="content">
-          <h3>About This Video</h3>
-          <p>THROUGH THIS VIDEO WE WILL LEARN DEEPLY ABOUT QUEUE APPLICATION</p>
+        <a><button class="open-btn" onclick="toggleSidebar()">☰ Menu</button></a>
         </div>
-      </div>
-    </main>
-  </body>
+    
+            <div class="right">
+                <ul id="list">
+                    <li> <a href="#home">Home</a></li>
+                    <li><a href="about.html">About</a></li>
+                    <li><a href="#services">Services</a></li>
+                    <li> <a href="#contact">Contact</a></li>
+                    <li><a href="#contact"><button class="tabs-learn-more">Learn More</button></a></li>
+                    
+                </ul>
+               
+            
+            </div>
+
+    </div>
+</nav>
+<header>
+  <h2 style="text-align: left; padding-top: 20px; padding-bottom: 20px;"> Queue Explanation :</h2>
+</header>
+<div class="video-section" id="Details on types of queue">
+  <!-- YouTube Video Embed within a bordered container -->
+  <div class="video-container">
+    <iframe src="https://www.youtube.com/embed/va_6RmSrKCg" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+  </div>
+    <!-- Video Description/Overview -->
+    <div class="video-description" style="padding-top: 40px;">
+      <h2>Video Overview:</h2>
+
+      <p  style="padding-top: 20px; padding-bottom: 10px;">This video lecture introduces the Queue data structure, focusing on its First-In-First-Out (FIFO)
+         principle and essential operations like enqueue, dequeue, and peek. It covers various implementations,
+          starting with a Queue using Array, addressing limitations like overflow, followed by the Circular Queue, 
+          which optimizes space by wrapping around. The lecture then explores Queue using Linked List, offering 
+          a more dynamic solution with dynamic memory allocation.</p>
+
+      <p style="padding-top: 20px; padding-bottom: 10px;"> Next, the video delves into using Java’s Collection Framework for queue implementations, highlighting
+         classes like LinkedList and PriorityQueue. The lecture concludes with an engaging challenge: implementing 
+         a queue using two stacks, showcasing how two stacks can simulate queue behavior. By the end, viewers will
+          have a solid understanding of queue types, their operations, and practical implementations in various 
+          programming contexts. </p>
+
+    </div>
+  </div>
+  
+</body>
 </html>
