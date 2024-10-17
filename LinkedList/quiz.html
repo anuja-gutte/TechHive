@@ -1,0 +1,194 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>linkedlistquiz</title>
+    <link rel="stylesheet" href="quiz.css" />
+    <style>
+      .body {
+        font-family: "Gill Sans", "Gill Sans MT", Calibri, "Trebuchet MS",
+          sans-serif;
+      }
+      .home {
+        max-width: 1300px;
+        margin: 0 auto;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+      }
+
+      * {
+        text-decoration: none;
+        margin: 0;
+        padding: 0;
+      }
+
+      .nav {
+        position: fixed;
+      }
+
+      .tab {
+        background: black;
+        font-family: "Gill Sans", "Gill Sans MT", Calibri, "Trebuchet MS",
+          sans-serif;
+        width: 100%;
+        /* padding-left: 15px;
+    padding-right: 15px; */
+      }
+
+      .tab {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+      }
+
+      img {
+        width: 50px;
+        border-radius: 100px;
+        padding-right: 50px;
+      }
+
+      .open-btn {
+        font-family: "Gill Sans", "Gill Sans MT", Calibri, "Trebuchet MS",
+          sans-serif;
+        font-size: 15px;
+        cursor: pointer;
+        display: inline-block;
+        background-color: black;
+        color: white;
+        border: none;
+      }
+
+      .arrow {
+        border: solid white;
+        border-width: 0 3px 3px 0;
+        display: inline-block;
+        padding: 2px;
+      }
+
+      .down {
+        transform: rotate(45deg);
+        -webkit-transform: rotate(45deg);
+      }
+
+      .open-btn:hover {
+        color: orange;
+        transition-duration: 0.3s;
+      }
+
+      a:hover {
+        color: orange;
+        transition-duration: 0.3s;
+      }
+
+      .left {
+        display: inline-flex;
+        align-items: center;
+        /* margin-left: 10%; */
+      }
+
+      .tabs-learn-more {
+        font-family: "Gill Sans", "Gill Sans MT", Calibri, "Trebuchet MS",
+          sans-serif;
+
+        background-color: black;
+        border-width: 2px;
+        border-style: solid;
+        border-color: white;
+        color: white;
+        font-weight: 500;
+        border-radius: 20px;
+        padding: 8px;
+        cursor: pointer;
+      }
+
+      .tabs-learn-more:hover {
+        background-color: rgb(28, 205, 15);
+        transition-duration: 0.3s;
+        border-color: rgb(28, 205, 15);
+      }
+
+      li {
+        list-style: none;
+        display: inline-block;
+      }
+
+      li a {
+        color: white;
+        font-size: 15px;
+        margin-right: 20px;
+      }
+
+    
+    </style>
+  </head>
+  <body>
+    <nav>
+      <div class="tab">
+        <div class="left">
+          <div class="logo">
+            <img src="../logo.jpeg" />
+          </div>
+          <a
+            ><button class="open-btn" onclick="toggleSidebar()">
+              ☰ Menu
+            </button></a
+          >
+        </div>
+
+        <div class="right">
+          <ul id="list">
+            <li><a href="#home">Home</a></li>
+            <li><a href="about.html">About</a></li>
+            <li><a href="#services">Services</a></li>
+            <li><a href="#contact">Contact</a></li>
+            <li>
+              <a href="#contact"
+                ><button class="tabs-learn-more">Learn More</button></a
+              >
+            </li>
+          </ul>
+        </div>
+      </div>
+    </nav>
+    <div id="navbar"></div>
+    <div class="quiz-page">
+      <div class="quiz-container">
+        <div class="topic"><h1>Linked List</h1></div>
+
+        <div class="header">
+          <div id="progress-bar-container">
+            <div id="progress-bar"></div>
+          </div>
+        </div>
+
+        <div id="quiz"></div>
+
+        <button id="submit-btn" onclick="submitQuiz()">Submit</button>
+
+
+        <div id="score-container"></div>
+      </div>
+    </div>
+
+    <script src="quiz.js"></script>
+    <script>
+      function loadHTML() {
+        fetch("../Home/navbar2.html")
+          .then((response) => response.text())
+          .then((data) => {
+            document.getElementById("navbar").innerHTML = data;
+          })
+          .catch((error) => {
+            console.error("Error fetching the HTML:", error);
+          });
+      }
+
+      window.onload = loadHTML;
+
+      
+    
+    </script>
+  </body>
+</html>
