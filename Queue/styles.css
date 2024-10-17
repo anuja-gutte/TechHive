@@ -19,7 +19,12 @@ header {
   width: 100%;
 }
 h1 {
-  margin: 0;
+    margin: 0;
+    text-align: center; 
+    border-bottom: 3px solid rgb(20, 153, 11); 
+    display: inline-block; 
+    padding-bottom: 5px; 
+    padding-top: 70px;
 }
 
 /* Navbar Styles */
