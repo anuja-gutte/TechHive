@@ -1,0 +1,305 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Code Implementation</title>
+    <link rel="stylesheet" href="styles.css">
+    <style>
+        .body{
+        font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+       
+    }
+    .home{
+      max-width: 1300px;
+      margin: 0 auto;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+    }
+    
+    *{
+        text-decoration: none;
+        margin: 0;
+        padding: 0;
+        
+    }
+    
+    .nav{
+        position: fixed;
+    }
+    
+    .tab{
+        background: black;
+        font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+        width: 100%;
+        /* padding-left: 15px;
+        padding-right: 15px; */
+    }
+    
+    .tab{
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+    }
+    
+    img{
+        width: 50px;
+        border-radius: 100px;
+        padding-right: 50px;
+    }
+    
+    .open-btn{
+        font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+        font-size:15px;
+        cursor: pointer;
+        display: inline-block;
+        background-color: black;
+        color:white;
+        border: none;
+        
+       
+    }
+    
+    .arrow {
+        border: solid white;
+        border-width: 0 3px 3px 0;
+        display: inline-block;
+        padding: 2px;
+      }
+    
+    .down {
+        transform: rotate(45deg);
+        -webkit-transform: rotate(45deg);
+      }
+    
+    .open-btn:hover{
+        color:orange;
+        transition-duration: 0.3s;
+    
+    }
+    
+    a:hover{
+        color: orange;
+        transition-duration: 0.3s;
+    }
+    
+    .left{
+        display: inline-flex;
+        align-items: center;
+        /* margin-left: 10%; */
+        
+    }
+    
+    
+    .tabs-learn-more{
+        font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+        
+        background-color: black;
+        border-width: 2px;
+        border-style: solid;
+        border-color: white;
+        color: white;
+        font-weight: 500;
+        border-radius: 20px;
+        padding: 8px;
+        cursor: pointer;
+    }
+    
+    .tabs-learn-more:hover{
+        background-color: rgb(28, 205, 15);
+        transition-duration: 0.3s;
+        border-color:  rgb(28, 205, 15);
+        
+    }
+    
+    li{
+        list-style: none;
+        display: inline-block;
+    }
+    
+    li a{
+        color: white;
+        font-size: 15px;
+        margin-right: 20px;
+    }
+    
+    </style>
+</head>
+<body>
+    <nav>
+        <div class="tab">
+            <div class="left">
+            <div class="logo">
+                <img src="../logo.jpeg">
+            </div>
+            <a><button class="open-btn" onclick="toggleSidebar()">☰ Menu</button></a>
+            </div>
+        
+                <div class="right">
+                    <ul id="list">
+                        <li> <a href="#home">Home</a></li>
+                        <li><a href="about.html">About</a></li>
+                        <li><a href="#services">Services</a></li>
+                        <li> <a href="#contact">Contact</a></li>
+                        <li><a href="#contact"><button class="tabs-learn-more">Learn More</button></a></li>
+                        
+                    </ul>
+                   
+                
+                </div>
+        
+        </div>
+    </nav>
+    <!-- <div id="navbar"></div> -->
+
+    <div class="home">
+        <div class="code-page">
+        
+            <!-- Main Heading -->
+            <h1>Code Implementation:</h1><br>
+            
+            <!-- Subheading -->
+            <h2>1]Linear Search</h2>
+               <!--Some info-->
+               Linear search is one of the simplest searching algorithms used to find an element in a list or array. <br>
+               It checks every element in the list sequentially until the desired element is found or the end of the list is reached. 
+
+            <!-- Code Implementation Section -->
+            <div class="code-box">
+                <h3>Code:</h3>
+                <pre>
+
+                    <!--Code here-->
+                    #include <stdio.h>
+
+                        int linearSearch(int arr[], int size, int target) {
+                            for (int i = 0; i < size; i++) {
+                                if (arr[i] == target) {
+                                    return i; // Return the index where the target is found
+                                }
+                            }
+                            return -1; // Return -1 if the target is not found
+                        }
+                        
+                        int main() {
+                            int arr[] = {5, 2, 9, 1, 6};
+                            int size = sizeof(arr) / sizeof(arr[0]);
+                            int target = 9;
+                        
+                            int result = linearSearch(arr, size, target);
+                        
+                            if (result != -1) {
+                                printf("Element found at index %d\n", result);
+                            } else {
+                                printf("Element not found in the array\n");
+                            }
+                        
+                            return 0;
+                        }
+                
+   
+                </pre>
+             
+                <!-- Output Section -->
+                <div class="output-box">
+                    <h3>Output:</h3>
+                    <pre>
+                        Element found at index 2
+  
+                    </pre>
+                </div>
+                <h3>Working of the above code:</h3>
+                <p>
+                   <!--Description-->
+                   The linearSearch function goes through each element in the array one by one.<br>
+                   Index 0: 5 (no match).<br>
+                   Index 1: 2 (no match).<br>
+                   Index 2: 9 (match found).<br>
+                   Since the target 9 is found at index 2, the function returns 2 and the search ends.
+                </p>
+                <h2>2]Binary Search</h2>
+            <p>
+               <!--Some info--> 
+               Binary search is a much more efficient algorithm than linear search but works only on sorted arrays. <br>
+               It repeatedly divides the search interval in half, <br>
+               eliminating half of the elements at each step until the target value is found or the interval is empty.
+            </p>
+
+            <!-- Code Implementation Section -->
+            <div class="code-box">
+                <h3>Code</h3>
+                <pre>
+                    <!--Code here-->
+                    #include <stdio.h>
+
+                        int binarySearch(int arr[], int size, int target) {
+                            int left = 0, right = size - 1;
+                        
+                            while (left <= right) {
+                                int mid = left + (right - left) / 2;
+                        
+                                // Check if the target is present at mid
+                                if (arr[mid] == target)
+                                    return mid;
+                        
+                                // If target is greater, ignore the left half
+                                if (arr[mid] < target)
+                                    left = mid + 1;
+                                // If target is smaller, ignore the right half
+                                else
+                                    right = mid - 1;
+                            }
+                        
+                            // Target is not present in the array
+                            return -1;
+                        }
+                        
+                        int main() {
+                            int arr[] = {2, 3, 4, 10, 40};
+                            int size = sizeof(arr) / sizeof(arr[0]);
+                            int target = 10;
+                        
+                            int result = binarySearch(arr, size, target);
+                            if (result != -1)
+                                printf("Element found at index %d\n", result);
+                            else
+                                printf("Element not found\n");
+                        
+                            return 0;
+                        }
+   
+                </pre>
+             
+                <!-- Output Section -->
+                <div class="output-box">
+                    <h3>Output:</h3>
+                    <pre>
+                        Element found at index 3
+
+                    </pre>
+                </div>
+
+                <!-- Working Explanation Section -->
+                <h3>Working of the above code:</h3>
+                <p>
+                   <!--Description-->
+                   1.Initial Setup: The binarySearch function starts by setting left to the first index (0) <br>
+                   and right to the last index (size - 1 = 4).<br>
+                   2.The array is divided into halves in each step:<br>
+                   First iteration:<br>
+                      The midpoint mid is calculated as 2 (using (left + right) / 2).<br>
+                      The element at mid is 4, which is less than the target 10, <br>
+                      so the search continues in the right half (i.e., from index 3 to 4).<br>
+                   Second iteration:<br>
+                      Now left is updated to 3, and right remains 4. The new midpoint mid is 3.<br>
+                      The element at mid is 10, which is the target, so the function returns index 3.<br>
+                    3.The function ends successfully when the target is found.
+                </p>
+            </div>
+        </div>
+    </div>
+
+    <script src="../Home/navbar2.js"></script>
+</body>
+</html>

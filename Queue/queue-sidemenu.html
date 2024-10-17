@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <style>
+     .left-section {
+      width: 200px;
+      background-color: rgb(233, 228, 228);
+      height: 100vh;
+      position: fixed;
+      top: 60px; /* Push down below the top navbar */
+      left: 0;
+      overflow-x: hidden;
+      display: flex;
+      flex-direction: column;
+      padding-top: 10%;
+      border-right: 3px solid rgb(236, 232, 232);
+     
+      z-index: 2; /* Ensure it's below the top navbar but above the content */
+    }
+
+    .left-section a {
+      padding: 8px 16px;
+      font-size: 18px;
+      color: grey;
+      display: block;
+      text-decoration: none;
+    }
+
+    .left-section a:hover {
+      background-color: orange;
+      color: white;
+    }
+
+    /* Main Content */
+    .main-content {
+      margin-top: 60px; /* Space for top navbar */
+      margin-left: 200px; /* Space for left section */
+      /* padding: 20px; */
+      width: calc(100% - 200px);
+      height: calc(100vh - 60px);
+      border: none;
+    }
+  </style>
+</head>
+<body>
+  <div id="navbar"></div>
+  <nav class="left-section">
+    <a href="QueueIntroduction.html" target="main-frame">Introduction</a>
+    <a href="array-Implementation.html" target="main-frame">Array Implementation</a>
+    <a href="linkedListImplementation.html" target="main-frame">Linked-list Implementation</a>
+    <a href="queueoverview.html" target="main-frame">Synopsis</a>
+    <a href="queuealgorithmandanalysis.html" target="main-frame">Algorithm & Analysis</a>
+    <a href="queuecode.html" target="main-frame">Code</a>
+    <a href="queuedemo.html" target="main-frame">Visualization</a>
+    <a href="queueapplicationandexample.html" target="main-frame">Applications</a>
+    <a href="queue.html" target="main-frame">Quiz</a>
+   
+  </nav>
+
+  <iframe class="main-content" name="main-frame" src="QueueIntroduction.html"></iframe>
+
+  <script src="../Home/navbar2.js"></script>
+</body>
+</html>

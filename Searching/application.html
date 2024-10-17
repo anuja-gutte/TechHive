@@ -1,0 +1,220 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Applications of Search Algorithms</title>
+    <link rel="stylesheet" href="styles.css">
+    <style>
+        .body{
+        font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+       
+    }
+    .home{
+      max-width: 1300px;
+      margin: 0 auto;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+    }
+    
+    *{
+        text-decoration: none;
+        margin: 0;
+        padding: 0;
+        
+    }
+    
+    .nav{
+        position: fixed;
+    }
+    
+    .tab{
+        background: black;
+        font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+        width: 100%;
+        /* padding-left: 15px;
+        padding-right: 15px; */
+    }
+    
+    .tab{
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+    }
+    
+    img{
+        width: 50px;
+        border-radius: 100px;
+        padding-right: 50px;
+    }
+    
+    .open-btn{
+        font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+        font-size:15px;
+        cursor: pointer;
+        display: inline-block;
+        background-color: black;
+        color:white;
+        border: none;
+        
+       
+    }
+    
+    .arrow {
+        border: solid white;
+        border-width: 0 3px 3px 0;
+        display: inline-block;
+        padding: 2px;
+      }
+    
+    .down {
+        transform: rotate(45deg);
+        -webkit-transform: rotate(45deg);
+      }
+    
+    .open-btn:hover{
+        color:orange;
+        transition-duration: 0.3s;
+    
+    }
+    
+    a:hover{
+        color: orange;
+        transition-duration: 0.3s;
+    }
+    
+    .left{
+        display: inline-flex;
+        align-items: center;
+        /* margin-left: 10%; */
+        
+    }
+    
+    
+    .tabs-learn-more{
+        font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+        
+        background-color: black;
+        border-width: 2px;
+        border-style: solid;
+        border-color: white;
+        color: white;
+        font-weight: 500;
+        border-radius: 20px;
+        padding: 8px;
+        cursor: pointer;
+    }
+    
+    .tabs-learn-more:hover{
+        background-color: rgb(28, 205, 15);
+        transition-duration: 0.3s;
+        border-color:  rgb(28, 205, 15);
+        
+    }
+    
+    li{
+        list-style: none;
+        display: inline-block;
+    }
+    
+    li a{
+        color: white;
+        font-size: 15px;
+        margin-right: 20px;
+    }
+    
+    </style>
+</head>
+<body>
+    <!-- <div id="navbar"></div> -->
+    <nav>
+        <div class="tab">
+            <div class="left">
+            <div class="logo">
+                <img src="../logo.jpeg">
+            </div>
+            <a><button class="open-btn" onclick="toggleSidebar()">☰ Menu</button></a>
+            </div>
+        
+                <div class="right">
+                    <ul id="list">
+                        <li> <a href="#home">Home</a></li>
+                        <li><a href="about.html">About</a></li>
+                        <li><a href="#services">Services</a></li>
+                        <li> <a href="#contact">Contact</a></li>
+                        <li><a href="#contact"><button class="tabs-learn-more">Learn More</button></a></li>
+                        
+                    </ul>
+                   
+                
+                </div>
+        
+        </div>
+    </nav>
+
+    <div class="home">
+        <h1>Applications of Search Algorithms</h1><br>
+
+        <div class="application">
+            <!-- Section 1: Data Structures -->
+            <h2>Applications of Linear Search:</h2> <br>
+            <p>
+                1]Technical Applications:<br>
+                
+                a.Simple Data Retrieval:<br>
+                Used when data sets are small or unsorted, such as searching for an item in a shopping list.
+            </p>
+            <p>
+                b.Debugging:<br>
+                Helpful in searching through logs or arrays for specific values while debugging software.
+            </p>
+            <p>
+                c.Real-time Systems:<br>
+                Useful in scenarios where quick, straightforward searches are required without prior sorting.
+            </p><br>
+            <p>
+                2]Real-life Examples:<br>
+                
+                a.Finding a customer’s name in a list of customer records that are not sorted.<br>
+            </p>
+            <p>
+                b.Searching for a book title in a physical library shelf.<br>
+            </p>
+            <p>
+                c.Checking the presence of a particular item in a grocery bag.<br>
+            </p><br>
+
+            <!-- Section 2: Parsing Expressions -->
+            <h2>Applications of Binary Search:</h2> <br>
+            <p>
+                1]Technical Applications:<br>
+                
+                a.Database Systems:<br>
+                Efficiently locating records in sorted databases.
+            </p>
+            <p>
+                b.Version Control:<br>
+                Used in applications like Git to quickly locate specific commits or branches in sorted lists.
+            </p>
+            <p>
+                c.Searching Algorithms:<br>
+                Forms the basis for various algorithms in computer science, especially in sorted data structures.
+            </p><br>
+            <p>
+                2]Real-life Examples:<br>
+                
+                a.Finding a word in a dictionary or a phone book, which is sorted alphabetically.<br>
+            </p>
+            <p>
+                b.Searching for a specific chapter in a well-organized textbook.<br>
+            </p>
+            <p>
+                c.Locating a specific file in a sorted directory on a computer.<br>
+            </p>
+        </div>
+    </div>
+
+    <script src="../Home/navbar2.js"></script>
+</body>
+</html>
