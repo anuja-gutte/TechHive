@@ -1,3 +1,5 @@
-function redirect(path) {
-    window.location.href = path; // Redirects to the provided path (e.g., arrays.html)
-}
+// JavaScript to handle navigation
+function navigateTo(page) {
+    window.location.href = page;
+  }
+  

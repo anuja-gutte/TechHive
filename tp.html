@@ -3,158 +3,100 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Document</title>
-  <style>
-    /* Left Section Styling */
-    .left-section {
-      width: 200px;
-      background-color: rgb(233, 228, 228);
-      height: 100vh;
-      position: fixed;
-      top: 60px; /* Push down below the top navbar */
-      left: 0;
-      overflow-x: hidden;
-      display: flex;
-      flex-direction: column;
-      padding-top: 10%;
-      border-right: 3px solid rgb(236, 232, 232);
-      z-index: 2; /* Ensure it's below the top navbar but above the content */
-    }
-
-    .left-section a {
-      padding: 8px 16px;
-      font-size: 18px;
-      color: grey;
-      display: block;
-      text-decoration: none;
-    }
-
-    .left-section a:hover {
-      background-color: orange;
-    }
-
-    /* Main Content */
-    .main-content {
-      margin-top: 60px; /* Space for top navbar */
-      margin-left: 200px; /* Space for left section */
-      width: calc(100% - 200px);
-      height: calc(100vh - 60px);
-      border: none;
-    }
-
-    /* Footer Styling */
-    footer {
-      background-color: #161616d6;
-      color: grey;
-      padding: 20px 0;
-      text-align: center;
-      width: 100%;
-      position: relative;
-      bottom: 0;
-      left: 0;
-      flex-shrink: 0;
-    }
-
-    .footer-container {
-      display: flex;
-      justify-content: space-between;
-      max-width: 1000px;
-      margin: 0 auto;
-      flex-wrap: wrap;
-    }
-
-    .footer-section {
-      margin: 10px;
-    }
-
-    .footer-section ul {
-      list-style: none;
-      padding: 0;
-    }
-
-    .footer-section ul li {
-      display: inline-block;
-      margin-right: 15px;
-    }
-
-    .footer-section ul li a {
-      color: grey;
-      text-decoration: none;
-      transition: color 0.3s;
-    }
-
-    .footer-section ul li a:hover {
-      color: #00aaff;
-    }
-
-    .social-icons a {
-      margin: 0 10px;
-      display: inline-block;
-    }
-
-    .social-icons img {
-      width: 25px;
-      height: 25px;
-    }
-
-    .footer-bottom {
-      margin-top: 20px;
-      font-size: 14px;
-    }
-
-    .back-to-top {
-      color: #00aaff;
-      text-decoration: none;
-    }
-
-    .back-to-top:hover {
-      color: #0088cc;
-    }
-
-    /* Responsive Design */
-    @media (max-width: 768px) {
-      .footer-container {
-        flex-direction: column;
-        align-items: center;
-      }
-
-      .footer-section ul li {
-        display: block;
-        margin: 5px 0;
-      }
-
-      .footer-section {
-        text-align: center;
-      }
-    }
-  </style>
+  <title>DSA Topics Overview</title>
+  <link rel="stylesheet" href="tp.css">
 </head>
 <body>
-  <div id="navbar"></div>
-  <nav class="left-section">
-    <a href="Recursion2/RecursionIntro.html" target="main-frame">Introduction</a>
-    <a href="Recursion-Video.html" target="main-frame">Synopsis</a>
-    <a href="Recursion-Algorithm.html" target="main-frame">Algorithm & Analysis</a>
-    <a href="Recursion-Code.html" target="main-frame">Code</a>
-    <a href="RecursionDemo.html" target="main-frame">Visualization</a>
-    <a href="Recursion-Application.html" target="main-frame">Applications</a>
-    <a href="Recursion-quiz.html" target="main-frame">Quiz</a>
-  </nav>
-  <footer>
-   
+  <header>
+    <h1>Data Structures and Algorithms Overview</h1>
+    <p class="intro-text">
+      Data Structures and Algorithms (DSA) are fundamental building blocks in programming that help in organizing data efficiently and solving complex problems. 
+      Data Structures are specialized formats for organizing and storing data, while algorithms are the step-by-step procedures used for calculations and data processing.
+    </p>
+  </header>
 
-      
-    <!-- Copyright and Back to Top -->
-    <div class="footer-bottom">
-      <p>© 2024 TechHive. All Rights Reserved.</p>
+  <section class="info-section">
+    <h2>What are Data Structures?</h2>
+    <p>
+      Data structures define the way data is stored, organized, and manipulated. They form the backbone of efficient algorithms and are crucial in optimizing code performance.
+    </p>
+    <ul>
+      <li>Efficiently manage large datasets.</li>
+      <li>Enable fast search, insertion, and deletion operations.</li>
+      <li>Help in optimizing space and time complexity of programs.</li>
+    </ul>
+
+    <h2>Applications of Data Structures</h2>
+    <p>Data structures are widely used in various real-world applications, including:</p>
+    <ul>
+      <li><b>Databases:</b> Efficient storage and retrieval of data.</li>
+      <li><b>Web Search Engines:</b> Search algorithms rely on data structures for indexing large datasets.</li>
+      <li><b>Network Systems:</b> Graphs are used to model networks.</li>
+      <li><b>Operating Systems:</b> Queue management and memory allocation.</li>
+      <li><b>Artificial Intelligence:</b> Heuristic search and optimization algorithms.</li>
+    </ul>
+
+    <h2>Programming Languages for DSA</h2>
+    <p>
+      Data Structures and Algorithms can be implemented using various programming languages, depending on the use case:
+    </p>
+    <ul class="programming-languages">
+      <li><b>C++:</b> Popular for competitive programming and efficient memory management.</li>
+      <li><b>Python:</b> Known for simplicity and ease of use, with rich libraries.</li>
+      <li><b>Java:</b> Commonly used for enterprise-level applications.</li>
+      <li><b>JavaScript:</b> Useful for implementing DSA in web applications.</li>
+      <li><b>C:</b> Offers low-level memory control and is excellent for system programming.</li>
+    </ul>
+  </section>
+
+  <!-- Topic Cards Section -->
+  <section class="topics-container">
+    <div class="topic-card" onclick="navigateTo('Arrays.html')">
+      <h2>Arrays</h2>
+      <p>Introduction to Arrays and their operations.</p>
     </div>
-  </footer>
 
+    <div class="topic-card" onclick="navigateTo('LinkedLists.html')">
+      <h2>Linked Lists</h2>
+      <p>Overview of Linked Lists, types, and usage.</p>
+    </div>
 
-  <iframe class="main-content" name="main-frame" src="Recursion2/RecursionIntro.html"></iframe>
+    <div class="topic-card" onclick="navigateTo('Stacks.html')">
+      <h2>Stacks</h2>
+      <p>Learn about Stack operations and applications.</p>
+    </div>
 
-  <!-- Footer -->
-  
-  <script src="../Home/navbar2.js"></script>
+    <div class="topic-card" onclick="navigateTo('Queues.html')">
+      <h2>Queues</h2>
+      <p>Concepts of Queues and types like Circular Queue.</p>
+    </div>
+
+    <div class="topic-card" onclick="navigateTo('Trees.html')">
+      <h2>Trees</h2>
+      <p>Introduction to Binary Trees, BSTs, and more.</p>
+    </div>
+
+    <div class="topic-card" onclick="navigateTo('Graphs.html')">
+      <h2>Graphs</h2>
+      <p>Graph representations, traversal techniques.</p>
+    </div>
+
+    <div class="topic-card" onclick="navigateTo('Hashing.html')">
+      <h2>Hashing</h2>
+      <p>Hash tables, collisions, and their applications.</p>
+    </div>
+
+    <div class="topic-card" onclick="navigateTo('Sorting.html')">
+      <h2>Sorting Algorithms</h2>
+      <p>Study of different sorting techniques.</p>
+    </div>
+
+    <div class="topic-card" onclick="navigateTo('Recursion.html')">
+      <h2>Recursion</h2>
+      <p>Explore recursion, its uses, and examples.</p>
+    </div>
+  </section>
+
+  <script src="scripts.js"></script>
 </body>
 </html>

@@ -3,220 +3,155 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>DSA Webpage</title>
+    <title>Document</title>
     <link rel="stylesheet" href="DSA.css">
 </head>
 <body>
-   
-   <!---- <header class="header">
-        <h1>Data Structures & Algorithms</h1>
-        <p>Master the fundamentals of computer science</p>
-    </header>
+    <div id="navbar"></div>
 
-    <nav class="navbar">
-        <ul>
-            <li><a href="#arrays">Arrays</a></li>
-            <li><a href="#linkedlists">Linked Lists</a></li>
-            <li><a href="#trees">Trees</a></li>
-            <li><a href="#sorting">Sorting Algorithms</a></li>
-        </ul>
-    </nav>-->
-    <div class="logo-tab">
-        <img src="../logo.jpeg" alt="Logo">
-        <span class="logo-name">TechHive</span>
+    
+
+
+
+
+  
+
+
+
+
+
+  <!-- Main Header -->
+  <header class="main-header">
+    <h1>Understanding Data Structures</h1>
+    <p>An in-depth look into the backbone of efficient programming</p>
+  </header>
+
+  <!-- Navigation Bar -->
+  <nav class="navbar">
+    <ul>
+      <li><a href="#definition">Definition</a></li>
+      <li><a href="#types">Types</a></li>
+      <li><a href="#operations">Operations</a></li>
+      <li><a href="#applications">Applications</a></li>
+    </ul>
+  </nav>
+
+  <!-- Definition Section -->
+  <section id="definition" class="content-section">
+    <h2>What are Data Structures?</h2>
+    <p>
+      Data structures are specialized formats for organizing, processing, retrieving, and storing data. They enable efficient access and modification of data, which is crucial for designing robust and high-performance software applications. By selecting the appropriate data structure, developers can optimize algorithms and enhance the overall efficiency of a program.
+    </p>
+  </section>
+
+  <!-- Types Section -->
+  <section id="types" class="content-section">
+    <h2>Types of Data Structures</h2>
+    <div class="accordion">
+
+      <div class="accordion-item">
+        <button class="accordion-header">Arrays</button>
+        <div class="accordion-content">
+          <p>Arrays are collections of elements identified by index or key, where each element is of the same data type. They are used to store multiple values in a single variable.</p>
+        </div>
+      </div>
+
+      <div class="accordion-item">
+        <button class="accordion-header">Linked Lists</button>
+        <div class="accordion-content">
+          <p>A linked list is a linear data structure where each element is a separate object, known as a node, connected using pointers.</p>
+        </div>
+      </div>
+
+      <div class="accordion-item">
+        <button class="accordion-header">Stacks</button>
+        <div class="accordion-content">
+          <p>Stacks are linear data structures that follow a particular order of operations: LIFO (Last In, First Out).</p>
+        </div>
+      </div>
+
+      <div class="accordion-item">
+        <button class="accordion-header">Queues</button>
+        <div class="accordion-content">
+          <p>Queues are linear structures which follow a particular order of operations: FIFO (First In, First Out).</p>
+        </div>
+      </div>
+
+      <div class="accordion-item">
+        <button class="accordion-header">Trees</button>
+        <div class="accordion-content">
+          <p>Trees are hierarchical data structures consisting of nodes connected by edges, used to represent relationships.</p>
+        </div>
+      </div>
+
+      <div class="accordion-item">
+        <button class="accordion-header">Graphs</button>
+        <div class="accordion-content">
+          <p>Graphs consist of a finite set of vertices or nodes connected by edges and are used to represent pairwise relationships.</p>
+        </div>
+      </div>
+
+      <div class="accordion-item">
+        <button class="accordion-header">Hash Tables</button>
+        <div class="accordion-content">
+          <p>Hash tables store data in an associative manner using key-value pairs and a hash function to compute an index.</p>
+        </div>
+      </div>
+
     </div>
-    
+  </section>
 
-    <div class="navbar">
-        <a><button class="open-btn" onclick="toggleSidebar()">☰ Menu</button></a>
-        
-    
-        <a href="#home">Home</a>
-        <a href="about.html">About</a>
-        <a href="#services">Services</a>
-        <a href="#contact">Contact</a>
-        
-    
+  <!-- Operations Section -->
+  <section id="operations" class="content-section">
+    <h2>Common Operations on Data Structures</h2>
+    <ul class="operations-list">
+      <li><strong>Traversal:</strong> Accessing each data element exactly once to process it.</li>
+      <li><strong>Insertion:</strong> Adding a new data element to a data structure.</li>
+      <li><strong>Deletion:</strong> Removing a data element from a data structure.</li>
+      <li><strong>Searching:</strong> Finding the location of a data element if it exists in the structure.</li>
+      <li><strong>Sorting:</strong> Arranging data elements in a specific order (ascending or descending).</li>
+      <li><strong>Updating:</strong> Modifying an existing data element.</li>
+    </ul>
+  </section>
+
+  <!-- Applications Section -->
+  <section id="applications" class="content-section">
+    <h2>Applications of Data Structures</h2>
+    <div class="applications-grid">
+      <div class="application-card">
+        <h3>Operating Systems</h3>
+        <p>Use of queues for process scheduling and resource management.</p>
+      </div>
+      <div class="application-card">
+        <h3>Databases</h3>
+        <p>Implementation of B-trees and hash tables for indexing and retrieval.</p>
+      </div>
+      <div class="application-card">
+        <h3>Networking</h3>
+        <p>Graphs are used to represent and navigate network topologies.</p>
+      </div>
+      <div class="application-card">
+        <h3>Artificial Intelligence</h3>
+        <p>Trees and graphs are used in machine learning algorithms and decision-making processes.</p>
+      </div>
+      <div class="application-card">
+        <h3>Compilers</h3>
+        <p>Use of stacks for syntax parsing and expression evaluation.</p>
+      </div>
+      <div class="application-card">
+        <h3>Web Development</h3>
+        <p>DOM manipulation using tree structures in front-end development.</p>
+      </div>
     </div>
-    
-    <div id="sidebar" class="sidebar">
-        <a href="#" class="close-btn" onclick="toggleSidebar()">×</a>
-        <a href="#home">Home</a>
-        <div class="dropdown">
-            <a href="javascript:void(0)" class="dropdown-btn" onclick="toggleDropdown('aboutDropdown')">About ▼</a>
-            <div id="aboutDropdown" class="dropdown-container">
-                <a href="about.html">About Us</a>
-                <a href="team.html">Our Team</a>
-                <a href="history.html">History</a>
-            </div></div>
+  </section>
 
-            <div class="dropdown">
-                <a href="javascript:void(0)" class="dropdown-btn" onclick="toggleDropdown('DSADropdown')">DSA ▼</a>
-                <div id="DSADropdown" class="dropdown-container">
-                    <a href="../DSA/DSAIntroduction.html">Introduction</a>
-                    <a href="#">Algorithms</a>
-                    <a href="#">Complexity Analysis</a>
-                    <a href="#">Need of DSA</a>
-                    <a href="team.html">Roadmap</a>
-            
-                </div></div>
-            
-            
-            
-                <div class="dropdown">
-                    <a href="javascript:void(0)" class="dropdown-btn" onclick="toggleDropdown('SearchingDropdown')">Searching ▼</a>
-                    <div id="SearchingDropdown" class="dropdown-container">
-                        <a href="#">Introduction</a>
-                        <a href="#">Synopsis(Video Lectures)</a>
-                        <a href="#">Algorithm</a>
-                        <a href="#">Complexity Analysis</a>
-                        <a href="#">Code</a>
-                        <a href="#">Demonstration</a>
-                        <a href="#">Quiz</a>
-                        <a href="#">Summary</a>
-            
-                    </div></div>
-            
-                    <div class="dropdown">
-                        <a href="javascript:void(0)" class="dropdown-btn" onclick="toggleDropdown('Sorting')">Sorting ▼</a>
-                        <div id="Sorting" class="dropdown-container">
-                            <a href="../Sorting/Sorting.html">Introduction</a>
-                            <a href="#">Synopsis(Video Lectures)</a>
-                            <a href="#">Algorithm</a>
-                            <a href="#">Complexity Analysis</a>
-                            <a href="#">Code</a>
-                            <a href="#">Demonstration</a>
-                            <a href="#">Quiz</a>
-                            <a href="#">Summary</a>
-            
-                        </div></div>
-            
-            
-                        <div class="dropdown">
-                            <a href="javascript:void(0)" class="dropdown-btn" onclick="toggleDropdown('LinkedListDropdown')">Linked List ▼</a>
-                            <div id="LinkedListDropdown" class="dropdown-container">
-                                <a href="../LinkedList/linkedlist.html">Introduction</a>
-                                <a href="#">Synopsis(Video Lectures)</a>
-                                <a href="#">Algorithm</a>
-                                <a href="#">Complexity Analysis</a>
-                                <a href="#">Code</a>
-                                <a href="#">Demonstration</a>
-                                <a href="#">Quiz</a>
-                                <a href="#">Summary</a>
-                
-                            </div></div>
-            
-            
-                            <div class="dropdown">
-                                <a href="javascript:void(0)" class="dropdown-btn" onclick="toggleDropdown('recursionDropdown')"> Recursion▼</a>
-                                <div id="recursionDropdown" class="dropdown-container">
-                                    <a href="../Recursion/RecursionIntroduction.html">Introduction</a>
-                                    <a href="#">Synopsis(Video Lectures)</a>
-                                    <a href="#">Algorithm</a>
-                                    <a href="#">Complexity Analysis</a>
-                                    <a href="#">Code</a>
-                                    <a href="#">Demonstration</a>
-                                    <a href="#">Quiz</a>
-                                    <a href="#">Summary</a>
-                    
-                                </div></div>
+  <!-- Footer -->
+  <footer class="main-footer">
+    <p>&copy; 2024 Your Company Name. All rights reserved.</p>
+  </footer>
 
-             <div class="dropdown">
-                    <a href="javascript:void(0)" class="dropdown-btn" onclick="toggleDropdown('QueueDropdown')">Queue ▼</a>
-                         <div id="QueueDropdown" class="dropdown-container">
-                                                    <a href="../Queue/queueintroduction.html">Introduction</a>
-                                                    <a href="../Queue/queueoverview.html">Synopsis(Video Lectures)</a>
-                                                    <a href="#">Algorithm</a>
-                                                    <a href="#">Complexity Analysis</a>
-                                                    <a href="#">Code</a>
-                                                    <a href="#">Demonstration</a>
-                                                    <a href="#">Quiz</a>
-                                                    <a href="#">Summary</a>
-                                                </div></div>
-            
-            
-            <div class="dropdown">
-                <a href="javascript:void(0)" class="dropdown-btn" onclick="toggleDropdown('TreeDropdown')">Trees ▼</a>
-                <div id="TreeDropdown" class="dropdown-container">
-                    <a href="#">Introduction</a>
-                    <a href="#">Synopsis(Video Lectures)</a>
-                    <a href="#">Algorithm</a>
-                    <a href="#">Complexity Analysis</a>
-                    <a href="#">Code</a>
-                    <a href="#">Demonstration</a>
-                    <a href="#">Quiz</a>
-                    <a href="#">Summary</a>
-            
-                </div></div>
-            
-            </div>
-
-            <header>
-                <h1>Explore Data Structures and Algorithms</h1>
-                
-            </header>
-
-
-    <section id="arrays" class="section">
-        <h2>Arrays</h2>
-        <div class="content">
-            <img src="images/arrays.png" alt="Arrays Illustration">
-            <p>Arrays are used to store multiple values in a single variable, instead of declaring separate variables for each value.</p>
-        </div>
-    </section>
-
-    <section id="linkedlists" class="section">
-        <h2>Linked Lists</h2>
-        <div class="content">
-            <img src="images/linkedlists.png" alt="Linked Lists Illustration">
-            <p>A linked list is a linear data structure where each element is a separate object. Elements are linked using pointers.</p>
-        </div>
-    </section>
-
-    <section id="trees" class="section">
-        <h2>Stack</h2>
-        <div class="content">
-            <img src="images/trees.png" alt="Trees Illustration">
-            <p>A Stack is a linear data structure that holds a linear, ordered sequence of elements. It is an abstract data type. A Stack works on the LIFO process (Last In First Out), i.e., the element that was inserted last will be removed first.</p>
-        </div>
-    </section>
-
-    <section id="sorting" class="section">
-        <h2>Sorting Algorithms</h2>
-        <div class="content">
-            <img src="images/sorting.png" alt="Sorting Algorithms Illustration">
-            <p>Sorting algorithms are a set of instructions that take an array or list as input and arrange the items into a specific order.</p>
-        </div>
-    </section>
-
-    <section id="trees" class="section">
-        <h2>Trees</h2>
-        <div class="content">
-            <img src="images/trees.png" alt="Trees Illustration">
-            <p>Trees are a type of data structure that emulates a hierarchical tree structure with a set of linked nodes.</p>
-        </div>
-    </section>
-
-    <section id="trees" class="section">
-        <h2>Queue</h2>
-        <div class="content">
-            <img src="images/trees.png" alt="Trees Illustration">
-            <p>A Queue Data Structure is a fundamental concept in computer science used for storing and managing data in a specific order. It follows the principle of “First in, First out” (FIFO), where the first element added to the queue is the first one to be removed</p>
-        </div>
-    </section>
-
-    <section id="trees" class="section">
-        <h2>Graph</h2>
-        <div class="content">
-            <img src="images/trees.png" alt="Trees Illustration">
-            <p>A graph can be defined as group of vertices and edges that are used to connect these vertices. A graph can be seen as a cyclic tree, where the vertices (Nodes) maintain any complex relationship among them instead of having parent child relationship.</p>
-        </div>
-    </section>
-
-    <footer class="footer">
-        <p>© 2024 DSA Webpage. All Rights Reserved.</p>
-    </footer>
-
-    <script src="../Home.js"></script>
+  <!-- JavaScript File -->
+  <script src="script.js"></script>
+  <script src="../Home/navbar2.js"></script>
 </body>
 </html>
