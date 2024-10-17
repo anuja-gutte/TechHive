@@ -141,17 +141,6 @@
       margin-bottom: 10px; /* Adds space below the heading */
     }
 
-    /* Styling the ordered list */
-    ol {
-      padding-left: 20px; /* Adds padding to make the numbers clearly visible */
-      font-size: 1.2em; /* Slightly larger text for the list */
-    }
-
-    /* List items styling */
-    ol li {
-      margin-bottom: 10px; /* Adds space between list items */
-    }
-
   </style>
 </head>
 <body>
@@ -179,198 +168,194 @@
 
   <!-- Page header -->
   <header>
-    <h1>Implementations Of <span style="color: green;">Queue</span> Using Array</h1>
+    <h1>Implementations Of <span style="color: green;">Queue</span> Using Linked List</h1>
   </header>
+<main>
+  <p> In this article, we will explore the implementation of a <strong>Queue</strong> a linked list. Before
+     diving into the specifics of this topic, it is essential to have a solid understanding of how a linked
+      list functions. Having a grasp of linked list operations will help in comprehending the underlying 
+      mechanics of a queue built on this data structure.</p>
 
-  <!-- Main content -->
-  <main>
-    <p>
-      For implementing a queue, we need to keep track of two indices: front and rear. We enqueue an
-      item at the rear and dequeue an item from the front. If we simply increment 
-      front and rear indices, then there may be problems, as front may reach the 
-      end of the array. The solution to this problem is to increase front and rear in a circular manner.
-    </p>
+<p> we know about basic operations of queue like enqueue, dequeue, peek, isempty() and isfull().
+</p>
 
-    <div class="section" id="steps-of">
-      <h2 style="text-align: left;">Steps for Enqueue</h2>
-      <ol>
-        <li> 1.Check the queue is full or not</li>
-<br>
+<div class="section" id="steps-of">
+  <h3 style="text-align: left; padding-top: 20px;">Structure of the Linked List-Based Queue:</h3>
+  <p style="padding-top: 15px; font-size:large;">In a linked list-based queue, each element (node) contains:</p>
+  <ul>
+    <li style="padding-top: 10px;"> 1.Data: The value of the element.</li><br></br>
+    <li> 2.Next: A pointer/reference to the next node in the queue.</li>
+  </ul>
 
-      </br>
-
-        <li> 2. If full, print overflow and exit</li>
-
-<br>
-</br>
-
-        <li> 3.If the queue is not full, increment tail and add the element</li>
-      </ol>
-    </div>
-  
-
-   <div class="section" id="steps-of">
-    <h2 style="text-align: left;">Steps for dequeue</h2>
-    <ol>
-      <li> 1.Check queue is empty or not</li>
-<br>
-
-    </br>
-
-      <li> 2. if empty, print underflow and exit</li>
-
-<br>
-</br>
-
-      <li> 3. if not empty, print element at the head and increment head</li>
-    </ol>
-  </div>
-  <div class="section" id="code block" style="background-color:#eff8ed; padding: 20px; border-radius: 2px; box-shadow: 0 4px 8px rgba(36, 30, 30, 0.1); margin: 20px 0;">
-   <h2> Example code :</h2>
-    <pre>
-      // Java program for array
-      // implementation of queue
-      
-      // A class to represent a queue
-      class Queue {
-        int front, rear, size;
-        int capacity;
-        int array[];
-      
-        public Queue(int capacity)
-        {
-          this.capacity = capacity;
-          front = this.size = 0;
-          rear = capacity - 1;
-          array = new int[this.capacity];
+  <p style="padding-top: 10px;font-size: medium; font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;"> To implement the queue we maintain 2 pointer same like in all the other cases <strong> front </strong> and <strong> rear</strong></p>
+</div>   
+<div class="section" id="code block" style="background-color:#eff8ed; padding: 20px; border-radius: 2px; box-shadow: 0 4px 8px rgba(36, 30, 30, 0.1); margin: 20px 0;">
+  <h2> Example code :</h2>
+   <pre>
+    // Node class represents each element in the queue
+    class Node {
+        int data;
+        Node next;
+    
+        // Constructor to initialize a new node
+        public Node(int data) {
+            this.data = data;
+            this.next = null;
         }
-      
-        // Queue is full when size becomes
-        // equal to the capacity
-        boolean isFull(Queue queue)
-        {
-          return (queue.size == queue.capacity);
-        }
-      
-        // Queue is empty when size is 0
-        boolean isEmpty(Queue queue)
-        {
-          return (queue.size == 0);
-        }
-      
-        // Method to add an item to the queue.
-        // It changes rear and size
-        void enqueue(int item)
-        {
-          if (isFull(this))
-            return;
-          this.rear = (this.rear + 1)
-                % this.capacity;
-          this.array[this.rear] = item;
-          this.size = this.size + 1;
-          System.out.println(item
-                  + " enqueued to queue");
-        }
-      
-        // Method to remove an item from queue.
-        // It changes front and size
-        int dequeue()
-        {
-          if (isEmpty(this))
-            return Integer.MIN_VALUE;
-      
-          int item = this.array[this.front];
-          this.front = (this.front + 1)
-                % this.capacity;
-          this.size = this.size - 1;
-          return item;
-        }
-      
-        // Method to get front of queue
-        int front()
-        {
-          if (isEmpty(this))
-            return Integer.MIN_VALUE;
-      
-          return this.array[this.front];
-        }
-      
-        // Method to get rear of queue
-        int rear()
-        {
-          if (isEmpty(this))
-            return Integer.MIN_VALUE;
-      
-          return this.array[this.rear];
-        }
-      }
-      
-      // Driver class
-      public class Test {
-        public static void main(String[] args)
-        {
-          Queue queue = new Queue(1000);
-      
-          queue.enqueue(10);
-          queue.enqueue(20);
-          queue.enqueue(30);
-          queue.enqueue(40);
-      
-          System.out.println(queue.dequeue()
-                  + " dequeued from queue\n");
-      
-          System.out.println("Front item is "
-                  + queue.front());
-      
-          System.out.println("Rear item is "
-                  + queue.rear());
-        }
-      }
-    </pre>
-  </div>
-      <h2> THE OUTPUT IS :</h2>
-
-      <div class="section" id="theory" style="background-color:#c9c3c3; padding: 2px; border-radius: 4px; box-shadow: 0 4px 8px rgba(36, 30, 30, 0.1); margin: 25px 300px; margin-left: auto;margin-right: auto; ">
-
-        <pre>
-        10 enqueued to queue
-        20 enqueued to queue
-        30 enqueued to queue
-        40 enqueued to queue
-        10 dequeued from queue
-        Front item is 20
-        Rear item is 40
-        </pre>
-      </div>
-
-<h3 style="padding-bottom: 15px;"> Code Explanation:</h3>
-      <p style="padding-top: 10px;padding-bottom: 15px;">The Node class represents an element in the queue, storing a data value and a reference
-      (next) to the next node. The Queue class manages the queue using a linked list. It has 
-      two pointers, front (points to the first element) and rear (points to the last element). 
-      The enqueue method adds a new node with a given value to the rear of the queue. If 
-      the queue is empty, both front and rear point to this new node. The dequeue method
-      removes the node from the front, updating the front pointer to the next node, and resets 4
-      rear if the queue becomes empty. The peekmethod returns the value of the front node 
-      without removing it. The isEmpty method checks if the queue is empty by verifying if 
-      the front is null. The display method prints all the elements from the front to the rear. 
-      The queue operates efficiently with constant time complexity (O(1)) for both enqueue and dequeue
-       operations. The main class demonstrates the queue's functionality by performing these operations 
-      and printing the queue state at various points.</p>
-
-
-
-      <button onclick="location.href='queueintroduction.html'"
-      class="nav-button"
-    >
-      Back to Introduction
-    </button>
-  </main>
-
-  <script>
-    // You can add your toggleSidebar function here if you need it for the "Menu" button.
-    function toggleSidebar() {
-      console.log("Sidebar toggle functionality goes here.");
     }
-  </script>
+    
+    // Queue class implements the queue operations using linked list
+    class Queue {
+        Node front, rear;
+    
+        // Constructor to initialize the queue
+        public Queue() {
+            front = rear = null;
+        }
+    
+        // Enqueue operation: Add an element at the rear of the queue
+        public void enqueue(int data) {
+            Node newNode = new Node(data);
+            if (rear == null) {
+                // If the queue is empty, both front and rear point to the new node
+                front = rear = newNode;
+                return;
+            }
+            // Add the new node at the end and update the rear to the new node
+            rear.next = newNode;
+            rear = newNode;
+        }
+    
+        // Dequeue operation: Remove an element from the front of the queue
+        public int dequeue() {
+            if (front == null) {
+                System.out.println("Queue is empty!");
+                return -1; // Return a sentinel value for empty queue
+            }
+            int data = front.data;
+            front = front.next;
+            if (front == null) {
+                rear = null; // If the queue becomes empty, reset rear to null
+            }
+            return data;
+        }
+    
+        // Peek operation: Return the front element without removing it
+        public int peek() {
+            if (front == null) {
+                System.out.println("Queue is empty!");
+                return -1;
+            }
+            return front.data;
+        }
+    
+        // Check if the queue is empty
+        public boolean isEmpty() {
+            return front == null;
+        }
+    
+        // Display the elements in the queue (for debugging or visualization)
+        public void display() {
+            if (isEmpty()) {
+                System.out.println("Queue is empty.");
+                return;
+            }
+            Node temp = front;
+            while (temp != null) {
+                System.out.print(temp.data + " -> ");
+                temp = temp.next;
+            }
+            System.out.println("null");
+        }
+    }
+    
+    // Main class to test the queue implementation
+    public class Main {
+        public static void main(String[] args) {
+            Queue q = new Queue();
+    
+            // Enqueue elements into the queue
+            q.enqueue(10);
+            q.enqueue(20);
+            q.enqueue(30);
+    
+            // Display the queue
+            System.out.println("Queue after enqueue operations:");
+            q.display();  // Expected output: 10 -> 20 -> 30 -> null
+    
+            // Peek at the front element
+            System.out.println("Front element is: " + q.peek());  // Expected output: 10
+    
+            // Dequeue elements from the queue
+            System.out.println("Dequeued element: " + q.dequeue());  // Expected output: 10
+            System.out.println("Queue after dequeue operation:");
+            q.display();  // Expected output: 20 -> 30 -> null
+    
+            // Dequeue remaining elements
+            System.out.println("Dequeued element: " + q.dequeue());  // Expected output: 20
+            System.out.println("Dequeued element: " + q.dequeue());  // Expected output: 30
+            System.out.println("Queue after all dequeue operations:");
+            q.display();  // Expected output: Queue is empty.
+        }
+    }
+    
+   </pre>
+ </div>
+     <h2> THE OUTPUT IS :</h2>
+
+     <div class="section" id="theory" style="background-color:#c9c3c3; padding: 2px; border-radius: 4px; box-shadow: 0 4px 8px rgba(36, 30, 30, 0.1); margin: 25px 300px; margin-left: auto;margin-right: auto; ">
+
+       <pre>
+        Queue after enqueue operations:
+        10 -> 20 -> 30 -> null
+        Front element is: 10
+        Dequeued element: 10
+        Queue after dequeue operation:
+        20 -> 30 -> null
+        Dequeued element: 20
+        Dequeued element: 30
+        Queue after all dequeue operations:
+        Queue is empty.
+        
+       </pre>
+     </div>
+
+     <h3 style="padding-bottom: 15px;"> Code Explanation:</h3>
+     <p style="padding-top: 10px;padding-bottom: 15px;">The Node class represents an element in the queue, storing a data value and a reference
+     (next) to the next node. The Queue class manages the queue using a linked list. It has 
+     two pointers, front (points to the first element) and rear (points to the last element). 
+     The enqueue method adds a new node with a given value to the rear of the queue. If 
+     the queue is empty, both front and rear point to this new node. The dequeue method
+     removes the node from the front, updating the front pointer to the next node, and resets 4
+     rear if the queue becomes empty. The peekmethod returns the value of the front node 
+     without removing it. The isEmpty method checks if the queue is empty by verifying if 
+     the front is null. The display method prints all the elements from the front to the rear. 
+     The queue operates efficiently with constant time complexity (O(1)) for both enqueue and dequeue
+      operations. The main class demonstrates the queue's functionality by performing these operations 
+     and printing the queue state at various points.</p>
+
+
+
+
+
+
+
+
+     
+     <button onclick="location.href='queueintroduction.html'"
+     class="nav-button"
+   >
+     Back to Introduction
+   </button>
+ </main>
+
+ <script>
+   // You can add your toggleSidebar function here if you need it for the "Menu" button.
+   function toggleSidebar() {
+     console.log("Sidebar toggle functionality goes here.");
+   }
+ </script>
 </body>
 </html>
+  
+
