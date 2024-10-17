@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <!-- <div id="navbar"></div> -->
+    <div class="space"></div>
+   
+    
+
+  
+  <div class="page">
+            <div class="heading">
+                <h1>Recursion</h1>
+            </div>
+
+           <div class="para">
+            <p>
+                Recursion is a programming technique where a function calls itself directly or indirectly to solve a problem. It is often used when a problem can be divided into smaller subproblems of the same type. In a recursive function, there is usually a base case that stops the recursion and prevents an infinite loop.
+            </p>
+            <br>
+
+            <h2>Base Case</h2>
+            <br>
+            <p>The base case of recursion is a condition in a recursive function that serves as the stopping point for the recursive process. It defines the simplest, smallest problem that can be solved directly without further recursion. Without a base case, the function would keep calling itself indefinitely, leading to infinite recursion and eventually causing a stack overflow.</p>
+            <br>
+            <h2>Types of Recursion</h2>
+            <br>
+            <h3>1) Direct Recursion: </h3>
+            <p>Direct recursion is the type of recursion in which a function directly calls itself within its own block of code. This means that the function appears as a part of the function's definition, and the function calls itself in order to perform its task.</p>
+            <br>
+            <h3>2) Indirect Recusion: </h3>
+            <p>Indirect recursion is a function or method calls another function or method, which in turn calls the original function or method. This creates a cyclic dependency between the functions, forming a loop-like structure.</p>
+
+            <br>
+            <h2>Call Stack</h2>
+            <br>
+            <p>A call stack is a data structure used by computer programs to keep track of function calls. When a function is called, a new frame is added to the call stack. This frame contains information about the function call, such as the <b>function arguments</b> and the <b>current position</b> in the code. When the function completes its execution, the frame is removed from the call stack, and the program returns to the previous frame.
+            <br><br>The call stack operates in a <b>Last-In-First-Out (LIFO)</b> manner, which means that the last function called is the first to be completed. This is important to keep in mind when dealing with recursive functions, as each recursive call adds a new frame to the call stack, which can lead to stack overflow errors if not managed properly.</p><br><br>
+           <div class="call-stack">
+             <img src="Recursion-Call-Stack.png">
+             <p>Call Stack while finding factorial of number using Recursion</p>
+            </div>
+           
+           </div>
+
+    </div>
+
+    <!-- <iframe class="main-content" name="main-frame" src="RecursionIntro.html"></iframe> -->
+
+
+    <script src="../Home/navbar2.js"></script>
+    <script src="Recursiontab.js"></script>
+</body>
+</html>

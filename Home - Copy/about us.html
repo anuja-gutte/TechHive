@@ -1,0 +1,168 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>About Us - TechHive</title>
+    <style>
+        body {
+            font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #f4f4f4;
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 20px;
+            border: 5px solid #14A489; /* Green border */
+            border-radius: 20px;
+            background-color: white;
+            box-shadow: 0 0 15px rgba(0, 0, 0, 0.2);
+        }
+
+        h1 {
+            color: #FFAE00; /* orange */
+            font-size: 48px;
+            text-align: center;
+            margin-top: 50px;
+        }
+
+        h2 {
+            font-size: 36px;
+            text-align: center;
+            margin-top: 20px;
+        }
+
+        h2 .black-text {
+            color: #000000; /* black */
+        }
+
+        h2 .green-text {
+            color: #14A489; /* green */
+        }
+
+        p {
+            color: #333; /* neutral dark color */
+            font-size: 18px;
+            text-align: justify;
+            line-height: 1.6;
+            margin-bottom: 20px;
+        }
+
+        .team-section {
+            margin-top: 40px;
+            border: 3px solid #DB2168; /* pink border */
+            padding: 20px;
+            border-radius: 15px;
+            text-align: center; /* Center-align team members */
+        }
+
+        .team-member {
+            font-size: 18px;
+            display: inline-block;
+            margin-right: 30px; /* Add spacing between names */
+        }
+
+        nav {
+            position: fixed;
+            top: 0;
+            width: 100%;
+            background-color: black;
+            z-index: 1000;
+        }
+
+        .content {
+            padding-top: 100px; /* Ensure content does not overlap with navbar */
+        }
+
+        .tab {
+            background: black;
+            width: 100%;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+        }
+
+        img {
+            width: 50px;
+            border-radius: 100px;
+            padding-right: 50px;
+        }
+
+        .open-btn {
+            font-size: 15px;
+            cursor: pointer;
+            background-color: black;
+            color: white;
+            border: none;
+        }
+
+        .open-btn:hover {
+            color: orange;
+            transition-duration: 0.3s;
+        }
+
+        a:hover {
+            color: orange;
+            transition-duration: 0.3s;
+        }
+
+        li {
+            list-style: none;
+            display: inline-block;
+        }
+
+        li a {
+            color: white;
+            font-size: 15px;
+            margin-right: 20px;
+        }
+    </style>
+</head>
+<body>
+
+    <!-- Navigation Bar -->
+    <nav>
+        <div class="tab">
+            <div class="left">
+                <div class="logo">
+                    <img src="../logo.jpeg">
+                </div>
+                <a><button class="open-btn" onclick="toggleSidebar()">☰ Menu</button></a>
+            </div>
+            <div class="right">
+                <ul id="list">
+                    <li><a href="#home">Home</a></li>
+                    <li><a href="about.html">About</a></li>
+                    <li><a href="#services">Services</a></li>
+                    <li><a href="#contact">Contact</a></li>
+                    <li><a href="#contact"><button class="tabs-learn-more">Learn More</button></a></li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+
+    <!-- About Us Section -->
+    <div class="content">
+        <div class="container">
+            <h1>About Us</h1>
+            <h2><span class="black-text">Welcome to</span> <span class="green-text">TechHive</span></h2>
+            <p>At TechHive, our vision is to make learning feel seamless and enjoyable. We believe that understanding data structures is a fundamental skill for any aspiring programmer or software engineer.</p>
+            <p>Our aim is to create a platform that simplifies complex concepts and provides interactive learning experiences. We strive to foster a community where learners can explore various data structures, understand their applications, and implement them in real-world scenarios.</p>
+            <p>We recognize the challenges that learners face when dealing with abstract concepts, and we are committed to bridging that gap. Our resources are designed to be engaging, accessible, and insightful, helping learners to not only grasp the theoretical aspects of data structures but also to apply them effectively in programming languages. By encouraging exploration and experimentation, we aspire to empower learners to build confidence and proficiency in their coding skills.</p>
+            
+            <h2>Our Team</h2>
+            <div class="team-section">
+                <div class="team-member">Aditi Gupta - 6</div>
+                <div class="team-member">Anuja Gutte - 18</div>
+                <div class="team-member">Chaitali Nadekar - 29</div>
+                <div class="team-member">Cherry Agarwal - 31</div>
+                <div class="team-member">Chhavi Pancholi - 32</div>
+            </div>
+        </div>
+    </div>
+
+</body>
+</html>

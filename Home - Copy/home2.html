@@ -1,0 +1,194 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>TechHive</title>
+
+    <link rel="stylesheet" href="home2.css">
+</head>
+<body>
+
+    
+   <nav>
+        <div class="tab">
+            <div class="left">
+            <div class="logo">
+                <img src="../logo.jpeg">
+            </div>
+            <a><button class="open-btn" onclick="toggleSidebar()">☰ Menu</button></a>
+            </div>
+        
+                <div class="right">
+                    <ul id="list">
+                        <li> <a href="#home">Home</a></li>
+                        <li><a href="about.html">About</a></li>
+                        <li><a href="#services">Services</a></li>
+                        <li> <a href="#contact">Contact</a></li>
+                        <li><a href="#contact"><button class="tabs-learn-more">Learn More</button></a></li>
+                        
+                    </ul>
+                   
+                
+                </div>
+        
+        </div>
+    </nav>
+
+    
+      
+<div class="home">
+    <div class="search-container">
+        <input type="text" id="searchInput" placeholder="Search">
+    
+    </div>
+
+    
+    <div class="home-pg-img">
+        <div class="para">
+            <br>
+            <br>
+            <h1> Welcome to <span>TechHive</span>!</h1>
+        <h2>Master Data Structures & Algorithms</h2>
+
+          <p> Your go-to platform for learning DSA through clear tutorials,<br> interactive quizzes, and coding challenges. </p>
+          <a href="#contact"><button class="tabs-learn-more-2">Learn More</button></a>
+        </div>
+        <img src="computer-girl.jpeg">
+
+      
+    </div>
+
+    
+  <div class="slider">
+    <div class="topics-grid">
+
+     
+         <div class="topic-card" onclick="redirect('DSA/DSAIntroduction.html')">
+            <div class="heading" id="DSA">
+            <span class="overlay"></span>
+            <h2>DSA Topics</h2></div>
+            <p>Learn about data structures and algorithms</p>
+            
+         </div>
+            <div class="topic-card" onclick="redirect('linked-lists.html')">
+            <div class="heading" id="Demos">
+                <span class="overlay"></span>
+            <h2>Demos</h2></div>
+            <p>Explore DSA concepts with our interactive demos</p>
+            
+            </div>
+         <div class="topic-card" onclick="redirect('trees.html')">
+            <div class="heading" id="Quiz">
+                <span class="overlay"></span>
+            <h2>Quiz</h2></div>
+            <p>Test your DSA knowledge with our interactive quiz</p>
+        
+            </div>
+        <div class="topic-card" onclick="redirect('graphs.html')">
+            <div class="heading" id="Roadmap">
+                <span class="overlay"></span>
+            <h2>Roadmap</h2></div>
+            <p>Plan your DSA journey with our detailed roadmap</p>
+            
+        </div></div>
+    
+
+   
+    <div class="info">
+        <div class="what-is-dsa">
+            <h2 class="heading1">What is DSA?</h2>
+           
+            <div class="para1">
+            <img src="C:\Users\anuja\Downloads\card-infographic-v2-min-1024x683.jpg">
+             <div class="border1">
+            <p>
+
+                Data Structures and Algorithms (DSA) refer to the study of methods for organizing and storing data and the design of procedures (algorithms) for solving problems, which operate on these data structures.DSA is one of the most important skills that every computer science student must have.</p>
+            </div>
+            </div>
+        </div>
+
+        <div class="importance-of-dsa">
+            <h2 class="heading2">Why DSA is Important?</h2>
+
+            <div class="para2">
+            <img src="C:\Users\anuja\Downloads\card-infographic-v2-min-1024x683.jpg">
+             <div class="border2">
+            <p> Data Structures and Algorithms plays a pivotal role in optimization, enabling developers to devise efficient solutions to computational problems. By supporting optimized data structures and algorithms, developers can streamline operations, minimize resource usage, and improve overall system performance.
+             </p>
+             </div>
+            </div>
+        </div>
+
+        <div class="want-to-know-more">
+            <h2 class="heading3">Want to know more about DSA?</h2>
+
+            <div class="para3">
+            <img src="C:\Users\anuja\Downloads\card-infographic-v2-min-1024x683.jpg">
+            <div class="border3">
+            <p>
+
+                Data Structures and Algorithms (DSA) refer to the study of methods for organizing and storing data and the design of procedures (algorithms) for solving problems, which operate on these data structures. DSA is one of the most important skills that every computer science student must have.</p>
+                
+                 
+            </div>
+            <a href="#contact"><button class="tabs-learn-more-3">Get Started</button></a>
+               </div>
+            </div>
+        </div>
+    </div>
+    
+
+
+      
+      
+    
+
+    <!-- Footer Section -->
+<!-- Footer Section -->
+<footer>
+    <div class="footer-container">
+        <!-- Quick Links Section -->
+        <div class="footer-section">
+            <ul>
+                <li><a href="#">Home</a></li>
+                <li><a href="#">About Us</a></li>
+                <li><a href="#">Contact Us</a></li>
+            </ul>
+        </div>
+
+        <!-- Social Media Links Section -->
+        <div class="footer-section">
+            <div class="social-icons">
+                <a href="#"><img src="facebook-icon.png" alt="Facebook"></a>
+                <a href="#"><img src="twitter-icon.png" alt="Twitter"></a>
+                <a href="#"><img src="linkedin-icon.png" alt="LinkedIn"></a>
+            </div>
+        </div>
+
+        <!-- Contact Information -->
+        <div class="footer-section">
+            <p>Email: <a href="mailto:contact@techhive.com">contact@techhive.com</a></p>
+        </div>
+    </div>
+
+    <!-- Copyright and Back to Top -->
+    <div class="footer-bottom">
+        <p>© 2024 TechHive. All Rights Reserved. <a href="#" class="back-to-top">Back to Top ↑</a></p>
+    </div>
+</footer>
+
+     
+</div>  
+
+     
+
+ <script src="searchbar.js"></script>
+ <script src="card-sliding.js"></script> 
+ <script src="fetch.js"></script>
+  
+
+
+</body>
+</html>

@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <!--<div id="navbar"></div>-->
+   
+
+      
+    
+    <div class="page">
+       
+          
+        <div class="heading">
+            <h1>Algorithm and Analysis</h1>
+        </div>
+        <br>
+        <div class="para">
+            <h2>Recursive Algorithm for Factorial Calculation</h2>
+            <br>
+
+          <p>
+            <b>Problem Statement:</b>
+    Given a non-negative integer n, calculate the factorial of n denoted as n!. The factorial of 
+    n is the product of all positive integers less than or equal to n.
+    <br><br>
+    <b>Step-by-Step Algorithm:</b><br><br>
+    Step 1: &nbsp Start.<br><br>
+
+    Step 2: &nbsp Input: Take an integer n as input.<br><br>
+    Step 3: &nbsp Base Case Check:<br><br>
+    &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp If n=0, return 1. (This is because 0!=1).<br><br>
+    Step 4: &nbsp Recursive Case:<br><br>
+    &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp If n>0, return n*factorial(n-1).<br><br>
+    &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp else Call the function recursively with n-1 until the base case 
+    n=0 is reached.<br><br>
+    Step 5: &nbsp End.<br><br>
+          </p>
+        </div>
+
+        <div id="code-block">
+        <h2>Pseudocode</h2>
+        <div class="code-container">
+            <pre>
+                <code>
+                    
+    <span class="keyword">function</span> Factorial {
+        
+       
+            <span class="comment">// Base case</span>
+            <span class="keyword">if</span> (n == 0) {
+                <span class="keyword">return</span> 1;
+            }
+            <span class="keyword">else</span>
+            <span class="comment">// Recursive case</span>
+            <span class="keyword">return</span> n * <span class="function-name">factorial</span>(n - 1);
+        }
+                    </code>
+            </pre>
+        </div>
+
+
+        <h2>Code Example</h2>
+    
+        <div class="code-container">
+            <pre><code>
+    <span class="comment">// This is a recursive function to calculate factorial</span>
+    <span class="keyword">public</span> <span class="keyword">class</span> Factorial {
+        
+        <span class="keyword">public static int</span> <span class="function-name">factorial</span>(<span class="keyword">int</span> n) {
+            <span class="comment">// Base case</span>
+            <span class="keyword">if</span> (n == 0) {
+                <span class="keyword">return</span> 1;
+            }
+            <span class="comment">// Recursive case</span>
+            <span class="keyword">return</span> n * <span class="function-name">factorial</span>(n - 1);
+        }
+    }
+            </code></pre>
+        </div>
+
+        </div>
+
+
+        <div class="Analysis">
+            <h1>Analysis</h1><br>
+            <ol>
+                <li>The time complexity of recursion depends on several factors, including the nature of the recursion (how many recursive calls are made and how the problem is divided).</li>
+                <li>In the recursive approach of finding a factorial, for each value of n, we make a recursive call to compute the factorial of (n-1)
+                     This process continues until we reach the base case (when n=0). 
+                   </li>
+                   <li>For n, there is 1 recursive call to comput factorial(n-1).</li>
+                   <li>For n-1, there is 1 recursive call to compute factorial(n-2).</li>
+                   <li>This continues until the base case is reached.</li>
+                   <li>Thus,there are n
+                    n recursive calls in total, each performing a constant amount of work (a multiplication and a function call).</li>
+                    <li>Therefore the time complexity is: <b>O(n)</b></li>
+            </ol>
+        </div>
+    </div>
+
+
+      <script src="../Home/navbar2.js"></script>
+</body>
+</html>

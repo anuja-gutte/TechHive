@@ -1,0 +1,408 @@
+<!--<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+
+  <style>
+    .body{
+    font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+   
+}
+.home{
+  max-width: 1300px;
+  margin: 0 auto;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+*{
+    text-decoration: none;
+    margin: 0;
+    padding: 0;
+    
+}
+
+.nav{
+    position: fixed;
+}
+
+.tab{
+    background: black;
+    font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+    width: 100%;
+    /* padding-left: 15px;
+    padding-right: 15px; */
+}
+
+.tab{
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+img{
+    width: 50px;
+    border-radius: 100px;
+    padding-right: 50px;
+}
+
+.open-btn{
+    font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+    font-size:15px;
+    cursor: pointer;
+    display: inline-block;
+    background-color: black;
+    color:white;
+    border: none;
+    
+   
+}
+
+.arrow {
+    border: solid white;
+    border-width: 0 3px 3px 0;
+    display: inline-block;
+    padding: 2px;
+  }
+
+.down {
+    transform: rotate(45deg);
+    -webkit-transform: rotate(45deg);
+  }
+
+.open-btn:hover{
+    color:orange;
+    transition-duration: 0.3s;
+
+}
+
+a:hover{
+    color: orange;
+    transition-duration: 0.3s;
+}
+
+.left{
+    display: inline-flex;
+    align-items: center;
+    /* margin-left: 10%; */
+    
+}
+
+
+.tabs-learn-more{
+    font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+    
+    background-color: black;
+    border-width: 2px;
+    border-style: solid;
+    border-color: white;
+    color: white;
+    font-weight: 500;
+    border-radius: 20px;
+    padding: 8px;
+    cursor: pointer;
+}
+
+.tabs-learn-more:hover{
+    background-color: rgb(28, 205, 15);
+    transition-duration: 0.3s;
+    border-color:  rgb(28, 205, 15);
+    
+}
+
+li{
+    list-style: none;
+    display: inline-block;
+}
+
+li a{
+    color: white;
+    font-size: 15px;
+    margin-right: 20px;
+}
+
+
+  </style>
+</head>
+<body>
+  <nav>
+    <div class="tab">
+        <div class="left">
+        <div class="logo">
+            <img src="../logo.jpeg">
+        </div>
+        <a><button class="open-btn" onclick="toggleSidebar()">☰ Menu</button></a>
+        </div>
+    
+            <div class="right">
+                <ul id="list">
+                    <li> <a href="#home">Home</a></li>
+                    <li><a href="about.html">About</a></li>
+                    <li><a href="#services">Services</a></li>
+                    <li> <a href="#contact">Contact</a></li>
+                    <li><a href="#contact"><button class="tabs-learn-more">Learn More</button></a></li>
+                    
+                </ul>
+               
+            
+            </div>
+    
+    </div>
+    
+</nav>
+
+
+</body>
+</html>-->
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+
+  <style>
+    body {
+      font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+      margin: 0;
+    }
+
+    .home {
+      max-width: 1300px;
+      margin: 0 auto;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+    }
+
+    * {
+      text-decoration: none;
+      margin: 0;
+      padding: 0;
+    }
+
+    .nav {
+      position: fixed;
+    }
+
+    .tab {
+      background: black;
+      width: 100%;
+    }
+
+    .tab {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+    }
+
+    img {
+      width: 50px;
+      border-radius: 100px;
+      padding-right: 50px;
+    }
+
+    .open-btn {
+      font-size: 15px;
+      cursor: pointer;
+      display: inline-block;
+      background-color: black;
+      color: white;
+      border: none;
+    }
+
+    .open-btn:hover {
+      color: orange;
+      transition-duration: 0.3s;
+    }
+
+    a:hover {
+      color: orange;
+      transition-duration: 0.3s;
+    }
+
+    .left {
+      display: inline-flex;
+      align-items: center;
+    }
+
+    .tabs-learn-more {
+      background-color: black;
+      border: 2px solid white;
+      color: white;
+      font-weight: 500;
+      border-radius: 20px;
+      padding: 8px;
+      cursor: pointer;
+    }
+
+    .tabs-learn-more:hover {
+      background-color: rgb(28, 205, 15);
+      border-color: rgb(28, 205, 15);
+      transition-duration: 0.3s;
+    }
+
+    li {
+      list-style: none;
+      display: inline-block;
+    }
+
+    li a {
+      color: white;
+      font-size: 15px;
+      margin-right: 20px;
+    }
+
+    /* Sidebar styles */
+    .sidebar {
+      height: 100%;
+      width: 0;
+      position: fixed;
+      top: 0;
+      left: 0;
+      background-color: black;
+      overflow-x: hidden;
+      transition: 0.5s;
+      padding-top: 60px;
+    }
+
+    .sidebar a {
+      padding: 8px 8px 8px 32px;
+      text-decoration: none;
+      font-size: 25px;
+      color: white;
+      display: block;
+      transition: 0.3s;
+    }
+
+    .sidebar a:hover {
+      color: orange;
+    }
+
+    .sidebar .closebtn {
+      position: absolute;
+      top: 0;
+      right: 25px;
+      font-size: 36px;
+      margin-left: 50px;
+    }
+
+    /* Dropdown styles inside the sidebar */
+    .dropdown-btn {
+      padding: 8px 32px;
+      text-align: left;
+      background: none;
+      border: none;
+      color: white;
+      font-size: 25px;
+      cursor: pointer;
+      outline: none;
+      width: 100%;
+    }
+
+    .dropdown-container {
+      display: none;
+      background-color: #333;
+      padding-left: 50px;
+    }
+
+    .dropdown-container a {
+      font-size: 20px;
+    }
+
+    .dropdown-btn:after {
+      content: '\25BC'; /* Down arrow */
+      float: right;
+      margin-right: 20px;
+    }
+
+    .active:after {
+      content: '\25B2'; /* Up arrow */
+    }
+
+    /* When sidebar is open */
+    .open-sidebar {
+      width: 250px;
+    }
+
+  </style>
+</head>
+<body>
+
+  <!-- Navbar -->
+  <nav>
+    <div class="tab">
+      <div class="left">
+        <div class="logo">
+          <img src="../logo.jpeg" alt="Logo">
+        </div>
+        <a><button class="open-btn" onclick="toggleSidebar()">☰ Menu</button></a>
+      </div>
+
+      <div class="right">
+        <ul id="list">
+          <li><a href="#home">Home</a></li>
+          <li><a href="about.html">About</a></li>
+          <li><a href="#services">Services</a></li>
+          <li><a href="#contact">Contact</a></li>
+          <li><a href="#learn-more"><button class="tabs-learn-more">Learn More</button></a></li>
+        </ul>
+      </div>
+    </div>
+  </nav>
+
+  <!-- Sidebar -->
+  <div id="mySidebar" class="sidebar">
+    <a href="javascript:void(0)" class="closebtn" onclick="toggleSidebar()">&times;</a>
+    <a href="#home">Home</a>
+    <a href="about.html">About</a>
+    
+    <!-- Dropdown for services -->
+    <button class="dropdown-btn">Data Structures 
+    </button>
+    <div class="dropdown-container">
+      <a href="#web-dev">Sorting Techniques</a>
+      <a href="#web-dev">Searching</a>
+      <a href="#web-dev">Linked List</a>
+      <a href="#app-dev">Queue</a>
+      <a href="#marketing">Recursion</a>
+      <a href="#web-dev">Trees</a>
+    </div>
+
+
+    <a href="#contact">Roadmap</a>
+    <a href="#contact">Contact</a>
+    <a href="#learn-more">Learn More</a>
+  </div>
+
+  <script>
+    function toggleSidebar() {
+      var sidebar = document.getElementById("mySidebar");
+      if (sidebar.style.width === "250px") {
+        sidebar.style.width = "0";
+      } else {
+        sidebar.style.width = "250px";
+      }
+    }
+
+    /* Dropdown functionality */
+    var dropdowns = document.getElementsByClassName("dropdown-btn");
+    for (var i = 0; i < dropdowns.length; i++) {
+      dropdowns[i].addEventListener("click", function() {
+        this.classList.toggle("active");
+        var dropdownContent = this.nextElementSibling;
+        if (dropdownContent.style.display === "block") {
+          dropdownContent.style.display = "none";
+        } else {
+          dropdownContent.style.display = "block";
+        }
+      });
+    }
+  </script>
+
+</body>
+</html>

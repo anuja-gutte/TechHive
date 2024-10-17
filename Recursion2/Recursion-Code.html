@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <!-- <div id="navbar"></div> -->
+    <div class="home">
+    <div class="code-page">
+    
+    <h1>Code Implementation: Recursion in Java</h1><br>
+    <h2>How to implement Recursion in Java</h2>
+    <p>
+        Recursion in Java is implemented by having a method call itself to solve smaller instances of a problem. A recursive function typically has two main parts:<br>
+        <br>
+        1.&nbsp Base Case: This stops the recursion when the problem is simple enough to be solved directly.<br><br>
+        2.&nbsp Recursive Case: This breaks the problem down into smaller instances of the same problem and calls itself with those smaller instances.
+    </p><br><br>
+
+
+    <div class="code-box">
+        <h3>Reversing a String using Recursion</h3>
+        <pre>
+    class StringReverse { 
+
+    //recursive method to reverse a given string
+
+    void reverseString(String str) 
+    { 
+        //base condition
+        if ((str==null)||(str.length() <= 1)) 
+           System.out.println(str); 
+        else
+        { 
+            System.out.print(str.charAt(str.length()-1)); 
+            reverseString(str.substring(0,str.length()-1)); 
+        } 
+    }
+}
+    public class Main{
+        public static void main(String[] args)  
+    { 
+        String input = "TechHiveOnline";
+        System.out.println("The given string: " + input);
+        StringReverse obj = new StringReverse(); 
+        System.out.print("The reversed string: ");
+        obj.reverseString(input); 
+          
+    }     
+}
+        </pre>
+
+     <div class="output-box">
+        <h3>Output</h3>
+        <pre>
+            The given string: TechHiveOnline
+            The reversed string: enilnOeviHhceT
+        </pre>
+     </div>
+
+     <h3>Working of the above code: </h3>
+     <p>
+        1.&nbsp Main Method:<br>
+        &nbsp  &nbsp  &nbsp  A string input is defined with the value "TechHiveOnline".<br>
+        &nbsp  &nbsp  &nbsp  It prints the original string:
+        <br> &nbsp  &nbsp  &nbsp  The given string: "TechHiveOnline".<br>
+        2.&nbsp Creating an Object:<br>
+        &nbsp  &nbsp  &nbsp  The program creates an object obj of the class StringReverse.<br>
+        3.&nbsp Calling the Recursive Method:<br>
+        &nbsp  &nbsp  &nbsp  The method reverseString(input) is called on the object obj, starting the recursive string reversal process.<br>
+        Example of the Recursive Flow for "TechHiveOnline":<br>
+        &nbsp  &nbsp  &nbsp  &nbsp Initial Call:&nbsp reverseString("TechHiveOnline")<br>
+        &nbsp  &nbsp  &nbsp  &nbsp Prints: &nbsp e (last character)<br>
+        &nbsp  &nbsp  &nbsp  &nbsp Calls: &nbsp reverseString("TechHiveOnlin")<br>
+        &nbsp  &nbsp  &nbsp  &nbsp Prints: &nbsp n (last character)<br>
+        &nbsp  &nbsp  &nbsp  &nbsp Calls: &nbsp reverseString("TechHiveOnli")<br>
+        &nbsp  &nbsp  &nbsp  &nbsp Prints: &nbsp i<br>
+        &nbsp  &nbsp  &nbsp  &nbsp Calls: &nbsp reverseString("TechHiveOn")<br>
+        &nbsp  &nbsp  &nbsp  &nbsp Continues...<br>
+        Eventually, the recursion reaches the base case with a single character, and the full reversed string is printed.<br>
+     </p>
+    </div>
+    
+
+    </div>
+    </div>
+
+
+    <script src="../Home/navbar2.js"></script>
+</body>
+</html>

@@ -1,0 +1,126 @@
+body{
+    font-family: Arial, Helvetica, sans-serif;
+    margin-left: 25px;
+    padding: 10px 10px;
+    display: flex;
+}
+
+.page{
+    max-width: 1300px;
+   margin-top: 3%;
+   margin: 0 auto;
+   display: flex;
+   flex-direction: column;
+   align-items: center;
+   padding: 0 12%;
+}
+h1{
+    
+    text-align: center;
+    border-bottom: 3px solid black;
+}
+
+.para{
+    margin-top: 4%;
+}
+
+.para h2{
+    text-align: left;
+}
+.para p{
+    font-size: larger;
+    text-align:justify;
+}
+
+.call-stack img{
+   display: block;
+   margin-left: auto;
+   margin-right: auto;
+   width: 45%;
+   border-radius: 0%;
+}
+
+.call-stack p{
+    margin-top: 2%;
+    text-align: center;
+} 
+
+.code-container {
+    display: block;
+    width: 100%;
+    margin: 0;
+    background-color: #2e3440;  
+    color: #d8dee9;            
+    padding: 15px;
+    border-radius: 8px;
+    font-family: 'Courier New', Courier, monospace; 
+    width: 100%;
+    margin: 20px 0; 
+    box-sizing: border-box;
+    
+}
+
+
+pre code {
+    display:block;
+    white-space: pre-wrap;      
+    line-height: 1.5;         
+}
+
+.code-container .keyword {
+    color: #81a1c1;
+}
+.code-container .comment {
+    color: #a3be8c;
+    font-style: italic;
+}
+.code-container .function-name {
+    color: #ebcb8b;
+}
+
+h2{
+    text-align: left;
+}
+
+
+.code-page h2,h3{
+    margin-top: 3%;
+    margin-bottom: 3%;
+    border: none;
+}
+
+.code-page h3{
+    text-align: center;
+}
+
+.code-page pre{
+   
+    background-color: #eee;
+    padding: 15px;
+    border-radius: 8px;
+    white-space: pre-wrap;
+    overflow-x: auto;
+      
+  
+}
+
+.output-box pre{
+    padding: 20px;
+    border-radius: 0;
+    border-left: 3px solid black;
+}
+
+p{
+    margin-top: 3%;
+    font-size: large;
+}
+
+.application p{
+    line-height: 30px;
+}
+
+.application h2,p{
+    margin-top: 3%;
+    text-align: left;
+   
+ }
