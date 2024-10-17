@@ -1,0 +1,243 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+
+  <style>
+    .body{
+    font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+   
+}
+.home{
+  max-width: 1300px;
+  margin: 0 auto;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+*{
+    text-decoration: none;
+    margin: 0;
+    padding: 0;
+    
+}
+
+.nav{
+    position: fixed;
+}
+
+.tab{
+    background: black;
+    font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+    width: 100%;
+    /* padding-left: 15px;
+    padding-right: 15px; */
+}
+
+.tab{
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+img{
+    width: 50px;
+    border-radius: 100px;
+    padding-right: 50px;
+}
+
+.open-btn{
+    font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+    font-size:15px;
+    cursor: pointer;
+    display: inline-block;
+    background-color: black;
+    color:white;
+    border: none;
+    
+   
+}
+
+.arrow {
+    border: solid white;
+    border-width: 0 3px 3px 0;
+    display: inline-block;
+    padding: 2px;
+  }
+
+.down {
+    transform: rotate(45deg);
+    -webkit-transform: rotate(45deg);
+  }
+
+.open-btn:hover{
+    color:orange;
+    transition-duration: 0.3s;
+
+}
+
+a:hover{
+    color: orange;
+    transition-duration: 0.3s;
+}
+
+.left{
+    display: inline-flex;
+    align-items: center;
+    /* margin-left: 10%; */
+    
+}
+
+
+.tabs-learn-more{
+    font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+    
+    background-color: black;
+    border-width: 2px;
+    border-style: solid;
+    border-color: white;
+    color: white;
+    font-weight: 500;
+    border-radius: 20px;
+    padding: 8px;
+    cursor: pointer;
+}
+
+.tabs-learn-more:hover{
+    background-color: rgb(28, 205, 15);
+    transition-duration: 0.3s;
+    border-color:  rgb(28, 205, 15);
+    
+}
+
+li{
+    list-style: none;
+    display: inline-block;
+}
+
+li a{
+    color: white;
+    font-size: 15px;
+    margin-right: 20px;
+}
+
+</style>
+</head>
+<body>
+    <nav>
+        <div class="tab">
+            <div class="left">
+            <div class="logo">
+                <img src="../logo.jpeg">
+            </div>
+            <a><button class="open-btn" onclick="toggleSidebar()">☰ Menu</button></a>
+            </div>
+        
+                <div class="right">
+                    <ul id="list">
+                        <li> <a href="#home">Home</a></li>
+                        <li><a href="about.html">About</a></li>
+                        <li><a href="#services">Services</a></li>
+                        <li> <a href="#contact">Contact</a></li>
+                        <li><a href="#contact"><button class="tabs-learn-more">Learn More</button></a></li>
+                        
+                    </ul>
+                   
+                
+                </div>
+        
+        </div>
+    </nav>
+
+    <h2>1.Linear Search</h2>
+    <p>Linear search scans each element in a list sequentially until the target element is found or the end of the list is reached.</p>
+    <p><b>Algorithm:</b><hr>
+        1.Start at the beginning of the array/list:
+        Set an index i = 0, which will point to the first element in the list.
+        <hr>
+        2.Check if the current element is equal to the target value:
+        Compare the element at position i with the target value you're searching for.
+        <hr>
+        3.If a match is found:
+        If the element at position i matches the target value, stop the search and return the index i.
+        <hr>
+        4.If no match is found:
+        Move to the next element by increasing the index i by 1 (i = i + 1).
+        Repeat steps 2 and 3 for the next element.
+       <hr>
+        5.Check if the entire array has been searched:
+        If you reach the end of the list (i.e., i is equal to the length of the list), and no match has been found, conclude that the target value is not present in the list.
+        <hr>
+        6.Return the result:
+        If the target value was found in the list, return its index.
+        If the target value was not found, return an indication that the value is not present, such as -1 (or any suitable value that represents "not found").</p>
+    <h3>Time Complexity</h3>
+    <table>
+        <tr>
+            <th>Case</th>
+            <th>Time Complexity</th>
+        </tr>
+        <tr>
+            <td>Best Case</td>
+            <td>O(1)</td>
+        </tr>
+        <tr>
+            <td>Average Case</td>
+            <td>O(n)</td>
+        </tr>
+        <tr>
+            <td>Worst Case</td>
+            <td>O(n)</td>
+        </tr>
+    </table>
+
+    <h2>2.Binary Search</h2>
+    <p>Binary search works on sorted arrays by repeatedly dividing the search interval in half until the target element is found.</p>
+    <hr>
+    <strong>Algorithm</strong><hr>
+    <p> 1.Initial Setup:
+        Ensure the array or list is sorted.
+        Define two pointers: low (starting at the first element of the array) and high (starting at the last element of the array).
+
+        <hr>Find the middle element:
+        Calculate the middle index using the formula:
+        mid=(low+high)/2
+        In an array, the middle index would be:
+        mid= low+(high-low)/2
+        <hr>
+        3.Compare the target value with the middle element:
+        If the middle element is equal to the target, return the middle index. The search is complete.
+        If the target is smaller than the middle element, eliminate the right half of the array by updating high = mid - 1.
+        If the target is larger than the middle element, eliminate the left half of the array by updating low = mid + 1.
+        <hr>
+        4.Repeat the process:
+        Repeat steps 2 and 3 with the updated low and high values until the target is found, or the search space is empty (low > high).
+        <hr>
+        5.Return the result:
+        If the target is found, return its index.
+        If low exceeds high (meaning the target is not found), return an indication that the value is not present (e.g., return -1).</p>
+    <h3>Time Complexity</h3>
+    <table>
+        <tr>
+            <th>Case</th>
+            <th>Time Complexity</th>
+        </tr>
+        <tr>
+            <td>Best Case</td>
+            <td>O(1)</td>
+        </tr>
+        <tr>
+            <td>Average Case</td>
+            <td>O(log n)</td>
+        </tr>
+        <tr>
+            <td>Worst Case</td>
+            <td>O(log n)</td>
+        </tr>
+    </table>
+
+</body>
+</html>
