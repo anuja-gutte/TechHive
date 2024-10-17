@@ -25,95 +25,75 @@
     z-index: 1000;
   }
   
-  /* Sidebar */
+  /* Sidebar styles */
   .sidebar {
+    z-index: 1000;
     height: 100%;
-    width: 250px;
+    width: 0;
     position: fixed;
     top: 0;
-    left: -250px;
-    background-color: #333;
+    left: 0;
+    background-color: black;
+    overflow-x: hidden;
+    transition: 0.5s;
     padding-top: 60px;
-    transition: 0.3s;
-    z-index: 999;
   }
-  
-  .sidebar ul {
-    list-style-type: none;
-    padding: 0;
-  }
-  
-  .sidebar ul li {
-    padding: 15px;
-  }
-  
-  .sidebar ul li a {
+
+  .sidebar a {
+    padding: 8px 8px 8px 32px;
     text-decoration: none;
-    color: black;
+    font-size: 25px;
+    color: white;
     display: block;
+    transition: 0.3s;
   }
-  
-  .sidebar ul li a:hover {
-    background-color: #575757;
+
+  .sidebar a:hover {
+    color: orange;
   }
-  
-  /* Dropdown Content */
-  .dropdown-content {
-    display: none;
-    list-style-type: none;
-    padding-left: 20px;
-  }
-  
-  .dropdown-content li {
-    padding: 10px 0;
-  }
-  
-  .dropdown-content li a {
-    color: black;
-    font-size: 14px;
-  }
-  
-  .dropdown-content li a:hover {
-    color: black;
-  }
-  
-  /* Close Button */
-  .close-btn {
+
+  .sidebar .closebtn {
     position: absolute;
-    top: 15px;
-    right: 20px;
-    font-size: 30px;
+    top: 0;
+    right: 25px;
+    font-size: 36px;
+    margin-left: 50px;
+  }
+
+  /* Dropdown styles inside the sidebar */
+  .dropdown-btn {
+    padding: 8px 32px;
+    text-align: left;
     background: none;
     border: none;
-    color: black;
+    color: white;
+    font-size: 25px;
     cursor: pointer;
+    outline: none;
+    width: 100%;
   }
-  
-  /* Main content */
-  .content {
-    padding: 20px;
-    margin-left: 0;
-    transition: margin-left 0.3s;
-    flex: 1;
+
+  .dropdown-container {
+    display: none;
+    background-color: #333;
+    padding-left: 50px;
   }
-  
-  @media screen and (min-width: 600px) {
-    .content {
-      margin-left: 0;
-    }
-  
-    .sidebar.open ~ .content {
-      margin-left: 250px;
-    }
+
+  .dropdown-container a {
+    font-size: 20px;
   }
-  
-  /* Sidebar open state */
-  .sidebar.open {
-    left: 0;
+
+  .dropdown-btn:after {
+    content: '\25BC'; /* Down arrow */
+    float: right;
+    margin-right: 20px;
   }
-  
-  /* Dropdown open state */
-  .dropdown.open .dropdown-content {
-    display: block;
+
+  .active:after {
+    content: '\25B2'; /* Up arrow */
   }
-  
+
+  /* When sidebar is open */
+  .open-sidebar {
+    width: 250px;
+  }

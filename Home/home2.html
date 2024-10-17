@@ -9,13 +9,15 @@
 </head>
 <body>
 
-    
-   <nav>
+ 
+    <nav>
         <div class="tab">
             <div class="left">
             <div class="logo">
-                <img src="../logo.jpeg">
+                <img src="logo.png">
+               
             </div>
+            <h1 style="color: white; padding-right: 20px;">Tech<span style="color: rgb(28, 205, 15);">Hive</span></h1>
             <a><button class="open-btn" onclick="toggleSidebar()">☰ Menu</button></a>
             </div>
         
@@ -33,10 +35,33 @@
                 </div>
         
         </div>
-    </nav>
+    </nav> 
+
+    <div id="mySidebar" class="sidebar">
+        <a href="javascript:void(0)" class="closebtn" onclick="toggleSidebar()">&times;</a>
+        <a href="#home">Home</a>
+        <a href="about.html">About</a>
+        
+      
+         <button class="dropdown-btn">Data Structures 
+        </button>
+        <div class="dropdown-container">
+          <a href="#web-dev">Sorting Techniques</a>
+          <a href="#web-dev">Searching</a>
+          <a href="#web-dev">Linked List</a>
+          <a href="#app-dev">Queue</a>
+          <a href="#marketing">Recursion</a>
+          <a href="#web-dev">Trees</a>
+        </div>
+    
+    
+        <a href="#contact">Roadmap</a>
+        <a href="#contact">Contact</a>
+        <a href="#learn-more">Learn More</a>
+      </div> 
 
     
-      
+       
 <div class="home">
     <div class="search-container">
         <input type="text" id="searchInput" placeholder="Search">
@@ -100,7 +125,7 @@
             <h2 class="heading1">What is DSA?</h2>
            
             <div class="para1">
-            <img src="C:\Users\anuja\Downloads\card-infographic-v2-min-1024x683.jpg">
+            <img src="What-Are-Data-Structures-Algorithms-1.jpg">
              <div class="border1">
             <p>
 
@@ -113,7 +138,7 @@
             <h2 class="heading2">Why DSA is Important?</h2>
 
             <div class="para2">
-            <img src="C:\Users\anuja\Downloads\card-infographic-v2-min-1024x683.jpg">
+            <img src="why-dsa-is-imp.jpg">
              <div class="border2">
             <p> Data Structures and Algorithms plays a pivotal role in optimization, enabling developers to devise efficient solutions to computational problems. By supporting optimized data structures and algorithms, developers can streamline operations, minimize resource usage, and improve overall system performance.
              </p>
@@ -125,7 +150,7 @@
             <h2 class="heading3">Want to know more about DSA?</h2>
 
             <div class="para3">
-            <img src="C:\Users\anuja\Downloads\card-infographic-v2-min-1024x683.jpg">
+            <img src="want-to-know-more.jpg">
             <div class="border3">
             <p>
 
@@ -186,8 +211,41 @@
 
  <script src="searchbar.js"></script>
  <script src="card-sliding.js"></script> 
- <script src="fetch.js"></script>
-  
+ <!-- <script src="fetch.js"></script> -->
+ 
+ <script>
+    // Toggle Sidebar function
+    function toggleSidebar() {
+        var sidebar = document.getElementById("mySidebar");
+        if (sidebar.style.width === "300px") {
+            sidebar.style.width = "0";
+        } else {
+            sidebar.style.width = "300px";
+        }
+    }
+
+    // Initialize Dropdown functionality
+    function initializeDropdowns() {
+        var dropdowns = document.getElementsByClassName("dropdown-btn");
+        for (var i = 0; i < dropdowns.length; i++) {
+            dropdowns[i].addEventListener("click", function() {
+                this.classList.toggle("active");
+                var dropdownContent = this.nextElementSibling;
+                if (dropdownContent.style.display === "block") {
+                    dropdownContent.style.display = "none";
+                } else {
+                    dropdownContent.style.display = "block";
+                }
+            });
+        }
+    }
+
+    // Ensure dropdowns are initialized when the page is fully loaded
+    window.onload = function() {
+        initializeDropdowns();
+    };
+</script>
+
 
 
 </body>

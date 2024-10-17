@@ -1,0 +1,85 @@
+body {
+    font-family: 'Arial', sans-serif;
+    background-color: #f4f4f4;
+    margin: 0;
+    padding: 0;
+  }
+  
+  .container {
+    text-align: center;
+    padding: 20px;
+  }
+  
+  h1 {
+    color: #333;
+  }
+  
+  #roadmap ul {
+    list-style-type: none;
+    padding-left: 20px;
+    position: relative;
+  }
+  
+  #roadmap ul ul {
+    margin-left: 40px;
+  }
+  
+  #roadmap ul:before {
+    content: '';
+    border-left: 2px solid #6a4feb;
+    position: absolute;
+    left: 15px;
+    top: 0;
+    bottom: 0;
+  }
+  
+  #roadmap ul li {
+    padding: 10px 0;
+    position: relative;
+  }
+  
+  #roadmap ul li:before {
+    content: '';
+    border-top: 2px solid #6a4feb;
+    position: absolute;
+    top: 15px;
+    left: 0;
+    right: 20px;
+  }
+  
+  #roadmap ul li span.title {
+    background-color: #6a4feb;
+    color: white;
+    padding: 8px 12px;
+    border-radius: 20px;
+    display: inline-block;
+    position: relative;
+    font-weight: bold;
+  }
+  
+  #roadmap ul li ul li span.title {
+    background-color: #feb64f;
+  }
+  
+  #roadmap ul ul ul li span.title {
+    background-color: #4feb6a;
+  }
+  
+  #roadmap ul li:hover span.title {
+    background-color: #4f6afeb6;
+  }
+  
+  @media (max-width: 768px) {
+    #roadmap ul {
+      padding-left: 10px;
+    }
+  
+    #roadmap ul:before {
+      left: 5px;
+    }
+  
+    #roadmap ul li span.title {
+      font-size: 14px;
+      padding: 6px 10px;
+    }
+  }
