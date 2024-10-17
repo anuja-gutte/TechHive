@@ -3,13 +3,37 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="icon" type="image/png" href="logo.jpeg">
     <title>Introduction to Trees</title>
-    <link rel="stylesheet" href="TreesIntro.css"> <!-- Link to external CSS file -->
+    <link rel="stylesheet" href="Trees.css"> <!-- Link to external CSS file -->
 </head>
 <body>
 
+    <div class="home">
+        <nav class="nav">
+            <div class="tab">
+                <div class="left">
+                    <div class="logo">
+                        <img src="../logo.jpeg" alt="Logo">
+                    </div>
+                    <a><button class="open-btn" onclick="toggleSidebar()">☰ Menu</button></a>
+                </div>
+
+                <div class="right">
+                    <ul id="list">
+                        <li><a href="#home">Home</a></li>
+                        <li><a href="about.html">About</a></li>
+                        <li><a href="#services">Services</a></li>
+                        <li><a href="#contact">Contact</a></li>
+                        <li><a href="#contact"><button class="tabs-learn-more">Learn More</button></a></li>
+                    </ul>
+                </div>
+            </div>
+        </nav>
+    </div>
+
 <header>
-    <h1>Introduction to Trees</h1>
+    <h1> Introduction to Trees </h1>
 </header>
 
 <div class="container">
@@ -20,43 +44,45 @@
 
     <h2>Basic Terminology in Trees</h2>
     <ul>
-        <li><b>Node:</b> The fundamental component of a tree that contains data and may have child nodes.</li>
-        <li><b>Root:</b> The topmost node of the tree with no parent.</li>
-        <li><b>Edge:</b> The connection between two nodes.</li>
-        <li><b>Leaf:</b> A node with no children.</li>
-        <li><b>Parent:</b> A node that has one or more child nodes.</li>
-        <li><b>Child:</b> A node that is a descendant of another node.</li>
-        <li><b>Subtree:</b> A portion of the tree that consists of a node and its descendants.</li>
+        <li><strong>Node:</strong> The fundamental component of a tree that contains data and may have child nodes.</li>
+        <li><strong>Root:</strong> The topmost node of the tree with no parent.</li>
+        <li><strong>Edge:</strong> The connection between two nodes.</li>
+        <li><strong>Leaf:</strong> A node with no children.</li>
+        <li><strong>Parent:</strong> A node that has one or more child nodes.</li>
+        <li><strong>Child:</strong> A node that is a descendant of another node.</li>
+        <li><strong>Subtree:</strong> A portion of the tree that consists of a node and its descendants.</li>
     </ul>
 
-    <br><br>
-    <img src="Trees.png" alt="Trees" width="700" height="350">
-    <br><br>
+    <br><section class="img-section">
+        <img src="Trees.png" alt="Trees" width="700" height="350">
+    </section>
+    <br>
 
     <h2>Types of Trees</h2>
     <p>There are various types of trees, each with specific properties and applications:</p>
     <ul>
-        <li><b>Binary Tree:</b> A tree where each node has at most two children (left and right).</li>
-        <li><b>Binary Search Tree (BST):</b> A binary tree in which the left child contains values less than the parent node, and the right child contains values greater than the parent node.</li>
-        <li><b>AVL Tree:</b> A self-balancing binary search tree where the difference in heights of the left and right subtrees is no more than one for any node.</li>
-        <li><b>Heap:</b> A special type of binary tree where the parent node is either greater than (max heap) or smaller than (min heap) its children.</li>
-        <li><b>B-Tree:</b> A self-balancing tree data structure that maintains sorted data and allows searches, insertions, deletions, and sequential access in logarithmic time.</li>
+        <li><strong>Binary Tree:</strong> A tree where each node has at most two children (left and right).</li>
+        <li><strong>Binary Search Tree (BST):</strong> A binary tree in which the left child contains values less than the parent node, and the right child contains values greater than the parent node.</li>
+        <li><strong>AVL Tree:</strong> A self-balancing binary search tree where the difference in heights of the left and right subtrees is no more than one for any node.</li>
+        <li><strong>Heap:</strong> A special type of binary tree where the parent node is either greater than (max heap) or smaller than (min heap) its children.</li>
+        <li><strong>B-Tree:</strong> A self-balancing tree data structure that maintains sorted data and allows searches, insertions, deletions, and sequential access in logarithmic time.</li>
     </ul>
 
-    <br><br>
-    <img src="Types-of-Tree.jpg" alt="Types of Trees" width="500" height="250">
-    <br><br>
+    <br><section class="img-section">
+        <img src="Types-of-Tree.jpg" alt="Types of Trees" width="500" height="250">
+    </section>
+    <br>
 
     <h2>Basic Structure of a Node</h2>
     <p>The basic structure of a tree node can vary based on the type of tree. Below is an example of a node structure for a binary tree in C:</p>
 
     <div class="code">
         <pre>
-struct Node {
-    int data;
-    struct Node* left;
-    struct Node* right;
-};
+            struct Node {
+                int data;
+                struct Node* left;
+                struct Node* right;
+            };
         </pre>
     </div>
 
@@ -65,29 +91,29 @@ struct Node {
     <h2>How Trees Work</h2>
     <p>In a tree, the root node is the topmost node, and each child of a node is connected by edges. Here's how basic operations work in trees:</p>
     <ul>
-        <li><b>Insertion:</b> A new node can be inserted based on tree-specific rules. For instance, in a binary search tree, the value is inserted in the left or right subtree based on its value.</li>
-        <li><b>Deletion:</b> Deleting a node involves reconnecting its children and maintaining the structure of the tree.</li>
-        <li><b>Traversal:</b> Traversing a tree means visiting each node in a specific order. Common traversal methods are in-order, pre-order, and post-order.</li>
+        <li><strong>Insertion:</strong> A new node can be inserted based on tree-specific rules. For instance, in a binary search tree, the value is inserted in the left or right subtree based on its value.</li>
+        <li><strong>Deletion:</strong> Deleting a node involves reconnecting its children and maintaining the structure of the tree.</li>
+        <li><strong>Traversal:</strong> Traversing a tree means visiting each node in a specific order. Common traversal methods are in-order, pre-order, and post-order.</li>
     </ul>
 
     <h2>Common Operations in Trees</h2>
     <p>Some common operations performed on trees include:</p>
     <ul>
-        <li><b>Insertion:</b> Inserting a node based on the tree type.</li>
-        <li><b>Deletion:</b> Removing a node while maintaining the tree structure.</li>
-        <li><b>Traversal:</b> Visiting nodes in a specific order (e.g., in-order, pre-order, post-order).</li>
-        <li><b>Searching:</b> Searching for a node based on its value.</li>
-        <li><b>Balancing:</b> Keeping the tree balanced for efficient operations (e.g., AVL trees).</li>
+        <li><strong>Insertion:</strong> Inserting a node based on the tree type.</li>
+        <li><strong>Deletion:</strong> Removing a node while maintaining the tree structure.</li>
+        <li><strong>Traversal:</strong> Visiting nodes in a specific order (e.g., in-order, pre-order, post-order).</li>
+        <li><strong>Searching:</strong> Searching for a node based on its value.</li>
+        <li><strong>Balancing:</strong> Keeping the tree balanced for efficient operations (e.g., AVL trees).</li>
     </ul>
 
     <h2>Applications of Trees</h2>
     <p>Trees are widely used in various applications due to their hierarchical structure. Some common applications include:</p>
     <ul>
-        <li><b>Binary Search Trees:</b> Used to implement fast search algorithms in databases.</li>
-        <li><b>File Systems:</b> Trees are used to represent the hierarchical structure of directories in a file system.</li>
-        <li><b>Heaps:</b> Used in priority queues and algorithms like Dijkstra’s shortest path algorithm.</li>
-        <li><b>Expression Trees:</b> Used in compilers to represent expressions and parse syntax.</li>
-        <li><b>Routing Algorithms:</b> Trees are used to find paths in network routing protocols.</li>
+        <li><strong>Binary Search Trees:</strong> Used to implement fast search algorithms in databases.</li>
+        <li><strong>File Systems:</strong> Trees are used to represent the hierarchical structure of directories in a file system.</li>
+        <li><strong>Heaps:</strong> Used in priority queues and algorithms like Dijkstra’s shortest path algorithm.</li>
+        <li><strong>Expression Trees:</strong> Used in compilers to represent expressions and parse syntax.</li>
+        <li><strong>Routing Algorithms:</strong> Trees are used to find paths in network routing protocols.</li>
     </ul>
 </div>
 
