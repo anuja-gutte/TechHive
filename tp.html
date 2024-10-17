@@ -1,45 +1,160 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>DSA Topics</title>
-    <link rel="stylesheet" href="tp.css">
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <style>
+    /* Left Section Styling */
+    .left-section {
+      width: 200px;
+      background-color: rgb(233, 228, 228);
+      height: 100vh;
+      position: fixed;
+      top: 60px; /* Push down below the top navbar */
+      left: 0;
+      overflow-x: hidden;
+      display: flex;
+      flex-direction: column;
+      padding-top: 10%;
+      border-right: 3px solid rgb(236, 232, 232);
+      z-index: 2; /* Ensure it's below the top navbar but above the content */
+    }
+
+    .left-section a {
+      padding: 8px 16px;
+      font-size: 18px;
+      color: grey;
+      display: block;
+      text-decoration: none;
+    }
+
+    .left-section a:hover {
+      background-color: orange;
+    }
+
+    /* Main Content */
+    .main-content {
+      margin-top: 60px; /* Space for top navbar */
+      margin-left: 200px; /* Space for left section */
+      width: calc(100% - 200px);
+      height: calc(100vh - 60px);
+      border: none;
+    }
+
+    /* Footer Styling */
+    footer {
+      background-color: #161616d6;
+      color: grey;
+      padding: 20px 0;
+      text-align: center;
+      width: 100%;
+      position: relative;
+      bottom: 0;
+      left: 0;
+      flex-shrink: 0;
+    }
+
+    .footer-container {
+      display: flex;
+      justify-content: space-between;
+      max-width: 1000px;
+      margin: 0 auto;
+      flex-wrap: wrap;
+    }
+
+    .footer-section {
+      margin: 10px;
+    }
+
+    .footer-section ul {
+      list-style: none;
+      padding: 0;
+    }
+
+    .footer-section ul li {
+      display: inline-block;
+      margin-right: 15px;
+    }
+
+    .footer-section ul li a {
+      color: grey;
+      text-decoration: none;
+      transition: color 0.3s;
+    }
+
+    .footer-section ul li a:hover {
+      color: #00aaff;
+    }
+
+    .social-icons a {
+      margin: 0 10px;
+      display: inline-block;
+    }
+
+    .social-icons img {
+      width: 25px;
+      height: 25px;
+    }
+
+    .footer-bottom {
+      margin-top: 20px;
+      font-size: 14px;
+    }
+
+    .back-to-top {
+      color: #00aaff;
+      text-decoration: none;
+    }
+
+    .back-to-top:hover {
+      color: #0088cc;
+    }
+
+    /* Responsive Design */
+    @media (max-width: 768px) {
+      .footer-container {
+        flex-direction: column;
+        align-items: center;
+      }
+
+      .footer-section ul li {
+        display: block;
+        margin: 5px 0;
+      }
+
+      .footer-section {
+        text-align: center;
+      }
+    }
+  </style>
 </head>
 <body>
-    <header>
-        <h1>Explore Data Structures and Algorithms</h1>
-        <p>Click on a topic to learn more</p>
-    </header>
+  <div id="navbar"></div>
+  <nav class="left-section">
+    <a href="Recursion2/RecursionIntro.html" target="main-frame">Introduction</a>
+    <a href="Recursion-Video.html" target="main-frame">Synopsis</a>
+    <a href="Recursion-Algorithm.html" target="main-frame">Algorithm & Analysis</a>
+    <a href="Recursion-Code.html" target="main-frame">Code</a>
+    <a href="RecursionDemo.html" target="main-frame">Visualization</a>
+    <a href="Recursion-Application.html" target="main-frame">Applications</a>
+    <a href="Recursion-quiz.html" target="main-frame">Quiz</a>
+  </nav>
+  <footer>
+   
 
-    <div class="grid-container">
-        <div class="grid-item" onclick="redirect('arrays.html')">
-            <h2>Arrays</h2>
-            <p>Arrays store elements in contiguous memory locations, allowing indexed access to elements.</p>
-        </div>
-        <div class="grid-item" onclick="redirect('linkedlists.html')">
-            <h2>Linked Lists</h2>
-            <p>Linked lists consist of nodes where each node contains data and a pointer to the next node.</p>
-        </div>
-        <div class="grid-item" onclick="redirect('trees.html')">
-            <h2>Trees</h2>
-            <p>Trees are hierarchical data structures with nodes connected by edges. They are used in search operations.</p>
-        </div>
-        <div class="grid-item" onclick="redirect('graphs.html')">
-            <h2>Graphs</h2>
-            <p>Graphs consist of vertices connected by edges, representing relationships between entities.</p>
-        </div>
-        <div class="grid-item" onclick="redirect('heaps.html')">
-            <h2>Heaps</h2>
-            <p>Heaps are complete binary trees where each node is greater (max heap) or smaller (min heap) than its children.</p>
-        </div>
-        <div class="grid-item" onclick="redirect('hashing.html')">
-            <h2>Hashing</h2>
-            <p>Hashing is a technique to map data to a fixed-size table using a hash function for faster access.</p>
-        </div>
-        <!-- Add more topics as needed -->
+      
+    <!-- Copyright and Back to Top -->
+    <div class="footer-bottom">
+      <p>© 2024 TechHive. All Rights Reserved.</p>
     </div>
+  </footer>
 
-    <script src="script.js"></script>
+
+  <iframe class="main-content" name="main-frame" src="Recursion2/RecursionIntro.html"></iframe>
+
+  <!-- Footer -->
+  
+  <script src="../Home/navbar2.js"></script>
 </body>
 </html>

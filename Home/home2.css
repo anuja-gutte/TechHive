@@ -114,6 +114,7 @@ li a{
 
  /* Sidebar styles */
  .sidebar {
+    font-family: Arial, Helvetica, sans-serif;
     z-index: 1000;
     height: 100%;
     width: 0;
