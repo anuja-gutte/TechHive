@@ -1,0 +1,239 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="icon" type="image/png" href="logo.jpeg">
+    <title>Trees Algorithm</title>
+    <link rel="stylesheet" href="Trees.css"> <!-- Link to external CSS file -->
+</head>
+<body>
+
+    <div class="home">
+        <nav class="nav">
+            <div class="tab">
+                <div class="left">
+                    <div class="logo">
+                        <img src="../logo.jpeg" alt="Logo">
+                    </div>
+                    <a><button class="open-btn" onclick="toggleSidebar()">☰ Menu</button></a>
+                </div>
+
+                <div class="right">
+                    <ul id="list">
+                        <li><a href="#home">Home</a></li>
+                        <li><a href="about.html">About</a></li>
+                        <li><a href="#services">Services</a></li>
+                        <li><a href="#contact">Contact</a></li>
+                        <li><a href="#contact"><button class="tabs-learn-more">Learn More</button></a></li>
+                    </ul>
+                </div>
+            </div>
+        </nav>
+    </div>
+
+    <header class="main-header">
+        <h1>Algorithm And Analysis of Trees</h1>
+    </header>
+
+    <div class="container">
+        <!-- Algorithm for Insertion of node in binary search tree -->
+            <div>
+                <h2>Algorithm for Insertion</h2>
+                <ul>
+                    <li><b>Step 1: </b>If the tree is empty, create the new node as the root.</li>
+                    <li><b>Step 2: </b>Traverse the tree according to its rules (e.g., binary trees use comparisons to decide left or right).</li>
+                    <li><b>Step 3: </b>Find the appropriate position (empty left or right child).</li>
+                    <li><b>Step 4: </b>Insert the new node at that position.</li>
+                    <li><b>Step 5: </b>Return the modified tree.</li>
+                </ul>
+            </div>
+            <!-- New Insertion Block -->
+            <div class="insertion">
+                <h4>Insert (TREE, VAL)</h4>
+                <pre>
+        Step 1: IF TREE NULL
+                    Allocate memory for TREE
+                    SET TREE -> DATA = VAL
+                    SET TREE-> LEFT TREE-RIGHT NULL
+                ELSE
+                    IF VAL < TREE -> DATA
+                        Insert (TREE -> LEFT, VAL) 
+                    ELSE        
+                        Insert (TREE -> RIGHT, VAL)
+                    [END OF IF]
+                [END OF IF]
+        Step 2: END
+                </pre>
+            </div>
+
+            <div>
+                <h2>Algorithm for Deletion</h2>
+                <ul>
+                    <li><b>Step 1: </b>If the tree is empty, return.</li>
+                    <li><b>Step 2: </b>Traverse the tree to find the node to be deleted.</li>
+                    <li><b>Step 3: </b>Handle the deletion based on the node's children:</li>
+                    <ul>
+                        <li>No children: Simply remove the node.</li>
+                        <li>One child: Replace the node with its child.</li>
+                        <li>Two children: Replace the node with its in-order successor/predecessor (smallest/largest in the subtree), then delete the successor/predecessor.</li>
+                    </ul>
+                    <li><b>Step 4: </b>Return the modified tree.</li>
+                </ul>
+            </div>
+    
+            <!-- New Deletion Block -->
+            <div class="deletion">
+                <h4>Delete (TREE, VAL) </h4>
+                <pre>
+        Step 1: IF TREE = NULL
+                    Write "VAL not found in the tree"
+                ELSE IF VAL < TREE -> DATA
+                    Delete(TREE->LEFT, VAL)
+                ELSE IF VAL > TREE -> DATA
+                    Delete (TREE -> RIGHT, VAL)
+                ELSE IF TREE -> LEFT AND TREE -> RIGHT
+                    SET TEMP find LargestNode (TREE -> LEFT)
+                    SET TREE -> DATA TEMP -> DATA
+                    Delete (TREE -> LEFT, TEMP -> DATA)
+                ELSE
+                    SET TEMP = TREE
+                    IF TREE->LEFT = NULL AND TREE > RIGHT = NULL
+                        SET TREE = NULL
+                    ELSE IF TREE -> LEFT != NULL
+                        SET TREE TREE -> LEFT
+                    ELSE
+                        SET TREE TREE -> RIGHT
+                    [END OF IF]
+                    FREE TEMP
+                [END OF IF]
+        Step 2: END    
+                </pre>
+            </div>
+
+            <div>
+                <h2>Algorithm for Searching an Element</h2>
+                <ul>
+                    <li><b>Step 1: </b>If the tree is empty, return that the element is not found.</li>
+                    <li><b>Step 2: </b>Start at the root and traverse the tree according to its rules (e.g., in a binary tree, compare values to decide whether to go left or right).</li>
+                    <li><b>Step 3: </b>At each node, check if the current node contains the target value.</li>
+                    <ul>
+                        <li>If yes, return the node or its value.</li>
+                        <li>If no, move to the next node based on the tree structure.</li>
+                    </ul>
+                    <li><b>Step 4: </b>If the end of the path is reached without finding the value, return that the element is not found.</li>
+                </ul>
+            </div>
+    
+            <!-- New Searching Block -->
+            <div class="searching">
+                <h4>searchElement: </h4>
+                <pre>
+        Step 1: IF TREE -> DATA VAL OR TREE = NULL
+                    Return TREE
+                ELSE 
+                    IF VAL TREE -> DATA
+                        Return search Element (TREE -> LEFT, VAL) 
+                    ELSE
+                        Return searchElement(TREE -> RIGHT, VAL)
+                    [END OF IF]
+                [END OF IF]
+        Step 2: END
+                </pre>
+            </div>            
+        
+            <div>
+                <h2>Traversal of Elements</h2>
+                <ul>
+                    <li><b>Step 1: </b>Start at the root of the tree.</li>
+                    <li><b>Step 2: </b>Depending on the traversal type (Pre-order, In-order, Post-order):</li>
+                    <ol>
+                        <li>Pre-order: Visit the root, traverse the left subtree, then the right subtree.</li>
+                        <li>In-order: Traverse the left subtree, visit the root, then the right subtree.</li>
+                        <li>Post-order: Traverse the left subtree, traverse the right subtree, then visit the root.</li>
+                    </ol>
+                    <li><b>Step 3: </b>Repeat the process for each subtree recursively.</li>
+                    <li><b>Step 4: </b>Return when all nodes have been visited.</li>
+                </ul>
+            </div>
+    
+            <!-- New Traversing Block -->
+            <ol>
+                <div class="traversing">
+                    <li><h4>Pre-order Traversing</h4></li>
+                    <pre>
+        Step 1: Repeat Steps 2 to 4 while TREE != NULL
+        Step 2:     Write TREE -> DATA
+        Step 3:     PREORDER (TREE -> LEFT)
+        Step 4:     PREORDER (TREE -> RIGHT)
+                [END OF LOOP]
+        Step 5: END
+                    </pre>
+                </div>
+
+                <div class="traversing">
+                    <li><h4>In-order Traversing</h4></li>
+                    <pre>
+        Step 1: Repeat Steps 2 to 4 while TREE != NULL
+        Step 2:     INORDER (TREE -> LEFT)
+        Step 3:     Write TREE -> DATA
+        Step 4:     INORDER (TREE -> RIGHT)
+                [END OF LOOP]
+        Step 5: END
+                    </pre>
+                </div>
+
+                <div class="traversing">
+                    <li><h4>Post-order Traversing</h4></li>
+                    <pre>
+        Step 1: Repeat Steps 2 to 4 while TREE != NULL
+        Step 2:     POSTORDER (TREE -> LEFT)
+        Step 3:     POSTORDER (TREE -> RIGHT)
+        Step 4:     Write TREE -> DATA
+                [END OF LOOP]
+        Step 5: END
+                    </pre>
+                </div>
+            </ol>
+
+            <h2 style="text-align: center;">Time Complexity Table for Tree Operations</h2>
+
+            <div class="table-container">
+                <table>
+                    <thead>
+                        <tr>
+                            <th>Operation</th>
+                            <th>Binary Tree</th>
+                            <th>BST (Balanced)</th>
+                            <th>BST (Unbalanced)</th>
+                            <th>Heap</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td><b>Insertion</b></td>
+                            <td>O(n)</td>
+                            <td>O(log n)</td>
+                            <td>O(n)</td>
+                            <td>O(log n)</td>
+                        </tr>
+                        <tr>
+                            <td><b>Deletion</b></td>
+                            <td>O(n)</td>
+                            <td>O(log n)</td>
+                            <td>O(n)</td>
+                            <td>O(log n)</td>
+                        </tr>
+                        <tr>
+                            <td><b>Search</b></td>
+                            <td>O(n)</td>
+                            <td>O(log n)</td>
+                            <td>O(n)</td>
+                            <td>O(n)</td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+        </div>
+</body>
+</html>
