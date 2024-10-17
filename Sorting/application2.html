@@ -1,0 +1,220 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Applications of Search Algorithms</title>
+    <link rel="stylesheet" href="styles.css">
+    <style>
+        .body{
+        font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+       
+    }
+    .home{
+      max-width: 1300px;
+      margin: 0 auto;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+    }
+    
+    *{
+        text-decoration: none;
+        margin: 0;
+        padding: 0;
+        
+    }
+    
+    .nav{
+        position: fixed;
+    }
+    
+    .tab{
+        background: black;
+        font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+        width: 100%;
+        /* padding-left: 15px;
+        padding-right: 15px; */
+    }
+    
+    .tab{
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+    }
+    
+    img{
+        width: 50px;
+        border-radius: 100px;
+        padding-right: 50px;
+    }
+    
+    .open-btn{
+        font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+        font-size:15px;
+        cursor: pointer;
+        display: inline-block;
+        background-color: black;
+        color:white;
+        border: none;
+        
+       
+    }
+    
+    .arrow {
+        border: solid white;
+        border-width: 0 3px 3px 0;
+        display: inline-block;
+        padding: 2px;
+      }
+    
+    .down {
+        transform: rotate(45deg);
+        -webkit-transform: rotate(45deg);
+      }
+    
+    .open-btn:hover{
+        color:orange;
+        transition-duration: 0.3s;
+    
+    }
+    
+    a:hover{
+        color: orange;
+        transition-duration: 0.3s;
+    }
+    
+    .left{
+        display: inline-flex;
+        align-items: center;
+        /* margin-left: 10%; */
+        
+    }
+    
+    
+    .tabs-learn-more{
+        font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+        
+        background-color: black;
+        border-width: 2px;
+        border-style: solid;
+        border-color: white;
+        color: white;
+        font-weight: 500;
+        border-radius: 20px;
+        padding: 8px;
+        cursor: pointer;
+    }
+    
+    .tabs-learn-more:hover{
+        background-color: rgb(28, 205, 15);
+        transition-duration: 0.3s;
+        border-color:  rgb(28, 205, 15);
+        
+    }
+    
+    li{
+        list-style: none;
+        display: inline-block;
+    }
+    
+    li a{
+        color: white;
+        font-size: 15px;
+        margin-right: 20px;
+    }
+    
+    </style>
+</head>
+<body>
+    <!-- <div id="navbar"></div> -->
+    <nav>
+        <div class="tab">
+            <div class="left">
+            <div class="logo">
+                <img src="../logo.jpeg">
+            </div>
+            <a><button class="open-btn" onclick="toggleSidebar()">☰ Menu</button></a>
+            </div>
+        
+                <div class="right">
+                    <ul id="list">
+                        <li> <a href="#home">Home</a></li>
+                        <li><a href="about.html">About</a></li>
+                        <li><a href="#services">Services</a></li>
+                        <li> <a href="#contact">Contact</a></li>
+                        <li><a href="#contact"><button class="tabs-learn-more">Learn More</button></a></li>
+                        
+                    </ul>
+                   
+                
+                </div>
+        
+        </div>
+    </nav>
+
+    <div class="home">
+        <h1>Applications of Sort Algorithms</h1><br>
+
+        <div class="application">
+            <!-- Section 1: Data Structures -->
+            <h2>Applications of Insertion Sort:</h2> <br>
+            <p>
+                1]Technical Applications:<br>
+                
+                a.Small Data Sets:<br>
+                Efficient for small or partially sorted datasets where overhead of more complex algorithms is not justified.
+            </p>
+            <p>
+                b.Online Sorting:<br>
+                Useful in scenarios where data is being received in a stream and needs to be sorted on the fly.
+            </p>
+            <p>
+                c.Memory Management:<br>
+                Helps in organizing data in dynamic programming problems or when implementing certain algorithms.
+            </p><br>
+            <p>
+                2]Real-life Examples:<br>
+                
+                a.Sorting cards in your hand while playing a card game.<br>
+            </p>
+            <p>
+                b.Arranging a list of tasks or items by priority as they come in.<br>
+            </p>
+            <p>
+                c.Real-time sorting of sensor data in embedded systems.<br>
+            </p>
+
+            <!-- Section 2: Parsing Expressions -->
+            <h2>Applications of Merge Sort:</h2> <br>
+            <p>
+                1]Technical Applications:<br>
+                
+                a.Large Data Sets:<br>
+                Efficient for sorting large datasets that do not fit into memory and need to be sorted using external storage (external sorting).
+            </p>
+            <p>
+                b.Stable Sorting:<br>
+                Maintains the relative order of records with equal keys, making it useful for applications where stability is important.
+            </p>
+            <p>
+                c.Parallel Processing:<br>
+                Can be efficiently implemented in parallel processing environments, enhancing performance on multi-core systems.
+            </p><br>
+            <p>
+                2]Real-life Examples:<br>
+                
+                a.Sorting large databases in data analytics applications.<br>
+            </p>
+            <p>
+                b.Organizing records in applications that require consistent performance regardless of data characteristics.<br>
+            </p>
+            <p>
+                c.Sorting a large collection of data received from sensors or logs over time.<br>
+            </p>
+        </div>
+    </div>
+
+    <script src="../Home/navbar2.js"></script>
+</body>
+</html>
