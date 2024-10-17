@@ -1,0 +1,200 @@
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    line-height: 1.5;
+    background-color: #f4f4f9;
+    color: #333;
+    padding-left: 10%;
+    padding-right: 10%;
+}
+
+/* Navbar css */
+.nav {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    z-index: 1000;
+}
+
+.tab {
+    background: black;
+    font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+    width: 100%;
+}
+
+.tab {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.logo img {
+    width: 65px;
+    padding-right: 40px;
+}
+
+.open-btn {
+    font-size: 15px;
+    background-color: black;
+    color: white;
+    border: none;
+    padding: 10px;
+    cursor: pointer;
+}
+
+.open-btn:hover {
+    color: orange;
+    transition: color 0.3s;
+}
+
+.left {
+    display: inline-flex;
+    align-items: center;
+}
+
+.tabs-learn-more {
+    background-color: black;
+    color: white;
+    border: 2px solid white;
+    padding: 8px 16px;
+    cursor: pointer;
+    border-radius: 20px;
+    font-weight: 500;
+}
+
+.tabs-learn-more:hover {
+    background-color: rgb(28, 205, 15);
+    border-color: rgb(28, 205, 15);
+    transition: 0.3s;
+}
+
+/*List css*/
+.right ul {
+    list-style: none;
+    display: flex;
+    margin: 0;
+    padding: 20;
+}
+
+.right ul li {
+    margin-right: 20px;
+    line-height: 2.5;
+}
+
+.right ul li a {
+    color: white;
+    text-decoration: none;
+    font-size: 15px;
+}
+
+.right ul li a:hover {
+    color: orange;
+    transition: color 0.3s;
+}
+
+/*Header css*/
+header {
+    background-color:#f4f4f4;
+    color: rgb(12, 4, 4);
+    padding: 0em;
+    text-align: center;
+    width: 100%;
+}
+
+/*Heading css*/
+h1 {
+    margin: 0;
+    text-align: center; 
+    border-bottom: 3px solid rgb(20, 153, 11); 
+    display: inline-block; 
+    padding-bottom: 5px; 
+    padding-top: 70px;
+}
+
+h2 {
+    color: #000000;
+}
+
+/*image css*/
+.img-section {
+    margin-top: 20px;
+    margin-bottom: 20px;
+    text-align: center;
+}
+
+.img-section img {
+    max-width: 700px;
+    height: auto;
+    border: 2px solid #4CAF50;
+    border-radius: 10px;
+
+}
+
+/*para css*/
+p {
+    line-height: 1.6;
+}
+
+/*code snippet css*/
+.code {
+    background-color: #f1f1f1;
+    padding: 10px;
+    border-left: 5px solid #4CAF50;
+    margin: 20px 0;
+    font-family: monospace;
+}
+
+/*Footer css*/
+footer {
+    text-align: center;
+    padding: 20px 0;
+    background-color: #4CAF50;
+    color: white;
+}
+
+/*table css*/
+.table-container {
+    width: 80%;
+    margin: 20px auto;
+    background-color: #fff;
+    padding: 20px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    border-radius: 8px;
+}
+
+table {
+    width: 100%;
+    border-collapse: collapse;
+    margin: 10px 0;
+}
+
+thead {
+    background-color: rgb(20, 153, 11);
+    color: white;
+}
+
+thead th {
+    padding: 12px;
+    font-size: 16px;
+    text-align: center;
+}
+
+tbody td {
+    padding: 10px;
+    text-align: center;
+    border: 1px solid #ddd;
+}
+
+tbody tr:nth-child(even) {
+    background-color: #f2f2f2;
+}
+
+tbody tr:hover {
+    background-color: #ddd;
+}
+
+b {
+    font-weight: bold;
+}
