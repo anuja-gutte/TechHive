@@ -1,0 +1,219 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="icon" type="image/png" href="logo.jpeg">
+    <title>Trees Overview</title>
+    <link rel="stylesheet" href="Trees.css">
+    <style>
+        .body{
+        font-family: Arial, Helvetica, sans-serif;   
+        }
+
+        .home{
+        max-width: 1300px;
+        margin: 0 auto;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        }
+
+        *{
+            text-decoration: none;
+            margin: 0;
+            padding: 0;
+        }
+
+        h2{
+            text-align: center;
+        }
+
+        img{
+            width: 50px;
+            border-radius: 100px;
+            padding-right: 50px;
+        }
+
+        .open-btn{
+            font-family: Arial, Helvetica, sans-serif;
+            font-size:15px;
+            cursor: pointer;
+            display: inline-block;
+            background-color: black;
+            color:white;
+            border: none;
+        }
+
+        .arrow {
+            border: solid white;
+            border-width: 0 3px 3px 0;
+            display: inline-block;
+            padding: 2px;
+        }
+
+        .down {
+            transform: rotate(45deg);
+            -webkit-transform: rotate(45deg);
+        }
+
+        .open-btn:hover{
+            color:orange;
+            transition-duration: 0.3s;
+        }
+
+        a:hover{
+            color: orange;
+            transition-duration: 0.3s;
+        }
+
+        .left{
+            display: inline-flex;
+            align-items: center;
+            /* margin-left: 10%; */
+        }
+
+        .tabs-learn-more{
+            font-family: Arial, Helvetica, sans-serif;
+            background-color: black;
+            border-width: 2px;
+            border-style: solid;
+            border-color: white;
+            color: white;
+            font-weight: 500;
+            border-radius: 20px;
+            padding: 8px;
+            cursor: pointer;
+        }
+
+        .tabs-learn-more:hover{
+            background-color: rgb(28, 205, 15);
+            transition-duration: 0.3s;
+            border-color:  rgb(28, 205, 15);
+        }
+
+        li{
+            list-style: none;
+            display: inline-block;
+        }
+
+        li a{
+            color: white;
+            font-size: 15px;
+            margin-right: 20px;
+        }
+        /* Styles for the video and description */
+        .video-section {
+            background-color: transparent; 
+            padding: 20px;
+            border-radius: 2px;
+            box-shadow: 0 4px 8px rgba(36, 30, 30, 0.1);
+            margin: 20px 0;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            flex-direction: column;
+            }
+
+            /* Container for video with border */
+            .video-container {
+            border: 3px solid rgb(20, 153, 11);
+            padding: 15px;
+            border-radius: 10px;
+            max-width: 70%; 
+            width: 100%;
+            margin: 0 auto;
+            }
+
+            .video-description {
+            padding-top: 20px;
+            font-size: 16px;
+            color: #333;
+            }
+
+            /* Centering the video within the video-container */
+            iframe {
+            width: 100%;
+            height: 450px; /* Adjust the height as needed */
+            border-radius: 10px;
+            }
+    </style>
+</head>
+
+<body>
+
+    <div class="home">
+        <nav class="nav">
+            <div class="tab">
+                <div class="left">
+                    <div class="logo">
+                        <img src="../logo.jpeg" alt="Logo">
+                    </div>
+                    <a><button class="open-btn" onclick="toggleSidebar()">☰ Menu</button></a>
+                </div>
+
+                <div class="right">
+                    <ul id="list">
+                        <li><a href="#home">Home</a></li>
+                        <li><a href="about.html">About</a></li>
+                        <li><a href="#services">Services</a></li>
+                        <li><a href="#contact">Contact</a></li>
+                        <li><a href="#contact"><button class="tabs-learn-more">Learn More</button></a></li>
+                    </ul>
+                </div>
+            </div>
+        </nav>
+    </div>
+
+<header>
+    <h1> Tree Explanation</h1>
+</header>
+
+<div class="video-section" id="Details on types of queue">
+    <!-- YouTube Video Embed within a bordered container -->
+        <!-- Video Description/Overview -->
+    <div class="video-description" style="padding-top: 40px;">
+        <h2>Binary Tree</h2>
+        <div class="video-container">
+            <iframe width="695" height="391" src="https://www.youtube.com/embed/-DzowlcaUmE" title="Binary Tree in Data Structures | All about Binary Tree | DSA Course" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen>Binary Tree</iframe>
+        </div>
+        <br><br>
+        <h2 style="text-align: left;">Video Overview:</h2>
+
+        <p style="padding-top: 20px; padding-bottom: 10px;">
+            In this video of Binary tree, we will learn the following:
+            <ul>
+                <li>Structure, representation and implementation of Binary Tree.</li>
+                <li>Getting acquainted with terminologies related to trees, binary trees and BST.</li>
+                <li>Binary Tree properties and the differences between a binary tree and a binary search tree.</li>
+                <li>Operations on Binary Tree, their algorithms, and time and space complexity analysis.</li>
+                <li>Uses and relationship with other data structures.</li>
+                <li>Applications of a Binary Tree in searching, sorting etc.</li>
+            </ul>
+        </p>
+
+        <br><br>
+
+        <h2>Binary Search Tree</h2>
+        <div class="video-container">
+            <iframe width="695" height="391" src="https://www.youtube.com/embed/qAeitQWjNNg" title="Binary Search Trees | BST in One Video | Java Placement Course | Data Structures &amp; Algorithms" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen>Binary Search Tree</iframe>
+        </div>
+        <br><br>
+        <h2 style="text-align: left;">Video Overview:</h2>
+
+        <p style="padding-top: 20px; padding-bottom: 10px;">
+            In this video of Binary search tree, we will learn the following:
+            <ul>
+                <li>Structure, representation and implementation of BST.</li>
+                <li>Getting acquainted with terminologies related to trees, binary trees and BST.</li>
+                <li>Binary Search Tree properties and the differences between a binary tree and a binary search tree.</li>
+                <li>Operations on BST, their algorithms, and time and space complexity analysis.</li>
+                <li>Uses and relationship with other data structures such as Dictionaries and Priority Queues.</li>
+                <li>Applications of a BST in searching, sorting etc.</li>
+            </ul>
+        </p>
+    </div>
+</div>
+
+</body>
+</html>
