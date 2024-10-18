@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="icon" type="image/png" href="logo.jpeg">
+    <link rel="stylesheet" href="Trees.css">
+    <title>Tree Visualization</title>
+    <style>
+        .tree-container {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+        }
+
+        .children-container {
+            display: flex;
+            justify-content: center;
+            margin-top: 20px; /* Add some space between parent and children */
+            position: relative; /* Relative positioning for connectors */
+        }
+
+        .node {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            width: 60px;
+            height: 60px;
+            background-color: #4CAF50;
+            color: white;
+            font-weight: bold;
+            border-radius: 50%;
+            line-height: 60px;
+            text-align: center;
+            margin: 0 20px; /* Adjust horizontal spacing */
+            position: relative; /* Allow absolute positioning for connectors */
+        }
+
+        .node-connector {
+            width: 2px;
+            height: 50px; /* Adjust the height of the connector */
+            background-color: black;
+            position: absolute;
+            top: -50px; /* Position above the node */
+            left: 50%; /* Center the connector */
+            transform: translateX(-50%); /* Centering correction */
+        }
+
+        .connector-container {
+            display: flex;
+            justify-content: center;
+            width: 100%;
+            margin-top: 0; /* No extra space */
+        }
+
+    </style>
+</head>
+<body>
+
+<div class="container">
+    <h1>Tree Operations Visualization</h1>
+    
+    <div class="input-container">
+        <input type="text" id="value-input" placeholder="Enter value" />
+        <button onclick="insertNode()">Insert</button>
+        <button onclick="inOrderTraversal()">In-Order Traversal</button>
+    </div>
+    
+    <div class="tree-container" id="tree-container"></div>
+    <div id="output-container"></div>
+</div>
+
+<script src="Demo.js"></script>
+</body>
+</html>
