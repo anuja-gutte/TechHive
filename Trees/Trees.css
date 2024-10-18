@@ -2,7 +2,7 @@ body {
     font-family: Arial, sans-serif;
     margin: 0;
     padding: 0;
-    line-height: 1.5;
+    line-height: 1.6;
     background-color: #f4f4f9;
     color: #333;
     padding-left: 10%;
@@ -20,7 +20,7 @@ body {
 
 .tab {
     background: black;
-    font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+    font-family: Arial, Helvetica, sans-serif;
     width: 100%;
 }
 
@@ -198,3 +198,63 @@ tbody tr:hover {
 b {
     font-weight: bold;
 }
+
+/*
+.footer{
+    position: relative;
+    bottom: 0;
+    width: 100%;
+    padding: 40px 0;
+    background-color: black;
+}
+.footer .social{
+    text-align: center;
+    padding-bottom: 25px;
+    color: beige;
+}
+.footer .social a{
+    font-size: 22px;
+    color: beige;
+    border: 2px solid rgb(115, 208, 180);
+    width: 38px;
+    height: 36px;
+    line-height: 38px;
+    display: inline-block;
+    text-align: center;
+    border-radius: 100%;
+    margin: 0 8px;
+    box-shadow: inset 0 0 10px rgb(115, 208, 180), 0 0 10px rgb(115, 208, 180);
+    transition: 0.3s ease;
+}
+.footer .social a:hover{
+    transform: scale(1.2)translateY(-10px);
+    color: rgb(115, 208, 180);
+    border: 2px solid rgb(115, 208, 180);
+}
+.footer ul{
+    margin-top: 0;
+    padding: 0;
+    font-size: 18px;
+    line-height: 1.6;
+    margin-bottom: 0;
+    text-align: center;
+}
+.footer ul li a{
+    color: beige;
+    border-bottom: 3px solid transparent;
+    transition: 0.2s ease;
+}
+.footer ul li a:hover{
+    border-bottom: 3px solid rgb(115, 208, 180);
+}
+.footer ul li{
+    display: inline-block;
+    padding: 0 15px;
+}
+.footer .copyright{
+    margin-top: 15px;
+    text-align: center;
+    font-size: 12px;
+    color: beige;
+}
+    */
