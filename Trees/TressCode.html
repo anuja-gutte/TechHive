@@ -1,0 +1,233 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="icon" type="image/png" href="logo.jpeg">
+    <title>Introduction to Trees</title>
+    <link rel="stylesheet" href="Trees.css"> <!-- Link to external CSS file -->
+    <style>
+        .home{
+        max-width: 1300px;
+        margin: 0 auto;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        }
+
+        *{
+            text-decoration: none;
+            margin: 0;
+            padding: 0;
+            
+        }
+
+        
+        .arrow {
+            border: solid white;
+            border-width: 0 3px 3px 0;
+            display: inline-block;
+            padding: 2px;
+        }
+
+        .down {
+            transform: rotate(45deg);
+            -webkit-transform: rotate(45deg);
+        }
+    </style>
+</head>
+
+<body>
+    <div class="home">
+        <nav class="nav">
+            <div class="tab">
+                <div class="left">
+                    <div class="logo">
+                        <img src="../logo.jpeg" alt="Logo">
+                    </div>
+                    <a><button class="open-btn" onclick="toggleSidebar()">☰ Menu</button></a>
+                </div>
+
+                <div class="right">
+                    <ul id="list">
+                        <li><a href="#home">Home</a></li>
+                        <li><a href="about.html">About</a></li>
+                        <li><a href="#services">Services</a></li>
+                        <li><a href="#contact">Contact</a></li>
+                        <li><a href="#contact"><button class="tabs-learn-more">Learn More</button></a></li>
+                    </ul>
+                </div>
+            </div>
+        </nav>
+    </div>
+
+<header>
+<h1> Code Implementation of Tree - Java </h1>
+</header>
+<main>
+    <div class="section" id="theory" style=" padding: 20px; margin: 20px 0;">
+    <p  style="font-size: larger;">In this section, we will explore the fundamental operations of a tree, including insertion, 
+        deletion, searching, and traversing of a node. To help solidify our understanding of these operations, we'll implement 
+        a basic trees in Java. This hands-on example will allow you to grasp the core concepts of tree behavior effectively. 
+        Furthermore, you are encouraged to try implementing this in other programming languages as well . Doing so will deepen 
+        your comprehension of the topic and provide valuable insights into how trees can be handled across different programming environments.</p>
+    </div>
+    <br>
+
+    <h3 > Simple Example : </h3>
+        
+    <div class="section" id="code block" style="background-color:#a8a8a81a; padding: 20px; border-radius: 2px; box-shadow: 0 4px 8px rgba(36, 30, 30, 0.1); margin: 20px 0;">
+        <pre>
+    class Node {
+        int data;
+        Node left, right;
+    
+        public Node(int item) {
+            data = item;
+            left = right = null;
+        }
+    }
+    
+    class BinarySearchTree {
+        Node root;
+    
+        // Insert a new node
+        void insert(int data) {
+            root = insertRec(root, data);
+        }
+    
+        Node insertRec(Node root, int data) {
+            if (root == null) {
+                root = new Node(data);
+                return root;
+            }
+            if (data < root.data)
+                root.left = insertRec(root.left, data);
+            else if (data > root.data)
+                root.right = insertRec(root.right, data);
+            return root;
+        }
+    
+        // In-order Traversal
+        void inOrder() {
+            inOrderRec(root);
+        }
+    
+        void inOrderRec(Node root) {
+            if (root != null) {
+                inOrderRec(root.left);
+                System.out.print(root.data + " ");
+                inOrderRec(root.right);
+            }
+        }
+    
+        // Search a key
+        Node search(int data) {
+            return searchRec(root, data);
+        }
+    
+        Node searchRec(Node root, int data) {
+            if (root == null || root.data == data)
+                return root;
+            if (data < root.data)
+                return searchRec(root.left, data);
+            return searchRec(root.right, data);
+        }
+    
+        // Delete a node
+        void delete(int data) {
+            root = deleteRec(root, data);
+        }
+    
+        Node deleteRec(Node root, int data) {
+            if (root == null)
+                return root;
+    
+            if (data < root.data)
+                root.left = deleteRec(root.left, data);
+            else if (data > root.data)
+                root.right = deleteRec(root.right, data);
+            else {
+                if (root.left == null)
+                    return root.right;
+                else if (root.right == null)
+                    return root.left;
+    
+                root.data = minValue(root.right);
+                root.right = deleteRec(root.right, root.data);
+            }
+            return root;
+        }
+    
+        int minValue(Node root) {
+            int minValue = root.data;
+            while (root.left != null) {
+                minValue = root.left.data;
+                root = root.left;
+            }
+            return minValue;
+        }
+    }
+    
+    public class Main {
+        public static void main(String[] args) {
+            BinarySearchTree tree = new BinarySearchTree();
+            
+            // Insertion
+            tree.insert(50);
+            tree.insert(30);
+            tree.insert(20);
+            tree.insert(40);
+            tree.insert(70);
+            tree.insert(60);
+            tree.insert(80);
+            
+            // In-order Traversal
+            System.out.println("Inorder traversal:");
+            tree.inOrder();
+    
+            // Search
+            int key = 40;
+            Node searchResult = tree.search(key);
+            System.out.println("\n\nSearch result for key " + key + ": " + (searchResult != null ? "Found" : "Not Found"));
+    
+            // Deletion
+            System.out.println("\nDeleting 20");
+            tree.delete(20);
+            System.out.println("Inorder traversal after deletion:");
+            tree.inOrder();
+        }
+    }
+        </pre>
+    </div>
+    <br>
+
+    <h3>Output: </h3>
+    <div class="section" id="theory" style="background-color:#a8a8a81a; padding: 20px; border-radius: 2px; box-shadow: 0 4px 8px rgba(36, 30, 30, 0.1); margin: 20px 0;">
+        <pre>
+    Inorder traversal:
+    20 30 40 50 60 70 80 
+    
+    Search result for key 40: Found
+    
+    Deleting 20
+    Inorder traversal after deletion:
+    30 40 50 60 70 80 
+        </pre>
+    </div><br>
+
+    <h3> Explanation of code :</h3>
+    <div class="section" id="output Explanation" style="padding: 20px; margin: 20px 0;">
+        <p>The code implements a Binary Search Tree (BST) in Java with operations for insertion, 
+            in-order traversal, search, and deletion. The insert() method adds nodes based on value 
+            comparisons, ensuring smaller values go to the left subtree and larger ones to the right. 
+            The in_order_traversal() visits nodes in ascending order, while search() locates a specific 
+            value. The delete() method handles three cases: deleting a leaf node, a node with one child, 
+            or a node with two children (replacing it with the smallest value in the right subtree). 
+            The code tests these operations by inserting values, performing an in-order traversal, searching 
+            for a value (40), and deleting a node (20), ensuring the tree structure remains valid.
+        </p>    
+    </div>
+</main>
+</body>
+</html>
