@@ -6,10 +6,11 @@
     <title>About Us - TechHive</title>
     <style>
         body {
-            font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+            font-family: Arial, Helvetica, sans-serif;
             margin: 0;
             padding: 0;
             background-color: #f4f4f4;
+          
         }
 
         .container {
@@ -22,7 +23,7 @@
             box-shadow: 0 0 15px rgba(0, 0, 0, 0.2);
         }
 
-        h1 {
+       .conatiner h1 {
             color: #FFAE00; /* orange */
             font-size: 48px;
             text-align: center;
@@ -57,27 +58,30 @@
             padding: 20px;
             border-radius: 15px;
             text-align: center; /* Center-align team members */
+            
         }
 
         .team-member {
             font-size: 18px;
             display: inline-block;
             margin-right: 30px; /* Add spacing between names */
+            margin-bottom: 10px;
         }
 
-        nav {
+        /* nav {
             position: fixed;
             top: 0;
             width: 100%;
             background-color: black;
             z-index: 1000;
-        }
+        } */
 
         .content {
             padding-top: 100px; /* Ensure content does not overlap with navbar */
+            margin-bottom: 10px;
         }
 
-        .tab {
+        /* .tab {
             background: black;
             width: 100%;
             display: flex;
@@ -118,13 +122,17 @@
             color: white;
             font-size: 15px;
             margin-right: 20px;
+        } */
+        .team-member{
+            font-weight: bolder;
         }
     </style>
 </head>
 <body>
-
+    
+    <div id="navbar"></div>
     <!-- Navigation Bar -->
-    <nav>
+    <!-- <nav>
         <div class="tab">
             <div class="left">
                 <div class="logo">
@@ -142,7 +150,7 @@
                 </ul>
             </div>
         </div>
-    </nav>
+    </nav> -->
 
     <!-- About Us Section -->
     <div class="content">
@@ -155,14 +163,21 @@
             
             <h2>Our Team</h2>
             <div class="team-section">
-                <div class="team-member">Aditi Gupta - 6</div>
-                <div class="team-member">Anuja Gutte - 18</div>
-                <div class="team-member">Chaitali Nadekar - 29</div>
-                <div class="team-member">Cherry Agarwal - 31</div>
-                <div class="team-member">Chhavi Pancholi - 32</div>
+                <ol>
+                    <li> <div class="team-member">Aditi Gupta - 6</div></li>
+                    <li><div class="team-member">Anuja Gutte - 18</div></li>
+                    <li> <div class="team-member">Chaitali Nadekar - 29</div></li>
+                    <li> <div class="team-member">Cherry Agarwal - 31</div></li>
+                    <li><div class="team-member">Chhavi Pancholi - 32</div></li>
+                </ol>
+               
+                
+               
+               
+                
             </div>
         </div>
     </div>
-
+    <script src="navbar2.js"></script>
 </body>
 </html>
