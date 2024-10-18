@@ -1,0 +1,272 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Introduction to Searching</title>
+    <link rel="stylesheet" href="styles.css">
+    <style>
+        .body{
+        font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+       
+    }
+    .home{
+      max-width: 1300px;
+      margin: 0 auto;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+    }
+    
+    *{
+        text-decoration: none;
+        margin: 0;
+        padding: 0;
+        
+    }
+    
+    .nav{
+        position: fixed;
+    }
+    
+    .tab{
+        background: black;
+        font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+        width: 100%;
+        /* padding-left: 15px;
+        padding-right: 15px; */
+    }
+    
+    .tab{
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+    }
+    
+    img{
+        width: 50px;
+        border-radius: 100px;
+        padding-right: 50px;
+    }
+    
+    .open-btn{
+        font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+        font-size:15px;
+        cursor: pointer;
+        display: inline-block;
+        background-color: black;
+        color:white;
+        border: none;
+        
+       
+    }
+    
+    .arrow {
+        border: solid white;
+        border-width: 0 3px 3px 0;
+        display: inline-block;
+        padding: 2px;
+      }
+    
+    .down {
+        transform: rotate(45deg);
+        -webkit-transform: rotate(45deg);
+      }
+    
+    .open-btn:hover{
+        color:orange;
+        transition-duration: 0.3s;
+    
+    }
+    
+    a:hover{
+        color: orange;
+        transition-duration: 0.3s;
+    }
+    
+    .left{
+        display: inline-flex;
+        align-items: center;
+        /* margin-left: 10%; */
+        
+    }
+    
+    
+    .tabs-learn-more{
+        font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+        
+        background-color: black;
+        border-width: 2px;
+        border-style: solid;
+        border-color: white;
+        color: white;
+        font-weight: 500;
+        border-radius: 20px;
+        padding: 8px;
+        cursor: pointer;
+    }
+    
+    .tabs-learn-more:hover{
+        background-color: rgb(28, 205, 15);
+        transition-duration: 0.3s;
+        border-color:  rgb(28, 205, 15);
+        
+    }
+    
+    li{
+        list-style: none;
+        display: inline-block;
+    }
+    
+    li a{
+        color: white;
+        font-size: 15px;
+        margin-right: 20px;
+    }
+    
+    </style>
+    
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #f4f4f9;
+            color: #333;
+            padding-left: 10%;
+            padding-right: 10%;
+        }
+        header {
+            background-color: #256b27;
+            padding: 10px 0;
+            text-align: center;
+            color: white;
+        }
+        h1 {
+            margin: 0;
+        }
+       
+        h2 {
+            color: #256b27;
+        }
+        p {
+            line-height: 1.6;
+        }
+        ul {
+            margin-left: 20px;
+        }
+        .code {
+            background-color: #f1f1f1;
+            padding: 10px;
+            border-left: 5px solid #256b27;
+            margin: 20px 0;
+            font-family: monospace;
+        }
+        footer {
+            text-align: center;
+            padding: 20px 0;
+            background-color: #256b27;
+            color: white;
+        }
+    </style>
+    
+</head>
+<body>
+    <nav>
+        <div class="tab">
+            <div class="left">
+            <div class="logo">
+                <img src="../logo.jpeg">
+            </div>
+            <a><button class="open-btn" onclick="toggleSidebar()">☰ Menu</button></a>
+            </div>
+        
+                <div class="right">
+                    <ul id="list">
+                        <li> <a href="#home">Home</a></li>
+                        <li><a href="about.html">About</a></li>
+                        <li><a href="#services">Services</a></li>
+                        <li> <a href="#contact">Contact</a></li>
+                        <li><a href="#contact"><button class="tabs-learn-more">Learn More</button></a></li>
+                        
+                    </ul>
+                   
+                
+                </div>
+        
+        </div>
+    </nav><br><br>
+
+<header>
+    <h1>Searching Algorithms</h1>
+</header><br>
+
+<div class="container">
+    <h2>What is Searching?</h2>
+    <p><b>Searching</b> refers to the process of finding a specific element in a collection of data. The efficiency of a search algorithm is often measured by how many comparisons it makes before it finds the desired element or determines that the element is not present in the data.</p>
+
+    <p>Two of the most commonly used searching techniques are <b>Linear Search</b> and <b>Binary Search</b>. Each has its advantages and specific use cases.</p>
+<br>
+    <h2>Types of Searching</h2>
+    <p>Here are two basic types of searching algorithms:</p>
+    <ul>
+        <li><b>Linear Search:</b> This is the simplest search algorithm. It checks each element in the list sequentially until the desired element is found or the end of the list is reached. It can be used on unsorted data.</li>
+        <li><b>Binary Search:</b> This is a more efficient search algorithm but requires the data to be sorted. Binary search works by repeatedly dividing the sorted list in half and comparing the middle element with the target value. If the middle element is not the target, the algorithm discards half of the list and continues searching in the other half.</li>
+    </ul>
+
+    <h2>Linear Search</h2>
+    <p>In a linear search, each element in the data set is checked one by one until the target element is found. It’s straightforward but not the most efficient for large data sets.</p>
+    
+    <div class="code">
+        <pre>
+def linear_search(arr, target):
+    for i in range(len(arr)):
+        if arr[i] == target:
+            return i
+    return -1
+        </pre>
+    </div>
+    
+    <p>In this example, the algorithm iterates through the array <code>arr</code> and returns the index of the <code>target</code> if found. If the target is not found, it returns <code>-1</code>.</p>
+
+    <h2>Binary Search</h2>
+    <p>Binary search is much faster than linear search, but it only works on sorted lists. It repeatedly divides the search space in half, eliminating half of the data at each step.</p>
+    
+    <div class="code">
+        <pre>
+def binary_search(arr, target):
+    low = 0
+    high = len(arr) - 1
+    
+    while low <= high:
+        mid = (low + high) // 2
+        if arr[mid] == target:
+            return mid
+        elif arr[mid] < target:
+            low = mid + 1
+        else:
+            high = mid - 1
+            
+    return -1
+        </pre>
+    </div>
+    
+    <p>In this example, the algorithm splits the array in half by calculating the middle index and adjusting the search space based on whether the <code>target</code> is smaller or larger than the middle element.</p>
+<br>
+    <h2>Advantages of Binary Search</h2><br>
+    <ul>
+        <li><b>Efficiency:</b> Binary search is much faster than linear search for large, sorted data sets, with a time complexity of O(log n) compared to O(n) for linear search.</li>
+        <li><b>Predictability:</b> With a sorted list, binary search is highly predictable and ensures efficient searches.</li>
+    </ul>
+<br>
+    <h2>Applications of Searching Algorithms</h2>
+    <p>Searching algorithms are fundamental to many applications:</p>
+    <ul>
+        <li><b>Database Search:</b> Databases often use binary search when dealing with sorted data to optimize performance.</li>
+        <li><b>Information Retrieval:</b> Searching through data, such as files or records, is commonly done using these algorithms.</li>
+        <li><b>Competitive Programming:</b> Searching techniques, particularly binary search, are essential in solving many coding problems efficiently.</li>
+    </ul>
+
+</div>
+</body>
+</html>
