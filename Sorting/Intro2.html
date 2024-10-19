@@ -3,183 +3,155 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <title>Sorting Algorithms</title>
     <link rel="stylesheet" href="styles.css">
     <style>
-        .body{
-        font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
-       
-    }
-    .home{
-      max-width: 1300px;
-      margin: 0 auto;
-      display: flex;
-      flex-direction: column;
-      align-items: center;
-    }
-    
-    *{
-        text-decoration: none;
-        margin: 0;
-        padding: 0;
-        
-    }
-    
-    .nav{
-        position: fixed;
-    }
-    
-    .tab{
-        background: black;
-        font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
-        width: 100%;
-        /* padding-left: 15px;
-        padding-right: 15px; */
-    }
-    
-    .tab{
-        display: flex;
-        align-items: center;
-        justify-content: space-between;
-    }
-    
-    img{
-        width: 50px;
-        border-radius: 100px;
-        padding-right: 50px;
-    }
-    
-    .open-btn{
-        font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
-        font-size:15px;
-        cursor: pointer;
-        display: inline-block;
-        background-color: black;
-        color:white;
-        border: none;
-        
-       
-    }
-    
-    .arrow {
-        border: solid white;
-        border-width: 0 3px 3px 0;
-        display: inline-block;
-        padding: 2px;
-      }
-    
-    .down {
-        transform: rotate(45deg);
-        -webkit-transform: rotate(45deg);
-      }
-    
-    .open-btn:hover{
-        color:orange;
-        transition-duration: 0.3s;
-    
-    }
-    
-    a:hover{
-        color: orange;
-        transition-duration: 0.3s;
-    }
-    
-    .left{
-        display: inline-flex;
-        align-items: center;
-        /* margin-left: 10%; */
-        
-    }
-    
-    
-    .tabs-learn-more{
-        font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
-        
-        background-color: black;
-        border-width: 2px;
-        border-style: solid;
-        border-color: white;
-        color: white;
-        font-weight: 500;
-        border-radius: 20px;
-        padding: 8px;
-        cursor: pointer;
-    }
-    
-    .tabs-learn-more:hover{
-        background-color: rgb(28, 205, 15);
-        transition-duration: 0.3s;
-        border-color:  rgb(28, 205, 15);
-        
-    }
-    
-    li{
-        list-style: none;
-        display: inline-block;
-    }
-    
-    li a{
-        color: white;
-        font-size: 15px;
-        margin-right: 20px;
-    }
-    
+        body{
+            font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+            margin: 0;
+            padding: 0;
+        }
+        .home{
+            max-width: 1300px;
+            margin: 0 auto;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+        }
+        *{
+            text-decoration: none;
+            margin: 0;
+            padding: 0;
+        }
+        .nav{
+            position: fixed;
+        }
+        .tab{
+            background: black;
+            font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+            width: 100%;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+        }
+        img{
+            width: 50px;
+            border-radius: 100px;
+            padding-right: 50px;
+        }
+        .open-btn{
+            font-size:15px;
+            cursor: pointer;
+            background-color: black;
+            color: white;
+            border: none;
+        }
+        .arrow {
+            border: solid white;
+            border-width: 0 3px 3px 0;
+            display: inline-block;
+            padding: 2px;
+        }
+        .down {
+            transform: rotate(45deg);
+            -webkit-transform: rotate(45deg);
+        }
+        .open-btn:hover{
+            color: orange;
+            transition-duration: 0.3s;
+        }
+        a:hover{
+            color: orange;
+            transition-duration: 0.3s;
+        }
+        .left{
+            display: inline-flex;
+            align-items: center;
+        }
+        .tabs-learn-more{
+            background-color: black;
+            border-width: 2px;
+            border-style: solid;
+            border-color: white;
+            color: white;
+            font-weight: 500;
+            border-radius: 20px;
+            padding: 8px;
+            cursor: pointer;
+        }
+        .tabs-learn-more:hover{
+            background-color: rgb(28, 205, 15);
+            transition-duration: 0.3s;
+            border-color: rgb(28, 205, 15);
+        }
+        li{
+            list-style: none;
+            display: inline-block;
+        }
+        li a{
+            color: white;
+            font-size: 15px;
+            margin-right: 20px;
+        }
+        .page{
+            padding: 60px;
+        }
+        .heading h1{
+            text-align: center;
+            margin-bottom: 20px;
+        }
+        .para p{
+            line-height: 1.6;
+            font-size: large;
+        }
+        ul{
+            padding-left: 20px;
+        }
+        ul li{
+            margin-bottom: 15px;
+            font-size: large;
+        }
     </style>
 </head>
 <body>
     <nav>
         <div class="tab">
             <div class="left">
-            <div class="logo">
-                <img src="../logo.jpeg">
-            </div>
-            <a><button class="open-btn" onclick="toggleSidebar()">☰ Menu</button></a>
-            </div>
-        
-                <div class="right">
-                    <ul id="list">
-                        <li> <a href="#home">Home</a></li>
-                        <li><a href="about.html">About</a></li>
-                        <li><a href="#services">Services</a></li>
-                        <li> <a href="#contact">Contact</a></li>
-                        <li><a href="#contact"><button class="tabs-learn-more">Learn More</button></a></li>
-                        
-                    </ul>
-                   
-                
+                <div class="logo">
+                    <img src="../logo.jpeg" alt="Logo">
                 </div>
-        
+                <a><button class="open-btn" onclick="toggleSidebar()">☰ Menu</button></a>
+            </div>
+            <div class="right">
+                <ul id="list">
+                    <li> <a href="#home">Home</a></li>
+                    <li><a href="about.html">About</a></li>
+                    <li><a href="#services">Services</a></li>
+                    <li> <a href="#contact">Contact</a></li>
+                    <li><a href="#contact"><button class="tabs-learn-more">Learn More</button></a></li>
+                </ul>
+            </div>
         </div>
     </nav>
 
-  
-  <div class="page">
-            <div class="heading">
-                <h1>Introduction to Sorting </h1>
-            </div>
+    <div class="page">
+        <div class="heading">
+            <h1>Introduction to Sorting</h1>
+        </div>
 
-           <div class="para">
-            <p>Sorting is a fundamental operation in computer science that involves arranging the elements of a list or array in a specific order, <br>
-                typically in ascending or descending order. Sorting algorithms are essential for optimizing data retrieval and ensuring efficient data processing.<br></p><br>
-           
-            <h2>Types of Sorting Algorithms</h2>
-            <p><!---Info--><br>
-                <ul>
-                    <li><strong>Insertion Sort:</strong> This algorithm builds a sorted array one element at a time by repeatedly taking the next element <br>
-                        from the unsorted section and inserting it into the correct position in the sorted section. Its time complexity is O(n²).</li><br>
-                    <li><strong>Merge Sort:</strong> This efficient, stable, divide-and-conquer algorithm divides the array into halves, sorts each half, <br>
-                        and then merges them back together. Its time complexity is O(n log n).</li>
-                </ul>
-            </p><br>
-            <h2>Conclusion</h2>
-     <p>Understanding the various sorting algorithms and their characteristics is crucial for optimizing data organization <br>
-        and retrieval processes in software development.The choice of sorting algorithm depends on factors such as<br>
-        the size of the data, whether the data is already partially sorted, and the memory constraints of the system.</p>
-            
-           </div>
+        <div class="para">
+            <p>Sorting is a fundamental operation in computer science that involves arranging the elements of a list or array in a specific order, typically in ascending or descending order. Sorting algorithms are essential for optimizing data retrieval and ensuring efficient data processing.</p>
+<br>
+            <h2>Types of Sorting Algorithms</h2><br>
+            <ul>
+                <li><strong>Insertion Sort:</strong> This algorithm builds a sorted array one element at a time by repeatedly taking the next element from the unsorted section and inserting it into the correct position in the sorted section. Its time complexity is O(n²).</li>
+                <li><strong>Merge Sort:</strong> This efficient, stable, divide-and-conquer algorithm divides the array into halves, sorts each half, and then merges them back together. Its time complexity is O(n log n).</li>
+            </ul><br>
 
+            <h2>Conclusion</h2><br>
+            <p>Understanding the various sorting algorithms and their characteristics is crucial for optimizing data organization and retrieval processes in software development. The choice of sorting algorithm depends on factors such as the size of the data, whether the data is already partially sorted, and the memory constraints of the system.</p>
+        </div>
     </div>
-    
 
     <script src="../Home/navbar2.js"></script>
 </body>
