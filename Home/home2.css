@@ -162,6 +162,10 @@ li a{
     width: 100%;
   }
 
+  .dropdown-btn:hover{
+    color: orange;
+  }
+
   .dropdown-container {
     display: none;
     background-color: #333;

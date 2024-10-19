@@ -15,9 +15,8 @@ body{
    padding: 0 12%;
 }
 h1{
-    
     text-align: center;
-    border-bottom: 3px solid black;
+    /* border-bottom: 3px solid black; */
 }
 
 .para{
@@ -25,6 +24,7 @@ h1{
 }
 
 .para h2{
+   
     text-align: left;
 }
 .para p{
@@ -124,3 +124,6 @@ p{
     text-align: left;
    
  }
+
+
+ 

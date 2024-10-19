@@ -7,7 +7,7 @@
   <style>
     /* General styles */
     body {
-      font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+      font-family: Arial, Helvetica, sans-serif;
     }
 
     .home {
@@ -31,7 +31,7 @@
 
     .tab {
       background: black;
-      font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+      font-family: Arial, Helvetica, sans-serif;
       width: 100%;
     }
 
@@ -125,7 +125,7 @@
     }
 
     main p {
-      font-size: x-large;
+      font-size: larger;
     }
 
     section {
@@ -144,27 +144,7 @@
   </style>
 </head>
 <body>
-  <!-- Navbar section -->
-  <!-- <nav>
-    <div class="tab">
-      <div class="left">
-        <div class="logo">
-          <img src="../logo.jpeg" alt="Logo">
-        </div>
-        <a><button class="open-btn" onclick="toggleSidebar()">☰ Menu</button></a>
-      </div>
-
-      <div class="right">
-        <ul id="list">
-          <li><a href="#home">Home</a></li>
-          <li><a href="about.html">About</a></li>
-          <li><a href="#services">Services</a></li>
-          <li><a href="#contact">Contact</a></li>
-          <li><a href="#contact"><button class="tabs-learn-more">Learn More</button></a></li>
-        </ul>
-      </div>
-    </div>
-  </nav> -->
+  
 
   <!-- Page header -->
   <header>
@@ -181,13 +161,13 @@
 
 <div class="section" id="steps-of">
   <h3 style="text-align: left; padding-top: 20px;">Structure of the Linked List-Based Queue:</h3>
-  <p style="padding-top: 15px; font-size:large;">In a linked list-based queue, each element (node) contains:</p>
+  <p style="padding-top: 15px; font-size:larger;">In a linked list-based queue, each element (node) contains:</p>
   <ul>
     <li style="padding-top: 10px;"> 1.Data: The value of the element.</li><br></br>
     <li> 2.Next: A pointer/reference to the next node in the queue.</li>
   </ul>
 
-  <p style="padding-top: 10px;font-size: medium; font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;"> To implement the queue we maintain 2 pointer same like in all the other cases <strong> front </strong> and <strong> rear</strong></p>
+  <p style="padding-top: 10px;font-size: larger; font-family: Arial, Helvetica, sans-serif;"> To implement the queue we maintain 2 pointer same like in all the other cases <strong> front </strong> and <strong> rear</strong></p>
 </div>   
 <div class="section" id="code block" style="background-color:#eff8ed; padding: 20px; border-radius: 2px; box-shadow: 0 4px 8px rgba(36, 30, 30, 0.1); margin: 20px 0;">
   <h2> Example code :</h2>
@@ -324,15 +304,18 @@
      <p style="padding-top: 10px;padding-bottom: 15px;">The Node class represents an element in the queue, storing a data value and a reference
      (next) to the next node. The Queue class manages the queue using a linked list. It has 
      two pointers, front (points to the first element) and rear (points to the last element). 
-     The enqueue method adds a new node with a given value to the rear of the queue. If 
-     the queue is empty, both front and rear point to this new node. The dequeue method
-     removes the node from the front, updating the front pointer to the next node, and resets 4
-     rear if the queue becomes empty. The peekmethod returns the value of the front node 
-     without removing it. The isEmpty method checks if the queue is empty by verifying if 
-     the front is null. The display method prints all the elements from the front to the rear. 
-     The queue operates efficiently with constant time complexity (O(1)) for both enqueue and dequeue
-      operations. The main class demonstrates the queue's functionality by performing these operations 
-     and printing the queue state at various points.</p>
+     <p> The <b>enqueue</b> method adds a new node with a given value to the rear of the queue. If 
+      the queue is empty, both front and rear point to this new node. The dequeue method
+      removes the node from the front, updating the front pointer to the next node, and resets 4
+      rear if the queue becomes empty.</p>
+      <p>The <b>peekmethod</b> returns the value of the front node without removing it. </p>
+     <p> The <b>isEmpty</b> method checks if the queue is empty by verifying if 
+      the front is null.</p>
+      <p>The <b>display</b> method prints all the elements from the front to the rear.</p>
+      <p>The queue operates efficiently with constant time complexity <b>(O(1))</b> for both enqueue and dequeue
+        operations. The main class demonstrates the queue's functionality by performing these operations 
+       and printing the queue state at various points.</p>
+     </p>
 
 
 

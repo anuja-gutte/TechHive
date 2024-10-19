@@ -7,7 +7,7 @@
   <style>
     /* General styles */
     body {
-      font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+      font-family: Arial, Helvetica, sans-serif;
     }
 
     .home {
@@ -31,7 +31,7 @@
 
     .tab {
       background: black;
-      font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+      font-family:Arial, Helvetica, sans-serif;
       width: 100%;
     }
 
@@ -48,7 +48,7 @@
     }
 
     .open-btn {
-      font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+      font-family: Arial, Helvetica, sans-serif;
       font-size: 15px;
       cursor: pointer;
       display: inline-block;
@@ -85,7 +85,7 @@
     }
 
     .tabs-learn-more {
-      font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+      font-family: Arial, Helvetica, sans-serif;
       background-color: black;
       border-width: 2px;
       border-style: solid;
@@ -125,7 +125,7 @@
     }
 
     main p {
-      font-size: x-large;
+      font-size: larger;
     }
 
     section {
@@ -134,7 +134,7 @@
       max-width: 600px;
     }
 
-    /* Styling the heading to align left */
+   
     h2 {
       text-align: left; /* Aligns the title to the left */
       font-size: 1.5em; /* Makes the heading a bit larger */
@@ -155,27 +155,7 @@
   </style>
 </head>
 <body>
-  <!-- Navbar section -->
-  <!-- <nav>
-    <div class="tab">
-      <div class="left">
-        <div class="logo">
-          <img src="../logo.jpeg" alt="Logo">
-        </div>
-        <a><button class="open-btn" onclick="toggleSidebar()">☰ Menu</button></a>
-      </div>
 
-      <div class="right">
-        <ul id="list">
-          <li><a href="#home">Home</a></li>
-          <li><a href="about.html">About</a></li>
-          <li><a href="#services">Services</a></li>
-          <li><a href="#contact">Contact</a></li>
-          <li><a href="#contact"><button class="tabs-learn-more">Learn More</button></a></li>
-        </ul>
-      </div>
-    </div>
-  </nav> -->
 
   <!-- Page header -->
   <header>
@@ -189,10 +169,10 @@
       item at the rear and dequeue an item from the front. If we simply increment 
       front and rear indices, then there may be problems, as front may reach the 
       end of the array. The solution to this problem is to increase front and rear in a circular manner.
-    </p>
+    </p><br>
 
     <div class="section" id="steps-of">
-      <h2 style="text-align: left;">Steps for Enqueue</h2>
+      <h2 style="text-align: left;">Steps for Enqueue</h2><br>
       <ol>
         <li> 1.Check the queue is full or not</li>
 <br>
@@ -207,7 +187,7 @@
         <li> 3.If the queue is not full, increment tail and add the element</li>
       </ol>
     </div>
-  
+   <br>
 
    <div class="section" id="steps-of">
     <h2 style="text-align: left;">Steps for dequeue</h2>
@@ -342,11 +322,14 @@
         Rear item is 40
         </pre>
       </div>
-      <button onclick="location.href='queueintroduction.html'"
+      <!-- <button onclick="location.href='queueintroduction.html'"
       class="nav-button"
     >
       Back to Introduction
-    </button>
+    </button> -->
+    <div class="footer-bottom" style="margin-bottom: 3%;margin-top:15% ;color: rgba(128, 128, 128, 0.923);">
+      <p>© 2024 TechHive. All Rights Reserved.</p>
+    </div>
   </main>
 
   <script>
