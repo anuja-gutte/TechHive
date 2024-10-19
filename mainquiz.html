@@ -158,7 +158,128 @@ button {
 }
 
 
+.topic-card {
+  background-color: white;
+  border-radius: 8px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  padding: 20px;
+  text-align: center;
+  cursor: pointer;
+  transition: transform 0.3s, box-shadow 0.3s;
+  border: 2px solid transparent;
+}
+
+.Searching{
+    background-color: #FFAE00;
+}
+
+.Sorting{
+    background-color: #DB2168;
+}
+
+.Linked-List{
+    background-color:  #BB00FF;
+}
+
+.Queue{
+    background-color: #535C91;
+}
+
+.Recursion{
+    background-color: #14A489;
+}
+
+.Tree{
+    background-color: #FFAE00;
+}
+
+.topic-card:hover {
+  transform: translateY(-10px);
+  box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
+  border-color: #007bff;
+}
+
+.topic-card h3 {
+  text-align: center;
+  /* margin-top: 0; */
+  color: rgba(255, 255, 255, 0.862);
+}
+
+.topic-card p {
+  color: #666;
+}
+
+/* Responsive design for smaller screens */
+@media (max-width: 768px) {
+  .card-container {
+      grid-template-columns: repeat(2, 1fr); /* 2 cards per row for tablets/smaller screens */
+  }
+}
+
+@media (max-width: 480px) {
+  .card-container {
+      grid-template-columns: 1fr; /* 1 card per row for mobile screens */
+  }
+}
+
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    background-color: #f4f4f4;
+}
+
+
+/* Footer styles */
+footer {
+    background-color: #363636c9;
+    color: #fff;
+    padding: 40px 20px;
+    margin-top: 12%;
+}
+.footer-container {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr); /* 4 columns */
+    gap: 20px;
+    max-width: 1200px;
+    margin: 0 auto;
+}
+.footer-column {
+    display: flex;
+    flex-direction: column;
+}
+.footer-column h3 {
+    margin-bottom: 10px;
+    font-size: 18px;
+    color: rgb(28, 205, 15); /* Optional: Add color to headings */
+}
+.footer-column p,
+.footer-column a {
+    color: #ddd;
+    text-decoration: none;
+    margin-bottom: 10px;
+}
+.footer-column a:hover {
+    color: #ffcc00; /* Optional: Hover effect */
+}
+/* Responsive design */
+@media (max-width: 768px) {
+    .footer-container {
+        grid-template-columns: repeat(2, 1fr); /* 2 columns for tablets */
+    }
+}
+@media (max-width: 480px) {
+    .footer-container {
+        grid-template-columns: 1fr; /* 1 column for mobile */
+    }
+}
     </style>
+
+
+
+
+
+
   </head>
   <body>
   
@@ -206,29 +327,95 @@ button {
         <div id="score-container"></div>
       </div>
     </div>
-    <section>
-      <h2 style="text-align :center;border-bottom: 3px solid rgb(20, 153, 11); 
-      display: inline-block; 
-      padding-bottom: 5px; 
-      padding-top: 70px; "> Other quiz : </h2>
-
-
-      <br>
-
-    </br>
-      <button onclick="location.href='arrayImplementation.html'" class="nav-button">Searching quiz</button>
+    <div>
+      <p style="text-align: center; padding-top: 70px; padding-bottom: 50px; font-size: xxx-large; font-family: Arial, Helvetica, sans-serif; color: black;">
+    <span style="border-bottom: 3px solid  rgb(20, 153, 11); ;">Practice More Quizzes:</span>
+    </p>
     
-      <button onclick="location.href='linkedListImplementation.html'" class="nav-button">Sorting Quiz</button>
-      <button onclick="location.href='linkedListImplementation.html'" class="nav-button"> Recursion  QUIZ </button>
+      
+    </div>      
+
+<div class="card-container">
+  <div class="topic-card Searching"  onclick="goToPage('page1.html')">
+      <h3>Searching</h3>
+     
+  </div>
+  <div class="topic-card Sorting" onclick="goToPage('page2.html')">
+      <h3>Sorting</h3>
+    
+  </div>
+  <div class="topic-card Linked-List" onclick="goToPage('page3.html')">
+      <h3>Linked List</h3>
+     
+  </div>
+  <div class="topic-card Queue" onclick="goToPage('queueintroduction.html')">
+      <h3>Queue</h3>
+      
+  </div>
+  <div class="topic-card Recursion" onclick="goToPage('page5.html')">
+      <h3>Recursion</h3>
+     
+  </div>
+  <div class="topic-card Tree" onclick="goToPage('page6.html')">
+      <h3>Tree</h3>
+     
+  </div>
+</div>
+
+</div>
 
 
-      <br> 
 
-    </br>
-      <button onclick="location.href='linkedListImplementation.html'" class="nav-button"> Linked List</button>
-      <button onclick="location.href='linkedListImplementation.html'" class="nav-button">Queue</button>
-      <button onclick="location.href='linkedListImplementation.html'" class="nav-button">Trees</button>
-    </section>
+
+
+
+
+
+
+
+
+  
+
+    <footer >
+      <div class="footer-container">
+          <div class="footer-column">
+              <h3>TechHive</h3>
+              <p>The best place to learn Data Structure and Algorithms concepts.</p>
+          </div>
+          <div class="footer-column">
+              <h3>Company</h3>
+              <ul>
+                  <li><a href="#">About Us</a></li>
+                  <li><a href="#">Feedback</a></li>
+              </ul>
+          </div>
+          <div class="footer-column">
+              <h3>DSA</h3>
+              <ul>
+                  <li><a href="#">Data Structures</a></li>
+                  <li><a href="#">Algorithms</a></li>
+                  <li><a href="#">Quiz</a></li>
+                  <li><a href="#">Roadmap</a></li>
+              </ul>
+              
+          </div>
+          <div class="footer-column">
+              <h3>Find Us On</h3>
+              <ul>
+                  <li><a href="#">GitHub</a></li>
+                  <li><a href="#">LinkedIn</a></li>
+              </ul>
+          </div>
+      </div>
+  </footer>
+
+
+
+
+
+
+
+
 
     <script src="mainquiz.js"></script>
     <script>
