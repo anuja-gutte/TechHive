@@ -1,243 +1,134 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
+  <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Document</title>
+  <title>Search Algorithms and Analysis</title>
 
   <style>
-    .body{
-    font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
-   
-}
-.home{
-  max-width: 1300px;
-  margin: 0 auto;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-}
-
-*{
-    text-decoration: none;
-    margin: 0;
-    padding: 0;
-    
-}
-
-.nav{
-    position: fixed;
-}
-
-.tab{
-    background: black;
-    font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
-    width: 100%;
-    /* padding-left: 15px;
-    padding-right: 15px; */
-}
-
-.tab{
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
-}
-
-img{
-    width: 50px;
-    border-radius: 100px;
-    padding-right: 50px;
-}
-
-.open-btn{
-    font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
-    font-size:15px;
-    cursor: pointer;
-    display: inline-block;
-    background-color: black;
-    color:white;
-    border: none;
-    
-   
-}
-
-.arrow {
-    border: solid white;
-    border-width: 0 3px 3px 0;
-    display: inline-block;
-    padding: 2px;
-  }
-
-.down {
-    transform: rotate(45deg);
-    -webkit-transform: rotate(45deg);
-  }
-
-.open-btn:hover{
-    color:orange;
-    transition-duration: 0.3s;
-
-}
-
-a:hover{
-    color: orange;
-    transition-duration: 0.3s;
-}
-
-.left{
-    display: inline-flex;
-    align-items: center;
-    /* margin-left: 10%; */
-    
-}
-
-
-.tabs-learn-more{
-    font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
-    
-    background-color: black;
-    border-width: 2px;
-    border-style: solid;
-    border-color: white;
-    color: white;
-    font-weight: 500;
-    border-radius: 20px;
-    padding: 8px;
-    cursor: pointer;
-}
-
-.tabs-learn-more:hover{
-    background-color: rgb(28, 205, 15);
-    transition-duration: 0.3s;
-    border-color:  rgb(28, 205, 15);
-    
-}
-
-li{
-    list-style: none;
-    display: inline-block;
-}
-
-li a{
-    color: white;
-    font-size: 15px;
-    margin-right: 20px;
-}
-
-</style>
+    body{
+      font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+      margin: 0;
+      padding: 0;
+      background-color: #f4f4f4;
+    }
+    .home{
+      max-width: 1300px;
+      margin: 0 auto;
+      padding: 20px;
+    }
+    h1, h2, h3 {
+      text-align: center;
+      color: #333;
+    }
+    p {
+      text-align: justify;
+      line-height: 1.6;
+      font-size: large;
+    }
+    pre {
+      background-color: #e0e0e0;
+      padding: 15px;
+      border-radius: 5px;
+      max-width: 90%;
+      margin: 20px auto;
+      overflow-x: auto;
+    }
+    code {
+      font-family: Consolas, 'Courier New', monospace;
+    }
+    .analysis {
+      background-color: #ecf0f1;
+      padding: 20px;
+      margin: 20px auto;
+      border-left: 5px solid #3498db;
+      max-width: 90%;
+    }
+    .center {
+      text-align: center;
+    }
+    img {
+      max-width: 50%;
+      display: block;
+      margin: 20px auto;
+    }
+  </style>
 </head>
 <body>
-    <nav>
-        <div class="tab">
-            <div class="left">
-            <div class="logo">
-                <img src="../logo.jpeg">
-            </div>
-            <a><button class="open-btn" onclick="toggleSidebar()">☰ Menu</button></a>
-            </div>
-        
-                <div class="right">
-                    <ul id="list">
-                        <li> <a href="#home">Home</a></li>
-                        <li><a href="about.html">About</a></li>
-                        <li><a href="#services">Services</a></li>
-                        <li> <a href="#contact">Contact</a></li>
-                        <li><a href="#contact"><button class="tabs-learn-more">Learn More</button></a></li>
-                        
-                    </ul>
-                   
-                
-                </div>
-        
-        </div>
-    </nav>
 
-    <h2>1.Linear Search</h2>
-    <p>Linear search scans each element in a list sequentially until the target element is found or the end of the list is reached.</p>
-    <p><b>Algorithm:</b><hr>
-        1.Start at the beginning of the array/list:
-        Set an index i = 0, which will point to the first element in the list.
-        <br>
-        2.Check if the current element is equal to the target value:
-        Compare the element at position i with the target value you're searching for.
-        <br>
-        3.If a match is found:
-        If the element at position i matches the target value, stop the search and return the index i.
-        <br>
-        4.If no match is found:
-        Move to the next element by increasing the index i by 1 (i = i + 1).
-        Repeat steps 2 and 3 for the next element.
-       <br>
-        5.Check if the entire array has been searched:
-        If you reach the end of the list (i.e., i is equal to the length of the list), and no match has been found, conclude that the target value is not present in the list.
-        <br>
-        6.Return the result:
-        If the target value was found in the list, return its index.
-        If the target value was not found, return an indication that the value is not present, such as -1 (or any suitable value that represents "not found").</p>
-    <h3>Time Complexity</h3>
-    <table>
-        <tr>
-            <th>Case</th>
-            <th>Time Complexity</th>
-        </tr>
-        <tr>
-            <td>Best Case</td>
-            <td>O(1)</td>
-        </tr>
-        <tr>
-            <td>Average Case</td>
-            <td>O(n)</td>
-        </tr>
-        <tr>
-            <td>Worst Case</td>
-            <td>O(n)</td>
-        </tr>
-    </table>
+  <div class="home">
+    <h1>Search Algorithms and Analysis</h1>
 
-    <h2>2.Binary Search</h2>
-    <p>Binary search works on sorted arrays by repeatedly dividing the search interval in half until the target element is found.</p>
-    <hr>
-    <strong>Algorithm</strong><hr>
-    <p> 1.Initial Setup:
-        Ensure the array or list is sorted.
-        Define two pointers: low (starting at the first element of the array) and high (starting at the last element of the array).
+    <h2>Algorithm Overview</h2>
+    <p>Searching is a fundamental operation in computer science used to locate an element in a list or array. The two primary searching techniques are linear search and binary search. Each algorithm has its specific use cases, depending on whether the data is sorted or unsorted, as well as the size of the data.</p>
 
-        <hr>Find the middle element:
-        Calculate the middle index using the formula:
-        mid=(low+high)/2
-        In an array, the middle index would be:
-        mid= low+(high-low)/2
-        <br>
-        3.Compare the target value with the middle element:
-        If the middle element is equal to the target, return the middle index. The search is complete.
-        If the target is smaller than the middle element, eliminate the right half of the array by updating high = mid - 1.
-        If the target is larger than the middle element, eliminate the left half of the array by updating low = mid + 1.
-        <br>
-        4.Repeat the process:
-        Repeat steps 2 and 3 with the updated low and high values until the target is found, or the search space is empty (low > high).
-        <br>
-        5.Return the result:
-        If the target is found, return its index.
-        If low exceeds high (meaning the target is not found), return an indication that the value is not present (e.g., return -1).</p>
-    <h3>Time Complexity</h3>
-    <table>
-        <tr>
-            <th>Case</th>
-            <th>Time Complexity</th>
-        </tr>
-        <tr>
-            <td>Best Case</td>
-            <td>O(1)</td>
-        </tr>
-        <tr>
-            <td>Average Case</td>
-            <td>O(log n)</td>
-        </tr>
-        <tr>
-            <td>Worst Case</td>
-            <td>O(log n)</td>
-        </tr>
-    </table>
+    <h2>Algorithm: Linear Search</h2>
+    <h3>Theory</h3>
+    <p>Linear search is a simple algorithm that checks each element of the list one by one until the desired element is found or the list ends. This method works on both sorted and unsorted lists but is inefficient for large datasets as it has a time complexity of O(n).</p>
+
+    <pre><code>
+// Function for linear search
+int linearSearch(int arr[], int n, int x) {
+    for (int i = 0; i < n; i++) {
+        if (arr[i] == x) {
+            return i; // Element found, return its index
+        }
+    }
+    return -1; // Element not found
+}
+    </code></pre>
+
+    <div class="analysis">
+      <h3>Analysis: Linear Search Algorithm</h3>
+      <p><strong>Best Case:</strong> O(1) — The element is at the beginning of the list.</p>
+      <p><strong>Average Case:</strong> O(n) — On average, the algorithm needs to search half of the elements.</p>
+      <p><strong>Worst Case:</strong> O(n) — The element is at the end of the list or not present.</p>
+      <p><strong>Space Complexity:</strong> O(1) — Constant space is used since the search is conducted in-place.</p>
+    </div>
+
+    <h2>Algorithm: Binary Search</h2>
+    <h3>Theory</h3>
+    <p>Binary search is a much faster algorithm than linear search, but it requires the list to be sorted. It works by repeatedly dividing the list into halves and comparing the middle element with the target value. If the target is smaller, the search continues in the left half, otherwise, it continues in the right half. This algorithm has a logarithmic time complexity of O(log n).</p>
+
+    <pre><code>
+// Function for binary search
+int binarySearch(int arr[], int n, int x) {
+    int low = 0;
+    int high = n - 1;
+
+    while (low <= high) {
+        int mid = low + (high - low) / 2;
+
+        // Check if x is present at mid
+        if (arr[mid] == x) {
+            return mid;
+        }
+
+        // If x greater, ignore the left half
+        if (arr[mid] < x) {
+            low = mid + 1;
+        }
+        // If x is smaller, ignore the right half
+        else {
+            high = mid - 1;
+        }
+    }
+    return -1; // Element not found
+}
+    </code></pre>
+
+    <div class="analysis">
+      <h3>Analysis: Binary Search Algorithm</h3>
+      <p><strong>Best Case:</strong> O(1) — The element is at the middle of the list in the first iteration.</p>
+      <p><strong>Average Case:</strong> O(log n) — The algorithm reduces the search space by half each time.</p>
+      <p><strong>Worst Case:</strong> O(log n) — The search continues until only one element is left.</p>
+      <p><strong>Space Complexity:</strong> O(1) — The iterative version of binary search uses constant space.</p>
+    </div>
+
+    <h2>Visual Representation of Search Algorithms</h2>
+    <img src="https://upload.wikimedia.org/wikipedia/commons/f/f7/Binary_search_algorithm_diagram.svg" alt="Binary Search Diagram" class="center">
+
+  </div>
 
 </body>
 </html>
