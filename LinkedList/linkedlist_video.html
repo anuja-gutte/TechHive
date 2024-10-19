@@ -6,7 +6,7 @@
   <title>Linked List</title>
   <style>
     .body{
-    font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+      font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
     }
 
     .home{
@@ -23,20 +23,10 @@
       padding: 0;
     }
 
-    .nav{
-      position: fixed;
-    }
-
     .tab{
       background: black;
       font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
       width: 100%;
-    }
-
-    .tab{
-      display: flex;
-      align-items: center;
-      justify-content: space-between;
     }
 
     img{
@@ -47,7 +37,7 @@
 
     .open-btn{
       font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
-      font-size:15px;
+      font-size: 15px;
       cursor: pointer;
       display: inline-block;
       background-color: black;
@@ -68,18 +58,13 @@
     }
 
     .open-btn:hover{
-      color:orange;
+      color: orange;
       transition-duration: 0.3s;
     }
 
     a:hover{
       color: orange;
       transition-duration: 0.3s;
-    }
-
-    .left{
-      display: inline-flex;
-      align-items: center;
     }
 
     .tabs-learn-more{
@@ -101,16 +86,6 @@
       border-color: rgb(28, 205, 15);
     }
 
-    li{
-      list-style: none;
-      display: inline-block;
-    }
-
-    li a{
-      color: white;
-      font-size: 15px;
-      margin-right: 20px;
-    }
     .video-section {
       background-color: transparent;
       padding: 20px;
@@ -131,6 +106,7 @@
       width: 100%;
       margin: 0 auto;
     }
+    
     .video-description {
       padding-top: 20px;
       font-size: 16px;
@@ -142,41 +118,22 @@
       height: 450px;
       border-radius: 10px;
     }
+
     header h2 {
-      text-align: center;
+      text-align: left;
       padding-top: 20px;
       padding-bottom: 20px;
+      padding-left: 20px; /* Optional: Adjust padding for a better appearance */
     }
   </style>
 </head>
 <body>
-  <!-- <nav>
-    <div class="tab">
-      <div class="left">
-        <div class="logo">
-          <img src="../logo.jpeg">
-        </div>
-        <a><button class="open-btn" onclick="toggleSidebar()">☰ Menu</button></a>
-      </div>
-    
-      <div class="right">
-        <ul id="list">
-          <li> <a href="#home">Home</a></li>
-          <li><a href="about.html">About</a></li>
-          <li><a href="#services">Services</a></li>
-          <li> <a href="#contact">Contact</a></li>
-          <li><a href="#contact"><button class="tabs-learn-more">Learn More</button></a></li>
-        </ul>
-      </div>
-    </div>
-  </nav> -->
 
   <header>
     <h2>Linked List Explanation:</h2>
   </header>
 
   <div class="video-section" id="Details on linked list">
-   
     <div class="video-container">
       <iframe src="https://www.youtube.com/embed/oAja8-Ulz6o" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
     </div>
@@ -198,5 +155,6 @@
       </p>
     </div>
   </div>
+
 </body>
 </html>
