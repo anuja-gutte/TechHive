@@ -1,259 +1,72 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Linked list apllications and examples</title>
-  <style>
-    body {
-      font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
-      line-height: 1.6;
-      padding: 20px;
-    }
-
-    .home {
-      max-width: 1300px;
-      margin: 0 auto;
-      display: flex;
-      flex-direction: column;
-      align-items: center;
-    }
-
-    * {
-      text-decoration: none;
-      margin: 0;
-      padding: 0;
-    }
-
-    .nav {
-      position: fixed;
-    }
-
-    .tab {
-      background: black;
-      font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
-      width: 100%;
-    }
-
-    .tab {
-      display: flex;
-      align-items: center;
-      justify-content: space-between;
-    }
-
-    img {
-      width: 50px;
-      border-radius: 100px;
-      padding-right: 50px;
-    }
-
-    .open-btn {
-      font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
-      font-size: 15px;
-      cursor: pointer;
-      background-color: black;
-      color: white;
-      border: none;
-    }
-
-    .arrow {
-      border: solid white;
-      border-width: 0 3px 3px 0;
-      display: inline-block;
-      padding: 2px;
-    }
-
-    .down {
-      transform: rotate(45deg);
-      -webkit-transform: rotate(45deg);
-    }
-
-    .open-btn:hover {
-      color: orange;
-      transition-duration: 0.3s;
-    }
-
-    a:hover {
-      color: orange;
-      transition-duration: 0.3s;
-    }
-
-    .left {
-      display: inline-flex;
-      align-items: center;
-    }
-
-    .tabs-learn-more {
-      background-color: black;
-      border-width: 2px;
-      border-style: solid;
-      border-color: white;
-      color: white;
-      font-weight: 500;
-      border-radius: 20px;
-      padding: 8px;
-      cursor: pointer;
-    }
-
-    .tabs-learn-more:hover {
-      background-color: rgb(28, 205, 15);
-      transition-duration: 0.3s;
-      border-color: rgb(28, 205, 15);
-    }
-
-    li {
-      list-style: none;
-      display: inline-block;
-    }
-
-    li a {
-      color: white;
-      font-size: 18px;
-      margin-right: 20px;
-    }
-
-    /* Increased font size for applications and examples */
-    .application,
-    .example {
-      font-size: 1.2em;
-      margin-bottom: 15px;
-    }
-
-    h1 {
-      text-align: center;
-      padding-top: 20px;
-      font-size: 2.5em; /* Main heading size */
-      color: black;
-    }
-
-    /* Style for headers */
-    h3 {
-      font-size: 1.6em; /* Smaller than main heading */
-      margin-top: 30px;
-      color: darkgreen;
-    }
-
-    /* Larger bullet points */
-    ul li {
-      font-size: 1.3em; /* Slightly smaller than the section heading */
-      margin-bottom: 10px;
-    }
-  </style>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Applications of Linked Lists</title>
+    <link rel="stylesheet" href="styles.css">
 </head>
 <body>
-  <nav>
-    <div class="tab">
-      <div class="left">
-        <div class="logo">
-          <img src="../logo.jpeg" alt="Logo">
+    <!-- <div id="navbar"></div> -->
+
+    <div class="home">
+        <h1>Applications of Linked Lists</h1><br>
+        <div class="application">
+            <h2>Data Structures</h2>
+            <p>
+                Linked lists are fundamental data structures used in many different areas of computer science, including:<br>
+
+                a. Implementation of Stacks and Queues<br>
+                Linked lists are commonly used to implement dynamic stacks (Last-In-First-Out) and queues (First-In-First-Out). These implementations allow the structure to grow or shrink as elements are added or removed.<br>
+            </p>
+            <p>b. Graph Representation<br>
+                In graph data structures, linked lists are used to represent adjacency lists. Each vertex of a graph is associated with a linked list that stores adjacent vertices. This representation is particularly useful for implementing graph traversal algorithms such as BFS and DFS.</p>
+
+            <p>c. Dynamic Memory Allocation<br>
+                Linked lists are used in operating systems for dynamic memory allocation. Memory blocks are stored as nodes, making it easier to manage free memory, especially in systems with heap memory allocation.</p>
+
+            <h2>File and Directory Management</h2>
+            <p>
+                In file systems, linked lists can be used to represent the directory structure, where directories and files are treated as nodes. This allows for efficient directory traversal and file handling.<br><br>
+
+                Use Case:<br>
+                Navigating through a file directory system.<br>
+                Searching for files and subdirectories.<br>
+                Representing directory contents in certain file systems.
+            </p>
+
+            <h2>Real-World Applications</h2>
+            <p>
+                Linked lists also find applications outside of computer science theory:<br><br>
+                a. Image Viewers<br>
+                Image viewers utilize linked lists to allow users to navigate between images using "next" and "previous" buttons. Each image is stored as a node in the list.<br><br>
+                
+                b. Web Browsers<br>
+                Web browsers maintain a linked list of visited pages to allow easy navigation back and forth in the browsing history. This makes it convenient to return to previous or next pages.<br><br>
+
+                c. Music Players<br>
+                Music players often store playlists as linked lists, where each song is a node. Users can easily navigate through the list, and operations like shuffle and repeat can be implemented by traversing the linked list.
+            </p>
+
+            <h2>Examples of Linked Lists</h2>
+            <p>
+                There are various types of linked lists that are used for different applications:<br><br>
+                a. Singly Linked List<br>
+                A singly linked list allows traversal in only one direction, from the first node to the last. Each node points to the next node in the sequence.<br><br>
+
+                b. Doubly Linked List<br>
+                A doubly linked list allows traversal in both directions, where each node points to both the next and the previous nodes. This is useful for applications that require back-and-forth navigation.<br><br>
+
+                c. Circular Linked List<br>
+                In a circular linked list, the last node is linked back to the first node, forming a continuous loop. This is particularly useful for certain scheduling algorithms and applications like round-robin task management.
+            </p>
         </div>
-        <a><button class="open-btn" onclick="toggleSidebar()">☰ Menu</button></a>
-      </div>
 
-      <div class="right">
-        <ul id="list">
-          <li><a href="#home">Home</a></li>
-          <li><a href="about.html">About</a></li>
-          <li><a href="#services">Services</a></li>
-          <li><a href="#contact">Contact</a></li>
-          <li><a href="#contact"><button class="tabs-learn-more">Learn More</button></a></li>
-        </ul>
-      </div>
+        <div class="footer-bottom" style="margin-bottom: 3%;margin-top:15%;color: rgba(128, 128, 128, 0.923);">
+            <p>© 2024 TechHive. All Rights Reserved.</p>
+        </div>
     </div>
-  </nav>
 
-  <header>
-    <h1>Application and Examples of Linked List></h1>
-  </header>
-
-  <h3>Applications of Linked Lists in Computer Science</h3>
-
-  <section class="section">
-    <ul>
-      <li><strong>1. Implementation of Stacks and Queues:</strong> 
-        Linked lists are often used to implement dynamic stacks (Last-In-First-Out) and queues (First-In-First-Out). They enable flexible memory usage because the size of the stack or queue can change dynamically as elements are added or removed.
-      </li>
-
-      <li><strong>2. Graph Representation:</strong> 
-        In graph data structures, linked lists are used to represent adjacency lists. Each vertex of the graph can be associated with a linked list that stores adjacent vertices. This representation is space-efficient for sparse graphs and plays a key role in traversal algorithms like Breadth-First Search (BFS) and Depth-First Search (DFS).
-      </li>
-
-      <li><strong>3. Dynamic Memory Allocation:</strong> 
-        Linked lists are used for dynamic memory allocation in operating systems. Memory blocks, or "chunks," are stored as nodes, making it easier to manage free memory, particularly in scenarios like heap memory allocation.
-      </li>
-
-      <li><strong>4. Directory Management:</strong> 
-        In some file systems, linked lists are used to represent directory structures, where directories and files are treated as nodes. This allows for easy navigation through directories and efficient file handling.
-      </li>
-
-      <li><strong>5. Undo/Redo Operations:</strong> 
-        Many applications, such as text editors and design tools, implement undo/redo functionality using linked lists. Each state or action is stored as a node, and navigating forward and backward through the list allows users to undo or redo actions seamlessly.
-      </li>
-    </ul>
-  </section>
-
-  <h3>Applications of Linked Lists in the Real World</h3>
-
-  <section class="section">
-    <ul>
-      <li><strong>1. Image Viewer:</strong> 
-        Image viewers use linked lists to allow users to navigate between images with "previous" and "next" buttons. Each image is stored as a node, and the viewer can easily load the next or previous image from the list.
-      </li>
-
-      <li><strong>2. Web Browsers:</strong> 
-        Web browsers maintain a linked list of previously visited pages, allowing users to move back and forth in their browsing history. This makes navigation smooth and intuitive.
-      </li>
-
-      <li><strong>3. Music Players:</strong> 
-        In music players, linked lists store playlists where each song is a node. Users can navigate between songs, and operations like shuffle and repeat can be implemented by traversing the linked list.
-      </li>
-    </ul>
-  </section>
-
-  <h3>Applications of Circular Linked Lists</h3>
-
-  <section class="section">
-    <ul>
-      <li><strong>1. Task Scheduling:</strong> 
-        Circular linked lists are often used in operating systems for round-robin scheduling. Each process is represented as a node, and the scheduler moves through the list in a circular fashion, ensuring each process gets an equal share of CPU time.
-      </li>
-
-      <li><strong>2. Multiplayer Games:</strong> 
-        Circular linked lists are used to manage player turns in multiplayer games. Each player is represented as a node, and the game passes turns in a cyclic manner, returning to the first player after the last player has played.
-      </li>
-    </ul>
-  </section>
-
-  <h3>Applications of Doubly Linked Lists</h3>
-
-  <section class="section">
-    <ul>
-      <li><strong>1. Browser Cache:</strong> 
-        Web browsers often use doubly linked lists to manage the cache of web pages. The forward and backward navigation buttons allow users to move between cached pages efficiently, with each page being a node connected in both directions.
-      </li>
-
-      <li><strong>2. Undo/Redo Functionality:</strong> 
-        Text editors and other applications use doubly linked lists to manage undo/redo operations. Each edit is stored as a node, and users can move both backward (undo) and forward (redo) through the editing history.
-      </li>
-    </ul>
-  </section>
-
-  <h3>Examples of Linked Lists</h3>
-
-  <section class="section">
-    <ul>
-      <li><strong>1. Singly Linked List:</strong> 
-        A singly linked list allows traversal in one direction only, where each node points to the next node in the sequence.
-      </li>
-
-      <li><strong>2. Doubly Linked List:</strong> 
-        A doubly linked list allows traversal in both directions, where each node points to both the next and the previous nodes.
-      </li>
-
-      <li><strong>3. Circular Linked List:</strong> 
-        A circular linked list connects the last node back to the first node, forming a continuous loop. This structure is useful for certain applications like round-robin scheduling.
-      </li>
-    </ul>
-  </section>
+    <script src="../Home/navbar2.js"></script>
 </body>
 </html>
