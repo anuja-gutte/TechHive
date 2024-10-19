@@ -1,0 +1,310 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>What-Are-Data-Structures</title>
+    <style>
+        body{
+            font-family: Arial, Helvetica, sans-serif;
+            font-size: 19.2px;
+            
+        }
+        html{
+            overflow: auto;
+        }
+
+        .home{
+        max-width: 1300px;
+        margin: 0 auto;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+       
+        }
+
+        .heading {
+            
+            margin: 5%;
+            text-align: center;
+            
+        }
+
+        h2{
+            display: inline-block;
+            border-bottom: 3px solid black;
+        }
+
+        .img1{
+            display: block;
+            margin: auto;
+            width:500px;
+            height: 300px;
+        
+        }
+
+        .list li{
+            display: list-item;
+            list-style: disc;
+            line-height: 150%;
+        }
+
+
+        .card-container {
+        display: grid;
+        grid-template-columns: repeat(3, 300px); /* 3 cards per row */
+         gap: 20px;
+        padding: 20px;
+        }
+
+.topic-card {
+  background-color: white;
+  border-radius: 8px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  padding: 20px;
+  text-align: center;
+  cursor: pointer;
+  transition: transform 0.3s, box-shadow 0.3s;
+  border: 2px solid transparent;
+}
+
+.Searching{
+    background-color: #FFAE00;
+}
+
+.Sorting{
+    background-color: #DB2168;
+}
+
+.Linked-List{
+    background-color:  #BB00FF;
+}
+
+.Queue{
+    background-color: #535C91;
+}
+
+.Recursion{
+    background-color: #14A489;
+}
+
+.Tree{
+    background-color: #FFAE00;
+}
+
+.topic-card:hover {
+  transform: translateY(-10px);
+  box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
+  border-color: #007bff;
+}
+
+.topic-card h3 {
+  text-align: center;
+  /* margin-top: 0; */
+  color: rgba(255, 255, 255, 0.862);
+}
+
+.topic-card p {
+  color: #666;
+}
+
+/* Responsive design for smaller screens */
+@media (max-width: 768px) {
+  .card-container {
+      grid-template-columns: repeat(2, 1fr); /* 2 cards per row for tablets/smaller screens */
+  }
+}
+
+@media (max-width: 480px) {
+  .card-container {
+      grid-template-columns: 1fr; /* 1 card per row for mobile screens */
+  }
+}
+
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    background-color: #f4f4f4;
+}
+
+/* Footer styles */
+footer {
+    background-color: #363636c9;
+    color: #fff;
+    padding: 40px 20px;
+    margin-top: 12%;
+}
+
+.footer-container {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr); /* 4 columns */
+    gap: 20px;
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+.footer-column {
+    display: flex;
+    flex-direction: column;
+}
+
+.footer-column h3 {
+    margin-bottom: 10px;
+    font-size: 18px;
+    color: rgb(28, 205, 15); /* Optional: Add color to headings */
+}
+
+.footer-column p,
+.footer-column a {
+    color: #ddd;
+    text-decoration: none;
+    margin-bottom: 10px;
+}
+
+.footer-column a:hover {
+    color: #ffcc00; /* Optional: Hover effect */
+}
+
+/* Responsive design */
+@media (max-width: 768px) {
+    .footer-container {
+        grid-template-columns: repeat(2, 1fr); /* 2 columns for tablets */
+    }
+}
+
+@media (max-width: 480px) {
+    .footer-container {
+        grid-template-columns: 1fr; /* 1 column for mobile */
+    }
+}
+
+
+    </style>
+</head>
+<body>
+    <div id="navbar"></div>
+
+     <div class="home" style="max-width: 1100px; text-align: justify;">
+
+         <div class="heading">
+                <h2>What Are Data Structures?</h2>
+         </div>
+
+         <div class="para">
+            <p>A data structure is a specialized format for organizing, processing, retrieving and storing data. There are several basic and advanced types of data structures, all designed to arrange data to suit a specific purpose. Data structures make it easy for users to access and work with the data they need. Most importantly, data structures frame the organization of information so that machines and humans can better understand it.</p><br>
+
+            <img class="img1" src="Data-Structures.png"></div>
+
+            <div class="heading">
+                <h2>Classification of Data Structures</h2>
+            </div>
+
+            <div class="list">
+                <ol>
+                    <li><b>Linear Data Structure:</b> Data structure in which data elements are arranged sequentially or linearly, where each element is attached to its previous and next adjacent elements, is called a linear data structure.<br>
+                    Example: Array, Stack, Queue, Linked List, etc.<br></li>
+                    <li><b>Static Data Structure:</b> Static data structure has a fixed memory size. It is easier to access the elements in a static data structure.<br> 
+                    Example: array.<br></li>
+                    <li><b>Dynamic Data Structure:</b> In dynamic data structure, the size is not fixed. It can be randomly updated during the runtime which may be considered efficient concerning the memory (space) complexity of the code. <br>
+                    Example: Queue, Stack, etc.</li>
+                    <li><b>Non-Linear Data Structure:</b> Data structures where data elements are not placed sequentially or linearly are called non-linear data structures. In a non-linear data structure, we can't traverse all the elements in a single run only. <br>
+                    Examples: Trees and Graphs.<br></li>
+                </ol><br>
+
+                <img class="img1" src="ClassificationofDataStructure-660x347 (1).jpg">
+            </div>
+
+
+            <div class="heading">
+                <h2>Applications of Data Structures</h2>
+            </div>
+
+            <div class="para">
+                <div class="list">
+                <ul>
+                    <li><b>Efficient data storage:</b> Arrays, linked lists, and hash tables are used to store and quickly access data.</li>
+                    <li><b>Algorithm optimization:</b> Trees, heaps, and graphs enable efficient searching, sorting, and traversal in algorithms.</li>
+                    <li><b>Software development:</b> Stacks, queues, and priority queues manage tasks, function calls, and processes in operating systems, compilers, and task scheduling.</li>
+                    <li><b>Real-world systems:</b> Applications like social networks, file systems, database indexing, and network routing all rely on data structures to handle complex data relationships.</li>
+                </ul>
+                </div>
+            </div>
+
+            <div class="heading">
+                <h2 style="border: none; color: rgba(137, 5, 5, 0.766);">Continue Learning About Data Structures!</h2>
+            </div>
+
+            
+            <div class="card-container">
+                <div class="topic-card Searching"  onclick="goToPage('page1.html')">
+                    <h3>Searching</h3>
+                   
+                </div>
+                <div class="topic-card Sorting" onclick="goToPage('page2.html')">
+                    <h3>Sorting</h3>
+                  
+                </div>
+                <div class="topic-card Linked-List" onclick="goToPage('page3.html')">
+                    <h3>Linked List</h3>
+                   
+                </div>
+                <div class="topic-card Queue" onclick="goToPage('page4.html')">
+                    <h3>Queue</h3>
+                    
+                </div>
+                <div class="topic-card Recursion" onclick="goToPage('page5.html')">
+                    <h3>Recursion</h3>
+                   
+                </div>
+                <div class="topic-card Tree" onclick="goToPage('page6.html')">
+                    <h3>Tree</h3>
+                   
+                </div>
+            </div>
+           
+         </div>
+
+         <footer>
+            <div class="footer-container">
+                <div class="footer-column">
+                    <h3>TechHive</h3>
+                    <p>The best place to learn Data Structure and Algorithms concepts.</p>
+                </div>
+                <div class="footer-column">
+                    <h3>Company</h3>
+                    <ul>
+                        <li><a href="#">About Us</a></li>
+                        <li><a href="#">Feedback</a></li>
+                    </ul>
+                </div>
+                <div class="footer-column">
+                    <h3>DSA</h3>
+                    <ul>
+                        <li><a href="#">Data Structures</a></li>
+                        <li><a href="#">Algorithms</a></li>
+                        <li><a href="#">Quiz</a></li>
+                        <li><a href="#">Roadmap</a></li>
+                    </ul>
+                    
+                </div>
+                <div class="footer-column">
+                    <h3>Find Us On</h3>
+                    <ul>
+                        <li><a href="#">GitHub</a></li>
+                        <li><a href="#">LinkedIn</a></li>
+                    </ul>
+                </div>
+            </div>
+        </footer>
+     
+
+
+    <script src="navbar2.js"></script>
+    <script>
+        function goToPage(url) {
+        window.location.href = url;
+        }
+</script>
+</body>
+</html>
