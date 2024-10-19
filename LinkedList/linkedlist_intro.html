@@ -1,0 +1,120 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Linked List Introduction</title>
+  <link rel="stylesheet" href="styles.css"> <!-- Reference your CSS file -->
+</head>
+<body>
+
+  <!-- Navbar Section -->
+  <!-- You can uncomment this for the navigation menu -->
+  <!--
+  <div class="home">
+    <nav class="nav">
+      <div class="tab">
+        <div class="left">
+          <div class="logo">
+            <img src="../logo.jpeg" alt="Logo">
+          </div>
+          <a><button class="open-btn" onclick="toggleSidebar()">☰ Menu</button></a>
+        </div>
+        <div class="right">
+          <ul id="list">
+            <li><a href="#home">Home</a></li>
+            <li><a href="about.html">About</a></li>
+            <li><a href="#services">Services</a></li>
+            <li><a href="#contact">Contact</a></li>
+            <li><a href="#contact"><button class="tabs-learn-more">Learn More</button></a></li>
+          </ul>
+        </div>
+      </div>
+    </nav>
+  </div>
+  -->
+
+  <!-- Main Content Section -->
+  <header>
+    <h1 style="text-align: center; border-bottom: 3px solid rgb(20, 153, 11); display: inline-block; padding-bottom: 5px; padding-top: 70px;">Linked List Introduction</h1>
+  </header>
+
+  <div class="container">
+    <main>
+      <!-- Introduction to Linked List -->
+      <section>
+        <h2>What is a Linked List?</h2>
+        <p>
+          A <strong>Linked List</strong> is a linear data structure where each element, called a node, contains data and a reference to the next node. Unlike arrays, linked lists do not store data in contiguous memory locations, making them more efficient for insertions and deletions.
+        </p>
+        <p>
+          Each node in a linked list contains two components:
+        </p>
+        <ul>
+          <li><strong>Data:</strong> The value stored in the node.</li>
+          <li><strong>Pointer (or link):</strong> A reference to the next node in the sequence.</li>
+        </ul>
+      </section>
+
+      <!-- Advantages of Linked Lists -->
+      <section>
+        <h2>Advantages of Linked Lists</h2>
+        <p>Here are some advantages of using linked lists:</p>
+        <ul>
+          <li><strong>Dynamic Size:</strong> Linked lists can grow or shrink at runtime, unlike arrays that have a fixed size.</li>
+          <li><strong>Efficient Insertions/Deletions:</strong> It’s easier to insert or delete elements since only pointers need to be adjusted.</li>
+          <li><strong>Memory Utilization:</strong> Memory is allocated as needed, avoiding the need for predefining a fixed size.</li>
+        </ul>
+      </section>
+
+      <!-- Types of Linked Lists -->
+      <section>
+        <h2>Types of Linked Lists</h2>
+        <p>Different types of linked lists include:</p>
+        <ul>
+          <li><strong>Singly Linked List:</strong> Each node points to the next, allowing traversal in one direction only.</li>
+          <li><strong>Doubly Linked List:</strong> Nodes contain links to both the next and the previous nodes, enabling bidirectional traversal.</li>
+          <li><strong>Circular Linked List:</strong> The last node points back to the first node, forming a circular structure.</li>
+        </ul>
+      </section>
+
+      <!-- Operations in Linked Lists -->
+      <section>
+        <h2>Common Operations in Linked Lists</h2>
+        <ul>
+          <li><strong>Insertion:</strong> Insert elements at the beginning, middle, or end of the list by adjusting the pointers.</li>
+          <li><strong>Deletion:</strong> Remove nodes by updating the pointers of adjacent nodes to skip the node being deleted.</li>
+          <li><strong>Traversal:</strong> Visit each node in the list sequentially, starting from the head node.</li>
+          <li><strong>Reversal:</strong> Reverse the order of nodes in the list.</li>
+        </ul>
+      </section>
+
+      <!-- Applications of Linked Lists -->
+      <section>
+        <h2>Applications of Linked Lists</h2>
+        <ul>
+          <li><strong>Dynamic Memory Allocation:</strong> Used to manage free memory in operating systems.</li>
+          <li><strong>Stack and Queue Implementation:</strong> Provides a way to dynamically implement these data structures.</li>
+          <li><strong>Graph Representations:</strong> Often used to implement adjacency lists in graphs.</li>
+          <li><strong>Polynomial Manipulation:</strong> Used in polynomial operations where each node represents a term of the polynomial.</li>
+        </ul>
+      </section>
+
+      <!-- Implementation Section -->
+      <section>
+        <h3> Implementation of Linked Lists: </h3>
+        <h4> 1. Singly Linked List Implementation</h4>
+        <h4 style="margin-bottom: 50px;"> 2. Doubly Linked List Implementation</h4>
+      </section>
+    </main>
+  </div>
+
+  <script>
+    // Function to toggle the sidebar (if needed in the future)
+    function toggleSidebar() {
+      console.log('Toggle menu clicked!');
+    }
+  </script>
+
+</body>
+</html>
