@@ -1,71 +1,50 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Linked List Algorithm and Analysis</title>
-
-  <style>
-    body{
-      font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
-      margin: 0;
-      padding: 0;
-      background-color: #f4f4f4;
-    }
-    .home{
-      max-width: 1300px;
-      margin: 0 auto;
-      padding: 20px;
-    }
-    h1, h2, h3 {
-      text-align: center;
-      color: #333;
-    }
-    p {
-      text-align: justify;
-      line-height: 1.6;
-    }
-    pre {
-      background-color: #e0e0e0;
-      padding: 15px;
-      border-radius: 5px;
-      max-width: 90%;
-      margin: 20px auto;
-      overflow-x: auto;
-    }
-    code {
-      font-family: Consolas, 'Courier New', monospace;
-    }
-    .analysis {
-      background-color: #ecf0f1;
-      padding: 20px;
-      margin: 20px auto;
-      border-left: 5px solid #3498db;
-      max-width: 90%;
-    }
-    .center {
-      text-align: center;
-    }
-    img {
-      max-width: 50%;
-      display: block;
-      margin: 20px auto;
-    }
-  </style>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="styles.css">
 </head>
 <body>
+    <!--<div id="navbar"></div>-->
 
-  <div class="home">
-    <h1>Linked List Algorithm and Analysis</h1>
+    <div class="page">
+        <div class="heading">
+            <h1>Algorithm and Analysis</h1>
+        </div>
+        <br>
+        <div class="para">
+            <h2>Linked List Algorithm and Analysis</h2>
+            <br>
 
-    <h2>Algorithm Overview</h2>
-    <p>A linked list is a linear data structure where each element (node) is a separate object. Each node comprises two fields: data and a reference (or pointer) to the next node in the sequence. Linked lists are dynamic and allow efficient insertion and deletion of elements. Below are the algorithms for inserting and deleting nodes in a singly linked list.</p>
+          <p>
+            <b>Problem Statement:</b>
+    A linked list is a linear data structure where each element (node) is a separate object. Each node comprises two fields: data and a reference (or pointer) to the next node in the sequence. Linked lists are dynamic and allow efficient insertion and deletion of elements. Below are the algorithms for inserting and deleting nodes in a singly linked list.
+    <br><br>
+    <b>Step-by-Step Algorithm for Insertion at the Beginning:</b><br><br>
+    Step 1: &nbsp Start.<br><br>
+    Step 2: &nbsp Allocate memory for the new node.<br><br>
+    Step 3: &nbsp Assign data to the new node.<br><br>
+    Step 4: &nbsp Make the next of the new node point to the current head.<br><br>
+    Step 5: &nbsp Update the head to point to the new node.<br><br>
+    Step 6: &nbsp End.<br><br>
 
-    <h2>Algorithm: Insertion at the Beginning</h2>
-    <h3>Theory</h3>
-    <p>Inserting a node at the beginning of a linked list involves creating a new node and updating the head pointer. The new node becomes the head of the list, and its next pointer points to the old head. This operation is efficient because it does not require traversing the list, making it a constant-time operation.</p>
+    <b>Step-by-Step Algorithm for Deletion from the Beginning:</b><br><br>
+    Step 1: &nbsp Start.<br><br>
+    Step 2: &nbsp If the list is empty, return.<br><br>
+    Step 3: &nbsp Store the current head node in a temporary variable.<br><br>
+    Step 4: &nbsp Move the head to point to the next node.<br><br>
+    Step 5: &nbsp Free the memory of the old head node.<br><br>
+    Step 6: &nbsp End.<br><br>
+          </p>
+        </div>
 
-    <pre><code>
+        <div id="code-block">
+        <h2>Pseudocode</h2>
+        <div class="code-container">
+            <pre>
+                <code>
 // Node structure
 struct Node {
     int data;
@@ -86,21 +65,7 @@ void insertAtBeginning(struct Node** head, int newData) {
     // 4. Move the head to point to the new node
     *head = newNode;
 }
-    </code></pre>
 
-    <div class="analysis">
-      <h3>Analysis: Insertion Algorithm</h3>
-      <p><strong>Best Case:</strong> O(1) — The operation always takes constant time, as we only need to modify the head pointer and create a new node.</p>
-      <p><strong>Average Case:</strong> O(1) — There is no traversal required, so the average time complexity is constant.</p>
-      <p><strong>Worst Case:</strong> O(1) — Even in the worst-case scenario (with a large list), the insertion at the beginning remains a constant-time operation.</p>
-      <p><strong>Space Complexity:</strong> O(1) — The space complexity per operation is constant because only one new node is created.</p>
-    </div>
-
-    <h2>Algorithm: Deletion from the Beginning</h2>
-    <h3>Theory</h3>
-    <p>Deleting a node from the beginning of a linked list involves updating the head pointer to the next node and freeing the memory of the original head node. Like insertion, deletion at the beginning is a simple and efficient operation that does not require list traversal, making it a constant-time operation.</p>
-
-    <pre><code>
 // Function to delete a node from the beginning
 void deleteAtBeginning(struct Node** head) {
     if (*head == NULL) return; // List is empty
@@ -114,20 +79,53 @@ void deleteAtBeginning(struct Node** head) {
     // 3. Free memory of the old head
     free(temp);
 }
-    </code></pre>
+                </code>
+            </pre>
+        </div>
 
-    <div class="analysis">
-      <h3>Analysis: Deletion Algorithm</h3>
-      <p><strong>Best Case:</strong> O(1) — Deleting the first node always takes constant time, regardless of the size of the list.</p>
-      <p><strong>Average Case:</strong> O(1) — Since no traversal is required, the average time complexity remains constant.</p>
-      <p><strong>Worst Case:</strong> O(1) — The time complexity does not increase even in the worst case, making it constant-time.</p>
-      <p><strong>Space Complexity:</strong> O(1) — The space complexity is constant because we only free one node's memory.</p>
+        <h2>Code Example</h2>
+        <div class="code-container">
+            <pre><code>
+    <span class="comment">// Singly Linked List Insertion and Deletion in C</span>
+    <span class="keyword">public class</span> LinkedListOperations {
+        
+        <span class="keyword">public</span> <span class="keyword">static void</span> insertAtBeginning(Node** head, int newData) {
+            <span class="comment">// Allocate memory for the new node</span>
+            Node newNode = <span class="keyword">new</span> Node();
+            newNode.data = newData;
+            newNode.next = head;
+            head = newNode;
+        }
+
+        <span class="keyword">public</span> <span class="keyword">static void</span> deleteAtBeginning(Node** head) {
+            <span class="comment">// If the list is empty</span>
+            if (head == NULL) <span class="keyword">return</span>;
+            
+            Node temp = head;
+            head = head.next;
+            temp = null;  <span class="comment">// Free the old head</span>
+        }
+    }
+            </code></pre>
+        </div>
+
+        </div>
+
+        <div class="Analysis">
+            <h1>Analysis</h1><br>
+            <ol>
+                <li>The insertion and deletion at the beginning of a linked list are very efficient because these operations do not require traversing the list. Both operations are performed in constant time.</li>
+                <li>For insertion, we allocate memory for a new node, update its next pointer, and adjust the head pointer. This is done in O(1) time.</li>
+                <li>For deletion, we move the head to the next node and free the memory of the original head, also an O(1) operation.</li>
+                <li>Therefore, both the time and space complexity for these operations is: <b>O(1)</b>.</li>
+            </ol>
+        </div>
+
+        <div class="footer-bottom" style="margin-bottom: 3%;margin-top:15% ;color: rgba(128, 128, 128, 0.923);">
+            <p>© 2024 TechHive. All Rights Reserved.</p>
+          </div>
     </div>
 
-    <h2>Visual Representation of a Singly Linked List</h2>
-    <img src="https://upload.wikimedia.org/wikipedia/commons/6/6d/Singly-linked-list.svg" alt="Singly Linked List" class="center">
-
-  </div>
-
+      <script src="../Home/navbar2.js"></script>
 </body>
 </html>
