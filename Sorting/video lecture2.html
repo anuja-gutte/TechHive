@@ -1,11 +1,10 @@
 <!DOCTYPE html>
 <html lang="en">
-    <head>
-        <meta charset="UTF-8">
+<head>
+  <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Document</title>
-
-  <style>
+<style>
     .body{
     font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
    
@@ -123,42 +122,94 @@ li a{
     font-size: 15px;
     margin-right: 20px;
 }
+ /* Styles for the video and description */
+ .video-section {
+      /* Remove background-color or set it to transparent */
+      background-color: transparent; /* Change this if you want a different background color */
+      padding: 20px;
+      border-radius: 2px;
+      box-shadow: 0 4px 8px rgba(36, 30, 30, 0.1);
+      margin: 20px 0;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      flex-direction: column;
+    }
 
+    /* Container for video with border */
+    .video-container {
+      
+      border: 5px solid #1ac80f; /* The border color you want */
+      padding: 20px; /* Space between the border and video */
+      border-radius: 10px;
+      max-width: 70%; /* Reduce width to 70% of the parent container */
+      width: 100%;
+      margin: 0 auto; /* Center the video */
+    }
 
+    .video-description {
+      padding-top: 20px;
+      font-size: 16px;
+      color: #333;
+    }
+
+    /* Centering the video within the video-container */
+    iframe {
+      width: 100%;
+      height: 450px; /* Adjust the height as needed */
+      border-radius: 10px;
+    }
   </style>
-    </head>
-    
+
+
+</head>
 <body>
-    <!-- <nav>
-        <div class="tab">
-            <div class="left">
-            <div class="logo">
-                <img src="../logo.jpeg">
-            </div>
-            <a><button class="open-btn" onclick="toggleSidebar()">☰ Menu</button></a>
-            </div>
-        
-                <div class="right">
-                    <ul id="list">
-                        <li> <a href="#home">Home</a></li>
-                        <li><a href="about.html">About</a></li>
-                        <li><a href="#services">Services</a></li>
-                        <li> <a href="#contact">Contact</a></li>
-                        <li><a href="#contact"><button class="tabs-learn-more">Learn More</button></a></li>
-                        
-                    </ul>
-                   
-                
-                </div>
-        
+  <nav>
+    <div class="tab">
+        <div class="left">
+        <div class="logo">
+            <img src="../logo.jpeg">
         </div>
-    </nav> -->
-    <div class="container">
-        <h1>Video Lectures:</h1>
-        <p>Click the link below to watch the video lecture.</p><br>
-        <p>Sorting:</p>
-        <a href="https://youtu.be/1jCFUv-Xlqo?si=4eiU636giQ4VMg9S" target="_blank" style="font-size: 20px; color: blue;">Watch Video Lecture</a><br>
-        <p>More information about the lecture can go here.</p>
+        <a><button class="open-btn" onclick="toggleSidebar()">☰ Menu</button></a>
+        </div>
+    
+            <div class="right">
+                <ul id="list">
+                    <li> <a href="#home">Home</a></li>
+                    <li><a href="about.html">About</a></li>
+                    <li><a href="#services">Services</a></li>
+                    <li> <a href="#contact">Contact</a></li>
+                    <li><a href="#contact"><button class="tabs-learn-more">Learn More</button></a></li>
+                    
+                </ul>
+               
+            
+            </div>
+
     </div>
+</nav>
+<header>
+  <h2 style="text-align: left; padding-top: 20px; padding-bottom: 20px;">Sorting:</h2>
+</header>
+<div class="video-section" id="Details on types of queue">
+  <!-- YouTube Video Embed within a bordered container -->
+  <div class="video-container">
+    <iframe width="560" height="315" src="https://www.youtube.com/embed/PkJIc5tBRUE?si=9-wHXGSebmnLrzU7" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+  </div>
+    <!-- Video Description/Overview -->
+    <div class="video-description" style="padding-top: 40px;">
+      <h2>Video Overview:</h2>
+
+      <p  style="padding-top: 20px; padding-bottom: 10px;">In this video, you'll learn Sorting, a fundamental concept in Data Structures and Algorithms (DSA), by exploring how it works and why it's so powerful. </p>
+
+      <p style="padding-top: 20px; padding-bottom: 10px;"> By the end of the video, you'll have a solid grasp of Sorting algorithms, how it applies to DSA problems, and how to implement it effectively in your coding projects. Perfect for preparing for coding interviews and exams! </p>
+
+    </div>
+
+    <div class="footer-bottom" style="margin-bottom: 3%;margin-top:15% ;color: rgba(128, 128, 128, 0.923);">
+      <p>© 2024 TechHive. All Rights Reserved.</p>
+    </div>
+  </div>
+  
 </body>
 </html>
