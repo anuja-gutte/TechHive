@@ -1,0 +1,198 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Resources</title>
+
+  <style>
+    .body{
+      font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+    }
+
+    .home{
+      max-width: 1300px;
+      margin: 0 auto;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+    }
+
+    *{
+      text-decoration: none;
+      margin: 0;
+      padding: 0;
+    }
+
+    .nav{
+      position: fixed;
+    }
+
+    .tab{
+      background: black;
+      font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+      width: 100%;
+    }
+
+    .tab{
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+    }
+
+    img{
+      width: 50px;
+      border-radius: 100px;
+      padding-right: 50px;
+    }
+
+    .open-btn{
+      font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+      font-size: 15px;
+      cursor: pointer;
+      display: inline-block;
+      background-color: black;
+      color: white;
+      border: none;
+    }
+
+    .open-btn:hover{
+      color: orange;
+      transition-duration: 0.3s;
+    }
+
+    a:hover{
+      color: orange;
+      transition-duration: 0.3s;
+    }
+
+    .left{
+      display: inline-flex;
+      align-items: center;
+    }
+
+    .tabs-learn-more{
+      font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+      background-color: black;
+      border-width: 2px;
+      border-style: solid;
+      border-color: white;
+      color: white;
+      font-weight: 500;
+      border-radius: 20px;
+      padding: 8px;
+      cursor: pointer;
+    }
+
+    .tabs-learn-more:hover{
+      background-color: rgb(28, 205, 15);
+      transition-duration: 0.3s;
+      border-color:  rgb(28, 205, 15);
+    }
+
+    li{
+      list-style: none;
+      display: inline-block;
+    }
+
+    li a{
+      color: white;
+      font-size: 15px;
+      margin-right: 20px;
+    }
+
+    .resources{
+      margin-top: 100px;
+      padding: 20px;
+      text-align: center;
+    }
+
+    .resource-links{
+      margin-bottom: 40px; /* Add space between the sections */
+    }
+
+    .resource-links a{
+      display: block;
+      color: black;
+      font-size: 18px;
+      margin-bottom: 10px;
+      text-decoration: none;
+    }
+
+    .resource-links a:hover{
+      color: green;
+    }
+
+    .header{
+      font-size: 24px;
+      color: black;
+      font-weight: bold;
+      margin-bottom: 20px;
+    }
+
+    .sub-header{
+      font-size: 20px;
+      color: darkblue;
+      margin-bottom: 20px;
+      margin-top: 40px; /* Adds space above each section */
+    }
+
+  </style>
+</head>
+<body>
+  <!-- Navigation Bar -->
+  <nav>
+    <div class="tab">
+      <div class="left">
+        <div class="logo">
+          <img src="../logo.jpeg" alt="Logo">
+        </div>
+        <a><button class="open-btn" onclick="toggleSidebar()">☰ Menu</button></a>
+      </div>
+  
+      <div class="right">
+        <ul id="list">
+          <li><a href="#home">Home</a></li>
+          <li><a href="about.html">About</a></li>
+          <li><a href="#services">Services</a></li>
+          <li><a href="#resources">Resources</a></li>
+          <li><a href="#contact">Contact</a></li>
+          <li><a href="#contact"><button class="tabs-learn-more">Learn More</button></a></li>
+        </ul>
+      </div>
+    </div>
+  </nav>
+
+  <!-- Resources Section -->
+  <div class="resources">
+    <h2 class="header">Useful Resources</h2>
+
+    <!-- Websites Section -->
+    <h3 class="sub-header">Websites</h3>
+    <div class="resource-links">
+      <a href="https://www.geeksforgeeks.org/" target="_blank">GeeksforGeeks</a>
+      <a href="https://www.takeuforward.org/" target="_blank">TakeUForward</a>
+      <a href="https://www.w3schools.com/" target="_blank">W3Schools</a>
+      <a href="https://practice.geeksforgeeks.org/" target="_blank">GFG (Practice)</a>
+    </div>
+
+    <!-- Coding Platforms Section -->
+    <h3 class="sub-header">Coding Platforms</h3>
+    <div class="resource-links">
+      <a href="https://leetcode.com/" target="_blank">LeetCode</a>
+      <a href="https://www.hackerrank.com/" target="_blank">HackerRank</a>
+      <a href="https://www.codechef.com/" target="_blank">CodeChef</a>
+      <a href="https://practice.geeksforgeeks.org/" target="_blank">GFG (Coding Platform)</a>
+    </div>
+
+    <!-- YouTube Section -->
+    <h3 class="sub-header">YouTube Channels</h3>
+    <div class="resource-links">
+      <a href="https://www.youtube.com/c/ApnaCollegeOfficial" target="_blank">Apna College</a>
+      <a href="https://www.youtube.com/c/GateSmashers" target="_blank">Gate Smashers</a>
+      <a href="https://www.youtube.com/c/CodeWithHarry" target="_blank">Code with Harry</a>
+    </div>
+  </div>
+
+</body>
+</html>
