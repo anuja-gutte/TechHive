@@ -1,363 +1,290 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Code Implementation</title>
-    <link rel="stylesheet" href="styles.css">
-    <style>
-        .body{
-        font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
-       
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Code Implementation of Insertion and Merge Sort</title>
+  <style>
+    body {
+      font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
     }
-    .home{
+
+    .home {
       max-width: 1300px;
       margin: 0 auto;
       display: flex;
       flex-direction: column;
       align-items: center;
     }
-    
-    *{
-        text-decoration: none;
-        margin: 0;
-        padding: 0;
-        
+
+    * {
+      text-decoration: none;
+      margin: 0;
+      padding: 0;
     }
-    
-    .nav{
-        position: fixed;
+
+    .nav {
+      position: fixed;
     }
-    
-    .tab{
-        background: black;
-        font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
-        width: 100%;
-        /* padding-left: 15px;
-        padding-right: 15px; */
+
+    .tab {
+      background: black;
+      font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+      width: 100%;
     }
-    
-    .tab{
-        display: flex;
-        align-items: center;
-        justify-content: space-between;
+
+    .tab {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
     }
-    
-    img{
-        width: 50px;
-        border-radius: 100px;
-        padding-right: 50px;
+
+    img {
+      width: 50px;
+      border-radius: 100px;
+      padding-right: 50px;
     }
-    
-    .open-btn{
-        font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
-        font-size:15px;
-        cursor: pointer;
-        display: inline-block;
-        background-color: black;
-        color:white;
-        border: none;
-        
-       
+
+    .open-btn {
+      font-size: 15px;
+      cursor: pointer;
+      display: inline-block;
+      background-color: black;
+      color: white;
+      border: none;
     }
-    
+
     .arrow {
-        border: solid white;
-        border-width: 0 3px 3px 0;
-        display: inline-block;
-        padding: 2px;
-      }
-    
+      border: solid white;
+      border-width: 0 3px 3px 0;
+      display: inline-block;
+      padding: 2px;
+    }
+
     .down {
-        transform: rotate(45deg);
-        -webkit-transform: rotate(45deg);
-      }
-    
-    .open-btn:hover{
-        color:orange;
-        transition-duration: 0.3s;
-    
+      transform: rotate(45deg);
+      -webkit-transform: rotate(45deg);
     }
-    
-    a:hover{
-        color: orange;
-        transition-duration: 0.3s;
+
+    .open-btn:hover {
+      color: orange;
+      transition-duration: 0.3s;
     }
-    
-    .left{
-        display: inline-flex;
-        align-items: center;
-        /* margin-left: 10%; */
-        
+
+    a:hover {
+      color: orange;
+      transition-duration: 0.3s;
     }
-    
-    
-    .tabs-learn-more{
-        font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
-        
-        background-color: black;
-        border-width: 2px;
-        border-style: solid;
-        border-color: white;
-        color: white;
-        font-weight: 500;
-        border-radius: 20px;
-        padding: 8px;
-        cursor: pointer;
+
+    .left {
+      display: inline-flex;
+      align-items: center;
     }
-    
-    .tabs-learn-more:hover{
-        background-color: rgb(28, 205, 15);
-        transition-duration: 0.3s;
-        border-color:  rgb(28, 205, 15);
-        
+
+    .tabs-learn-more {
+      background-color: black;
+      border-width: 2px;
+      border-style: solid;
+      border-color: white;
+      color: white;
+      font-weight: 500;
+      border-radius: 20px;
+      padding: 8px;
+      cursor: pointer;
     }
-    
-    li{
-        list-style: none;
-        display: inline-block;
+
+    .tabs-learn-more:hover {
+      background-color: rgb(28, 205, 15);
+      transition-duration: 0.3s;
+      border-color: rgb(28, 205, 15);
     }
-    
-    li a{
-        color: white;
-        font-size: 15px;
-        margin-right: 20px;
+
+    li {
+      list-style: none;
+      display: inline-block;
     }
-    
-    </style>
+
+    li a {
+      color: white;
+      font-size: 15px;
+      margin-right: 20px;
+    }
+
+    h2 {
+      text-align: center;
+      padding-top: 20px;
+      color: green;
+      font-size: 30px;
+    }
+
+    .section {
+      background-color: #eff8ed;
+      padding: 20px;
+      border-radius: 2px;
+      box-shadow: 0 4px 8px rgba(36, 30, 30, 0.1);
+      margin: 20px 0;
+    }
+
+    pre {
+      background-color: #f4f4f4;
+      padding: 10px;
+      border-left: 4px solid #ccc;
+      overflow-x: auto;
+      font-size: large;
+    }
+  </style>
 </head>
 <body>
-    <nav>
-        <div class="tab">
-            <div class="left">
-            <div class="logo">
-                <img src="../logo.jpeg">
-            </div>
-            <a><button class="open-btn" onclick="toggleSidebar()">☰ Menu</button></a>
-            </div>
-        
-                <div class="right">
-                    <ul id="list">
-                        <li> <a href="#home">Home</a></li>
-                        <li><a href="about.html">About</a></li>
-                        <li><a href="#services">Services</a></li>
-                        <li> <a href="#contact">Contact</a></li>
-                        <li><a href="#contact"><button class="tabs-learn-more">Learn More</button></a></li>
-                        
-                    </ul>
-                   
-                
-                </div>
-        
+  <nav>
+    <div class="tab">
+      <div class="left">
+        <div class="logo">
+          <img src="../logo.jpeg" alt="Logo">
         </div>
-    </nav>
-    <!-- <div id="navbar"></div> -->
+        <a><button class="open-btn" onclick="toggleSidebar()">☰ Menu</button></a>
+      </div>
 
-    <div class="home">
-        <div class="code-page">
+      <div class="right">
+        <ul id="list">
+          <li><a href="#home">Home</a></li>
+          <li><a href="about.html">About</a></li>
+          <li><a href="#services">Services</a></li>
+          <li><a href="#contact">Contact</a></li>
+          <li><a href="#contact"><button class="tabs-learn-more">Learn More</button></a></li>
+        </ul>
+      </div>
+    </div>
+  </nav>
+
+  <header>
+    <h2>Code Implementation of <span style="color: green;">Insertion and Merge Sort</span> - Java</h2>
+  </header>
+
+  <main>
+    <section class="section" id="theory">
+      <p style="font-size: larger;">
+        Sorting algorithms like Insertion Sort and Merge Sort are fundamental to computer science. Insertion Sort is simple and works well for small datasets, 
+        while Merge Sort is a more efficient, divide-and-conquer algorithm that performs well with larger datasets.
+      </p>
+    </section>
+
+    <!-- Insertion Sort Implementation -->
+    <h3>Insertion Sort Example:</h3>
+    <div class="section" id="insertion-sort-code">
+      <pre>
+class InsertionSort {
+    // Function to perform insertion sort
+    public static void insertionSort(int[] arr) {
+        for (int i = 1; i < arr.length; i++) {
+            int key = arr[i];
+            int j = i - 1;
+
+            // Move elements of arr[0..i-1], that are greater than key, to one position ahead of their current position
+            while (j >= 0 && arr[j] > key) {
+                arr[j + 1] = arr[j];
+                j = j - 1;
+            }
+            arr[j + 1] = key;
+        }
+    }
+
+    public static void main(String[] args) {
+        int[] numbers = {12, 11, 13, 5, 6};
+        insertionSort(numbers);
         
-            <!-- Main Heading -->
-            <h1>Code Implementation:</h1><br>
-            
-            <!-- Subheading -->
-            <h2>1]Insertion Sort</h2>
-               <!--Some info-->
-               Insertion Sort is a simple and intuitive sorting algorithm that builds a sorted array (or list) one element at a time. <br>
-               It works similarly to how you might sort playing cards in your hands.<br>
-               Here’s a detailed breakdown of the insertion sort code provided earlier.<br>
-            <!-- Code Implementation Section -->
-            <div class="code-box">
-                <h3>Code:</h3>
-                <pre>
-
-                    <!--Code here-->
-                    #include <stdio.h>
-
-                        // Function to perform Insertion Sort
-                        void insertionSort(int arr[], int n) {
-                            int i, key, j;
-                            for (i = 1; i < n; i++) {
-                                key = arr[i];  // The current element to be inserted
-                                j = i - 1;
-                        
-                                // Move elements of arr[0..i-1], that are greater than key,
-                                // to one position ahead of their current position
-                                while (j >= 0 && arr[j] > key) {
-                                    arr[j + 1] = arr[j];
-                                    j = j - 1;
-                                }
-                                arr[j + 1] = key;  // Insert the key at the correct position
-                            }
-                        }
-                        
-                        // Function to print the array
-                        void printArray(int arr[], int n) {
-                            for (int i = 0; i < n; i++) {
-                                printf("%d ", arr[i]);
-                            }
-                            printf("\n");
-                        }
-                        
-                        int main() {
-                            int arr[] = {12, 11, 13, 5, 6}; // Example array
-                            int n = sizeof(arr) / sizeof(arr[0]);
-                        
-                            printf("Original array: \n");
-                            printArray(arr, n);
-                        
-                            insertionSort(arr, n);  // Sort the array using Insertion Sort
-                        
-                            printf("Sorted array: \n");
-                            printArray(arr, n);      // Print the sorted array
-                        
-                            return 0;
-                        }
-   
-                </pre>
-             
-                <!-- Output Section -->
-                <div class="output-box">
-                    <h3>Output:</h3>
-                    <pre>
-                        Original array: <br>
-                         12 11 13 5 6 <br>
-                        Sorted array: <br>
-                         5 6 11 12 13 
-  
-                    </pre>
-                </div>
-                <h3>Working of the above code:</h3>
-                <p>
-                   <!--Description-->
-                   The insertion sort algorithm iteratively builds a sorted portion of the array by <br>
-                   inserting each new element into its correct position among the previously sorted elements. <br>
-                   This is done by shifting larger elements to the right and inserting the key in the appropriate position. <br>
-                   The final result is a sorted array in ascending order.<br>
-                </p><br><br>
-                <h2>2]Merge sort</h2>
-            <p>
-               <!--Some info--> 
-               Merge Sort is a highly efficient, stable sorting algorithm that follows the divide-and-conquer paradigm. <br>
-               It divides the input array into two halves, recursively sorts each half, and then merges the sorted halves back together. <br>
-            </p>
-
-            <!-- Code Implementation Section -->
-            <div class="code-box">
-                <h3>Code</h3>
-                <pre>
-                    <!--Code here-->
-                    #include <stdio.h>
-
-                        // Function to merge two subarrays
-                        void merge(int arr[], int left, int mid, int right) {
-                            int i, j, k;
-                            int n1 = mid - left + 1; // Size of left subarray
-                            int n2 = right - mid;    // Size of right subarray
-                        
-                            // Create temporary arrays
-                            int L[n1], R[n2];
-                        
-                            // Copy data to temporary arrays L[] and R[]
-                            for (i = 0; i < n1; i++)
-                                L[i] = arr[left + i];
-                            for (j = 0; j < n2; j++)
-                                R[j] = arr[mid + 1 + j];
-                        
-                            // Merge the temporary arrays back into arr[left..right]
-                            i = 0; // Initial index of first subarray
-                            j = 0; // Initial index of second subarray
-                            k = left; // Initial index of merged subarray
-                            while (i < n1 && j < n2) {
-                                if (L[i] <= R[j]) {
-                                    arr[k] = L[i];
-                                    i++;
-                                } else {
-                                    arr[k] = R[j];
-                                    j++;
-                                }
-                                k++;
-                            }
-                        
-                            // Copy the remaining elements of L[], if there are any
-                            while (i < n1) {
-                                arr[k] = L[i];
-                                i++;
-                                k++;
-                            }
-                        
-                            // Copy the remaining elements of R[], if there are any
-                            while (j < n2) {
-                                arr[k] = R[j];
-                                j++;
-                                k++;
-                            }
-                        }
-                        
-                        // Function to implement Merge Sort
-                        void mergeSort(int arr[], int left, int right) {
-                            if (left < right) {
-                                // Find the middle point
-                                int mid = left + (right - left) / 2;
-                        
-                                // Recursively sort the first and second halves
-                                mergeSort(arr, left, mid);
-                                mergeSort(arr, mid + 1, right);
-                        
-                                // Merge the sorted halves
-                                merge(arr, left, mid, right);
-                            }
-                        }
-                        
-                        // Function to print the array
-                        void printArray(int arr[], int size) {
-                            for (int i = 0; i < size; i++) {
-                                printf("%d ", arr[i]);
-                            }
-                            printf("\n");
-                        }
-                        
-                        int main() {
-                            int arr[] = {38, 27, 43, 3, 9, 82, 10}; // Example array
-                            int arr_size = sizeof(arr) / sizeof(arr[0]);
-                        
-                            printf("Original array: \n");
-                            printArray(arr, arr_size);
-                        
-                            mergeSort(arr, 0, arr_size - 1); // Sort the array using Merge Sort
-                        
-                            printf("Sorted array: \n");
-                            printArray(arr, arr_size); // Print the sorted array
-                        
-                            return 0;
-                        }
-   
-                </pre>
-             
-                <!-- Output Section -->
-                <div class="output-box">
-                    <h3>Output:</h3>
-                    <pre>
-                        Original array: <br>
-                        38 27 43 3 9 82 10 <br>
-                        Sorted array: <br>
-                        3 9 10 27 38 43 82<br> 
-
-                    </pre>
-                </div>
-
-                <!-- Working Explanation Section -->
-                <h3>Working of the above code:</h3>
-                <p>
-                   <!--Description-->
-                   The Merge Sort algorithm effectively sorts the array by continuously splitting it into smaller subarrays, <br>
-                   sorting those, and then merging them back together. <br>
-                   It is efficient, with a consistent time complexity of O(n log n), making it suitable for large datasets.<br> 
-                   However, it requires additional memory for temporary arrays, which is a trade-off to consider when using this algorithm.<br>
-                </p>
-            </div>
-        </div>
+        System.out.println("Sorted array: ");
+        for (int num : numbers) {
+            System.out.print(num + " ");
+        }
+    }
+}
+      </pre>
+    </div>
+    <h3>Output:</h3>
+    <div class="section" id="output">
+      <pre>
+Insertion Sort Output:
+Sorted array: 5 6 11 12 13
+      </pre>
     </div>
 
-    <script src="../Home/navbar2.js"></script>
+    <!-- Merge Sort Implementation -->
+    <h3>Merge Sort Example:</h3>
+    <div class="section" id="merge-sort-code">
+      <pre>
+class MergeSort {
+    // Function to merge two halves
+    public static void merge(int[] arr, int left, int mid, int right) {
+        int n1 = mid - left + 1;
+        int n2 = right - mid;
+
+        int[] L = new int[n1];
+        int[] R = new int[n2];
+
+        for (int i = 0; i < n1; ++i)
+            L[i] = arr[left + i];
+        for (int j = 0; j < n2; ++j)
+            R[j] = arr[mid + 1 + j];
+
+        int i = 0, j = 0;
+        int k = left;
+        while (i < n1 && j < n2) {
+            if (L[i] <= R[j]) {
+                arr[k] = L[i];
+                i++;
+            } else {
+                arr[k] = R[j];
+                j++;
+            }
+            k++;
+        }
+
+        while (i < n1) {
+            arr[k] = L[i];
+            i++;
+            k++;
+        }
+
+        while (j < n2) {
+            arr[k] = R[j];
+            j++;
+            k++;
+        }
+    }
+
+    // Function to perform merge sort
+    public static void mergeSort(int[] arr, int left, int right) {
+        if (left < right) {
+            int mid = left + (right - left) / 2;
+
+            mergeSort(arr, left, mid);
+            mergeSort(arr, mid + 1, right);
+
+            merge(arr, left, mid, right);
+        }
+    }
+
+    public static void main(String[] args) {
+        int[] numbers = {12, 11, 13, 5, 6, 7};
+        mergeSort(numbers, 0, numbers.length - 1);
+
+        System.out.println("Sorted array: ");
+        for (int num : numbers) {
+            System.out.print(num + " ");
+        }
+    }
+}
+      </pre>
+    </div>
+
+    <!-- Output Section -->
+    <h3>Output:</h3>
+    <div class="section" id="output">
+      <pre>
+Merge Sort Output:
+Sorted array: 5 6 7 11 12 13
+      </pre>
+    </div>
+  </main>
 </body>
 </html>
