@@ -1,0 +1,249 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>qquiz</title>
+    <link rel="stylesheet" href="mainquiz.css" />
+    <style>
+      .body {
+        font-family: Arial, Helvetica, sans-serif,
+          sans-serif;
+      }
+      .home {
+        max-width: 1300px;
+        margin: 0 auto;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+      }
+
+      * {
+        text-decoration: none;
+        margin: 0;
+        padding: 0;
+      }
+
+      .nav {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    z-index: 1000;
+}
+
+.tab {
+    background: black;
+    font-family: Arial, Helvetica, sans-serif;
+    width: 100%;
+}
+
+.tab {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.logo img {
+    width: 65px;
+    padding-right: 40px;
+}
+
+.open-btn {
+    font-size: 15px;
+    background-color: black;
+    color: white;
+    border: none;
+    padding: 10px;
+    cursor: pointer;
+}
+
+.open-btn:hover {
+    color: orange;
+    transition: color 0.3s;
+}
+
+.left {
+    display: inline-flex;
+    align-items: center;
+}
+
+.tabs-learn-more {
+    background-color: black;
+    color: white;
+    border: 2px solid white;
+    padding: 8px 16px;
+    cursor: pointer;
+    border-radius: 20px;
+    font-weight: 500;
+}
+
+.tabs-learn-more:hover {
+    background-color: rgb(28, 205, 15);
+    border-color: rgb(28, 205, 15);
+    transition: 0.3s;
+}
+
+/*List css*/
+.right ul {
+    list-style: none;
+    display: flex;
+    margin: 0;
+    padding: 20;
+}
+
+.right ul li {
+    margin-right: 20px;
+    line-height: 2.5;
+}
+
+.right ul li a {
+    color: white;
+    text-decoration: none;
+    font-size: 15px;
+}
+
+.right ul li a:hover {
+    color: orange;
+    transition: color 0.3s;
+}
+
+header {
+    background-color:#f4f4f4;
+    color: rgb(12, 4, 4);
+    padding: 0em;
+    text-align: center;
+    width: 100%;
+}
+
+/*Heading css*/
+h1 {
+    margin: 0;
+    text-align: center; 
+    border-bottom: 3px solid rgb(20, 153, 11); 
+    display: inline-block; 
+    padding-bottom: 5px; 
+    padding-top: 70px;
+}
+/* Style for the button */
+button {
+    background-color: green;   /* Green color for the button */
+    color: white;              /* White text color */
+    border: none;              /* Remove border */
+    padding: 10px 20px;        /* Padding inside the button */
+    font-size: 16px;           /* Font size */
+    border-radius: 5px;        /* Rounded corners */
+    cursor: pointer;           /* Cursor turns to a pointer */
+    transition: background-color 0.3s ease;  /* Smooth color transition */
+    display: inline-block;      /* Inline block for center alignment */
+}
+
+/* Hover effect */
+button:hover {
+    background-color: black;   /* Change background to black on hover */
+    color: white;              /* Text remains white on hover */
+}
+
+/* Center alignment for the buttons */
+.container {
+    display: flex;             /* Use flexbox for alignment */
+    justify-content: center;   /* Horizontally center the content */
+    align-items: center;       /* Vertically center the content */
+    height: 100vh;             /* Full viewport height */
+}
+
+/* Optional: Style buttons within a container */
+button {
+    margin: 10px;              /* Add spacing between buttons if needed */
+}
+
+
+    </style>
+  </head>
+  <body>
+  
+    <div class="home">
+      <nav class="nav">
+          <div class="tab">
+              <div class="left">
+                  <div class="logo">
+                      <img src="../logo.jpeg" alt="Logo">
+                  </div>
+                  <a><button class="open-btn" onclick="toggleSidebar()">☰ Menu</button></a>
+              </div>
+
+              <div class="right">
+                  <ul id="list">
+                      <li><a href="#home">Home</a></li>
+                      <li><a href="about.html">About</a></li>
+                      <li><a href="#services">Services</a></li>
+                      <li><a href="#contact">Contact</a></li>
+                      <li><a href="#contact"><button class="tabs-learn-more">Learn More</button></a></li>
+                  </ul>
+              </div>
+          </div>
+      </nav>
+  </div>
+
+  <header>
+    <h1>Quiz</h1>
+  </header>
+    <div class="quiz-page">
+      <div class="quiz-container">
+
+
+        <div class="header">
+          <div id="progress-bar-container">
+            <div id="progress-bar"></div>
+          </div>
+        </div>
+
+        <div id="quiz"></div>
+
+        <button id="submit-btn" onclick="submitQuiz()">Submit</button>
+
+
+        <div id="score-container"></div>
+      </div>
+    </div>
+    <section>
+      <h2 style="text-align :center;border-bottom: 3px solid rgb(20, 153, 11); 
+      display: inline-block; 
+      padding-bottom: 5px; 
+      padding-top: 70px; "> Other quiz : </h2>
+
+
+      <br>
+
+    </br>
+      <button onclick="location.href='arrayImplementation.html'" class="nav-button">Searching quiz</button>
+    
+      <button onclick="location.href='linkedListImplementation.html'" class="nav-button">Sorting Quiz</button>
+      <button onclick="location.href='linkedListImplementation.html'" class="nav-button"> Recursion  QUIZ </button>
+
+
+      <br> 
+
+    </br>
+      <button onclick="location.href='linkedListImplementation.html'" class="nav-button"> Linked List</button>
+      <button onclick="location.href='linkedListImplementation.html'" class="nav-button">Queue</button>
+      <button onclick="location.href='linkedListImplementation.html'" class="nav-button">Trees</button>
+    </section>
+
+    <script src="mainquiz.js"></script>
+    <script>
+      function loadHTML() {
+        fetch("../Home/navbar2.html")
+          .then((response) => response.text())
+          .then((data) => {
+            document.getElementById("navbar").innerHTML = data;
+          })
+          .catch((error) => {
+            console.error("Error fetching the HTML:", error);
+          });
+      }
+
+      window.onload = loadHTML;
+    </script>
+  </body>
+</html>
