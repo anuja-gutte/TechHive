@@ -1,337 +1,171 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>{{ Algorithm Name }}</title>
-    <link rel="stylesheet" href="styles.css">
-    <style>
-        .body{
-        font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
-       
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Sorting Algorithms and Analysis</title>
+
+  <style>
+    body{
+      font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+      margin: 0;
+      padding: 0;
+      background-color: #f4f4f4;
     }
     .home{
       max-width: 1300px;
       margin: 0 auto;
-      display: flex;
-      flex-direction: column;
-      align-items: center;
+      padding: 20px;
     }
-    
-    *{
-        text-decoration: none;
-        margin: 0;
-        padding: 0;
-        
+    h1, h2, h3 {
+      text-align: center;
+      color: #333;
     }
-    
-    .nav{
-        position: fixed;
+    p {
+      text-align: justify;
+      line-height: 1.6;
+      font-size: large;
     }
-    
-    .tab{
-        background: black;
-        font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
-        width: 100%;
-        /* padding-left: 15px;
-        padding-right: 15px; */
+    pre {
+      background-color: #e0e0e0;
+      padding: 15px;
+      border-radius: 5px;
+      max-width: 90%;
+      margin: 20px auto;
+      overflow-x: auto;
     }
-    
-    .tab{
-        display: flex;
-        align-items: center;
-        justify-content: space-between;
+    code {
+      font-family: Consolas, 'Courier New', monospace;
     }
-    
-    img{
-        width: 50px;
-        border-radius: 100px;
-        padding-right: 50px;
+    .analysis {
+      background-color: #ecf0f1;
+      padding: 20px;
+      margin: 20px auto;
+      border-left: 5px solid #3498db;
+      max-width: 90%;
     }
-    
-    .open-btn{
-        font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
-        font-size:15px;
-        cursor: pointer;
-        display: inline-block;
-        background-color: black;
-        color:white;
-        border: none;
-        
-       
+    .center {
+      text-align: center;
     }
-    
-    .arrow {
-        border: solid white;
-        border-width: 0 3px 3px 0;
-        display: inline-block;
-        padding: 2px;
-      }
-    
-    .down {
-        transform: rotate(45deg);
-        -webkit-transform: rotate(45deg);
-      }
-    
-    .open-btn:hover{
-        color:orange;
-        transition-duration: 0.3s;
-    
+    img {
+      max-width: 50%;
+      display: block;
+      margin: 20px auto;
     }
-    
-    a:hover{
-        color: orange;
-        transition-duration: 0.3s;
-    }
-    
-    .left{
-        display: inline-flex;
-        align-items: center;
-        /* margin-left: 10%; */
-        
-    }
-    
-    
-    .tabs-learn-more{
-        font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
-        
-        background-color: black;
-        border-width: 2px;
-        border-style: solid;
-        border-color: white;
-        color: white;
-        font-weight: 500;
-        border-radius: 20px;
-        padding: 8px;
-        cursor: pointer;
-    }
-    
-    .tabs-learn-more:hover{
-        background-color: rgb(28, 205, 15);
-        transition-duration: 0.3s;
-        border-color:  rgb(28, 205, 15);
-        
-    }
-    
-    li{
-        list-style: none;
-        display: inline-block;
-    }
-    
-    li a{
-        color: white;
-        font-size: 15px;
-        margin-right: 20px;
-    }
-    
-    </style>
+  </style>
 </head>
 <body>
-    <!-- Navbar -->
-    <nav>
-        <div class="tab">
-            <div class="left">
-            <div class="logo">
-                <img src="../logo.jpeg">
-            </div>
-            <a><button class="open-btn" onclick="toggleSidebar()">☰ Menu</button></a>
-            </div>
-        
-                <div class="right">
-                    <ul id="list">
-                        <li> <a href="#home">Home</a></li>
-                        <li><a href="about.html">About</a></li>
-                        <li><a href="#services">Services</a></li>
-                        <li> <a href="#contact">Contact</a></li>
-                        <li><a href="#contact"><button class="tabs-learn-more">Learn More</button></a></li>
-                        
-                    </ul>
-                   
-                
-                </div>
-        
-        </div>
-    </nav>
 
-    <div class="page">
-        <!-- Heading -->
-        <div class="heading">
-            <h1>Sort Algorithms and Time Analysis</h1>
-        </div>
-        <br>
-        
-        <!-- Problem Description -->
-        <div class="para">
-            <h2>1.Insertion Sort:</h2>
-            <br>
-            <p>
-                <p>Insertion Sort works by building a sorted array one element at a time. 
-                    <br>It takes an element from the unsorted portion of the array and inserts it into the correct position in the sorted portion. </p>
-                    <b>Algorithm:</b><hr>
-                    <p>1.Start from the second element (index 1), assuming the first element (index 0) is already sorted.
-                    <br>2.Compare the current element (key) with the elements before it.
-                    <br>3.Shift all elements that are larger than the current element to the right.
-                    <br>4.Insert the current element at the correct position.
-                    <br>5.Repeat this process for all elements.</p>
-            </p>
-        </div>
+  <div class="home">
+    <h1>Sorting Algorithms and Analysis</h1>
 
-        <!-- Pseudocode Section -->
-        <div id="code-block">
-            <h2>Pseudocode</h2>
-            <div class="code-container">
-                <pre><code>
-                    void insertionSort(int array[], int n) {
-                        // Outer loop for each element starting from index 1
-                        for (int i = 1; i < n; i++) {
-                            int key = array[i];  // Current element to be inserted
-                            int j = i - 1;
-                    
-                            // Inner loop to shift elements greater than key
-                            while (j >= 0 && array[j] > key) {
-                                array[j + 1] = array[j];  // Shift element to the right
-                                j = j - 1;
-                            }
-                            
-                            // Insert the key at its correct position
-                            array[j + 1] = key;
-                        }
-                    }                    
-               
-                </code></pre>
-            </div>
+    <h2>Algorithm Overview</h2>
+    <p>Sorting algorithms are essential for organizing data in a specific order (ascending or descending). This improves search efficiency and readability. Two important sorting techniques are insertion sort and merge sort. Each algorithm has its strengths based on the input size and characteristics.</p>
 
-        <!-- Analysis Section -->
-        <div class="Analysis">
-            <h1>Analysis of Time Complexity:</h1>
-            <br>
-            <table>
-                <tr>
-                    <th>Case</th>
-                    <th>Time Complexity</th>
-                </tr>
-                <tr>
-                    <td>Best Case</td>
-                    <td>O(n^2)</td>
-                </tr>
-                <tr>
-                    <td>Average Case</td>
-                    <td>O(n^2)</td>
-                </tr>
-                <tr>
-                    <td>Worst Case</td>
-                    <td>O(n)</td>
-                </tr>
-            </table>
-        </div>
-    </div>
-    <div class="para">
-        <h2>2.Merge Sort:</h2>
-        <br>
-        <p>
-            <b>Step-by-Step Algorithm:</b>
-            <p>1.If the array has one or zero elements, it is already sorted.
-           <br>2.Divide the array into two halves.
-           <br>3.Recursively apply merge sort to each half.
-           <br>4.Merge the two sorted halves into a single sorted array.</p>
-        
+    <h2>Algorithm: Insertion Sort</h2>
+    <h3>Theory</h3>
+    <p>Insertion sort is a simple, intuitive sorting algorithm that builds the sorted list one item at a time. It iterates over the array, growing the sorted portion by inserting each new element into its proper position. Although it is efficient for small datasets, its time complexity for larger datasets is not ideal.</p>
+
+    <pre><code>
+// Function for insertion sort
+void insertionSort(int arr[], int n) {
+    for (int i = 1; i < n; i++) {
+        int key = arr[i];
+        int j = i - 1;
+
+        // Move elements of arr[0..i-1] that are greater than key
+        // to one position ahead of their current position
+        while (j >= 0 && arr[j] > key) {
+            arr[j + 1] = arr[j];
+            j = j - 1;
+        }
+        arr[j + 1] = key;
+    }
+}
+    </code></pre>
+
+    <div class="analysis">
+      <h3>Analysis: Insertion Sort Algorithm</h3>
+      <p><strong>Best Case:</strong> O(n) — When the array is already sorted.</p>
+      <p><strong>Average Case:</strong> O(n<sup>2</sup>) — On average, elements are compared with half of the sorted portion.</p>
+      <p><strong>Worst Case:</strong> O(n<sup>2</sup>) — If the array is sorted in reverse order.</p>
+      <p><strong>Space Complexity:</strong> O(1) — The algorithm is in-place and requires no additional memory.</p>
+      <p>Insertion sort is adaptive, making it a good choice for small or nearly sorted arrays, as it requires fewer comparisons and swaps.</p>
     </div>
 
-    <!-- Pseudocode Section -->
-    <div id="code-block">
-        <h2>Pseudocode</h2>
-        <div class="code-container">
-            <pre><code>
-                void mergeSort(int array[], int left, int right) {
-                    if (left >= right) {
-                        return; // Base case: 1 or no elements
-                    }
-                
-                    int mid = left + (right - left) / 2;  // Find the middle point
-                
-                    // Recursively sort first and second halves
-                    mergeSort(array, left, mid);
-                    mergeSort(array, mid + 1, right);
-                
-                    // Merge the sorted halves
-                    merge(array, left, mid, right);
-                }
-                
-                void merge(int array[], int left, int mid, int right) {
-                    int n1 = mid - left + 1;  // Size of left subarray
-                    int n2 = right - mid;     // Size of right subarray
-                
-                    // Create temporary arrays
-                    int leftArray[n1], rightArray[n2];
-                
-                    // Copy data to temp arrays leftArray[] and rightArray[]
-                    for (int i = 0; i < n1; i++) {
-                        leftArray[i] = array[left + i];
-                    }
-                    for (int j = 0; j < n2; j++) {
-                        rightArray[j] = array[mid + 1 + j];
-                    }
-                
-                    // Initial indices of the two subarrays and merged array
-                    int i = 0, j = 0, k = left;
-                
-                    // Merge the temp arrays back into the original array
-                    while (i < n1 && j < n2) {
-                        if (leftArray[i] <= rightArray[j]) {
-                            array[k] = leftArray[i];
-                            i++;
-                        } else {
-                            array[k] = rightArray[j];
-                            j++;
-                        }
-                        k++;
-                    }
-                
-                    // Copy remaining elements of leftArray[], if any
-                    while (i < n1) {
-                        array[k] = leftArray[i];
-                        i++;
-                        k++;
-                    }
-                
-                    // Copy remaining elements of rightArray[], if any
-                    while (j < n2) {
-                        array[k] = rightArray[j];
-                        j++;
-                        k++;
-                    }
-                }
-                       
-           
-            </code></pre>
-        </div>
+    <h2>Algorithm: Merge Sort</h2>
+    <h3>Theory</h3>
+    <p>Merge sort is a divide-and-conquer algorithm that recursively divides the array into two halves, sorts them, and then merges the sorted halves. Merge sort is more efficient for larger datasets due to its logarithmic time complexity. Unlike insertion sort, it requires additional memory for merging.</p>
 
-    <!-- Analysis Section -->
-    <div class="Analysis">
-        <h1>Analysis of Time Complexity:</h1>
-        <br>
-        <table>
-            <tr>
-                <th>Case</th>
-                <th>Time Complexity</th>
-            </tr>
-            <tr>
-                <td>Best Case</td>
-                <td>O(n log n)</td>
-            </tr>
-            <tr>
-                <td>Average Case</td>
-                <td>O(n log n)</td>
-            </tr>
-            <tr>
-                <td>Worst Case</td>
-                <td>O(n log n)</td>
-            </tr>
-        </table>
+    <pre><code>
+// Function for merge sort
+void merge(int arr[], int l, int m, int r) {
+    int n1 = m - l + 1;
+    int n2 = r - m;
+
+    // Create temp arrays
+    int L[n1], R[n2];
+
+    // Copy data to temp arrays
+    for (int i = 0; i < n1; i++)
+        L[i] = arr[l + i];
+    for (int j = 0; j < n2; j++)
+        R[j] = arr[m + 1 + j];
+
+    // Merge the temp arrays
+    int i = 0, j = 0, k = l;
+    while (i < n1 && j < n2) {
+        if (L[i] <= R[j]) {
+            arr[k] = L[i];
+            i++;
+        } else {
+            arr[k] = R[j];
+            j++;
+        }
+        k++;
+    }
+
+    // Copy the remaining elements
+    while (i < n1) {
+        arr[k] = L[i];
+        i++;
+        k++;
+    }
+
+    while (j < n2) {
+        arr[k] = R[j];
+        j++;
+        k++;
+    }
+}
+
+void mergeSort(int arr[], int l, int r) {
+    if (l < r) {
+        int m = l + (r - l) / 2;
+
+        // Sort first and second halves
+        mergeSort(arr, l, m);
+        mergeSort(arr, m + 1, r);
+
+        // Merge the sorted halves
+        merge(arr, l, m, r);
+    }
+}
+    </code></pre>
+
+    <div class="analysis">
+      <h3>Analysis: Merge Sort Algorithm</h3>
+      <p><strong>Best Case:</strong> O(n log n) — The algorithm always divides the array and merges it back together in logarithmic time.</p>
+      <p><strong>Average Case:</strong> O(n log n) — The time complexity remains the same across all cases.</p>
+      <p><strong>Worst Case:</strong> O(n log n) — Even in the worst case, merge sort still has a logarithmic time complexity.</p>
+      <p><strong>Space Complexity:</strong> O(n) — Merge sort requires additional space for temporary arrays during the merge process.</p>
+      <p>Merge sort is stable, which means that equal elements retain their original order. This makes it a reliable choice for large datasets and for situations where stability is important.</p>
     </div>
-</div>
 
-    <!-- Navbar JS -->
-    <script src="../Home/navbar2.js"></script>
+    <h2>Visual Representation of Sorting Algorithms</h2>
+    <img src="https://upload.wikimedia.org/wikipedia/commons/c/cc/Merge-sort-example-300px.gif" alt="Merge Sort Visualization" class="center">
+
+  </div>
+
 </body>
 </html>
