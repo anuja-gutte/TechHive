@@ -1,220 +1,231 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Applications of Search Algorithms</title>
-    <link rel="stylesheet" href="styles.css">
-    <style>
-        .body{
-        font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
-       
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Applications of Insertion and Merge Sort</title>
+  <style>
+    body {
+      font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+      line-height: 1.6;
+      padding: 20px;
     }
-    .home{
+
+    .home {
       max-width: 1300px;
       margin: 0 auto;
       display: flex;
       flex-direction: column;
       align-items: center;
     }
-    
-    *{
-        text-decoration: none;
-        margin: 0;
-        padding: 0;
-        
+
+    * {
+      text-decoration: none;
+      margin: 0;
+      padding: 0;
     }
-    
-    .nav{
-        position: fixed;
+
+    .nav {
+      position: fixed;
     }
-    
-    .tab{
-        background: black;
-        font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
-        width: 100%;
-        /* padding-left: 15px;
-        padding-right: 15px; */
+
+    .tab {
+      background: black;
+      font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+      width: 100%;
     }
-    
-    .tab{
-        display: flex;
-        align-items: center;
-        justify-content: space-between;
+
+    .tab {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
     }
-    
-    img{
-        width: 50px;
-        border-radius: 100px;
-        padding-right: 50px;
+
+    img {
+      width: 50px;
+      border-radius: 100px;
+      padding-right: 50px;
     }
-    
-    .open-btn{
-        font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
-        font-size:15px;
-        cursor: pointer;
-        display: inline-block;
-        background-color: black;
-        color:white;
-        border: none;
-        
-       
+
+    .open-btn {
+      font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+      font-size: 15px;
+      cursor: pointer;
+      background-color: black;
+      color: white;
+      border: none;
     }
-    
+
     .arrow {
-        border: solid white;
-        border-width: 0 3px 3px 0;
-        display: inline-block;
-        padding: 2px;
-      }
-    
+      border: solid white;
+      border-width: 0 3px 3px 0;
+      display: inline-block;
+      padding: 2px;
+    }
+
     .down {
-        transform: rotate(45deg);
-        -webkit-transform: rotate(45deg);
-      }
-    
-    .open-btn:hover{
-        color:orange;
-        transition-duration: 0.3s;
-    
+      transform: rotate(45deg);
+      -webkit-transform: rotate(45deg);
     }
-    
-    a:hover{
-        color: orange;
-        transition-duration: 0.3s;
+
+    .open-btn:hover {
+      color: orange;
+      transition-duration: 0.3s;
     }
-    
-    .left{
-        display: inline-flex;
-        align-items: center;
-        /* margin-left: 10%; */
-        
+
+    a:hover {
+      color: orange;
+      transition-duration: 0.3s;
     }
-    
-    
-    .tabs-learn-more{
-        font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
-        
-        background-color: black;
-        border-width: 2px;
-        border-style: solid;
-        border-color: white;
-        color: white;
-        font-weight: 500;
-        border-radius: 20px;
-        padding: 8px;
-        cursor: pointer;
+
+    .left {
+      display: inline-flex;
+      align-items: center;
     }
-    
-    .tabs-learn-more:hover{
-        background-color: rgb(28, 205, 15);
-        transition-duration: 0.3s;
-        border-color:  rgb(28, 205, 15);
-        
+
+    .tabs-learn-more {
+      background-color: black;
+      border-width: 2px;
+      border-style: solid;
+      border-color: white;
+      color: white;
+      font-weight: 500;
+      border-radius: 20px;
+      padding: 8px;
+      cursor: pointer;
     }
-    
-    li{
-        list-style: none;
-        display: inline-block;
+
+    .tabs-learn-more:hover {
+      background-color: rgb(28, 205, 15);
+      transition-duration: 0.3s;
+      border-color: rgb(28, 205, 15);
     }
-    
-    li a{
-        color: white;
-        font-size: 15px;
-        margin-right: 20px;
+
+    li {
+      list-style: none;
+      display: inline-block;
     }
-    
-    </style>
+
+    li a {
+      color: white;
+      font-size: 18px;
+      margin-right: 20px;
+    }
+
+    /* Increased font size for applications and examples */
+    .application,
+    .example {
+      font-size: 1.2em;
+      margin-bottom: 15px;
+    }
+
+    h1 {
+      text-align: center;
+      padding-top: 20px;
+      font-size: 2.5em; /* Main heading size */
+      color: black;
+    }
+
+    /* Style for headers */
+    h3 {
+      font-size: 1.6em; /* Smaller than main heading */
+      margin-top: 30px;
+      color: darkgreen;
+    }
+
+    /* Larger bullet points */
+    ul li {
+      font-size: 1.3em; /* Slightly smaller than the section heading */
+      margin-bottom: 10px;
+    }
+  </style>
 </head>
 <body>
-    <!-- <div id="navbar"></div> -->
-    <nav>
-        <div class="tab">
-            <div class="left">
-            <div class="logo">
-                <img src="../logo.jpeg">
-            </div>
-            <a><button class="open-btn" onclick="toggleSidebar()">☰ Menu</button></a>
-            </div>
-        
-                <div class="right">
-                    <ul id="list">
-                        <li> <a href="#home">Home</a></li>
-                        <li><a href="about.html">About</a></li>
-                        <li><a href="#services">Services</a></li>
-                        <li> <a href="#contact">Contact</a></li>
-                        <li><a href="#contact"><button class="tabs-learn-more">Learn More</button></a></li>
-                        
-                    </ul>
-                   
-                
-                </div>
-        
+  <nav>
+    <div class="tab">
+      <div class="left">
+        <div class="logo">
+          <img src="../logo.jpeg" alt="Logo">
         </div>
-    </nav>
+        <a><button class="open-btn" onclick="toggleSidebar()">☰ Menu</button></a>
+      </div>
 
-    <div class="home">
-        <h1>Applications of Sort Algorithms</h1><br>
-
-        <div class="application">
-            <!-- Section 1: Data Structures -->
-            <h2>Applications of Insertion Sort:</h2> <br>
-            <p>
-                1]Technical Applications:<br>
-                
-                a.Small Data Sets:<br>
-                Efficient for small or partially sorted datasets where overhead of more complex algorithms is not justified.
-            </p>
-            <p>
-                b.Online Sorting:<br>
-                Useful in scenarios where data is being received in a stream and needs to be sorted on the fly.
-            </p>
-            <p>
-                c.Memory Management:<br>
-                Helps in organizing data in dynamic programming problems or when implementing certain algorithms.
-            </p><br>
-            <p>
-                2]Real-life Examples:<br>
-                
-                a.Sorting cards in your hand while playing a card game.<br>
-            </p>
-            <p>
-                b.Arranging a list of tasks or items by priority as they come in.<br>
-            </p>
-            <p>
-                c.Real-time sorting of sensor data in embedded systems.<br>
-            </p>
-
-            <!-- Section 2: Parsing Expressions -->
-            <h2>Applications of Merge Sort:</h2> <br>
-            <p>
-                1]Technical Applications:<br>
-                
-                a.Large Data Sets:<br>
-                Efficient for sorting large datasets that do not fit into memory and need to be sorted using external storage (external sorting).
-            </p>
-            <p>
-                b.Stable Sorting:<br>
-                Maintains the relative order of records with equal keys, making it useful for applications where stability is important.
-            </p>
-            <p>
-                c.Parallel Processing:<br>
-                Can be efficiently implemented in parallel processing environments, enhancing performance on multi-core systems.
-            </p><br>
-            <p>
-                2]Real-life Examples:<br>
-                
-                a.Sorting large databases in data analytics applications.<br>
-            </p>
-            <p>
-                b.Organizing records in applications that require consistent performance regardless of data characteristics.<br>
-            </p>
-            <p>
-                c.Sorting a large collection of data received from sensors or logs over time.<br>
-            </p>
-        </div>
+      <div class="right">
+        <ul id="list">
+          <li><a href="#home">Home</a></li>
+          <li><a href="about.html">About</a></li>
+          <li><a href="#services">Services</a></li>
+          <li><a href="#contact">Contact</a></li>
+          <li><a href="#contact"><button class="tabs-learn-more">Learn More</button></a></li>
+        </ul>
+      </div>
     </div>
+  </nav>
 
-    <script src="../Home/navbar2.js"></script>
+  <header>
+    <h1>Applications of Insertion and Merge Sort</h1>
+  </header>
+
+  <h3>Applications of Insertion Sort</h3>
+
+  <section class="section">
+    <ul>
+      <li><strong>1. Small Data Sets:</strong> 
+        Insertion sort is efficient for small datasets where the overhead of more complex algorithms is unnecessary. It is simple to implement and works well for small lists.
+      </li>
+
+      <li><strong>2. Nearly Sorted Data:</strong> 
+        Insertion sort is particularly effective when data is already nearly sorted. Since it processes each element one-by-one, it quickly places each item in its correct position.
+      </li>
+
+      <li><strong>3. Real-world Example - Sorting Playing Cards:</strong> 
+        The way players organize playing cards in their hands by inserting each card into its correct position is analogous to how insertion sort works.
+      </li>
+
+      <li><strong>4. Online Sorting:</strong> 
+        In scenarios where data is continuously received and needs to be sorted as it comes (such as real-time data streams), insertion sort is practical because it can sort the data incrementally.
+      </li>
+    </ul>
+  </section>
+
+  <h3>Applications of Merge Sort</h3>
+
+  <section class="section">
+    <ul>
+      <li><strong>1. Large Datasets:</strong> 
+        Merge sort is highly efficient for large datasets. It has a time complexity of O(n log n), making it one of the most efficient sorting algorithms for big data.
+      </li>
+
+      <li><strong>2. External Sorting:</strong> 
+        Merge sort is commonly used for external sorting, where the data is too large to fit into memory. For example, in sorting large files stored on disk, merge sort is employed to break the data into smaller chunks that are sorted and then merged together.
+      </li>
+
+      <li><strong>3. Sorting Linked Lists:</strong> 
+        Merge sort is well-suited for sorting linked lists because it does not require random access to elements, and it efficiently handles the merging of two sorted lists.
+      </li>
+
+      <li><strong>4. Parallel Computing:</strong> 
+        The divide-and-conquer nature of merge sort makes it a good candidate for parallel computing. It can be divided into subproblems that can be solved concurrently, making it suitable for multi-core processors and distributed systems.
+      </li>
+    </ul>
+  </section>
+
+  <h3>Differences between Insertion and Merge Sort</h3>
+
+  <section class="section">
+    <ul>
+      <li><strong>1. Efficiency:</strong> 
+        Insertion sort has a time complexity of O(n²), making it less efficient than merge sort, which has a time complexity of O(n log n), especially for large datasets.
+      </li>
+
+      <li><strong>2. Usage Scenarios:</strong> 
+        Insertion sort is more suitable for small datasets or nearly sorted data, while merge sort is preferred for large datasets and external sorting.
+      </li>
+
+      <li><strong>3. Memory Usage:</strong> 
+        Merge sort requires additional memory space for merging the divided arrays, whereas insertion sort works in-place and does not need extra memory.
+      </li>
+    </ul>
+  </section>
 </body>
 </html>
