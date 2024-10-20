@@ -89,7 +89,7 @@
     <div class="topics-grid">
 
      
-         <div class="topic-card" onclick="redirect('Data-Structures.html')">
+         <div class="topic-card" onclick="redirect('Data-Structres.html')">
             <div class="heading" id="DSA">
             <span class="overlay"></span>
             <h2>Data Structures</h2></div>
@@ -103,14 +103,14 @@
             <p>Explore the various algorithms in programming</p>
             
             </div>
-         <div class="topic-card" onclick="redirect('trees.html')">
+         <div class="topic-card" onclick="redirect('../mainquiz.html')">
             <div class="heading" id="Quiz">
                 <span class="overlay"></span>
             <h2>Quiz</h2></div>
             <p>Test your DSA knowledge with our interactive quiz</p>
         
             </div>
-        <div class="topic-card" onclick="redirect('graphs.html')">
+        <div class="topic-card" onclick="redirect('Roadmap.html')">
             <div class="heading" id="Roadmap">
                 <span class="overlay"></span>
             <h2>Roadmap</h2></div>
@@ -244,6 +244,10 @@
     window.onload = function() {
         initializeDropdowns();
     };
+
+    function redirect(url) {
+        window.location.href = url;
+        }
 </script>
 
 
