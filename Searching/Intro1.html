@@ -131,22 +131,27 @@
             font-family: Arial, sans-serif;
             margin: 0;
             padding: 0;
-            background-color: #f4f4f9;
+            /* background-color: #f4f4f9; */
             color: #333;
             padding-left: 10%;
             padding-right: 10%;
         }
         header {
-            background-color: #256b27;
-            padding: 10px 0;
+            /* background-color: #256b27; */
+            display: inline-block;
             text-align: center;
-            color: white;
+            padding: 10px 0;
+            padding-left: 35%;
+            margin-bottom: 5%;
+            text-align: center;
+            color: black;
         }
         h1 {
             margin: 0;
         }
        
         h2 {
+            margin-top: 3%;
             color: #256b27;
         }
         p {
@@ -154,6 +159,9 @@
         }
         ul {
             margin-left: 20px;
+        }
+        li{
+            line-height: 150%;
         }
         .code {
             background-color: #f1f1f1;
@@ -172,30 +180,7 @@
     
 </head>
 <body>
-    <nav>
-        <div class="tab">
-            <div class="left">
-            <div class="logo">
-                <img src="../logo.jpeg">
-            </div>
-            <a><button class="open-btn" onclick="toggleSidebar()">☰ Menu</button></a>
-            </div>
-        
-                <div class="right">
-                    <ul id="list">
-                        <li> <a href="#home">Home</a></li>
-                        <li><a href="about.html">About</a></li>
-                        <li><a href="#services">Services</a></li>
-                        <li> <a href="#contact">Contact</a></li>
-                        <li><a href="#contact"><button class="tabs-learn-more">Learn More</button></a></li>
-                        
-                    </ul>
-                   
-                
-                </div>
-        
-        </div>
-    </nav><br><br>
+   <br><br>
 
 <header>
     <h1>Searching Algorithms</h1>
@@ -210,7 +195,7 @@
     <h2>Types of Searching</h2>
     <p>Here are two basic types of searching algorithms:</p>
     <ul>
-        <li><b>Linear Search:</b> This is the simplest search algorithm. It checks each element in the list sequentially until the desired element is found or the end of the list is reached. It can be used on unsorted data.</li>
+        <li><b>Linear Search:</b> This is the simplest search algorithm. It checks each element in the list sequentially until the desired element is found or the end of the list is reached. It can be used on unsorted data.</li><br>
         <li><b>Binary Search:</b> This is a more efficient search algorithm but requires the data to be sorted. Binary search works by repeatedly dividing the sorted list in half and comparing the middle element with the target value. If the middle element is not the target, the algorithm discards half of the list and continues searching in the other half.</li>
     </ul>
 
@@ -262,11 +247,15 @@ def binary_search(arr, target):
     <h2>Applications of Searching Algorithms</h2>
     <p>Searching algorithms are fundamental to many applications:</p>
     <ul>
-        <li><b>Database Search:</b> Databases often use binary search when dealing with sorted data to optimize performance.</li>
+        <li><b>Database Search:</b> Databases often use binary search when dealing with sorted data to optimize performance.</li><br>
         <li><b>Information Retrieval:</b> Searching through data, such as files or records, is commonly done using these algorithms.</li>
         <li><b>Competitive Programming:</b> Searching techniques, particularly binary search, are essential in solving many coding problems efficiently.</li>
     </ul>
-
+    <div class="footer-bottom" style="margin-bottom: 3%;margin-top:15% ;color: rgba(128, 128, 128, 0.923);">
+        <p>© 2024 TechHive. All Rights Reserved.</p>
+      </div>
 </div>
+
+
 </body>
 </html>
