@@ -1,15 +1,14 @@
 const searchMapping = {
-    'data structures': '/data-structures.html',
-    'algorithms': '/algorithms.html',
-    'graph theory': '/graph-theory.html',
+    'data structures': '/Data-Structures',
+    'algorithms': '/Algorithms.html',
+    'about us': '/about us.html',
     'dynamic programming': '/dynamic-programming.html',
-    'recursion': './Recursion/RecursionIntroduction.html',
-    'sorting algorithms': '/sorting-algorithms.html',
-    'linked lists': '/linked-lists.html',
-    'stacks': '/stacks.html',
-    'queues': '/queues.html',
-    'hash tables': '/hash-tables.html',
-    'binary trees': '/binary-trees.html',
+    'recursion': '/Recursion2/sidemenu.html',
+    'sorting algorithms': './Sorting/sorting-sidemenu.html',
+    'linked lists': './LinkedList/LinkedList-sidemenu.html',
+    'queues': './Queue/queue-sidemenu.html',
+    'searching': './Searching/Searching-sidemenu.html',
+    'trees': './trees/Trees-sidemenu.html',
   };
 
 // Function to handle the redirect

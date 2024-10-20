@@ -6,105 +6,23 @@
   <title>Resources</title>
 
   <style>
-    .body{
-      font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+    body,html{
+      font-family: Arial, Helvetica, sans-serif;
+      overflow-y: scroll;
     }
 
-    .home{
-      max-width: 1300px;
-      margin: 0 auto;
-      display: flex;
-      flex-direction: column;
-      align-items: center;
-    }
-
-    *{
-      text-decoration: none;
-      margin: 0;
-      padding: 0;
-    }
-
-    .nav{
-      position: fixed;
-    }
-
-    .tab{
-      background: black;
-      font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
-      width: 100%;
-    }
-
-    .tab{
-      display: flex;
-      align-items: center;
-      justify-content: space-between;
-    }
-
-    img{
-      width: 50px;
-      border-radius: 100px;
-      padding-right: 50px;
-    }
-
-    .open-btn{
-      font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
-      font-size: 15px;
-      cursor: pointer;
-      display: inline-block;
-      background-color: black;
-      color: white;
-      border: none;
-    }
-
-    .open-btn:hover{
-      color: orange;
-      transition-duration: 0.3s;
-    }
-
-    a:hover{
-      color: orange;
-      transition-duration: 0.3s;
-    }
-
-    .left{
-      display: inline-flex;
-      align-items: center;
-    }
-
-    .tabs-learn-more{
-      font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
-      background-color: black;
-      border-width: 2px;
-      border-style: solid;
-      border-color: white;
-      color: white;
-      font-weight: 500;
-      border-radius: 20px;
-      padding: 8px;
-      cursor: pointer;
-    }
-
-    .tabs-learn-more:hover{
-      background-color: rgb(28, 205, 15);
-      transition-duration: 0.3s;
-      border-color:  rgb(28, 205, 15);
-    }
-
-    li{
-      list-style: none;
-      display: inline-block;
-    }
-
-    li a{
-      color: white;
-      font-size: 15px;
-      margin-right: 20px;
-    }
 
     .resources{
       margin-top: 100px;
       padding: 20px;
       text-align: center;
+      margin-bottom: 10%;
+     
+    }
+
+    .resources h1{
+      display: inline-block;
+      border-bottom: 3px solid #DB2168;
     }
 
     .resource-links{
@@ -124,51 +42,84 @@
     }
 
     .header{
-      font-size: 24px;
+      font-size: 35px;
       color: black;
       font-weight: bold;
       margin-bottom: 20px;
     }
 
     .sub-header{
-      font-size: 20px;
+      font-size: 30px;
       color: darkblue;
       margin-bottom: 20px;
       margin-top: 40px; /* Adds space above each section */
     }
 
+    /* Footer styles */
+  footer {
+    background-color: #363636c9;
+    color: #fff;
+    padding: 40px 20px;
+    margin-top: 12%;
+}
+
+.footer-container {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr); /* 4 columns */
+    gap: 20px;
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+.footer-column {
+    display: flex;
+    flex-direction: column;
+}
+
+.footer-column h3 {
+    margin-bottom: 10px;
+    font-size: 18px;
+    color: rgb(28, 205, 15); /* Optional: Add color to headings */
+}
+
+.footer-column p,
+.footer-column a {
+    color: #ddd;
+    text-decoration: none;
+    margin-bottom: 10px;
+}
+
+.footer-column a:hover {
+    color: #ffcc00; /* Optional: Hover effect */
+}
+
+/* Responsive design */
+@media (max-width: 768px) {
+    .footer-container {
+        grid-template-columns: repeat(2, 1fr); /* 2 columns for tablets */
+    }
+}
+
+@media (max-width: 480px) {
+    .footer-container {
+        grid-template-columns: 1fr; /* 1 column for mobile */
+    }
+}
+
+
   </style>
 </head>
 <body>
-  <!-- Navigation Bar -->
-  <nav>
-    <div class="tab">
-      <div class="left">
-        <div class="logo">
-          <img src="../logo.jpeg" alt="Logo">
-        </div>
-        <a><button class="open-btn" onclick="toggleSidebar()">☰ Menu</button></a>
-      </div>
   
-      <div class="right">
-        <ul id="list">
-          <li><a href="#home">Home</a></li>
-          <li><a href="about.html">About</a></li>
-          <li><a href="#services">Services</a></li>
-          <li><a href="#resources">Resources</a></li>
-          <li><a href="#contact">Contact</a></li>
-          <li><a href="#contact"><button class="tabs-learn-more">Learn More</button></a></li>
-        </ul>
-      </div>
-    </div>
-  </nav>
+
+  <div id="navbar"></div>
 
   <!-- Resources Section -->
   <div class="resources">
-    <h2 class="header">Useful Resources</h2>
+    <h1 class="header">Useful Resources</h1>
 
     <!-- Websites Section -->
-    <h3 class="sub-header">Websites</h3>
+    <h3 class="sub-header" style="">Websites</h3>
     <div class="resource-links">
       <a href="https://www.geeksforgeeks.org/" target="_blank">GeeksforGeeks</a>
       <a href="https://www.takeuforward.org/" target="_blank">TakeUForward</a>
@@ -193,6 +144,44 @@
       <a href="https://www.youtube.com/c/CodeWithHarry" target="_blank">Code with Harry</a>
     </div>
   </div>
+
+  <footer>
+    <div class="footer-container">
+        <div class="footer-column">
+            <h3>TechHive</h3>
+            <p>The best place to learn Data Structure and Algorithms concepts.</p>
+        </div>
+        <div class="footer-column">
+            <h3>Company</h3>
+            <ul>
+                <li><a href="#">About Us</a></li>
+                <li><a href="#">Feedback</a></li>
+            </ul>
+        </div>
+        <div class="footer-column">
+            <h3>DSA</h3>
+            <ul>
+                <li><a href="#">Data Structures</a></li>
+                <li><a href="#">Algorithms</a></li>
+                <li><a href="#">Quiz</a></li>
+                <li><a href="#">Roadmap</a></li>
+            </ul>
+            
+        </div>
+        <div class="footer-column">
+            <h3>Find Us On</h3>
+            <ul>
+                <li><a href="#">GitHub</a></li>
+                <li><a href="#">LinkedIn</a></li>
+            </ul>
+        </div>
+    </div>
+</footer>
+
+
+
+
+  <script src="navbar2.js"></script>
 
 </body>
 </html>
