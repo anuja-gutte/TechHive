@@ -1,57 +1,88 @@
 body {
   font-family: Arial, sans-serif;
+  text-align: center;
   margin: 0;
   padding: 0;
-  background-color: #f4f4f4;
+  background-color: #f7f7f7;
 }
 
-/* Footer styles */
-footer {
-  background-color: #333;
-  color: #fff;
-  padding: 40px 20px;
-  margin-top: 40px;
+.container {
+  margin: 50px auto;
+  width: 80%;
 }
 
-.footer-container {
-  display: grid;
-  grid-template-columns: repeat(4, 1fr); /* 4 columns */
-  gap: 20px;
-  max-width: 1200px;
-  margin: 0 auto;
+.input-area {
+  margin-bottom: 20px;
 }
 
-.footer-column {
+#nodeValue {
+  padding: 10px;
+  width: 200px;
+  border: 2px solid #333;
+  border-radius: 5px;
+  margin-right: 10px;
+}
+
+button {
+  padding: 10px 15px;
+  background-color: #4CAF50;
+  color: white;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+}
+
+button:hover {
+  background-color: #45a049;
+}
+
+.linked-list {
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+  margin-top: 30px;
+  flex-wrap: wrap;
+}
+
+.node {
+  position: relative;
   display: flex;
   flex-direction: column;
+  align-items: center;
+  margin-right: 30px;
 }
 
-.footer-column h3 {
-  margin-bottom: 10px;
-  font-size: 18px;
-  color: #ffcc00; /* Optional: Add color to headings */
+.node-value {
+  padding: 15px 20px;
+  background-color: #00BFFF;
+  color: white;
+  border-radius: 5px;
+  font-weight: bold;
 }
 
-.footer-column p,
-.footer-column a {
-  color: #ddd;
-  text-decoration: none;
-  margin-bottom: 10px;
+.pointer {
+  margin-top: 10px;
+  height: 50px;
+  width: 60px;
+  border: 2px solid #333;
+  border-radius: 5px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  position: relative;
 }
 
-.footer-column a:hover {
-  color: #ffcc00; /* Optional: Hover effect */
+.pointer::after {
+  content: '→';
+  position: absolute;
+  top: 50%;
+  right: -40px;
+  transform: translateY(-50%);
+  font-size: 24px;
+  font-weight: bold;
+  color: #333;
 }
 
-/* Responsive design */
-@media (max-width: 768px) {
-  .footer-container {
-      grid-template-columns: repeat(2, 1fr); /* 2 columns for tablets */
-  }
-}
-
-@media (max-width: 480px) {
-  .footer-container {
-      grid-template-columns: 1fr; /* 1 column for mobile */
-  }
+.pointer:last-child::after {
+  content: '';
 }

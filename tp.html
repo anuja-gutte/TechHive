@@ -3,43 +3,20 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Footer with Four Columns</title>
+    <title>Linked List Visualization</title>
     <link rel="stylesheet" href="tp.css">
 </head>
 <body>
-    <!-- Main content of the page -->
-    
-    <footer>
-        <div class="footer-container">
-            <div class="footer-column">
-                <h3>About Us</h3>
-                <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nulla at quam urna.</p>
-            </div>
-            <div class="footer-column">
-                <h3>Services</h3>
-                <ul>
-                    <li><a href="#">Service 1</a></li>
-                    <li><a href="#">Service 2</a></li>
-                    <li><a href="#">Service 3</a></li>
-                    <li><a href="#">Service 4</a></li>
-                </ul>
-            </div>
-            <div class="footer-column">
-                <h3>Contact Us</h3>
-                <p>Email: info@example.com</p>
-                <p>Phone: +123 456 7890</p>
-                <p>Address: 123 Street, City</p>
-            </div>
-            <div class="footer-column">
-                <h3>Follow Us</h3>
-                <ul>
-                    <li><a href="#">Facebook</a></li>
-                    <li><a href="#">Twitter</a></li>
-                    <li><a href="#">Instagram</a></li>
-                    <li><a href="#">LinkedIn</a></li>
-                </ul>
-            </div>
+    <div class="container">
+        <h1>Linked List Visualization</h1>
+        <div class="input-area">
+            <input type="text" id="nodeValue" placeholder="Enter value for node" />
+            <button onclick="addNode()">Add Node</button>
         </div>
-    </footer>
+        <div id="linkedList" class="linked-list">
+            <!-- Nodes will be appended here -->
+        </div>
+    </div>
+    <script src="tp.js"></script>
 </body>
 </html>
