@@ -1,193 +1,247 @@
 <!DOCTYPE html>
 <html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>qquiz</title>
-    <link rel="stylesheet" href="q.css" />
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Data Structure Sorting Quiz</title>
     <style>
-      .body {
-        font-family: Arial, Helvetica, sans-serif,
-          sans-serif;
-      }
-      .home {
-        max-width: 1300px;
-        margin: 0 auto;
-        display: flex;
-        flex-direction: column;
-        align-items: center;
-      }
+        .body {
+            font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+        }
+        .home {
+            max-width: 1300px;
+            margin: 0 auto;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+        }
 
-      * {
-        text-decoration: none;
-        margin: 0;
-        padding: 0;
-      }
+        * {
+            text-decoration: none;
+            margin: 0;
+            padding: 0;
+        }
 
-      .nav {
-        position: fixed;
-      }
+        .nav {
+            position: fixed;
+        }
 
-      .tab {
-        background: black;
-        font-family: Arial, Helvetica, sans-serif,
-          sans-serif;
-        width: 100%;
-        /* padding-left: 15px;
-    padding-right: 15px; */
-      }
+        .tab {
+            background: black;
+            font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+            width: 100%;
+        }
 
-      .tab {
-        display: flex;
-        align-items: center;
-        justify-content: space-between;
-      }
+        .tab {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+        }
 
-      img {
-        width: 50px;
-        border-radius: 100px;
-        padding-right: 50px;
-      }
+        img {
+            width: 50px;
+            border-radius: 100px;
+            padding-right: 50px;
+        }
 
-      .open-btn {
-        font-family: "Gill Sans", "Gill Sans MT", Calibri, "Trebuchet MS",
-          sans-serif;
-        font-size: 15px;
-        cursor: pointer;
-        display: inline-block;
-        background-color: black;
-        color: white;
-        border: none;
-      }
+        .open-btn {
+            font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+            font-size: 15px;
+            cursor: pointer;
+            display: inline-block;
+            background-color: black;
+            color: white;
+            border: none;
+        }
 
-      .arrow {
-        border: solid white;
-        border-width: 0 3px 3px 0;
-        display: inline-block;
-        padding: 2px;
-      }
+        .arrow {
+            border: solid white;
+            border-width: 0 3px 3px 0;
+            display: inline-block;
+            padding: 2px;
+        }
 
-      .down {
-        transform: rotate(45deg);
-        -webkit-transform: rotate(45deg);
-      }
+        .down {
+            transform: rotate(45deg);
+            -webkit-transform: rotate(45deg);
+        }
 
-      .open-btn:hover {
-        color: orange;
-        transition-duration: 0.3s;
-      }
+        .open-btn:hover {
+            color: orange;
+            transition-duration: 0.3s;
+        }
 
-      a:hover {
-        color: orange;
-        transition-duration: 0.3s;
-      }
+        a:hover {
+            color: orange;
+            transition-duration: 0.3s;
+        }
 
-      .left {
-        display: inline-flex;
-        align-items: center;
-        /* margin-left: 10%; */
-      }
+        .left {
+            display: inline-flex;
+            align-items: center;
+        }
 
-      .tabs-learn-more {
-        font-family: "Gill Sans", "Gill Sans MT", Calibri, "Trebuchet MS",
-          sans-serif;
+        .tabs-learn-more {
+            font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+            background-color: black;
+            border-width: 2px;
+            border-style: solid;
+            border-color: white;
+            color: white;
+            font-weight: 500;
+            border-radius: 20px;
+            padding: 8px;
+            cursor: pointer;
+        }
 
-        background-color: black;
-        border-width: 2px;
-        border-style: solid;
-        border-color: white;
-        color: white;
-        font-weight: 500;
-        border-radius: 20px;
-        padding: 8px;
-        cursor: pointer;
-      }
+        .tabs-learn-more:hover {
+            background-color: rgb(28, 205, 15);
+            transition-duration: 0.3s;
+            border-color: rgb(28, 205, 15);
+        }
 
-      .tabs-learn-more:hover {
-        background-color: rgb(28, 205, 15);
-        transition-duration: 0.3s;
-        border-color: rgb(28, 205, 15);
-      }
+        li {
+            list-style: none;
+            display: inline-block;
+        }
 
-      li {
-        list-style: none;
-        display: inline-block;
-      }
-
-      li a {
-        color: white;
-        font-size: 15px;
-        margin-right: 20px;
-      }
-
-    
+        li a {
+            color: white;
+            font-size: 15px;
+            margin-right: 20px;
+        }
     </style>
-  </head>
-  <body>
-      <div class="tab">
-        <div class="left">
-          <div class="logo">
-            <img src="../logo.jpeg" />
-          </div>
-          <a
-            ><button class="open-btn" onclick="toggleSidebar()">
-              ☰ Menu
-            </button></a
-          >
+</head>
+<body>
+    <!-- <nav>
+        <div class="tab">
+            <div class="left">
+                <div class="logo">
+                    <img src="../logo.jpeg">
+                </div>
+                <a><button class="open-btn" onclick="toggleSidebar()">☰ Menu</button></a>
+            </div>
+            <div class="right">
+                <ul id="list">
+                    <li><a href="#home">Home</a></li>
+                    <li><a href="about.html">About</a></li>
+                    <li><a href="#services">Services</a></li>
+                    <li><a href="#contact">Contact</a></li>
+                    <li><a href="#contact"><button class="tabs-learn-more">Learn More</button></a></li>
+                </ul>
+            </div>
         </div>
-
-        <div class="right">
-          <ul id="list">
-            <li><a href="#home">Home</a></li>
-            <li><a href="about.html">About</a></li>
-            <li><a href="#services">Services</a></li>
-            <li><a href="#contact">Contact</a></li>
-            <li>
-              <a href="#contact"
-                ><button class="tabs-learn-more">Learn More</button></a
-              >
-            </li>
-          </ul>
-        </div>
-      </div>
     </nav> -->
-    <!-- <div id="navbar"></div> -->
-    <div class="quiz-page">
-      <div class="quiz-container">
-        <div class="topic"><h1>Sorting</h1></div>
+    <div class="quiz-container">
+        <h2>Data Structures: Sorting Quiz</h2><br>
 
-        <div class="header">
-          <div id="progress-bar-container">
-            <div id="progress-bar"></div>
-          </div>
-        </div>
+        <!-- Question 1 -->
+        <div class="question" id="q1">
+            <p><strong>1. What is the time complexity of Insertion Sort in the average case?</strong></p>
+            <input type="checkbox" id="q1a" name="q1" value="O(n log n)">
+            <label for="q1a">O(n log n)</label><br>
+            <input type="checkbox" id="q1b" name="q1" value="O(n)">
+            <label for="q1b">O(n)</label><br>
+            <input type="checkbox" id="q1c" name="q1" value="O(n^2)">
+            <label for="q1c">O(n²)</label><br>
+            <input type="checkbox" id="q1d" name="q1" value="O(1)">
+            <label for="q1d">O(1)</label>
+        </div><br>
 
-        <div id="quiz"></div>
+        <!-- Question 2 -->
+        <div class="question" id="q2">
+            <p><strong>2. Which of the following describes Merge Sort?</strong></p>
+            <input type="checkbox" id="q2a" name="q2" value="It is a divide and conquer algorithm.">
+            <label for="q2a">It is a divide and conquer algorithm.</label><br>
+            <input type="checkbox" id="q2b" name="q2" value="It sorts in-place.">
+            <label for="q2b">It sorts in-place.</label><br>
+            <input type="checkbox" id="q2c" name="q2" value="It uses a single loop.">
+            <label for="q2c">It uses a single loop.</label><br>
+            <input type="checkbox" id="q2d" name="q2" value="It is not stable.">
+            <label for="q2d">It is not stable.</label>
+        </div><br>
 
-        <button id="submit-btn" onclick="submitQuiz()">Submit</button>
+        <!-- Question 3 -->
+        <div class="question" id="q3">
+            <p><strong>3. What is the primary disadvantage of Insertion Sort?</strong></p>
+            <input type="checkbox" id="q3a" name="q3" value="It requires more memory.">
+            <label for="q3a">It requires more memory.</label><br>
+            <input type="checkbox" id="q3b" name="q3" value="It is slow for large datasets.">
+            <label for="q3b">It is slow for large datasets.</label><br>
+            <input type="checkbox" id="q3c" name="q3" value="It can only sort arrays.">
+            <label for="q3c">It can only sort arrays.</label><br>
+            <input type="checkbox" id="q3d" name="q3" value="It is unstable.">
+            <label for="q3d">It is unstable.</label>
+        </div><br>
 
+        <!-- Question 4 -->
+        <div class="question" id="q4">
+            <p><strong>4. In which scenario would you prefer Merge Sort over Insertion Sort?</strong></p>
+            <input type="checkbox" id="q4a" name="q4" value="When the dataset is small.">
+            <label for="q4a">When the dataset is small.</label><br>
+            <input type="checkbox" id="q4b" name="q4" value="When the dataset is large.">
+            <label for="q4b">When the dataset is large.</label><br>
+            <input type="checkbox" id="q4c" name="q4" value="When the dataset is already sorted.">
+            <label for="q4c">When the dataset is already sorted.</label><br>
+            <input type="checkbox" id="q4d" name="q4" value="When memory usage is critical.">
+            <label for="q4d">When memory usage is critical.</label>
+        </div><br>
 
-        <div id="score-container"></div>
-      </div>
+        <!-- Question 5 -->
+        <div class="question" id="q5">
+            <p><strong>5. What is the time complexity of Merge Sort in the worst case?</strong></p>
+            <input type="checkbox" id="q5a" name="q5" value="O(n log n)">
+            <label for="q5a">O(n log n)</label><br>
+            <input type="checkbox" id="q5b" name="q5" value="O(n)">
+            <label for="q5b">O(n)</label><br>
+            <input type="checkbox" id="q5c" name="q5" value="O(n^2)">
+            <label for="q5c">O(n²)</label><br>
+            <input type="checkbox" id="q5d" name="q5" value="O(1)">
+            <label for="q5d">O(1)</label>
+        </div><br>
+
+        <!-- Submit Button -->
+        <button type="button" onclick="checkAnswers()">Submit</button>
     </div>
 
-    <script src="quiz2.js"></script>
     <script>
-      function loadHTML() {
-        fetch("../Home/navbar2.html")
-          .then((response) => response.text())
-          .then((data) => {
-            document.getElementById("navbar").innerHTML = data;
-          })
-          .catch((error) => {
-            console.error("Error fetching the HTML:", error);
-          });
-      }
+        function checkAnswers() {
+            // Correct answers for the quiz
+            const correctAnswers = {
+                q1: 'O(n²)',
+                q2: 'It is a divide and conquer algorithm.',
+                q3: 'It is slow for large datasets.',
+                q4: 'When the dataset is large.',
+                q5: 'O(n log n)'
+            };
 
-      window.onload = loadHTML;
+            let score = 0;
+            let totalQuestions = Object.keys(correctAnswers).length;
 
-      
-    
+            for (let question in correctAnswers) {
+                const selected = document.querySelectorAll(`input[name="${question}"]:checked`);
+                const selectedValues = Array.from(selected).map(input => input.value);
+
+                // Check if the selected answer matches the correct answer
+                if (correctAnswers[question] instanceof Array) {
+                    if (selectedValues.sort().toString() === correctAnswers[question].sort().toString()) {
+                        score++;
+                    }
+                } else {
+                    if (selectedValues.includes(correctAnswers[question])) {
+                        score++;
+                    }
+                }
+            }
+
+            // Display the score
+            alert(`You scored ${score} out of ${totalQuestions}.`);
+        }
+
+        function toggleSidebar() {
+            // Implement sidebar toggle functionality if needed
+            alert('Sidebar toggle functionality not implemented yet.');
+        }
     </script>
-  </body>
+</body>
 </html>
