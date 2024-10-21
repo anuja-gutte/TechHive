@@ -125,8 +125,10 @@ li a{
  /* Styles for the video and description */
  .video-section {
       /* Remove background-color or set it to transparent */
-      background-color: transparent; /* Change this if you want a different background color */
+      background-color: transparent;
+      font-family: Arial, Helvetica, sans-serif; /* Change this if you want a different background color */
       padding: 20px;
+      padding-left: 20px;
       border-radius: 2px;
       box-shadow: 0 4px 8px rgba(36, 30, 30, 0.1);
       margin: 20px 0;
@@ -164,32 +166,9 @@ li a{
 
 </head>
 <body>
-  <nav>
-    <div class="tab">
-        <div class="left">
-        <div class="logo">
-            <img src="../logo.jpeg">
-        </div>
-        <a><button class="open-btn" onclick="toggleSidebar()">☰ Menu</button></a>
-        </div>
-    
-            <div class="right">
-                <ul id="list">
-                    <li> <a href="#home">Home</a></li>
-                    <li><a href="about.html">About</a></li>
-                    <li><a href="#services">Services</a></li>
-                    <li> <a href="#contact">Contact</a></li>
-                    <li><a href="#contact"><button class="tabs-learn-more">Learn More</button></a></li>
-                    
-                </ul>
-               
-            
-            </div>
-
-    </div>
-</nav>
+  
 <header>
-  <h2 style="text-align: left; padding-top: 20px; padding-bottom: 20px;">Sorting:</h2>
+  <h2 style="text-align: left; padding-top: 20px; padding-bottom: 20px;padding-left: 20px;">Sorting:</h2>
 </header>
 <div class="video-section" id="Details on types of queue">
   <!-- YouTube Video Embed within a bordered container -->

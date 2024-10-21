@@ -1,30 +1,60 @@
-let linkedListContainer = document.getElementById('linkedList');
+const addNodeButton = document.getElementById('addNode');
+const resetListButton = document.getElementById('resetList');
+const nodeValueInput = document.getElementById('nodeValue');
+const listContainer = document.getElementById('list');
+const headTailDisplay = document.getElementById('headTail');
 
-function addNode() {
-    let value = document.getElementById('nodeValue').value;
-    if (value === '') return;
+let nodes = []; // Array to store node values
 
-    // Create node element
-    let nodeDiv = document.createElement('div');
-    nodeDiv.classList.add('node');
+addNodeButton.addEventListener('click', () => {
+    const nodeValue = nodeValueInput.value.trim();
+    if (nodeValue) {
+        nodes.push(nodeValue); // Add value to nodes array
+        createNode(nodeValue);
+        updateHeadTailDisplay();
+        nodeValueInput.value = ''; // Clear input field
+    }
+});
 
-    // Create the value part of the node
-    let nodeValue = document.createElement('div');
-    nodeValue.classList.add('node-value');
-    nodeValue.textContent = value;
+resetListButton.addEventListener('click', resetList);
 
-    // Create the pointer part of the node
-    let nodePointer = document.createElement('div');
-    nodePointer.classList.add('pointer');
-    nodePointer.textContent = 'next';
+function createNode(value) {
+    const node = document.createElement('div');
+    node.className = 'node';
 
-    // Append value and pointer to the node div
-    nodeDiv.appendChild(nodeValue);
-    nodeDiv.appendChild(nodePointer);
+    // Create node content container
+    const nodeContent = document.createElement('div');
+    nodeContent.className = 'node-content';
 
-    // Append node to the linked list container
-    linkedListContainer.appendChild(nodeDiv);
+    // Create value section
+    const valueDiv = document.createElement('div');
+    valueDiv.className = 'value';
+    valueDiv.textContent = value;
 
-    // Clear input field after adding the node
-    document.getElementById('nodeValue').value = '';
+    // Append value section to node content
+    nodeContent.appendChild(valueDiv);
+
+    // Append content to the node
+    node.appendChild(nodeContent);
+    listContainer.appendChild(node);
+
+    // Create pointer section if there are previous nodes
+    if (nodes.length > 1) {
+        const pointer = document.createElement('div');
+        pointer.className = 'pointer';
+        node.appendChild(pointer);
+    }
+}
+
+function updateHeadTailDisplay() {
+    const head = nodes[0];
+    const tail = nodes[nodes.length - 1];
+    headTailDisplay.textContent = `Head: ${head} | Tail: ${tail}`;
+}
+
+function resetList() {
+    nodes = []; // Clear the nodes array
+    listContainer.innerHTML = ''; // Clear the displayed list
+    headTailDisplay.textContent = ''; // Clear head and tail display
+    nodeValueInput.value = ''; // Clear input field
 }
