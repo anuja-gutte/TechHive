@@ -1,257 +1,288 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Code Implementation of Linear and Binary Search</title>
-  <style>
-    body {
-      font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
-    }
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Code Implementation</title>
+    <link rel="stylesheet" href="styles.css">
+    <style>
+       body{
+    font-family: Arial, Helvetica, sans-serif;
+    margin-left: 25px;
+    padding: 10px 10px;
+    /* display: flex; */
+}
 
-    .home {
-      max-width: 1300px;
-      margin: 0 auto;
-      display: flex;
-      flex-direction: column;
-      align-items: center;
-    }
+.page{
+    max-width: 1300px;
+   margin-top: 3%;
+   margin: 0 auto;
+   display: flex;
+   flex-direction: column;
+   align-items: center;
+   padding: 0 12%;
+  text-align: center;
+}
+h1{
+    text-align: center;
+    /* border-bottom: 3px solid black; */
+}
 
-    * {
-      text-decoration: none;
-      margin: 0;
-      padding: 0;
-    }
+.para{
+    margin-top: 4%;
+}
 
-    .nav {
-      position: fixed;
-    }
+.para h2{
+   
+    text-align: left;
+}
+.para p{
+    font-size: larger;
+    text-align:justify;
+}
+ 
 
-    .tab {
-      background: black;
-      font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
-      width: 100%;
-    }
+.code-container {
+    display: block;
+    width: 100%;
+    margin: 0;
+    background-color: #2e3440;  
+    color: #d8dee9;            
+    padding: 15px;
+    border-radius: 8px;
+    font-family: 'Courier New', Courier, monospace; 
+    width: 100%;
+    margin: 20px 0; 
+    box-sizing: border-box;
+    
+}
 
-    .tab {
-      display: flex;
-      align-items: center;
-      justify-content: space-between;
-    }
 
-    img {
-      width: 50px;
-      border-radius: 100px;
-      padding-right: 50px;
-    }
+pre code {
+    display:block;
+    white-space: pre-wrap;      
+    line-height: 1.5;         
+}
 
-    .open-btn {
-      font-size: 15px;
-      cursor: pointer;
-      display: inline-block;
-      background-color: black;
-      color: white;
-      border: none;
-    }
+.code-container .keyword {
+    color: #81a1c1;
+}
+.code-container .comment {
+    color: #a3be8c;
+    font-style: italic;
+}
+.code-container .function-name {
+    color: #ebcb8b;
+}
 
-    .arrow {
-      border: solid white;
-      border-width: 0 3px 3px 0;
-      display: inline-block;
-      padding: 2px;
-    }
+h2{
+    text-align: left;
+}
 
-    .down {
-      transform: rotate(45deg);
-      -webkit-transform: rotate(45deg);
-    }
 
-    .open-btn:hover {
-      color: orange;
-      transition-duration: 0.3s;
-    }
+.code-page h2,h3{
+    margin-top: 3%;
+    margin-bottom: 3%;
+    border: none;
+}
 
-    a:hover {
-      color: orange;
-      transition-duration: 0.3s;
-    }
+.code-page {
+    /* padding-left: 25%; */
+    /* padding-left: 20%; */
+    text-align: justify;
+}
 
-    .left {
-      display: inline-flex;
-      align-items: center;
-    }
+.code-page pre{
+   
+    background-color: #eee;
+    padding: 15px;
+    border-radius: 8px;
+    white-space: pre-wrap;
+    overflow-x: auto;
+      
+  
+}
 
-    .tabs-learn-more {
-      background-color: black;
-      border-width: 2px;
-      border-style: solid;
-      border-color: white;
-      color: white;
-      font-weight: 500;
-      border-radius: 20px;
-      padding: 8px;
-      cursor: pointer;
-    }
+.output-box pre{
+    padding: 20px;
+    border-radius: 0;
+    border-left: 3px solid black;
+}
 
-    .tabs-learn-more:hover {
-      background-color: rgb(28, 205, 15);
-      transition-duration: 0.3s;
-      border-color: rgb(28, 205, 15);
-    }
+p{
+    margin-top: 3%;
+    font-size: large;
+}
 
-    li {
-      list-style: none;
-      display: inline-block;
-    }
+.application p{
+    line-height: 30px;
+}
 
-    li a {
-      color: white;
-      font-size: 15px;
-      margin-right: 20px;
-    }
+.application h2,p{
+    margin-top: 3%;
+    text-align: left;
+   
+ }
 
-    h2 {
-      text-align: center;
-      padding-top: 20px;
-      color: green;
-    }
 
-    .section {
-      background-color: #eff8ed;
-      padding: 20px;
-      border-radius: 2px;
-      box-shadow: 0 4px 8px rgba(36, 30, 30, 0.1);
-      margin: 20px 0;
-    }
-
-    pre {
-      background-color: #f4f4f4;
-      padding: 10px;
-      border-left: 4px solid #ccc;
-      overflow-x: auto;
-    }
-  </style>
+ 
+    
+    </style>
 </head>
 <body>
-  <nav>
-    <div class="tab">
-      <div class="left">
-        <div class="logo">
-          <img src="../logo.jpeg" alt="Logo">
+    <!-- <div id="navbar"></div> -->
+
+    <div class="home">
+        <div class="code-page">
+        
+            <!-- Main Heading -->
+            <h1 style="padding-left: 35px;">Code Implementation:</h1><br>
+            
+            <!-- Subheading -->
+            <h2>1.Linear Search</h2>
+               <!--Some info-->
+               Linear search is one of the simplest searching algorithms used to find an element in a list or array. <br>
+               It checks every element in the list sequentially until the desired element is found or the end of the list is reached. 
+
+            <!-- Code Implementation Section -->
+            <div class="code-box">
+                <h3>Code:</h3>
+                <pre>
+
+                    <!--Code here-->
+                    #include <stdio.h>
+
+                        int linearSearch(int arr[], int size, int target) {
+                            for (int i = 0; i < size; i++) {
+                                if (arr[i] == target) {
+                                    return i; // Return the index where the target is found
+                                }
+                            }
+                            return -1; // Return -1 if the target is not found
+                        }
+                        
+                        int main() {
+                            int arr[] = {5, 2, 9, 1, 6};
+                            int size = sizeof(arr) / sizeof(arr[0]);
+                            int target = 9;
+                        
+                            int result = linearSearch(arr, size, target);
+                        
+                            if (result != -1) {
+                                printf("Element found at index %d\n", result);
+                            } else {
+                                printf("Element not found in the array\n");
+                            }
+                        
+                            return 0;
+                        }
+                
+   
+                </pre>
+             
+                <!-- Output Section -->
+                <div class="output-box">
+                    <h3>Output:</h3>
+                    <pre>
+                        Element found at index 2
+  
+                    </pre>
+                </div>
+                <h3>Working of the above code:</h3>
+                <p>
+                   <!--Description-->
+                   The linearSearch function goes through each element in the array one by one.<br>
+                   Index 0: 5 (no match).<br>
+                   Index 1: 2 (no match).<br>
+                   Index 2: 9 (match found).<br>
+                   Since the target 9 is found at index 2, the function returns 2 and the search ends.
+                </p>
+                <h2>2.Binary Search</h2>
+            <p>
+               <!--Some info--> 
+               Binary search is a much more efficient algorithm than linear search but works only on sorted arrays. <br>
+               It repeatedly divides the search interval in half, <br>
+               eliminating half of the elements at each step until the target value is found or the interval is empty.
+            </p>
+
+            <!-- Code Implementation Section -->
+            <div class="code-box">
+                <h3>Code</h3>
+                <pre>
+                    <!--Code here-->
+                    #include <stdio.h>
+
+                        int binarySearch(int arr[], int size, int target) {
+                            int left = 0, right = size - 1;
+                        
+                            while (left <= right) {
+                                int mid = left + (right - left) / 2;
+                        
+                                // Check if the target is present at mid
+                                if (arr[mid] == target)
+                                    return mid;
+                        
+                                // If target is greater, ignore the left half
+                                if (arr[mid] < target)
+                                    left = mid + 1;
+                                // If target is smaller, ignore the right half
+                                else
+                                    right = mid - 1;
+                            }
+                        
+                            // Target is not present in the array
+                            return -1;
+                        }
+                        
+                        int main() {
+                            int arr[] = {2, 3, 4, 10, 40};
+                            int size = sizeof(arr) / sizeof(arr[0]);
+                            int target = 10;
+                        
+                            int result = binarySearch(arr, size, target);
+                            if (result != -1)
+                                printf("Element found at index %d\n", result);
+                            else
+                                printf("Element not found\n");
+                        
+                            return 0;
+                        }
+   
+                </pre>
+             
+                <!-- Output Section -->
+                <div class="output-box">
+                    <h3>Output:</h3>
+                    <pre>
+                        Element found at index 3
+
+                    </pre>
+                </div>
+
+                <!-- Working Explanation Section -->
+                <h3>Working of the above code:</h3>
+                <p style="line-height: 150%;">
+                   <!--Description-->
+                   1.Initial Setup: The binarySearch function starts by setting left to the first index (0) <br>
+                   and right to the last index (size - 1 = 4).<br>
+                   2.The array is divided into halves in each step:<br>
+                   First iteration:<br>
+                      The midpoint mid is calculated as 2 (using (left + right) / 2).<br>
+                      The element at mid is 4, which is less than the target 10, <br>
+                      so the search continues in the right half (i.e., from index 3 to 4).<br>
+                   Second iteration:<br>
+                      Now left is updated to 3, and right remains 4. The new midpoint mid is 3.<br>
+                      The element at mid is 10, which is the target, so the function returns index 3.<br>
+                    3.The function ends successfully when the target is found.
+                </p>
+            </div>
         </div>
-        <a><button class="open-btn" onclick="toggleSidebar()">☰ Menu</button></a>
+    </div>
+
+    <div class="footer-bottom" style="margin-bottom: 3%;margin-top:15% ;color: rgba(128, 128, 128, 0.923);display: inline-block;text-align: center;">
+        <p>© 2024 TechHive. All Rights Reserved.</p>
       </div>
 
-      <div class="right">
-        <ul id="list">
-          <li><a href="#home">Home</a></li>
-          <li><a href="about.html">About</a></li>
-          <li><a href="#services">Services</a></li>
-          <li><a href="#contact">Contact</a></li>
-          <li><a href="#contact"><button class="tabs-learn-more">Learn More</button></a></li>
-        </ul>
-      </div>
-    </div>
-  </nav>
-
-  <header>
-    <h2>Code Implementation of <span style="color: green;">Linear and Binary Search</span> - Java</h2>
-  </header>
-
-  <main>
-    <section class="section" id="theory">
-      <p style="font-size: larger;">
-        In Java, searching algorithms like Linear and Binary Search are widely used to find specific elements within a dataset. 
-        Linear search works on unsorted data, while Binary search is more efficient but requires the data to be sorted beforehand.
-      </p>
-    </section>
-
-    <!-- Linear Search Implementation -->
-    <h3>Linear Search Example:</h3>
-    <div class="section" id="linear-search-code">
-      <pre>
-class LinearSearch {
-    // Function to perform linear search
-    public static int linearSearch(int[] arr, int target) {
-        for (int i = 0; i < arr.length; i++) {
-            if (arr[i] == target) {
-                return i;  // Return index if found
-            }
-        }
-        return -1;  // Return -1 if not found
-    }
-
-    public static void main(String[] args) {
-        int[] numbers = {10, 20, 30, 40, 50};
-        int target = 30;
-
-        int result = linearSearch(numbers, target);
-        if (result != -1) {
-            System.out.println("Element found at index: " + result);
-        } else {
-            System.out.println("Element not found.");
-        }
-    }
-}
-      </pre>
-    </div>
-    <h3>Output:</h3>
-    <div class="section" id="output">
-      <pre>
-Linear Search Output:
-Element found at index: 2
-
-      </pre>
-    </div>
-
-    <!-- Binary Search Implementation -->
-    <h3>Binary Search Example:</h3>
-    <div class="section" id="binary-search-code">
-      <pre>
-class BinarySearch {
-    // Function to perform binary search
-    public static int binarySearch(int[] arr, int target) {
-        int low = 0;
-        int high = arr.length - 1;
-
-        while (low <= high) {
-            int mid = low + (high - low) / 2;  // Calculate middle index
-
-            if (arr[mid] == target) {
-                return mid;  // Return index if found
-            } else if (arr[mid] < target) {
-                low = mid + 1;  // Search right half
-            } else {
-                high = mid - 1;  // Search left half
-            }
-        }
-        return -1;  // Return -1 if not found
-    }
-
-    public static void main(String[] args) {
-        int[] sortedNumbers = {10, 20, 30, 40, 50};
-        int target = 40;
-
-        int result = binarySearch(sortedNumbers, target);
-        if (result != -1) {
-            System.out.println("Element found at index: " + result);
-        } else {
-            System.out.println("Element not found.");
-        }
-    }
-}
-      </pre>
-    </div>
-
-    <!-- Output Section -->
-    <h3>Output:</h3>
-    <div class="section" id="output">
-      <pre>
-
-Binary Search Output:
-Element found at index: 3
-      </pre>
-    </div>
-  </main>
+    <script src="../Home/navbar2.js"></script>
 </body>
 </html>

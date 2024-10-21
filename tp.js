@@ -39,10 +39,14 @@ function createNode(value) {
     listContainer.appendChild(node);
 
     // Create pointer section if there are previous nodes
-    if (nodes.length > 1) {
+    if (nodes.length > 0) {
         const pointer = document.createElement('div');
         pointer.className = 'pointer';
         node.appendChild(pointer);
+        // const nullIndicator = document.createElement('div');
+        // nullIndicator.className = 'null-indicator';
+        // nullIndicator.textContent = 'null';
+        // node.appendChild(nullIndicator);
     }
 }
 

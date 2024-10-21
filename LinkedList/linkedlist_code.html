@@ -1,119 +1,118 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Linked List Implementation in Java</title>
-    <link rel="stylesheet" href="styles.css">
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+<style>
+   
+   body{
+    font-family: Arial, Helvetica, sans-serif;
+   }
+
+  </style>
 </head>
 <body>
-    <div class="home">
-        <div class="code-page">
+  
+<header>
+<h2 style="text-align: center; padding-top: 20PX;"> Code Implementation of <span style="color: green;"> Linked List</span> - Java </h2>
+</header>
+<main>
+    <div class="section" id="theory" style="background-color:#eff8ed; padding: 20px; border-radius: 2px; box-shadow: 0 4px 8px rgba(36, 30, 30, 0.1); margin: 20px 0;">
+       <p  style="font-size: larger;">In Java, a linked list is implemented using nodes, where each node contains data and a reference to the next node. 
+        This allows for efficient insertion and deletion operations by adjusting the links between nodes.</p>
 
-            <h1>Code Implementation: Linked List in Java</h1><br>
-            <h2>How to implement a Linked List in Java</h2>
-            <p>
-                In Java, a linked list is implemented using nodes, where each node contains data and a reference to the next node. 
-                This allows for efficient insertion and deletion operations by adjusting the links between nodes. 
-                A linked list is dynamic, meaning it can grow and shrink as elements are added or removed.
-            </p><br><br>
+</div>
 
-            <div class="code-box">
-                <h3>Simple Linked List Implementation</h3>
-                <pre>
-    class Node {
-        int data;
-        Node next;
-        Node(int data) {
-            this.data = data;
-            this.next = null;
+<h3 > Simple Example : </h3>
+    
+<div class="section" id="code block" style="background-color:#eff8ed; padding: 20px; border-radius: 2px; box-shadow: 0 4px 8px rgba(36, 30, 30, 0.1); margin: 20px 0;">
+    <pre>
+        class Node {
+            int data;
+            Node next;
+            Node(int data) {
+                this.data = data;
+                this.next = null;
+            }
         }
-    }
-    
-    // LinkedList class
-    class LinkedList {
-        Node head;
-    
-        // Inserting a new node
-        void insert(int data) {
-            Node newNode = new Node(data);
-            if (head == null) {
-                head = newNode;
-            } else {
+        
+        // LinkedList class
+        class LinkedList {
+            Node head;
+        
+            // Inserting a new node
+            void insert(int data) {
+                Node newNode = new Node(data);
+                if (head == null) {
+                    head = newNode;
+                } else {
+                    Node temp = head;
+                    while (temp.next != null) {
+                        temp = temp.next;
+                    }
+                    temp.next = newNode;
+                }
+            }
+        
+            // Deleting a node
+            void delete(int data) {
+                if (head == null) return;
+                if (head.data == data) {
+                    head = head.next;
+                    return;
+                }
                 Node temp = head;
-                while (temp.next != null) {
+                while (temp.next != null && temp.next.data != data) {
                     temp = temp.next;
                 }
-                temp.next = newNode;
+                if (temp.next != null) {
+                    temp.next = temp.next.next;
+                }
+            }
+        
+            // Display the list
+            void display() {
+                Node temp = head;
+                while (temp != null) {
+                    System.out.print(temp.data + " -> ");
+                    temp = temp.next;
+                }
+                System.out.println("null");
             }
         }
-    
-        // Deleting a node
-        void delete(int data) {
-            if (head == null) return;
-            if (head.data == data) {
-                head = head.next;
-                return;
-            }
-            Node temp = head;
-            while (temp.next != null && temp.next.data != data) {
-                temp = temp.next;
-            }
-            if (temp.next != null) {
-                temp.next = temp.next.next;
+        
+        public class Main {
+            public static void main(String[] args) {
+                LinkedList list = new LinkedList();
+                list.insert(10);
+                list.insert(20);
+                list.insert(30);
+                list.display();
+                
+                list.delete(20);
+                list.display();
             }
         }
-    
-        // Display the list
-        void display() {
-            Node temp = head;
-            while (temp != null) {
-                System.out.print(temp.data + " -> ");
-                temp = temp.next;
-            }
-            System.out.println("null");
-        }
-    }
-    
-    public class Main {
-        public static void main(String[] args) {
-            LinkedList list = new LinkedList();
-            list.insert(10);
-            list.insert(20);
-            list.insert(30);
-            list.display();
-            
-            list.delete(20);
-            list.display();
-        }
-    }
-                </pre>
+    </pre>
+  </div>
 
-                <div class="output-box">
-                    <h3>Output</h3>
-                    <pre>
-                        10 -> 20 -> 30 -> null
-                        10 -> 30 -> null
-                    </pre>
-                </div>
+    <h3>Output IS : </h3>
+    <div class="section" id="theory" style="background-color:#eff8ed; padding: 20px; border-radius: 2px; box-shadow: 0 4px 8px rgba(36, 30, 30, 0.1); margin: 20px 0;">
 
-                <h3>Working of the above code:</h3>
-                <p>
-                    1.&nbsp Main Method:<br>
-                    &nbsp &nbsp A linked list object is created, and three nodes are inserted with values 10, 20, and 30.<br>
-                    &nbsp &nbsp The list is printed as: 10 -> 20 -> 30 -> null.<br><br>
-                    2.&nbsp Deleting a Node:<br>
-                    &nbsp &nbsp The node with value 20 is deleted, and the list is updated.<br>
-                    &nbsp &nbsp After deletion, the list is printed as: 10 -> 30 -> null.
-                </p>
-            </div>
-        </div>
+    <pre>
+        10 -> 20 -> 30 -> null
+        10 -> 30 -> null
+    </pre>
+  </div>
+  <div class="footer-bottom" style="margin-bottom: 3%;margin-top:15% ;color: rgba(128, 128, 128, 0.923);">
+    <p>© 2024 TechHive. All Rights Reserved.</p>
+  </div>
+</div>
 
-        <div class="footer-bottom" style="margin-bottom: 3%;margin-top:15%;color: rgba(128, 128, 128, 0.923);">
-            <p>© 2024 TechHive. All Rights Reserved.</p>
-        </div>
-    </div>
 
-    <script src="../Home/navbar2.js"></script>
+</body>
+</html>
+</main>
 </body>
 </html>

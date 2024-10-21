@@ -1,47 +1,69 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>DSA Topics</title>
-  <link rel="stylesheet" href="tp.css">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Algorithms Webpage</title>
+    <link rel="stylesheet" href="algorithms-styles.css">
 </head>
 <body>
-  <div class="container">
-    <h1>Data Structures and Algorithms</h1>
-    <div class="topics-grid">
-      <div class="topic-card" onclick="location.href='arrays.html';">
-        <h2>Arrays</h2>
-        <p>Learn about arrays and their importance in DSA.</p>
-      </div>
+    <header class="header">
+        <h1>Introduction to Algorithms</h1>
+        <p>Learn the basics of common algorithms used in computer science</p>
+    </header>
 
-      <div class="topic-card" onclick="location.href='linkedlists.html';">
-        <h2>Linked Lists</h2>
-        <p>Explore linked lists and their various types.</p>
-      </div>
+    <nav class="navbar">
+        <ul>
+            <li><a href="#searching">Searching Algorithms</a></li>
+            <li><a href="#sorting">Sorting Algorithms</a></li>
+            <li><a href="#greedy">Greedy Algorithms</a></li>
+            <li><a href="#dynamic">Dynamic Programming</a></li>
+            <li><a href="#backtracking">Backtracking</a></li>
+        </ul>
+    </nav>
 
-      <div class="topic-card" onclick="location.href='stacks.html';">
-        <h2>Stacks</h2>
-        <p>Understand the stack data structure and its applications.</p>
-      </div>
+    <section id="searching" class="section">
+        <h2>Searching Algorithms</h2>
+        <div class="content">
+            <img src="images/searching.png" alt="Searching Algorithms Illustration">
+            <p>Searching algorithms are designed to check for an element or retrieve an element from any data structure where it is stored. Common examples include linear search and binary search.</p>
+        </div>
+    </section>
 
-      <div class="topic-card" onclick="location.href='queues.html';">
-        <h2>Queues</h2>
-        <p>Learn about queues and how they work in algorithms.</p>
-      </div>
+    <section id="sorting" class="section">
+        <h2>Sorting Algorithms</h2>
+        <div class="content">
+            <img src="images/sorting.png" alt="Sorting Algorithms Illustration">
+            <p>Sorting algorithms are a fundamental part of computer science, used to arrange the elements of a list in a particular order. Examples include bubble sort, merge sort, and quick sort.</p>
+        </div>
+    </section>
 
-      <div class="topic-card" onclick="location.href='trees.html';">
-        <h2>Trees</h2>
-        <p>Dive into tree structures and their significance.</p>
-      </div>
+    <section id="greedy" class="section">
+        <h2>Greedy Algorithms</h2>
+        <div class="content">
+            <img src="images/greedy.png" alt="Greedy Algorithms Illustration">
+            <p>Greedy algorithms make the locally optimal choice at each stage with the hope of finding the global optimum. They are used in optimization problems like the knapsack problem.</p>
+        </div>
+    </section>
 
-      <div class="topic-card" onclick="location.href='graphs.html';">
-        <h2>Graphs</h2>
-        <p>Discover graphs and how they model complex systems.</p>
-      </div>
-    </div>
-  </div>
+    <section id="dynamic" class="section">
+        <h2>Dynamic Programming</h2>
+        <div class="content">
+            <img src="images/dynamic.png" alt="Dynamic Programming Illustration">
+            <p>Dynamic programming is a method for solving complex problems by breaking them down into simpler subproblems. It is often used for optimization and is known for its efficiency.</p>
+        </div>
+    </section>
 
-  <script src="script.js"></script>
+    <section id="backtracking" class="section">
+        <h2>Backtracking</h2>
+        <div class="content">
+            <img src="images/backtracking.png" alt="Backtracking Illustration">
+            <p>Backtracking is an algorithmic technique for solving problems incrementally, abandoning solutions that fail to satisfy the constraints of the problem at any point of time.</p>
+        </div>
+    </section>
+
+    <footer class="footer">
+        <p>© 2024 Algorithms Webpage. All Rights Reserved.</p>
+    </footer>
 </body>
 </html>

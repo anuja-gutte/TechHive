@@ -39,8 +39,10 @@ body {
 }
 
 .null-indicator {
-  display: inline-block;
+  /* display: inline-block; */
+  /* position: absolute; */
   margin-left: 10px;
+  left:100%;
   font-weight: bold;
   color: #3498db;
 }
