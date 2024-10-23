@@ -1,97 +1,99 @@
 <!DOCTYPE html>
 <html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>qquiz</title>
-    <link rel="stylesheet" href="q.css" />
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Data Structure Search Quiz</title>
     <style>
-      .body {
-        font-family: Arial, Helvetica, sans-serif,
-          sans-serif;
-      }
-      .home {
-        max-width: 1300px;
-        margin: 0 auto;
-        display: flex;
-        flex-direction: column;
-        align-items: center;
-      }
-
-      * {
+        .body{
+        font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+       
+    }
+    .home{
+      max-width: 1300px;
+      margin: 0 auto;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+    }
+    
+    *{
         text-decoration: none;
         margin: 0;
         padding: 0;
-      }
-
-      .nav {
+        
+    }
+    
+    .nav{
         position: fixed;
-      }
-
-      .tab {
+    }
+    
+    .tab{
         background: black;
-        font-family: Arial, Helvetica, sans-serif,
-          sans-serif;
+        font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
         width: 100%;
         /* padding-left: 15px;
-    padding-right: 15px; */
-      }
-
-      .tab {
+        padding-right: 15px; */
+    }
+    
+    .tab{
         display: flex;
         align-items: center;
         justify-content: space-between;
-      }
-
-      img {
+    }
+    
+    img{
         width: 50px;
         border-radius: 100px;
         padding-right: 50px;
-      }
-
-      .open-btn {
-        font-family: "Gill Sans", "Gill Sans MT", Calibri, "Trebuchet MS",
-          sans-serif;
-        font-size: 15px;
+    }
+    
+    .open-btn{
+        font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+        font-size:15px;
         cursor: pointer;
         display: inline-block;
         background-color: black;
-        color: white;
+        color:white;
         border: none;
-      }
-
-      .arrow {
+        
+       
+    }
+    
+    .arrow {
         border: solid white;
         border-width: 0 3px 3px 0;
         display: inline-block;
         padding: 2px;
       }
-
-      .down {
+    
+    .down {
         transform: rotate(45deg);
         -webkit-transform: rotate(45deg);
       }
-
-      .open-btn:hover {
+    
+    .open-btn:hover{
+        color:orange;
+        transition-duration: 0.3s;
+    
+    }
+    
+    a:hover{
         color: orange;
         transition-duration: 0.3s;
-      }
-
-      a:hover {
-        color: orange;
-        transition-duration: 0.3s;
-      }
-
-      .left {
+    }
+    
+    .left{
         display: inline-flex;
         align-items: center;
         /* margin-left: 10%; */
-      }
-
-      .tabs-learn-more {
-        font-family: "Gill Sans", "Gill Sans MT", Calibri, "Trebuchet MS",
-          sans-serif;
-
+        
+    }
+    
+    
+    .tabs-learn-more{
+        font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+        
         background-color: black;
         border-width: 2px;
         border-style: solid;
@@ -101,93 +103,154 @@
         border-radius: 20px;
         padding: 8px;
         cursor: pointer;
-      }
-
-      .tabs-learn-more:hover {
+    }
+    
+    .tabs-learn-more:hover{
         background-color: rgb(28, 205, 15);
         transition-duration: 0.3s;
-        border-color: rgb(28, 205, 15);
-      }
-
-      li {
+        border-color:  rgb(28, 205, 15);
+        
+    }
+    
+    li{
         list-style: none;
         display: inline-block;
-      }
-
-      li a {
+    }
+    
+    li a{
         color: white;
         font-size: 15px;
         margin-right: 20px;
-      }
-
+    }
     
     </style>
-  </head>
-  <body>
-      <div class="tab">
-        <div class="left">
-          <div class="logo">
-            <img src="../logo.jpeg" />
-          </div>
-          <a
-            ><button class="open-btn" onclick="toggleSidebar()">
-              ☰ Menu
-            </button></a
-          >
+</head>
+<body>
+    <!-- <nav>
+        <div class="tab">
+            <div class="left">
+            <div class="logo">
+                <img src="../logo.jpeg">
+            </div>
+            <a><button class="open-btn" onclick="toggleSidebar()">☰ Menu</button></a>
+            </div>
+        
+                <div class="right">
+                    <ul id="list">
+                        <li> <a href="#home">Home</a></li>
+                        <li><a href="about.html">About</a></li>
+                        <li><a href="#services">Services</a></li>
+                        <li> <a href="#contact">Contact</a></li>
+                        <li><a href="#contact"><button class="tabs-learn-more">Learn More</button></a></li>
+                        
+                    </ul>
+                   
+                
+                </div>
+        
         </div>
-
-        <div class="right">
-          <ul id="list">
-            <li><a href="#home">Home</a></li>
-            <li><a href="about.html">About</a></li>
-            <li><a href="#services">Services</a></li>
-            <li><a href="#contact">Contact</a></li>
-            <li>
-              <a href="#contact"
-                ><button class="tabs-learn-more">Learn More</button></a
-              >
-            </li>
-          </ul>
-        </div>
-      </div>
     </nav> -->
-    <!-- <div id="navbar"></div> -->
-    <div class="quiz-page">
-      <div class="quiz-container">
-        <div class="topic"><h1>Searching</h1></div>
+    <div class="quiz-container">
+        <h2>Data Structures: Searching Quiz</h2><br>
 
-        <div class="header">
-          <div id="progress-bar-container">
-            <div id="progress-bar"></div>
-          </div>
-        </div>
+        <!-- Question 1 -->
+        <div class="question" id="q1">
+            <p><strong>1. What is the time complexity of Linear Search in the worst case?</strong></p>
+            <input type="checkbox" id="q1a" name="q1" value="O(log n)">
+            <label for="q1a">O(log n)</label><br>
+            <input type="checkbox" id="q1b" name="q1" value="O(n)">
+            <label for="q1b">O(n)</label><br>
+            <input type="checkbox" id="q1c" name="q1" value="O(n log n)">
+            <label for="q1c">O(n log n)</label><br>
+            <input type="checkbox" id="q1d" name="q1" value="O(1)">
+            <label for="q1d">O(1)</label>
+        </div><br>
 
-        <div id="quiz"></div>
+        <!-- Question 2 -->
+        <div class="question" id="q2">
+            <p><strong>2. Which of the following is required for Binary Search to work efficiently?</strong></p>
+            <input type="checkbox" id="q2a" name="q2" value="Array must be unsorted">
+            <label for="q2a">Array must be unsorted</label><br>
+            <input type="checkbox" id="q2b" name="q2" value="Array must be sorted">
+            <label for="q2b">Array must be sorted</label><br>
+            <input type="checkbox" id="q2c" name="q2" value="Array can be sorted or unsorted">
+            <label for="q2c">Array can be sorted or unsorted</label><br>
+            <input type="checkbox" id="q2d" name="q2" value="Array must contain distinct elements">
+            <label for="q2d">Array must contain distinct elements</label>
+        </div><br>
 
-        <button id="submit-btn" onclick="submitQuiz()">Submit</button>
+        <!-- Question 3 -->
+        <div class="question" id="q3">
+            <p><strong>3. What is the time complexity of Binary Search in the average case?</strong></p>
+            <input type="checkbox" id="q3a" name="q3" value="O(n)">
+            <label for="q3a">O(n)</label><br>
+            <input type="checkbox" id="q3b" name="q3" value="O(n log n)">
+            <label for="q3b">O(n log n)</label><br>
+            <input type="checkbox" id="q3c" name="q3" value="O(log n)">
+            <label for="q3c">O(log n)</label><br>
+            <input type="checkbox" id="q3d" name="q3" value="O(1)">
+            <label for="q3d">O(1)</label>
+        </div><br>
 
+        <!-- Question 4 -->
+        <div class="question" id="q4">
+            <p><strong>4. Which of the following is a key advantage of Binary Search over Linear Search?</strong></p>
+            <input type="checkbox" id="q4a" name="q4" value="Works on unsorted arrays">
+            <label for="q4a">Works on unsorted arrays</label><br>
+            <input type="checkbox" id="q4b" name="q4" value="Lower time complexity on sorted arrays">
+            <label for="q4b">Lower time complexity on sorted arrays</label><br>
+            <input type="checkbox" id="q4c" name="q4" value="Can search circular linked lists">
+            <label for="q4c">Can search circular linked lists</label><br>
+            <input type="checkbox" id="q4d" name="q4" value="Requires less memory">
+            <label for="q4d">Requires less memory</label>
+        </div><br>
 
-        <div id="score-container"></div>
-      </div>
+        <!-- Question 5 -->
+        <div class="question" id="q5">
+            <p><strong>5. In Binary Search, what happens if the element being searched is greater than the middle element?</strong></p>
+            <input type="checkbox" id="q5a" name="q5" value="Left half discarded">
+            <label for="q5a">Left half discarded</label><br>
+            <input type="checkbox" id="q5b" name="q5" value="Right half discarded">
+            <label for="q5b">Right half discarded</label><br>
+            <input type="checkbox" id="q5c" name="q5" value="Both halves searched recursively">
+            <label for="q5c">Both halves searched recursively</label><br>
+            <input type="checkbox" id="q5d" name="q5" value="Search ends immediately">
+            <label for="q5d">Search ends immediately</label>
+        </div><br>
+
+        <!-- Submit Button -->
+        <button type="button" onclick="checkAnswers()">Submit</button>
     </div>
 
-    <script src="quiz.js"></script>
     <script>
-      function loadHTML() {
-        fetch("../Home/navbar2.html")
-          .then((response) => response.text())
-          .then((data) => {
-            document.getElementById("navbar").innerHTML = data;
-          })
-          .catch((error) => {
-            console.error("Error fetching the HTML:", error);
-          });
-      }
+        function checkAnswers() {
+            // Correct answers for the quiz
+            const correctAnswers = {
+                q1: 'O(n)',
+                q2: 'Array must be sorted',
+                q3: 'O(log n)',
+                q4: 'Lower time complexity on sorted arrays',
+                q5: 'Left half discarded'
+            };
 
-      window.onload = loadHTML;
+            // Display correct answers for each question
+            displayCorrectAnswer('q1', correctAnswers.q1);
+            displayCorrectAnswer('q2', correctAnswers.q2);
+            displayCorrectAnswer('q3', correctAnswers.q3);
+            displayCorrectAnswer('q4', correctAnswers.q4);
+            displayCorrectAnswer('q5', correctAnswers.q5);
 
-      
-    
+            alert("Your answers have been submitted. Correct answers are shown below.");
+        }
+
+        // Function to display correct answers
+        function displayCorrectAnswer(questionId, correctAnswer) {
+            const questionElement = document.getElementById(questionId);
+            const correctAnswerElement = document.createElement('p');
+            correctAnswerElement.className = 'correct-answer';
+            correctAnswerElement.textContent = `Correct Answer: ${correctAnswer}`;
+            questionElement.appendChild(correctAnswerElement);
+        }
     </script>
-  </body>
+</body>
 </html>

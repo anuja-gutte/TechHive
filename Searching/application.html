@@ -1,235 +1,131 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Applications of Linear and Binary Search</title>
-  <style>
-    body {
-      font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
-      line-height: 1.6;
-      padding: 20px;
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Applications of Search Algorithms</title>
+    <link rel="stylesheet" href="styles.css">
+    <style>
+     
+     body{
+        font-family: Arial, Helvetica, sans-serif;
+     }
+
+     h1{
+        padding-left: 35%;
+     }
+
+     h2,p{
+        padding-left: 20px;
+     }
+
+    .application p{
+    line-height: 30px;
     }
 
-    .home {
-      max-width: 1300px;
-      margin: 0 auto;
-      display: flex;
-      flex-direction: column;
-      align-items: center;
-    }
-
-    * {
-      text-decoration: none;
-      margin: 0;
-      padding: 0;
-    }
-
-    .nav {
-      position: fixed;
-    }
-
-    .tab {
-      background: black;
-      font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
-      width: 100%;
-    }
-
-    .tab {
-      display: flex;
-      align-items: center;
-      justify-content: space-between;
-    }
-
-    img {
-      width: 50px;
-      border-radius: 100px;
-      padding-right: 50px;
-    }
-
-    .open-btn {
-      font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
-      font-size: 15px;
-      cursor: pointer;
-      background-color: black;
-      color: white;
-      border: none;
-    }
-
-    .arrow {
-      border: solid white;
-      border-width: 0 3px 3px 0;
-      display: inline-block;
-      padding: 2px;
-    }
-
-    .down {
-      transform: rotate(45deg);
-      -webkit-transform: rotate(45deg);
-    }
-
-    .open-btn:hover {
-      color: orange;
-      transition-duration: 0.3s;
-    }
-
-    a:hover {
-      color: orange;
-      transition-duration: 0.3s;
-    }
-
-    .left {
-      display: inline-flex;
-      align-items: center;
-    }
-
-    .tabs-learn-more {
-      background-color: black;
-      border-width: 2px;
-      border-style: solid;
-      border-color: white;
-      color: white;
-      font-weight: 500;
-      border-radius: 20px;
-      padding: 8px;
-      cursor: pointer;
-    }
-
-    .tabs-learn-more:hover {
-      background-color: rgb(28, 205, 15);
-      transition-duration: 0.3s;
-      border-color: rgb(28, 205, 15);
-    }
-
-    li {
-      list-style: none;
-      display: inline-block;
-    }
-
-    li a {
-      color: white;
-      font-size: 18px;
-      margin-right: 20px;
-    }
-
-    /* Increased font size for applications and examples */
-    .application,
-    .example {
-      font-size: 1.2em;
-      margin-bottom: 15px;
-    }
-
-    h1 {
-      text-align: center;
-      padding-top: 20px;
-      font-size: 2.5em; /* Main heading size */
-      color: black;
-    }
-
-    /* Style for headers */
-    h3 {
-      font-size: 1.6em; /* Smaller than main heading */
-      margin-top: 30px;
-      color: darkgreen;
-    }
-
-    /* Larger bullet points */
-    ul li {
-      font-size: 1.3em; /* Slightly smaller than the section heading */
-      margin-bottom: 10px;
-    }
-  </style>
+.application h2,p{
+    margin-top: 1%;
+    text-align: left;
+   
+ }
+    
+    </style>
 </head>
 <body>
-  <nav>
-    <div class="tab">
-      <div class="left">
-        <div class="logo">
-          <img src="../logo.jpeg" alt="Logo">
+    <!-- <div id="navbar"></div> -->
+    <!-- <nav>
+        <div class="tab">
+            <div class="left">
+            <div class="logo">
+                <img src="../logo.jpeg">
+            </div>
+            <a><button class="open-btn" onclick="toggleSidebar()">☰ Menu</button></a>
+            </div>
+        
+                <div class="right">
+                    <ul id="list">
+                        <li> <a href="#home">Home</a></li>
+                        <li><a href="about.html">About</a></li>
+                        <li><a href="#services">Services</a></li>
+                        <li> <a href="#contact">Contact</a></li>
+                        <li><a href="#contact"><button class="tabs-learn-more">Learn More</button></a></li>
+                        
+                    </ul>
+                   
+                
+                </div>
+        
         </div>
-        <a><button class="open-btn" onclick="toggleSidebar()">☰ Menu</button></a>
-      </div>
+    </nav> -->
 
-      <div class="right">
-        <ul id="list">
-          <li><a href="#home">Home</a></li>
-          <li><a href="about.html">About</a></li>
-          <li><a href="#services">Services</a></li>
-          <li><a href="#contact">Contact</a></li>
-          <li><a href="#contact"><button class="tabs-learn-more">Learn More</button></a></li>
-        </ul>
-      </div>
+    <div class="home">
+        <h1>Applications of Search Algorithms</h1><br>
+
+        <div class="application">
+            <!-- Section 1: Data Structures -->
+            <h2>Applications of Linear Search:</h2> <br>
+            <p>
+                1.Technical Applications:<br>
+                
+                a.Simple Data Retrieval:<br>
+                Used when data sets are small or unsorted, such as searching for an item in a shopping list.
+            </p>
+            <p>
+                b.Debugging:<br>
+                Helpful in searching through logs or arrays for specific values while debugging software.
+            </p>
+            <p>
+                c.Real-time Systems:<br>
+                Useful in scenarios where quick, straightforward searches are required without prior sorting.
+            </p><br>
+            <p>
+                2.Real-life Examples:<br>
+                
+                a.Finding a customer’s name in a list of customer records that are not sorted.<br>
+            </p>
+            <p>
+                b.Searching for a book title in a physical library shelf.<br>
+            </p>
+            <p>
+                c.Checking the presence of a particular item in a grocery bag.<br>
+            </p><br>
+
+            <!-- Section 2: Parsing Expressions -->
+            <h2>Applications of Binary Search:</h2> <br>
+            <p>
+                1.Technical Applications:<br>
+                
+                a.Database Systems:<br>
+                Efficiently locating records in sorted databases.
+            </p>
+            <p>
+                b.Version Control:<br>
+                Used in applications like Git to quickly locate specific commits or branches in sorted lists.
+            </p>
+            <p>
+                c.Searching Algorithms:<br>
+                Forms the basis for various algorithms in computer science, especially in sorted data structures.
+            </p><br>
+            <p>
+                2.Real-life Examples:<br>
+                
+                a.Finding a word in a dictionary or a phone book, which is sorted alphabetically.<br>
+            </p>
+            <p>
+                b.Searching for a specific chapter in a well-organized textbook.<br>
+            </p>
+            <p>
+                c.Locating a specific file in a sorted directory on a computer.<br>
+            </p>
+            <div class="footer-bottom" style="margin-bottom: 3%;margin-top:15% ;color: rgba(128, 128, 128, 0.923);">
+                <p>© 2024 TechHive. All Rights Reserved.</p>
+              </div>
+        </div>
+
+       
     </div>
-  </nav>
+   
 
-  <header>
-    <h1>Applications of Linear and Binary Search</h1>
-  </header>
-
-  <h3>Applications of Linear Search</h3>
-
-  <section class="section">
-    <ul>
-      <li><strong>1. Searching in Unsorted Data:</strong> 
-        Linear search is commonly used when the dataset is unsorted. It examines each element one-by-one, making it useful for small collections or when sorting is impractical.
-      </li>
-
-      <li><strong>2. Real-world Example - Checking Attendance:</strong> 
-        When teachers check students' attendance by calling out names in an unsorted list, they are performing a linear search to find the corresponding student.
-      </li>
-
-      <li><strong>3. Finding a Contact in a Phonebook:</strong> 
-        In a phonebook application that does not have sorted contacts, linear search is used to go through each contact until the desired one is found.
-      </li>
-
-      <li><strong>4. Checking for Duplicates:</strong> 
-        Linear search can be used to check for duplicate entries in a list or dataset by comparing each element with every other element.
-      </li>
-    </ul>
-  </section>
-
-  <h3>Applications of Binary Search</h3>
-
-  <section class="section">
-    <ul>
-      <li><strong>1. Searching in Sorted Data:</strong> 
-        Binary search is ideal for datasets that are already sorted. It quickly eliminates half the dataset with each comparison, significantly improving search time.
-      </li>
-
-      <li><strong>2. Real-world Example - Dictionary Lookup:</strong> 
-        When you look up a word in a physical dictionary, you're performing a form of binary search. You don't start from the beginning, but instead jump to the section that contains the word based on alphabetical ordering.
-      </li>
-
-      <li><strong>3. Database Query Optimization:</strong> 
-        Binary search is frequently used to optimize search queries in databases that store large amounts of sorted data, such as sorted tables of users or products.
-      </li>
-
-      <li><strong>4. Searching in a Sorted List of Students by Grades:</strong> 
-        In a list of students ordered by their grades, binary search helps quickly find a specific student by comparing the middle value and deciding which half of the list to discard.
-      </li>
-
-      <li><strong>5. Competitive Coding and Algorithms:</strong> 
-        Binary search is a popular technique in algorithm design for problems involving finding the right index or value in a sorted array.
-      </li>
-    </ul>
-  </section>
-
-  <h3>Differences between Linear and Binary Search</h3>
-
-  <section class="section">
-    <ul>
-      <li><strong>1. Efficiency:</strong> 
-        Linear search has a time complexity of O(n), meaning it scans each element. Binary search is more efficient with O(log n) time complexity, assuming the data is sorted.
-      </li>
-
-      <li><strong>2. Data Requirement:</strong> 
-        Linear search works on unsorted data, while binary search requires the data to be sorted beforehand.
-      </li>
-
-      <li><strong>3. Usage Scenarios:</strong> 
-        Linear search is preferred for smaller datasets or unsorted collections, while binary search is better for large datasets that are sorted.
-      </li>
-    </ul>
-  </section>
+    <script src="../Home/navbar2.js"></script>
 </body>
 </html>
