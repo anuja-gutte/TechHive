@@ -3,7 +3,7 @@ body {
   font-family: Arial, sans-serif;
   margin: 0;
   padding: 0;
-  background-color: #f4f4f4;
+  background-color: white;
   color: #333;
   display: flex;
   flex-direction: column;
@@ -12,7 +12,7 @@ body {
 }
 
 header {
-  background-color:#f4f4f4;
+  background-color:white;
   color: rgb(12, 4, 4);
   padding: 0em;
   text-align: center;
@@ -120,10 +120,10 @@ ul li a:hover {
   flex: 1;
   justify-content: center;
   align-items: center;
-  padding-top: 20px; /* Ensures that the content is not hidden behind the navbar */
+  padding-top: 20px; 
 }
 .container > div {
-  margin-top: 0px; /* Reduce space between the sections */
+  margin-top: 0px; 
 }
 
 
@@ -132,7 +132,7 @@ main {
 }
 
 .main-header {
-  margin-top: 70px; /* Adds spacing from the top for visibility */
+  margin-top: 70px; 
   
 }
 
@@ -173,7 +173,7 @@ ol li {
 }
 
 .image-section img {
-  border: 3px solid green; /* Green border around the image */
+  border: 3px solid green; 
   max-width: 400px;
   height: auto;
 }
@@ -195,13 +195,13 @@ ol li {
 }
 /* Insertion Algorithm Code */
 .insertion {
-  color: black; /* Text color */
-  padding: 20px; /* Padding inside the section */
-  margin: 0 auto; /* Center the insertion section */
-  width: 70%; /* Adjust the width to 70% of the container */
-  max-width: 600px; /* Optional: Set a maximum width */
-  background-color: #f4f4f4; /* Optional: Background color */
-  border-radius: 5px; /* Optional: Rounded corners */
+  color: black; 
+  padding: 20px; 
+  margin: 0 auto; 
+  width: 70%; 
+  max-width: 600px; 
+  background-color: #f4f4f4; 
+  border-radius: 5px; 
 }
 
 .insertion h3 {
@@ -221,13 +221,13 @@ ol li {
 
 /* Deletion Algorithm Code */
 .deletion {
-  color: black; /* Text color */
-  padding: 20px; /* Padding inside the section */
-  margin: 0 auto; /* Center the deletion section */
-  width: 70%; /* Adjust the width to 70% of the container */
-  max-width: 600px; /* Optional: Set a maximum width */
-  background-color: #f4f4f4; /* Optional: Background color */
-  border-radius: 5px; /* Optional: Rounded corners */
+  color: black; 
+  padding: 20px; 
+  margin: 0 auto; 
+  width: 70%; 
+  max-width: 600px; 
+  background-color: #f4f4f4; 
+  border-radius: 5px; 
 }
 
 .deletion h3 {
@@ -249,20 +249,20 @@ ol li {
   color: black;
   padding: 20px;
   margin: 0 auto;
-  width: 70%; /* Set the width similar to the other blocks */
-  max-width: 600px; /* Limit the width to 600px */
+  width: 70%; 
+  max-width: 600px; 
   background-color: #f4f4f4;
   border-radius: 5px;
-  margin-top: 20px; /* Space between the sections */
+  margin-top: 20px; 
 }
 
 .complexity h3 {
   font-size: 22px;
   margin-bottom: 15px;
-  text-align: center; /* Center the heading */
+  text-align: center; 
 }
 
-/* Reset global margins for the container */
+
 .complexity {
   margin: 0 auto;
   padding: 20px;
@@ -273,7 +273,7 @@ ol li {
   text-align: left;
 }
 
-/* Reset margins and paddings for the ordered list */
+
 .complexity ol, .complexity li {
   margin:1% ;
   padding: 0;
