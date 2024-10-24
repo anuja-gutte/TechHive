@@ -81,11 +81,26 @@ let answeredCount = 0;
 let selectedAnswers = {};
 let score = 0;
 
+
+const totalQuestions = 5; 
+
+
+function shuffle(array) {
+    for (let i = array.length - 1; i > 0; i--) {
+        const j = Math.floor(Math.random() * (i + 1));
+        [array[i], array[j]] = [array[j], array[i]];
+    }
+    return array;
+}
+
 function loadQuiz() {
     const quiz = document.getElementById('quiz');
-    quiz.innerHTML = ''; // Clear previous content
-
-    quizData.forEach((currentData, questionIndex) => {
+    quiz.innerHTML = '';
+    
+   
+    const shuffledQuestions = shuffle(quizData).slice(0, totalQuestions);
+    
+    shuffledQuestions.forEach((currentData, questionIndex) => {
         const questionEl = document.createElement('div');
         questionEl.classList.add('question');
         questionEl.textContent = `${questionIndex + 1}. ${currentData.question}`;
@@ -109,25 +124,24 @@ function loadQuiz() {
 function selectAnswer(questionIndex, selectedIndex, optionEl) {
     const options = optionEl.parentElement.children;
 
-    // Reset styles for other options in the same question
+    
     Array.from(options).forEach(option => option.classList.remove('selected'));
 
-    // Mark the selected option visually with the "selected" class
+    
     optionEl.classList.add('selected');
 
-    // Store the selected answer
     if (selectedAnswers[questionIndex] === undefined) {
         answeredCount++;
     }
     selectedAnswers[questionIndex] = selectedIndex;
 
-    // Update the progress bar
+   
     updateProgressBar();
 }
 
 function updateProgressBar() {
     const progressBar = document.getElementById('progress-bar');
-    const progressPercentage = (answeredCount / quizData.length) * 100;
+    const progressPercentage = (answeredCount / totalQuestions) * 100;
     progressBar.style.width = `${progressPercentage}%`;
 }
 
@@ -142,10 +156,10 @@ function submitQuiz() {
             const selectedOption = options[questionIndex * question.options.length + selectedAnswer];
             const correctOption = options[questionIndex * question.options.length + correctAnswer];
 
-            // Mark the correct answer
+            
             correctOption.classList.add('correct');
 
-            // If the selected answer is wrong, mark it
+            
             if (selectedAnswer !== correctAnswer) {
                 selectedOption.classList.add('wrong');
             } else {
@@ -154,20 +168,17 @@ function submitQuiz() {
         }
     });
 
-    // Disable further selection after submitting
+   
     options.forEach(option => {
         option.style.pointerEvents = 'none';
     });
 
-    // Display final score
     const scoreContainer = document.getElementById('score-container');
-    scoreContainer.textContent = `You scored ${score}/${quizData.length}`;
+    scoreContainer.textContent = 'You scored ' +score + '/' +totalQuestions; 
 
-    // Scroll back to the top to show the correct/incorrect answers
+    
     window.scrollTo(0, 0);
 }
 
-// Load the quiz when the page is ready
+
 loadQuiz();
-
-
