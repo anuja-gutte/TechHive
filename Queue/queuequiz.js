@@ -93,7 +93,7 @@ function loadQuiz() {
   const quiz = document.getElementById("quiz");
   quiz.innerHTML = ""; 
 
-  /
+  
   const shuffledQuizData = shuffleArray([...quizData]);
 
   shuffledQuizData.forEach((currentData, questionIndex) => {

@@ -11,13 +11,13 @@ function enqueue() {
     return;
   }
 
-  // Add to the queue
+  
   queue.push(input);
   
-  // Clear the input field after enqueuing
+  
   document.getElementById("queue-input").value = "";
 
-  // Re-render the queue
+ 
   renderQueue();
 }
 
@@ -27,24 +27,24 @@ function dequeue() {
     return;
   }
 
-  // Remove from the queue (first element)
-  const firstItem = queue.shift(); // Use shift() to dequeue
+ 
+  const firstItem = queue.shift(); 
 
-  // Re-render the queue
+ 
   renderQueue();
 }
 
 function renderQueue() {
-  // Clear the current queue visualization
+  
   queueContainer.innerHTML = "";
 
-  // Create and display the queue as individual items
+  
   queue.forEach((item, index) => {
     const queueItem = document.createElement("div");
     queueItem.classList.add("queue-item");
     queueItem.textContent = item;
 
-    // Add front and rear classes to highlight the queue's front and rear
+    
     if (index === 0) {
       queueItem.classList.add("front");
     }
@@ -55,7 +55,7 @@ function renderQueue() {
     queueContainer.appendChild(queueItem);
   });
 
-  // Update front and rear elements display
+  
   if (queue.length > 0) {
     frontElementDisplay.textContent = `Front: ${queue[0]}`;
     rearElementDisplay.textContent = `Rear: ${queue[queue.length - 1]}`;
@@ -65,6 +65,5 @@ function renderQueue() {
   }
 }
 
-// Initial render (empty queue)
 renderQueue();
 
