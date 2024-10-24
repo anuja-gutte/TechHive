@@ -89,99 +89,104 @@ let answeredCount = 0;
 let selectedAnswers = {};
 let score = 0;
 
+
+const totalQuestions = 5; 
+
+
+function shuffle(array) {
+    for (let i = array.length - 1; i > 0; i--) {
+        const j = Math.floor(Math.random() * (i + 1));
+        [array[i], array[j]] = [array[j], array[i]];
+    }
+    return array;
+}
+
 function loadQuiz() {
-  const quiz = document.getElementById("quiz");
-  quiz.innerHTML = ""; 
+    const quiz = document.getElementById('quiz');
+    quiz.innerHTML = '';
+    
+   
+    const shuffledQuestions = shuffle(quizData).slice(0, totalQuestions);
+    
+    shuffledQuestions.forEach((currentData, questionIndex) => {
+        const questionEl = document.createElement('div');
+        questionEl.classList.add('question');
+        questionEl.textContent = `${questionIndex + 1}. ${currentData.question}`;
 
-  
-  const shuffledQuizData = shuffleArray([...quizData]);
+        const optionsEl = document.createElement('ul');
+        optionsEl.classList.add('options');
 
-  shuffledQuizData.forEach((currentData, questionIndex) => {
-      const questionEl = document.createElement("div");
-      questionEl.classList.add("question");
-      questionEl.textContent = `${questionIndex + 1}. ${currentData.question}`;
+        currentData.options.forEach((option, index) => {
+            const optionEl = document.createElement('li');
+            optionEl.classList.add('option');
+            optionEl.textContent = option;
+            optionEl.onclick = () => selectAnswer(questionIndex, index, optionEl);
+            optionsEl.appendChild(optionEl);
+        });
 
-      const optionsEl = document.createElement("ul");
-      optionsEl.classList.add("options");
-
-      currentData.options.forEach((option, index) => {
-          const optionEl = document.createElement("li");
-          optionEl.classList.add("option");
-          optionEl.textContent = option;
-          optionEl.onclick = () => selectAnswer(questionIndex, index, optionEl);
-          optionsEl.appendChild(optionEl);
-      });
-
-      quiz.appendChild(questionEl);
-      quiz.appendChild(optionsEl);
-  });
+        quiz.appendChild(questionEl);
+        quiz.appendChild(optionsEl);
+    });
 }
 
 function selectAnswer(questionIndex, selectedIndex, optionEl) {
-  const options = optionEl.parentElement.children;
+    const options = optionEl.parentElement.children;
 
+    
+    Array.from(options).forEach(option => option.classList.remove('selected'));
 
-  if (selectedAnswers[questionIndex] !== undefined) {
-      return;
-  }
+    
+    optionEl.classList.add('selected');
 
-  Array.from(options).forEach((option) => option.classList.remove("selected"));
+    if (selectedAnswers[questionIndex] === undefined) {
+        answeredCount++;
+    }
+    selectedAnswers[questionIndex] = selectedIndex;
 
-  optionEl.classList.add("selected");
-
-
-  answeredCount++;
-  selectedAnswers[questionIndex] = selectedIndex;
-
-
-  updateProgressBar();
+   
+    updateProgressBar();
 }
 
 function updateProgressBar() {
-  const progressBar = document.getElementById("progress-bar");
-  const progressPercentage = (answeredCount / quizData.length) * 100;
-  progressBar.style.width = `${progressPercentage}%`;
+    const progressBar = document.getElementById('progress-bar');
+    const progressPercentage = (answeredCount / totalQuestions) * 100;
+    progressBar.style.width = `${progressPercentage}%`;
 }
 
 function submitQuiz() {
-  // Reset score before calculating new score
-  score = 0;
+    const options = document.querySelectorAll('.option');
 
-  const options = document.querySelectorAll(".option");
+    quizData.forEach((question, questionIndex) => {
+        const correctAnswer = question.correct;
+        const selectedAnswer = selectedAnswers[questionIndex];
 
-  quizData.forEach((question, questionIndex) => {
-      const correctAnswer = question.correct;
-      const selectedAnswer = selectedAnswers[questionIndex];
+        if (selectedAnswer !== undefined) {
+            const selectedOption = options[questionIndex * question.options.length + selectedAnswer];
+            const correctOption = options[questionIndex * question.options.length + correctAnswer];
 
-      if (selectedAnswer !== undefined) {
-          const selectedOption =
-              options[questionIndex * question.options.length + selectedAnswer];
-          const correctOption =
-              options[questionIndex * question.options.length + correctAnswer];
+            
+            correctOption.classList.add('correct');
 
-          // Mark the correct answer
-          correctOption.classList.add("correct");
+            
+            if (selectedAnswer !== correctAnswer) {
+                selectedOption.classList.add('wrong');
+            } else {
+                score++;
+            }
+        }
+    });
 
-          // If the selected answer is wrong, mark it
-          if (selectedAnswer !== correctAnswer) {
-              selectedOption.classList.add("wrong");
-          } else {
-              score++;
-          }
-      }
-  });
+   
+    options.forEach(option => {
+        option.style.pointerEvents = 'none';
+    });
 
-  
-  options.forEach((option) => {
-      option.style.pointerEvents = "none";
-  });
+    const scoreContainer = document.getElementById('score-container');
+    scoreContainer.textContent = 'You scored ' +score + '/' +totalQuestions; 
 
-
-  const scoreContainer = document.getElementById("score-container");
-  scoreContainer.textContent = `You scored ${score}/${quizData.length}`;
-
-
-  window.scrollTo(0, 0);
+    
+    window.scrollTo(0, 0);
 }
+
 
 loadQuiz();
