@@ -6,6 +6,7 @@ body{
 }
 
 .page{
+    font-size: larger;
     max-width: 1300px;
    margin-top: 3%;
    margin: 0 auto;
@@ -45,6 +46,10 @@ h1{
     text-align: center;
 } 
 
+
+.code-page{
+    font-size: larger;
+}
 .code-container {
     display: block;
     width: 100%;
@@ -112,14 +117,16 @@ h2{
 
 p{
     margin-top: 3%;
-    font-size: large;
+    font-size: larger;
 }
 
 .application p{
+    font-size: larger;
     line-height: 30px;
 }
 
 .application h2,p{
+    font-size: larger;
     margin-top: 3%;
     text-align: left;
    
