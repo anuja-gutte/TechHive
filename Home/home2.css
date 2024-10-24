@@ -177,21 +177,21 @@ li a{
   }
 
   .dropdown-btn:after {
-    content: '\25BC'; /* Down arrow */
+    content: '\25BC'; 
     float: right;
     margin-right: 20px;
   }
 
   .active:after {
-    content: '\25B2'; /* Up arrow */
+    content: '\25B2'; 
   }
 
-  /* When sidebar is open */
+  
   .open-sidebar {
     width: 250px;
   }
 
-/* Container for the search bar */
+
 .search-container {
     display: flex; 
     justify-content: center; 
