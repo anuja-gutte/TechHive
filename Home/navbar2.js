@@ -2,10 +2,10 @@
         fetch('../Home/navbar2.html')
             .then(response => response.text()) 
             .then(data => {
-                // Insert the navbar content into the DOM
+            
                 document.getElementById('navbar').innerHTML = data;
 
-                // After the navbar is loaded, call the dropdown logic
+            
                 initializeDropdowns();
             })
             .catch(error => {
@@ -22,7 +22,7 @@
         }
     }
 
-    /* Initialize dropdown functionality after the navbar is loaded */
+    
     function initializeDropdowns() {
         var dropdowns = document.getElementsByClassName("dropdown-btn");
         for (var i = 0; i < dropdowns.length; i++) {

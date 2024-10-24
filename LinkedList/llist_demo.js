@@ -4,15 +4,15 @@ const nodeValueInput = document.getElementById('nodeValue');
 const listContainer = document.getElementById('list');
 const headTailDisplay = document.getElementById('headTail');
 
-let nodes = []; // Array to store node values
+let nodes = []; 
 
 addNodeButton.addEventListener('click', () => {
     const nodeValue = nodeValueInput.value.trim();
     if (nodeValue) {
-        nodes.push(nodeValue); // Add value to nodes array
+        nodes.push(nodeValue);
         createNode(nodeValue);
         updateHeadTailDisplay();
-        nodeValueInput.value = ''; // Clear input field
+        nodeValueInput.value = ''; 
     }
 });
 

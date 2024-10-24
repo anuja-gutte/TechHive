@@ -82,7 +82,7 @@ const quizData = [
   
   function loadQuiz() {
     const quiz = document.getElementById("quiz");
-    quiz.innerHTML = ""; // Clear previous content
+    quiz.innerHTML = ""; 
   
     quizData.forEach((currentData, questionIndex) => {
       const questionEl = document.createElement("div");
@@ -107,23 +107,19 @@ const quizData = [
   
   function selectAnswer(questionIndex, selectedIndex, optionEl) {
     const options = optionEl.parentElement.children;
-  
-    // If the question has already been answered, return early to avoid counting multiple selections
+
     if (selectedAnswers[questionIndex] !== undefined) {
       return;
     }
   
-    // Reset styles for other options in the same question
     Array.from(options).forEach((option) => option.classList.remove("selected"));
   
-    // Mark the selected option visually with the "selected" class
     optionEl.classList.add("selected");
   
-    // Store the selected answer
     answeredCount++;
     selectedAnswers[questionIndex] = selectedIndex;
   
-    // Update the progress bar
+    
     updateProgressBar();
   }
   
@@ -134,7 +130,7 @@ const quizData = [
   }
   
   function submitQuiz() {
-    // Reset score before calculating new score
+   
     score = 0;
   
     const options = document.querySelectorAll(".option");
@@ -149,10 +145,10 @@ const quizData = [
         const correctOption =
           options[questionIndex * question.options.length + correctAnswer];
   
-        // Mark the correct answer
+       
         correctOption.classList.add("correct");
   
-        // If the selected answer is wrong, mark it
+       
         if (selectedAnswer !== correctAnswer) {
           selectedOption.classList.add("wrong");
         } else {
@@ -161,19 +157,19 @@ const quizData = [
       }
     });
   
-    // Disable further selection after submitting
+    
     options.forEach((option) => {
       option.style.pointerEvents = "none";
     });
   
-    // Display final score
+   
     const scoreContainer = document.getElementById("score-container");
     scoreContainer.textContent = `You scored ${score}/${quizData.length}`;
   
-    // Scroll back to the top to show the correct/incorrect answers
+  
     window.scrollTo(0, 0);
   }
   
-  // Load the quiz when the page is ready
+  
   loadQuiz();
   

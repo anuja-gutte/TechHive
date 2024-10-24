@@ -334,34 +334,33 @@ li a{
 }
 
 .topic-card {
-    opacity: 1; /* Show the active card */
+    opacity: 1; 
 }
 
 #Demos{
-    /* background: linear-gradient(0deg,#F94F52 0%, rgba(253,187,45,1) 100%); */
+
     background-color: #FFAE00;
     border-radius: 0px 10px 25px 30px;
 }
 #DSA{
-    /* background: linear-gradient(135deg, #364860,rgba(253,187,45,1) ); */
-    /* background: linear-gradient(0deg,#F94F52 0%, rgba(253,187,45,1) 100%); */
+
     background-color: #DB2168;
     border-radius: 0px 10px 25px 30px;
 }
 #Quiz{
-    /* background: linear-gradient(135deg, #ff6347, #8a2be2); */
+
     background-color: #BB00FF;
     border-radius: 0px 10px 25px 30px;
 }
 #Roadmap{
-    /* background: linear-gradient(0deg, rgba(34,193,195,1) 0%, rgba(253,187,45,1) 100%); */
+    
     background-color: #14A489;
     border-radius: 0px 10px 25px 25px;
 }
 
 .heading {
     position: relative;
-    height: 135px; /* Set height for the heading */
+    height: 135px;
     display: flex;
     justify-content: center;
     align-items: center;
@@ -371,11 +370,9 @@ li a{
     position: absolute;
     left: 0;
     top: 0;
-    height: 100%; /* Full height of the heading */
-    /* width: 100%; */
-    /* background: linear-gradient(135deg, #ff6347, #8a2be2); */
+    height: 100%; 
     
-    z-index: 1; /* Ensure it stays behind the text */
+    z-index: 1; 
 }
 
 .topics-grid {
@@ -552,7 +549,7 @@ footer {
 
 .footer-container {
     display: grid;
-    grid-template-columns: repeat(4, 1fr); /* 4 columns */
+    grid-template-columns: repeat(4, 1fr); 
     gap: 20px;
     max-width: 1300px;
     margin: 0 auto;
@@ -566,7 +563,7 @@ footer {
 .footer-column h3 {
     margin-bottom: 10px;
     font-size: 18px;
-    color: rgb(28, 205, 15); /* Optional: Add color to headings */
+    color: rgb(28, 205, 15); 
 }
 
 .footer-column p,
@@ -577,19 +574,19 @@ footer {
 }
 
 .footer-column a:hover {
-    color: #ffcc00; /* Optional: Hover effect */
+    color: #ffcc00; 
 }
 
 /* Responsive design */
 @media (max-width: 768px) {
     .footer-container {
-        grid-template-columns: repeat(2, 1fr); /* 2 columns for tablets */
+        grid-template-columns: repeat(2, 1fr);
     }
 }
 
 @media (max-width: 480px) {
     .footer-container {
-        grid-template-columns: 1fr; /* 1 column for mobile */
+        grid-template-columns: 1fr;
     }
 }
 

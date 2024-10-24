@@ -12,7 +12,7 @@ body {
     line-height: 1.6;
     background-color: #f4f4f4;
     color: #333;
-    scroll-behavior: smooth; /* Smooth scrolling */
+    scroll-behavior: smooth; 
 }
 
 /* Header styles */
@@ -31,7 +31,7 @@ body {
     top: 0;
     width: 100%;
      /* Ensures the navbar stays on top of other content */
-    box-shadow: 0 2px 5px rgba(0,0,0,0.2); /* Optional: Add some shadow for visual appeal */
+    box-shadow: 0 2px 5px rgba(0,0,0,0.2);
 }
 
 .navbar ul {
@@ -65,7 +65,7 @@ body {
 /* Section styles */
 .section {
     padding: 20px;
-    margin: 80px 20px; /* Adjusting top margin to compensate for the fixed navbar */
+    margin: 80px 20px; 
     background-color: white;
     border-radius: 5px;
     box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
@@ -97,5 +97,5 @@ body {
     padding: 10px;
     background-color: #333;
     color: white;
-    position: relative; /* Footer remains at the bottom of the content */
+    position: relative; 
 }

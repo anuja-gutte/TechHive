@@ -2,12 +2,12 @@
 body {
     font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
     background-color: #f4f4f4;
-    display: block; /* Use flexbox to center */
-    justify-content: center; /* Horizontally center */
-    align-items: center; /* Vertically center */
-    min-height: 100vh; /* Take full viewport height */
+    display: block; 
+    justify-content: center; 
+    align-items: center; 
+    min-height: 100vh; 
     margin: 0;
-    padding-top: 80px; /* Space for fixed navbar */
+    padding-top: 80px; 
 }
 
 /* Navbar styles */
@@ -79,7 +79,7 @@ body {
 
 /* Main container styles */
 .container {
-    margin-top: 100px; /* Adjust according to navbar height */
+    margin-top: 100px; 
     text-align: center;
     padding: 20px;
     background-color: white;
@@ -91,7 +91,7 @@ body {
     flex-direction: column;
     align-items: center;
     justify-content: center;
-    margin: 100px auto 20px; /* Ensures proper spacing below navbar */
+    margin: 100px auto 20px; 
 }
 
 /* Style for the header */
@@ -141,11 +141,11 @@ h1 {
 
 /* Style for the front and rear elements */
 #front-element {
-    border-color: #ff9800; /* Orange border for the front */
+    border-color: #ff9800; 
 }
 
 #rear-element {
-    border-color: #2196f3; /* Blue border for the rear */
+    border-color: #2196f3; 
 }
 
 /* Input container styles */

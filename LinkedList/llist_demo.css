@@ -35,7 +35,7 @@ body {
     padding: 10px;
     background-color: #e0f7fa;
     border-radius: 5px;
-    margin-right: 10px; /* Space between value and pointer */
+    margin-right: 10px; 
   }
   
   .null-indicator {
@@ -50,8 +50,8 @@ body {
     height: 2px;
     background-color: #3498db;
     position: absolute;
-    left: 100%; /* Position the pointer to the right of the node */
-    top: 50%; /* Adjust the vertical alignment of the pointer */
+    left: 100%; 
+    top: 50%; 
   }
   
   #headTail {

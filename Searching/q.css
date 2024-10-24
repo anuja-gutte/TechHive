@@ -84,14 +84,13 @@
     color: white;
   }
   
-  /* Color for correct and wrong answers after submission */
   .option.correct {
-    background-color: #5ce65cdb; /* Green for correct */
+    background-color: #5ce65cdb; 
     color: white;
   }
   
   .option.wrong {
-    background-color: #eb4d41e9; /* Red for wrong */
+    background-color: #eb4d41e9; 
     color: white;
   }
   
