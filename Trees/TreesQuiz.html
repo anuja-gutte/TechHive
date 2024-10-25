@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="icon" type="image/png" href="logo.jpeg">
+    <title>Trees Quiz</title>
+    <link rel="stylesheet" href="Quiz.css" />
+</head>
+<body>
+    
+    <div class="home">
+        <nav class="nav">
+            <div class="tab">
+                <div class="left">
+                    <div class="logo">
+                        <img src="../logo.jpeg" alt="Logo">
+                    </div>
+                    <a><button class="open-btn" onclick="toggleSidebar()">☰ Menu</button></a>
+                </div>
+
+                <div class="right">
+                    <ul id="list">
+                        <li><a href="#home">Home</a></li>
+                        <li><a href="about.html">About</a></li>
+                        <li><a href="#services">Services</a></li>
+                        <li><a href="#contact">Contact</a></li>
+                        <li><a href="#contact"><button class="tabs-learn-more">Learn More</button></a></li>
+                    </ul>
+                </div>
+            </div>
+        </nav>
+    </div>
+
+    <header>
+        <h1>Trees Quiz</h1>
+    </header>
+
+    <div class="quiz-page">
+        <div class="quiz-container">
+            <div class="header">
+                <div id="progress-bar-container">
+                    <div id="progress-bar"></div>
+                </div>
+            </div>
+            <div id="quiz"></div>
+            <button id="submit-btn" onclick="submitQuiz()">Submit</button>
+            <div id="score-container"></div>
+        </div>
+    </div>
+
+    <script src="Quiz.js"></script>
+    <script>
+    function loadHTML() {
+        fetch("../Home/navbar2.html")
+        .then((response) => response.text())
+        .then((data) => {
+            document.getElementById("navbar").innerHTML = data;
+        })
+        .catch((error) => {
+            console.error("Error fetching the HTML:", error);
+        });
+    }
+
+    window.onload = loadHTML;
+
+    </script>
+</body>
+</html>
