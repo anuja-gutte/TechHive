@@ -142,7 +142,7 @@ function selectAnswer(questionIndex, selectedIndex, optionEl) {
 function updateProgressBar() {
     const progressBar = document.getElementById('progress-bar');
     const progressPercentage = (answeredCount / totalQuestions) * 100;
-    progressBar.style.width = `${progressPercentage}%`;
+    progressBar.style.width = progressPercentage+'%';
 }
 
 function submitQuiz() {
