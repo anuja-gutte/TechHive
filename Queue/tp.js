@@ -1,4 +1,5 @@
 let queue = [];
+const maxQueueSize = 5; 
 const queueContainer = document.getElementById("queue-container");
 const frontElementDisplay = document.getElementById("front-element");
 const rearElementDisplay = document.getElementById("rear-element");
@@ -11,40 +12,37 @@ function enqueue() {
     return;
   }
 
-  
+
+  if (queue.length >= maxQueueSize) {
+    alert(`Queue is full(OVERFLOW)Cannot enqueue more than ${maxQueueSize} items.`);
+    return;
+  }
+
   queue.push(input);
-  
-  
   document.getElementById("queue-input").value = "";
 
- 
   renderQueue();
 }
 
 function dequeue() {
   if (queue.length === 0) {
-    alert("Queue is empty.");
+    alert("Queue is empty i.e underflow ");
     return;
   }
 
- 
-  const firstItem = queue.shift(); 
+  queue.shift(); 
 
- 
   renderQueue();
 }
 
 function renderQueue() {
-  
   queueContainer.innerHTML = "";
 
-  
   queue.forEach((item, index) => {
     const queueItem = document.createElement("div");
     queueItem.classList.add("queue-item");
     queueItem.textContent = item;
 
-    
     if (index === 0) {
       queueItem.classList.add("front");
     }
@@ -55,7 +53,6 @@ function renderQueue() {
     queueContainer.appendChild(queueItem);
   });
 
-  
   if (queue.length > 0) {
     frontElementDisplay.textContent = `Front: ${queue[0]}`;
     rearElementDisplay.textContent = `Rear: ${queue[queue.length - 1]}`;
@@ -64,6 +61,6 @@ function renderQueue() {
     rearElementDisplay.textContent = "Rear: None";
   }
 }
-
 renderQueue();
+
 
