@@ -14,7 +14,9 @@ async function visualizeFactorial(n) {
         
         const callElement = document.createElement('div');
         callElement.className = 'recursion-step';
-        callElement.textContent = `factorial(${n})`;
+     
+       callElement.textContent = "factorial(" + n + ")";
+
         callStackElement.appendChild(callElement);
 
         await sleep(500); 
@@ -29,7 +31,9 @@ async function visualizeFactorial(n) {
         
         const returnValueElement = document.createElement('span');
         returnValueElement.className = 'return-value';
-        returnValueElement.textContent = `= ${result}`;
+       
+       returnValueElement.textContent = "= " + result;
+
         callElement.appendChild(returnValueElement);
 
         await sleep(500); 
