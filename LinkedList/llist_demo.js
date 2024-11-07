@@ -47,7 +47,7 @@ function createNode(value, position = nodes.length) {
         listContainer.appendChild(node);
     }
 
-    if (nodes.length > 1) {
+    if (nodes.length > 0) {
         const pointer = document.createElement('div');
         pointer.className = 'pointer';
         node.appendChild(pointer);
