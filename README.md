@@ -25,6 +25,18 @@ Whether you're preparing for interviews or trying to strengthen your core CS fun
 - 💡 **Beginner-Friendly UI** with intuitive navigation
 
 ---
+![Screenshot 2025-05-23 153556](https://github.com/user-attachments/assets/51548b9d-bd43-4f0b-81da-37c53a5611ce)
+![Screenshot 2025-05-23 153659](https://github.com/user-attachments/assets/8658a3e3-c43e-4e54-b62b-e100d7ebca2a)
+![Screenshot 2025-05-23 153932](https://github.com/user-attachments/assets/cf42b1a3-3a18-4e0c-830c-a022eef627be)
+![Screenshot 2025-05-23 154205](https://github.com/user-attachments/assets/b3a84c24-24c0-4566-9aee-ddfba213f90a)![Screenshot 2025-05-23 155027](https://github.com/user-attachments/assets/c0d25038-cc31-40a6-aebc-f6e4cc4975bd)
+![Screenshot 2025-05-23 155042](https://github.com/user-attachments/assets/6963cb56-f849-47a3-afac-998528525ed8)
+![Screenshot 2025-05-23 154811](https://github.com/user-attachments/assets/ee7b0246-0031-407a-a966-1b4516ee4ac0)
+
+![Screenshot 2025-05-23 154900](https://github.com/user-attachments/assets/3f53005b-196d-436a-a83c-481eeb8e3fd5)
+![Screenshot 2025-05-23 154945](https://github.com/user-attachments/assets/3667961f-fd0a-4bfd-a701-8486000ae021)
+
+![Screenshot 2025-05-23 154956](https://github.com/user-attachments/assets/0629a7ea-e82b-4bca-bafd-f5a096acfe42)
+---
 
 ## 📂 Covered Topics
 
